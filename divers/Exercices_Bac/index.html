@@ -1,0 +1,1040 @@
+<!-- Ajout pour le bouton de téléchargement et le style des jupyter notebook   https://github.com/danielfrg/mkdocs-jupyter -->
+
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Cours et TD de l'année en cours">
+      
+      
+        <meta name="author" content="Michael Meyroneinc-condy">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.8">
+    
+    
+      
+        <title>TD n°21 - Exercices BAC - NSI Terminale 2022-2023</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.1d29e8d0.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+    
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#sujet-1-tableaux-et-programmation" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="../.." title="NSI Terminale 2022-2023" class="md-header__button md-logo" aria-label="NSI Terminale 2022-2023" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            NSI Terminale 2022-2023
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              TD n°21 - Exercices BAC
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Basculer en mode sombre"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Basculer en mode sombre" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="brown" data-md-color-accent="brown"  aria-label="Basculer en mode clair"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Basculer en mode clair" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Effacer" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Onglets" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Accueil
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Programmation/Cours_Programmation_Orientee_Objet/" class="md-tabs__link">
+        T1 - Struct. de données
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../BasesDonnees/Modele_Relationnel/" class="md-tabs__link">
+        T2 - Bases de données
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../epreuve_pratique/" class="md-tabs__link">
+        E.P 💻
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../sujet0_geipi.pdf" class="md-tabs__link">
+        Divers
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../conseil/" class="md-tabs__link">
+      Divers conseils
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="NSI Terminale 2022-2023" class="md-nav__button md-logo" aria-label="NSI Terminale 2022-2023" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    NSI Terminale 2022-2023
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Accueil
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          T1 - Struct. de données
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="T1 - Struct. de données" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          T1 - Struct. de données
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programmation/Cours_Programmation_Orientee_Objet/" class="md-nav__link">
+        P.O.O
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          T2 - Bases de données
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="T2 - Bases de données" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          T2 - Bases de données
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BasesDonnees/Modele_Relationnel/" class="md-nav__link">
+        TP 01 Modèle relationnel
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BasesDonnees/Cours_TP_SQL/" class="md-nav__link">
+        TP 02 Langage SQL
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BasesDonnees/SQL_BAC/" class="md-nav__link">
+        BAC SQL
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          E.P 💻
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="E.P 💻" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          E.P 💻
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../epreuve_pratique/" class="md-nav__link">
+        Déroulement
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Consigne_EP/" class="md-nav__link">
+        Consigne
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Divers
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Divers" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Divers
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sujet0_geipi.pdf" class="md-nav__link">
+        Epreuve GEIPI
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../conseil/" class="md-nav__link">
+        Divers conseils
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sujet-1-tableaux-et-programmation" class="md-nav__link">
+    Sujet  1 : Tableaux et Programmation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sujet-2-programmation-en-general" class="md-nav__link">
+    Sujet  2 : Programmation en Général
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sujet-3-tableau-parcours-programmation-en-general" class="md-nav__link">
+    Sujet  3 : Tableau - Parcours - Programmation en Général
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset"><a class="md-content__button md-icon" download href="Exercices_Bac.pdf" title="PDF"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 10.5h1v3h-1v-3m-5 1h1v-1H7v1M20 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2M9.5 10.5A1.5 1.5 0 0 0 8 9H5.5v6H7v-2h1a1.5 1.5 0 0 0 1.5-1.5v-1m5 0A1.5 1.5 0 0 0 13 9h-2.5v6H13a1.5 1.5 0 0 0 1.5-1.5v-3m4-1.5h-3v6H17v-2h1.5v-1.5H17v-1h1.5V9z"></path></svg></a>
+              
+
+
+
+
+
+                
+
+
+  <h1>TD n°21 - Exercices BAC</h1>
+
+<table  style="table-layout: fixed;background-color:#87A96B; border:solid;color:black;width:100%;">
+        <tr>
+            <th colspan=2; width="100%"; style="background-color: #3B444B;color:white;text-align:center;border:none;font-size:12pt;">
+            Thème  : BAC
+            </th>
+        </tr>
+        <tr >
+            <th width="20%"; style="background-color: #3B444B;color:white;text-align:center;border:none;font-size:50pt;">
+            21
+            </th>
+            <th  width="80%"; style="text-align:center;border:none;font-size:25pt;">TD : Exercices Divers BAC - Programmation</th>
+        </tr>
+</table>
+
+<h2 id="sujet-1-tableaux-et-programmation">Sujet  1 : Tableaux et Programmation<a class="headerlink" href="#sujet-1-tableaux-et-programmation" title="Permanent link">⚓︎</a></h2>
+<p>On rappelle que len est une fonction qui prend un tableau en paramètre et renvoie sa longueur.<br />
+C’est-à-dire le nombre d’éléments présents dans le tableau.  </p>
+<p><strong><em>Exemple</em></strong> : <code>len([12, 54, 34, 57])</code> vaut 4.</p>
+<p>Le but de cet exercice est de programmer différentes réductions pour un site de vente de vêtements en ligne.<br />
+On rappelle que si le prix d’un article avant réduction est de x euros,  </p>
+<ul>
+<li>son prix vaut 0, 5x si on lui applique une réduction de 50%,  </li>
+<li>son prix vaut 0, 6x si on lui applique une réduction de 40%,  </li>
+<li>son prix vaut 0, 7x si on lui applique une réduction de 30%,  </li>
+<li>son prix vaut 0, 8x si on lui applique une réduction de 20%,  </li>
+<li>son prix vaut 0, 9x si on lui applique une réduction de 10%.  </li>
+</ul>
+<p>Dans le système informatique du site de vente, l’ensemble des articles qu’un client veut acheter, appelé panier, est modélisé par un tableau de flottants.<br />
+Par exemple, si un client veut acheter un pantalon à 30,50 euros, un tee-shirt à 15 euros, une paire de chaussettes à 6 euros, une jupe à 20 euros, une paire de  collants à 5 euros, une robe à 35 euros et un short à 10,50 euros, le système informatique aura le tableau suivant :  </p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">tab</span> <span class="o">=</span> <span class="p">[</span><span class="mf">30.5</span><span class="p">,</span> <span class="mf">15.0</span><span class="p">,</span> <span class="mf">6.0</span><span class="p">,</span> <span class="mf">20.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">,</span> <span class="mf">35.0</span><span class="p">,</span> <span class="mf">10.5</span><span class="p">]</span>
+</code></pre></div>
+<div class="admonition fabquestion">
+<p class="admonition-title">Question 1. (a)</p>
+<p>Écrire une fonction Python total_hors_reduction ayant pour argument le tableau des prix des articles du panier d’un client et renvoyant le total des prix de ces articles. </p>
+</div>
+<div class="admonition fabquestion">
+<p class="admonition-title">Question  1. (b)</p>
+<p>Le site de vente propose la promotion suivante comme offre de bienvenue : 20% de réduction sur le premier article de la liste, 30% de réduction sur le deuxième article de la liste (s’il y a au moins deux articles) et aucune réduction sur le reste des articles (s’il y en a).<br />
+Recopier sur la copie et compléter la fonction Python offre_bienvenue prenant en paramètre le tableau tab des prix des articles du panier d’un client et renvoyant le total à payer lorsqu’on leur applique l’offre de bienvenue.  </p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">🐍 Script Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">offre_bienvenue</span> <span class="p">(</span><span class="n">tab</span> <span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; tableau -&gt; float &quot;&quot;&quot;</span>
+    <span class="n">somme</span> <span class="o">=</span><span class="mi">0</span>
+    <span class="n">longueur</span> <span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">tab</span> <span class="p">)</span>
+    <span class="k">if</span> <span class="n">longueur</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">:</span>
+        <span class="n">somme</span> <span class="o">=</span><span class="n">tab</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*...</span>
+    <span class="k">if</span> <span class="n">longueur</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="p">:</span>
+        <span class="n">somme</span> <span class="o">=</span> <span class="n">somme</span> <span class="o">+</span> <span class="o">...</span>
+    <span class="k">if</span> <span class="n">longueur</span> <span class="o">&gt;</span> <span class="mi">2</span> <span class="p">:</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">longueur</span> <span class="p">):</span>
+            <span class="n">somme</span> <span class="o">=...</span>
+    <span class="k">return</span> <span class="o">...</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<p>Pour toute la suite de l’exercice, on pourra utiliser la fonction total_hors_reduction même si la question 1 n’a pas été traitée.</p>
+<div class="admonition fabquestion">
+<p class="admonition-title">Question 2.</p>
+<p>Lors de la période des soldes, le site de vente propose les réductions suivantes :  </p>
+<ul>
+<li>si le panier contient 5 articles ou plus, une réduction globale de 50%,  </li>
+<li>si le panier contient 4 articles, une réduction globale de 40%,  </li>
+<li>si le panier contient 3 articles, une réduction globale de 30%,  </li>
+<li>si le panier contient 2 articles, une réduction globale de 20%,  </li>
+<li>si le panier contient 1 article, une réduction globale de 10%.  </li>
+</ul>
+<p>Proposer une fonction Python prix_solde ayant pour argument le tableau tab des prix des articles du panier d’un client et renvoyant le total des prix de ces articles lorsqu’on leur applique la réduction des soldes.</p>
+</div>
+<div class="admonition fabquestion">
+<p class="admonition-title">Question 3. (a)</p>
+<p>Écrire une fonction minimum qui prend en paramètre un tableau tab de nombres et renvoie la valeur minimum présente dans le tableau.</p>
+</div>
+<div class="admonition fabquestion">
+<p class="admonition-title">Question 3. (b)</p>
+<p>Pour ses bons clients, le site de vente propose une offre promotionnelle, à partir de 2 articles achetés, l’article le moins cher des articles commandés est  offert.<br />
+Écrire une fonction Python offre_bon_client ayant pour paramètre le tableau des prix des articles du panier d’un client et renvoyant le total à payer lorsqu’on leur applique l’offre bon client.</p>
+</div>
+<p><strong>Question 4.</strong><br />
+Afin de diminuer le stock de ses articles dans ses entrepôts, l’entreprise imagine faire l’offre suivante à ses clients : en suivant l’ordre des articles dans le panier du client, elle considère les 3 premiers articles et offre le moins cher, puis les 3 suivants et offre le moins cher et ainsi de suite jusqu’à ce qu’il reste au plus 2 articles qui n’ont alors droit à aucune réduction.<br />
+<strong><em>Exemple :</em></strong> Si le panier du client contient un pantalon à 30,50 euros, un tee-shirt à 15 euros, une paire de chaussettes à 6 euros, une jupe à 20 euros, une paire de collants à 5 euros, une robe à 35 euros et un short à 10,50 euros, ce panier est représenté par le tableau suivant :<br />
+ <div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">tab</span> <span class="o">=</span> <span class="p">[</span><span class="mf">30.5</span><span class="p">,</span> <span class="mf">15.0</span><span class="p">,</span> <span class="mf">6.0</span><span class="p">,</span> <span class="mf">20.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">,</span> <span class="mf">35.0</span><span class="p">,</span> <span class="mf">10.5</span><span class="p">]</span>
+</code></pre></div>
+ Pour le premier groupe (le pantalon à 30,50 euros, le tee-shirt à 15 euros, la paire de chaussettes à 6 euros), l’article le moins cher, la paire de chaussettes à 6 euros, est offert. Pour le second groupe (la jupe à 20 euros, la paire de collants à 5 euros, la robe à 35 euros), la paire de collants à 5 euros est offerte.<br />
+ Donc le total après promotion de déstockage est 111 euros.<br />
+ On constate que le prix après promotion de déstockage dépend de l’ordre dans lequel se présentent les articles dans le panier.</p>
+<div class="admonition fabquestion">
+<p class="admonition-title">Question 4.(a)</p>
+<p>Proposer un panier contenant les mêmes articles que ceux de l’exemple mais ayant un prix après promotion de déstockage différent de 111 euros.</p>
+</div>
+<div class="admonition fabquestion">
+<p class="admonition-title">Question 4. (b)</p>
+<p>Proposer un panier contenant les mêmes articles mais ayant le prix après promotion de déstockage le plus bas possible.</p>
+</div>
+<div class="admonition fabquestion">
+<p class="admonition-title">Question 4. (c)</p>
+<p>Une fois ses articles choisis, quel algorithme le client peut-il utiliser pour modifier son panier afin de s’assurer qu’il obtiendra le prix après promotion de déstockage le plus bas possible ? On ne demande pas d’écrire cet algorithme.</p>
+</div>
+<h2 id="sujet-2-programmation-en-general">Sujet  2 : Programmation en Général<a class="headerlink" href="#sujet-2-programmation-en-general" title="Permanent link">⚓︎</a></h2>
+<p><em>Cet exercice porte sur la programmation en général.</em>  </p>
+<p>Étant donné un tableau non vide de nombres entiers relatifs, on appelle sous-séquence une suite non vide d'éléments voisins de ce tableau. On cherche dans cet  exercice à déterminer la plus grande somme possible obtenue en additionnant les éléments d'une sous-séquence.  </p>
+<p>Par exemple, pour le tableau ci-dessous, la somme maximale vaut 18.<br />
+Elle est obtenue en additionnant les éléments de la sous-séquence encadrée en gras ci-dessous (6 ; 8 ; -6 ; 10).</p>
+<p><img alt="" src="../data/ExoBAC1.png" /></p>
+<div class="admonition fabquestion">
+<p class="admonition-title">Question 1. a.</p>
+<p>Quelle est la solution du problème si les éléments du tableau sont tous positifs ?</p>
+</div>
+<div class="admonition fabquestion">
+<p class="admonition-title">Question 1. b.</p>
+<p>Quelle est la solution du problème si tous les éléments sont négatifs ?</p>
+</div>
+<p>Dans cette question, on examine toutes les sous-séquences possibles.</p>
+<div class="admonition fabquestion">
+<p class="admonition-title">Question 2. a.</p>
+<p>Écrire le code Python d'une fonction <code>somme_sous_sequence(lst, i, j)</code> qui prend en argument une liste et deux entiers <code>i, j</code> et renvoie la somme de la sous-séquence délimitée par les indices i et j (inclus).</p>
+</div>
+<div class="admonition fabquestion">
+<p class="admonition-title">Question 2. b.</p>
+<p>La fonction <code>pgsp</code> ci-dessous permet de déterminer la plus grande des  sommes obtenues en additionnant les éléments de toutes les sous-séquences possibles du tableau lst.</p>
+<p><div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">def</span> <span class="nf">pgsp</span><span class="p">(</span><span class="n">lst</span><span class="p">):</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span>
+    <span class="n">somme_max</span> <span class="o">=</span> <span class="n">lst</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+            <span class="n">s</span> <span class="o">=</span> <span class="n">somme_sous_sequence</span><span class="p">(</span><span class="n">lst</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">s</span> <span class="o">&gt;</span> <span class="n">somme_max</span> <span class="p">:</span>
+                <span class="n">somme_max</span> <span class="o">=</span> <span class="n">s</span>
+    <span class="k">return</span> <span class="n">somme_max</span>
+</code></pre></div>
+Parmi les quatre choix suivants, quel est le nombre de comparaisons effectuées par cette fonction si le tableau lst passé en paramètre contient 10 éléments ?  </p>
+<ul>
+<li>10  </li>
+<li>55  </li>
+<li>100  </li>
+<li>1055  </li>
+</ul>
+</div>
+<div class="admonition fabquestion">
+<p class="admonition-title">Question 2. c.</p>
+<p>Recopier et modifier la fonction pgsp pour qu'elle renvoie un tuple contenant la somme maximale et les indices qui délimitent la sous-séquence correspondant à cette somme maximale.</p>
+</div>
+<p><strong>Question 3.</strong><br />
+On considère dans cette question une approche plus élaborée. Son principe consiste, pour toutes les valeurs possibles de l’indice ݅, à déterminer la somme maximale ܵ(݅) des sous-séquences qui se terminent à l'indice ݅.<br />
+En désignant par <code>lst[݅]</code> l’élément de lst d’indice ݅, on peut vérifier que </p>
+<ul>
+<li>S(0) = lst[0]</li>
+<li>et pour ݅<span class="arithmatex">\(i \geq 1\)</span> : <ul>
+<li><span class="arithmatex">\(Sܵ(i) = lst[݅i]\)</span> si ܵ<span class="arithmatex">\((݅i- 1) ≤ 0\)</span> ;</li>
+<li><span class="arithmatex">\(i = lst[݅i] + ܵS(݅i-1)\)</span> si ܵ<span class="arithmatex">\(S(݅i-1) &gt; 0\)</span>.  </li>
+</ul>
+</li>
+</ul>
+<div class="admonition fabquestion">
+<p class="admonition-title">Question 3. a.</p>
+<p>Recopier et compléter le tableau ci-dessous avec les valeurs de ܵ<span class="arithmatex">\(S(݅i)\)</span> pour la liste considérée en exemple.</p>
+<p><img alt="" src="../data/ExoBAC1.png" /></p>
+</div>
+<div class="admonition fabquestion">
+<p class="admonition-title">Question 3. b.</p>
+<p>La solution au problème étant la plus grande valeur des ܵ<span class="arithmatex">\(S(݅i)\)</span>, on demande de compléter la fonction <code>pgsp2</code> ci-dessous, de sorte que la variable sommes_max contienne la liste des valeurs ܵ<span class="arithmatex">\(S(݅i)\)</span>.  </p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">def</span> <span class="nf">pgsp2</span><span class="p">(</span><span class="n">lst</span><span class="p">):</span>
+    <span class="n">sommes_max</span> <span class="o">=</span> <span class="p">[</span><span class="n">lst</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">lst</span><span class="p">)):</span>
+         <span class="c1"># à compléter</span>
+
+<span class="k">return</span> <span class="nb">max</span><span class="p">(</span><span class="n">sommes_max</span><span class="p">)</span>
+</code></pre></div>
+</div>
+<div class="admonition fabquestion">
+<p class="admonition-title">Question 3. c.</p>
+<p>En quoi la solution obtenue par cette approche est-elle plus avantageuse que celle de la question 2.b. ? </p>
+</div>
+<h2 id="sujet-3-tableau-parcours-programmation-en-general">Sujet  3 : Tableau - Parcours - Programmation en Général<a class="headerlink" href="#sujet-3-tableau-parcours-programmation-en-general" title="Permanent link">⚓︎</a></h2>
+<p><em>Cet exercice porte sur l’algorithmique et la programmation en Python. Il aborde les notions de tableaux de tableaux et d’algorithmes de parcours de tableaux.</em>  </p>
+<p><strong>Partie A : Représentation d’un labyrinthe</strong>  </p>
+<p>On modélise un labyrinthe par un tableau à deux dimensions à ݊<span class="arithmatex">\(n\)</span> lignes et ݉<span class="arithmatex">\(m\)</span> colonnes avec ݊<span class="arithmatex">\(n\)</span> et ݉<span class="arithmatex">\(m\)</span> des entiers strictement positifs.<br />
+Les lignes sont numérotées de 0 à ݊<span class="arithmatex">\(n-1\)</span> et les colonnes de 0 à <span class="arithmatex">\(m-1\)</span>.<br />
+La case en haut à gauche est repérée par <span class="arithmatex">\((0,0)\)</span> et la case en bas à droite par <span class="arithmatex">\((n-1,m-1)\)</span>.  </p>
+<p>Dans ce tableau :  </p>
+<ul>
+<li>0 représente une case vide, hors case de départ et arrivée,  </li>
+<li>1 représente un mur,  </li>
+<li>2 représente le départ du labyrinthe,  </li>
+<li>3 représente l'arrivée du labyrinthe.  </li>
+</ul>
+<p>Ainsi, en Python, le labyrinthe ci-dessous est représentée par le tableau de tableaux <code>lab1</code>.  </p>
+<p><img alt="" src="../data/ExoBAC3.png" /></p>
+<div class="admonition fabquestion">
+<p class="admonition-title">Question A.1.</p>
+<p>Le labyrinthe ci-dessous est censé être représenté par le tableau de tableaux lab2. <br />
+Cependant, dans ce tableau, un mur se trouve à la place du départ du labyrinthe.<br />
+Donner une instruction permettant de placer le départ au bon endroit dans lab2.</p>
+<p><img alt="" src="../data/ExoBAC4.png" /></p>
+</div>
+<div class="admonition fabquestion">
+<p class="admonition-title">Question A.2.</p>
+<p>Écrire une fonction <code>est_valide(i, j, n, m)</code> qui renvoie <code>True</code> si le couple <span class="arithmatex">\((i,j)\)</span> correspond à des coordonnées valides pour un labyrinthe de taille <span class="arithmatex">\((n,m)\)</span>, et <code>False</code> sinon.<br />
+On donne ci-dessous des exemples d'appels.  </p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">est_valide</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="kc">True</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">est_valide</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="kc">False</span>
+</code></pre></div>
+</div>
+<div class="admonition fabquestion">
+<p class="admonition-title">Question A.3.</p>
+<p>On suppose que le départ d'un labyrinthe est toujours indiqué, mais on ne fait aucune supposition sur son emplacement. Compléter la fonction depart(lab)ci-dessous de sorte qu'elle renvoie, sous la forme d'un tuple, les coordonnées du départ d'un labyrinthe (représenté par le paramètre lab). <br />
+Par exemple, l'appel depart(lab1) doit renvoyer le tuple (5, 0).  </p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">def</span> <span class="nf">depart</span><span class="p">(</span><span class="n">lab</span><span class="p">)</span> <span class="p">:</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">lab</span><span class="p">)</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">lab</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="o">...</span>
+</code></pre></div>
+</div>
+<div class="admonition fabquestion">
+<p class="admonition-title">Question A.4.</p>
+<p>Écrire une fonction nb_cases_vides(lab) qui renvoie le nombre de cases vides d'un labyrinthe (comprenant donc l'arrivée et le départ).<br />
+Par exemple, l'appel nb_cases_vides(lab2) doit renvoyer la valeur 19.</p>
+</div>
+<p><strong>Partie B : Recherche d’une solution dans un labyrinthe</strong>  </p>
+<p>On suppose dans cette partie que les labyrinthes possèdent un unique chemin allant du départ à l’arrivée sans repasser par la même case. Dans la suite, c’est ce chemin que l’on appellera solution du labyrinthe.<br />
+Pour déterminer la solution d'un labyrinthe, on parcourt les cases vides de proche en proche.<br />
+Lors d’un tel parcours, afin d’éviter de tourner en rond, on choisit de marquer les cases visitées.<br />
+Pour cela, on remplace la valeur d'une case visitée dans le tableau représentant le labyrinthe par la valeur 4.  </p>
+<div class="admonition fabquestion">
+<p class="admonition-title">Question B.1.</p>
+<p>On dit que deux cases d'un labyrinthe sont voisines si elles ont un côté commun.<br />
+On considère une fonction <code>voisines(i, j, lab)</code> qui prend en arguments deux entiers ݅<span class="arithmatex">\(i\)</span> et ݆<span class="arithmatex">\(j\)</span> représentant les coordonnées d’une case et un tableau <code>lab</code> qui représente un labyrinthe.<br />
+Cette fonction renvoie la liste des coordonnées des cases voisines de la case de coordonnées <span class="arithmatex">\((i,j)\)</span> qui sont valides, non visitées et qui ne sont pas des murs. L'ordre des éléments de cette liste n'importe pas.<br />
+Ainsi, l'appel <code>voisines(1, 1, [[1, 1, 1], [4, 0, 0], [1, 0, 1]])</code> renvoie la liste <code>[(2, 1), (1, 2)]</code>.<br />
+Que renvoie l'appel <code>voisines(1, 2, [[1, 1, 4], [0, 0, 0], [1, 1, 0]])</code> ?</p>
+</div>
+<p><strong>Question 2.</strong><br />
+On souhaite stocker la solution dans une liste chemin. Cette liste contiendra les coordonnées des cases de la solution, dans l'ordre. Pour cela, on procède de la façon suivante.  </p>
+<ul>
+<li>Initialement :<ul>
+<li>déterminer les coordonnées du départ : c'est la première case à visiter ;</li>
+<li>ajouter les coordonnées de la case départ à la liste chemin.</li>
+</ul>
+</li>
+<li>Tant que l'arrivée n'a pas été atteinte :<ul>
+<li>on marque la case visitée avec la valeur 4 ;</li>
+<li>si la case visitée possède une case voisine libre, la première case de la liste renvoyée par la fonction <code>voisines</code> devient la prochaine case à visiter et on ajoute à la liste chemin ;  </li>
+<li>sinon, il s'agit d'une impasse. On supprime alors la dernière case dans la liste chemin. La prochaine case à visiter est celle qui est désormais en dernière position de la liste chemin. </li>
+</ul>
+</li>
+</ul>
+<div class="admonition fabquestion">
+<p class="admonition-title">Question B.2. a.</p>
+<p>Le tableau de tableaux lab3 ci-dessous représente un labyrinthe.  </p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">lab3</span> <span class="o">=</span>  <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+        <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+        <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+        <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]]</span>
+</code></pre></div>
+<p>La suite d'instructions ci-dessous simule le début des modifications subies par la liste chemin lorsque l'on applique la méthode présentée.<br />
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="c1"># entrée: (1, 0), sortie (1, 5)</span>
+<span class="n">chemin</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)]</span>
+<span class="n">chemin</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<span class="n">chemin</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<span class="n">chemin</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+<span class="n">chemin</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<span class="n">chemin</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="n">chemin</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+</code></pre></div></p>
+<p>Compléter cette suite d'instructions jusqu'à ce que la liste chemin représente la solution.<br />
+Rappel : la méthode pop supprime le dernier élément d'une liste et renvoie cet élément.</p>
+</div>
+<div class="admonition fabquestion">
+<p class="admonition-title">Question B.2. b.</p>
+<p>Recopier et compléter la fonction solution(lab) donnée ci-dessous de sorte qu'elle renvoie le chemin solution du labyrinthe représenté par le paramètre lab.  </p>
+<p>On pourra pour cela utiliser la fonction voisines.</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">lab</span><span class="p">):</span>
+    <span class="n">chemin</span> <span class="o">=</span> <span class="p">[</span><span class="n">depart</span><span class="p">(</span><span class="n">lab</span><span class="p">)]</span>
+    <span class="n">case</span> <span class="o">=</span> <span class="n">chemin</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="n">case</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">j</span> <span class="o">=</span> <span class="n">case</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="o">---</span>
+</code></pre></div>
+<p>Par exemple, l 'appel <code>solution(lab2)</code> doit renvoyer <code>[(1, 0), (1, 1), (1, 2), (1, 3), (1, 4), (1, 5), (2, 5), (3, 5), (4, 5), (5, 5), (6, 5)]</code>. </p>
+</div>
+
+              
+
+<style>
+    .jp-RenderedHTMLCommon p {
+        font-size: 0.8rem;
+        line-height: 1.6;
+    }
+
+    .jp-RenderedHTMLCommon li {
+        font-size: .8rem;
+        line-height: 1.6;
+    }
+
+    .jp-RenderedHTMLCommon h1 {
+        margin: 0 0 1.25em;
+        color: var(--md-default-fg-color--light);
+        font-weight: 300;
+        font-size: 2em;
+        line-height: 1.3;
+        letter-spacing: -0.01em;
+    }
+
+    .jp-RenderedHTMLCommon h2 {
+        margin: 1.6em 0 .64em;
+        font-weight: 300;
+        font-size: 1.965em;
+        line-height: 1.4;
+        letter-spacing: -0.01em;
+    }
+
+    .jp-RenderedHTMLCommon h3 {
+        margin: 1.6em 0 .8em;
+        font-weight: 400;
+        font-size: 1.57em;
+        line-height: 1.5;
+        letter-spacing: -0.01em;
+    }
+
+    .jp-RenderedHTMLCommon hr {
+        border: none;
+    }
+</style>
+
+
+
+            </article>
+            
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Retour en haut de la page
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      2023 sous licence <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr" target="_blank">CC BY-NC-SA 4.0</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.top", "navigation.sections", "navigation.indexes", "navigation.tracking", "header.autohide", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.config.lang": "fr", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Rechercher", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version.title": "S\u00e9lectionner la version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.0238f547.min.js"></script>
+      
+        <script src="../../xtra/mathjax.js"></script>
+      
+        <script src="../../javascripts/config.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
