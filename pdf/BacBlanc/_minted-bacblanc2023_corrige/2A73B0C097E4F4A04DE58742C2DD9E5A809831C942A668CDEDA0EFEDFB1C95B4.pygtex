@@ -1,0 +1,5 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{SELECT}\PYG{+w}{ }\PYG{n}{titre}
+\PYG{k}{FROM}\PYG{+w}{ }\PYG{n}{Articles}
+\PYG{k}{WHERE}\PYG{+w}{ }\PYG{n}{dateParution}\PYG{+w}{ }\PYG{o}{\PYGZgt{}=}\PYG{+w}{ }\PYG{l+m+mi}{20220101}
+\end{Verbatim}

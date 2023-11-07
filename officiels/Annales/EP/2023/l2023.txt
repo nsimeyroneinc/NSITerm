@@ -1,0 +1,45 @@
+23-NSI-01,37, Verifier qu'un tableau est trié, Dépouillement d'un vote (dictionnaire),1,
+23-NSI-02,16, Liste des indices du maximum, Pile des éléments positifs,1,
+23-NSI-03,39, Moyenne pondérée, Codage d'une image (liste de listes),1, 
+23-NSI-04, ,Présence de doublons dans une liste triée, Création de grille au démineur,1, N
+23-NSI-05, ,Simulation de lancers de dés, Représentation d'une image par une liste de listes,1, N
+23-NSI-06, 36,Recherche de la dernière occurrence, Plus courte distance entre un point et une liste de points, 1,M
+23-NSI-07,30, Fusion de deux listes déjà triées, Conversion de nombres en chiffres romains, 1,
+23-NSI-08,23, Recherche de maximum dans un dictionnaire, Evaluation d'une expression en notation postfixe (pile),1,M
+23-NSI-09,19, Multiplication avec uniquement additions et soustractions, Recherche dichotomique récursive, 1,
+23-NSI-10,24, Maximum des éléments d'un tableau, Parenthésage correct (pile),1,
+23-NSI-11,33, Conversion du binaire vers le décimal, Tri par insertion, 1,
+23-NSI-12, ,Ajout d'une clé dans un arbre binaire (récursivité), Algorithme glouton pour un rangement d'objet, 1, N
+23-NSI-13, 31,Nombre d'occurrences d'un élément dans une liste, Rendu de monnaie, 1,
+23-NSI-14,8, Recherche de l'indice de la première occurrence, insertion dans une liste déjà triée, 1,
+23-NSI-15,18, Minimum d'une liste de température, Palindromes, 1,
+23-NSI-16,, Liste des indices des éléments inférieures, égaux et supérieurs à une valeur, Calcul de moyenne (dictionnaire), 1 , N
+23-NSI-17,2, Moyenne pondérée, Triangle de Pascal,1,M
+23-NSI-18, , Valeur et indice du maximum, Ordre des gènes sur un chromosome, 1, N
+23-NSI-19,11, Recherche dichotomique,Code de César,1,
+23-NSI-20,, Fusion de deux dictionnaires, Simulation d'un jeu de dés, 1, N
+23-NSI-21,3, Codage par différence, Expression arithmétique représentée par un arbre binaire, 1, M
+23-NSI-22,9, Calcul de puissances avec multiplication successives,Codage d'un mot,1,M
+23-NSI-23,26, Traitement de données en table (animaux et enclos), Recherche récursive dans un tableau, 1,D
+23-NSI-24,10, Nombre d'occurrences des caractères (dictionnaire), Fusion de deux listes déjà triées,1,D
+23-NSI-25,0 , Enumération des positions des éléments dans une liste (dictionnaire),Arbre binaire (récursivité),1,ND
+23-NSI-26,21, Multiplications avec uniquement additions et soustractions, Recherche par dichotomique,1,
+23-NSI-27,26, Première occurence du minimum, Separation des 0 et des 1 dans un tableau, 1,
+23-NSI-28,35, Moyenne des éléments d'un tableau, Recherche par dichotomie, 1,
+23-NSI-29,0 ,Taille d'un arbre binaire, Insertion d'un élément dans une liste à une position donnée,1, N
+23-NSI-30,28, Calcul de moyenne, Conversion du décimal vers le binaire, 1,
+23-NSI-31,15, Nombre d'occurrences d'un élément dans une liste, Conversion du décimal vers le binaire, 1,
+23-NSI-32,5, Minimum et maximum des éléments d'un tableau, Classe représentant des cartes (POO), 1,
+23-NSI-33,27, Taille d'un arbre binaire (récursivité), Tri par sélection, 1,
+23-NSI-34,12, Calcul d'une moyenne, Séparation des 0 et des 1 dans un tableau, 1,
+23-NSI-35,20, Ou exclusif bit à bit entre deux listes de 0 et de 1, Carrés semi-magiques, 1,
+23-NSI-36,4, Liste des couples d'entiers consécutifs, Codage d'une image, 1,
+23-NSI-37,32, Indice de la dernière occurence, Classe des adresse Ip (POO), 1,
+23-NSI-38,14, Mots correspondants à un motif, Recherche d'un cycle, 1 ,
+23-NSI-39,29, Calcul des termes de la suite de Fibonacci, Liste des élèves ayant obtenu la note maximale, 1,M
+23-NSI-40,, Nombre de mots dans une phrase, Arbre binaire (POO), 1, N
+23-NSI-41,1, Nombre d'occurrences d'un caractères dans une chaine, Rendu de monnaie en récursif, 1,
+23-NSI-42,38, Tri par sélection, Jeu du plus ou moins, 1,
+23-NSI-43,7, Conversion du décimal vers le binaire, Tri à bulles, 1,
+23-NSI-44,22, Ecriture d'une chaine de caractères à l'envers, Crible d'Erasthotène, 1,M
+23-NSI-45, ,Tri par dénombrement, Conversion binaire vers décimal et inversement, 1, N

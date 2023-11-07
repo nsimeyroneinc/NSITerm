@@ -1,0 +1,6 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} On \PYGZdq{}remonte\PYGZdq{} cette boîte à sa position triée}
+\PYG{k}{while} \PYG{n}{i} \PYG{o}{\PYGZgt{}} \PYG{o}{..} \PYG{o+ow}{and} \PYG{n}{poidsBoite}\PYG{p}{(}\PYG{o}{...............}\PYG{p}{)} \PYG{o}{\PYGZgt{}} \PYG{o}{........}\PYG{p}{(}\PYG{n}{repartition}\PYG{p}{[}\PYG{o}{...}\PYG{p}{])} \PYG{p}{:}
+	\PYG{o}{........................................................................}
+	\PYG{n}{i} \PYG{o}{=} \PYG{o}{............}
+\end{Verbatim}

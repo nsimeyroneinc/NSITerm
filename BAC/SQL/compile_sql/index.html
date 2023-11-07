@@ -1,0 +1,3113 @@
+<!-- Ajout pour le bouton de téléchargement et le style des jupyter notebook   https://github.com/danielfrg/mkdocs-jupyter -->
+
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Cours et TD de l'année en cours">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../../images/dragon.svg">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.8">
+    
+    
+      
+        <title>Compile sql - NSI Terminale 2022-2023</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.4b4a2bd9.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.356b1318.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rod2ik/cdn@main/mkdocs/css/massilia-admonitions.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#sujet-bac-18-sql" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="../../.." title="NSI Terminale 2022-2023" class="md-header__button md-logo" aria-label="NSI Terminale 2022-2023" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="m352 124.5-51.9-13c-6.5-1.6-11.3-7.1-12-13.8s2.8-13.1 8.7-16.1l40.8-20.4-43.2-32.4c-5.5-4.1-7.8-11.3-5.6-17.9S297.1 0 304 0h160c30.2 0 58.7 14.2 76.8 38.4l57.6 76.8c6.2 8.3 9.6 18.4 9.6 28.8 0 26.5-21.5 48-48 48h-21.5c-17 0-33.3-6.7-45.3-18.7L480 160h-32v21.5c0 24.8 12.8 47.9 33.8 61.1l106.6 66.6c32.1 20.1 51.6 55.2 51.6 93.1 0 60.6-49.1 109.7-109.8 109.7H32.3c-3.3 0-6.6-.4-9.6-1.4-9.2-2.8-16.7-9.6-20.3-18.5C1 488.7.2 485.2 0 481.4c-.2-3.7.3-7.3 1.3-10.7 2.8-9.2 9.6-16.7 18.6-20.4 3-1.2 6.2-2 9.5-2.2L433.3 412c8.3-.7 14.7-7.7 14.7-16.1 0-4.3-1.7-8.4-4.7-11.4l-44.4-44.4c-30-30-46.9-70.7-46.9-113.1V124.5zm160-52.2v-.6.6zm-1.3 7.4-46.4-11.6c-.2 1.3-.3 2.6-.3 3.9 0 13.3 10.7 24 24 24 10.6 0 19.5-6.8 22.7-16.3zm-379.8 36.8c16.3-14.5 40.4-16.2 58.5-4.1l130.6 87V227c0 32.8 8.4 64.8 24 93H112c-6.7 0-12.7-4.2-15-10.4s-.5-13.3 4.6-17.7l69.4-59.6-152.6 23.5c-7 1.1-13.9-2.6-16.9-9S0 232.7 5.3 228l125.6-111.5z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            NSI Terminale 2022-2023
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Compile sql
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue"  aria-label="Basculer en mode sombre"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Basculer en mode sombre" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9v1Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="blue"  aria-label="Basculer en mode clair"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Basculer en mode clair" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Recherche">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Effacer" aria-label="Effacer" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Onglets" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+    
+  
+  Accueil
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../StructureDonnees/index_structDonnees/" class="md-tabs__link">
+          
+  
+    
+  
+  T1 - Struct. données
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../BasesDonnees/index_bd/" class="md-tabs__link">
+          
+  
+    
+  
+  T2 - Bases données
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Archi_Materielle/index_archi/" class="md-tabs__link">
+          
+  
+    
+  
+  T3 - Archi. mat.
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Programmation/index_prog/" class="md-tabs__link">
+          
+  
+    
+  
+  T4 - Prog.
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Algo/index_algo/" class="md-tabs__link">
+          
+  
+    
+  
+  T5 Algo.
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../bac_explication/" class="md-tabs__link">
+          
+  
+    
+  
+  BAC 📝
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../epreuve_pratique/" class="md-tabs__link">
+          
+  
+    
+  
+  Annales E.P. 💻
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../divers/prog/" class="md-tabs__link">
+          
+  
+    
+  
+  Extras
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../credit/" class="md-tabs__link">
+        
+  
+    
+  
+  Crédits
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="NSI Terminale 2022-2023" class="md-nav__button md-logo" aria-label="NSI Terminale 2022-2023" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="m352 124.5-51.9-13c-6.5-1.6-11.3-7.1-12-13.8s2.8-13.1 8.7-16.1l40.8-20.4-43.2-32.4c-5.5-4.1-7.8-11.3-5.6-17.9S297.1 0 304 0h160c30.2 0 58.7 14.2 76.8 38.4l57.6 76.8c6.2 8.3 9.6 18.4 9.6 28.8 0 26.5-21.5 48-48 48h-21.5c-17 0-33.3-6.7-45.3-18.7L480 160h-32v21.5c0 24.8 12.8 47.9 33.8 61.1l106.6 66.6c32.1 20.1 51.6 55.2 51.6 93.1 0 60.6-49.1 109.7-109.8 109.7H32.3c-3.3 0-6.6-.4-9.6-1.4-9.2-2.8-16.7-9.6-20.3-18.5C1 488.7.2 485.2 0 481.4c-.2-3.7.3-7.3 1.3-10.7 2.8-9.2 9.6-16.7 18.6-20.4 3-1.2 6.2-2 9.5-2.2L433.3 412c8.3-.7 14.7-7.7 14.7-16.1 0-4.3-1.7-8.4-4.7-11.4l-44.4-44.4c-30-30-46.9-70.7-46.9-113.1V124.5zm160-52.2v-.6.6zm-1.3 7.4-46.4-11.6c-.2 1.3-.3 2.6-.3 3.9 0 13.3 10.7 24 24 24 10.6 0 19.5-6.8 22.7-16.3zm-379.8 36.8c16.3-14.5 40.4-16.2 58.5-4.1l130.6 87V227c0 32.8 8.4 64.8 24 93H112c-6.7 0-12.7-4.2-15-10.4s-.5-13.3 4.6-17.7l69.4-59.6-152.6 23.5c-7 1.1-13.9-2.6-16.9-9S0 232.7 5.3 228l125.6-111.5z"/></svg>
+
+    </a>
+    NSI Terminale 2022-2023
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Accueil
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    T1 - Struct. données
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            T1 - Struct. données
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../StructureDonnees/index_structDonnees/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Structures de données
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    T2 - Bases données
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            T2 - Bases données
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../BasesDonnees/index_bd/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Base de données
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../BasesDonnees/Modele_Relationnel/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📓 C1 Modèle relationnel
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../BasesDonnees/Cours_TP_SQL/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📓 C2 Langage SQL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../BasesDonnees/SQL_BAC/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📝 S2 BAC SQL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../BasesDonnees/SQL_BAC_correction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📝 S2 BAC SQL Correction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    T3 - Archi. mat.
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            T3 - Archi. mat.
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Archi_Materielle/index_archi/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Architecture matérielle et OS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    T4 - Prog.
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            T4 - Prog.
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Programmation/index_prog/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Programmation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Programmation/T1_1_Recursivite/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📓 C3 Récursivité
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    T5 Algo.
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            T5 Algo.
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Algo/index_algo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Algorithmique
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    BAC 📝
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            BAC 📝
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bac_explication/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Information
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    2023
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_2">
+            <span class="md-nav__icon md-icon"></span>
+            2023
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Annales/2023/EE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Epreuves écrites
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_3" id="__nav_7_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    2022
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_3">
+            <span class="md-nav__icon md-icon"></span>
+            2022
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Annales/2022/EE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Epreuves écrites
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_4" id="__nav_7_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    2021
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_4">
+            <span class="md-nav__icon md-icon"></span>
+            2021
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Annales/2021/EE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Epreuves écrites
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Annales E.P. 💻
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Annales E.P. 💻
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../epreuve_pratique/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Déroulement
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../divers/Consigne_EP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Consigne
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../divers/lien/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    S'entrainer en ligne pour l'épreuve pratique
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_4" id="__nav_8_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    2023
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_4">
+            <span class="md-nav__icon md-icon"></span>
+            2023
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Annales/2023/EP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Epreuves pratiques
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Extras
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Extras
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../divers/prog/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Divers concours programmation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Projet/forcebrute/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Force brute
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Projet/cryptographie/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cryptographie
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Projet/cryptographie2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cryptographie bis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Projet/pyxel/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    pyxel
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../divers/sujet0_geipi.pdf" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Epreuve GEIPI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../credit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Crédits
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#cours" class="md-nav__link">
+    Cours
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gestions-de-musiciens" class="md-nav__link">
+    Gestions de musiciens
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#centres-etrangers-j1" class="md-nav__link">
+    Centres Etrangers J1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evaluations-deleves-par-competence" class="md-nav__link">
+    Évaluations d'élèves par compétence
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#donnees-de-visites-de-pages-web" class="md-nav__link">
+    Données de visites de pages Web
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+
+
+
+
+
+                  
+
+
+<h1 id="sujet-bac-18-sql"><span class='numBAC'>Sujet BAC 18 : </span> &nbsp; SQL <span style='float:right;'><span class="twemoji" title="BAC"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M471.6 21.7c-21.9-21.9-57.3-21.9-79.2 0l-30.1 30 97.9 97.9 30.1-30.1c21.9-21.9 21.9-57.3 0-79.2l-18.7-18.6zm-299.2 220c-6.1 6.1-10.8 13.6-13.5 21.9l-29.6 88.8c-2.9 8.6-.6 18.1 5.8 24.6s15.9 8.7 24.6 5.8l88.8-29.6c8.2-2.7 15.7-7.4 21.9-13.5l167.3-167.4-98-98-167.3 167.4zM96 64c-53 0-96 43-96 96v256c0 53 43 96 96 96h256c53 0 96-43 96-96v-96c0-17.7-14.3-32-32-32s-32 14.3-32 32v96c0 17.7-14.3 32-32 32H96c-17.7 0-32-14.3-32-32V160c0-17.7 14.3-32 32-32h96c17.7 0 32-14.3 32-32s-14.3-32-32-32H96z"/></svg></span></span><a class="headerlink" href="#sujet-bac-18-sql" title="Permanent link">⚓︎</a></h1>
+<h2 id="cours">Cours<a class="headerlink" href="#cours" title="Permanent link">⚓︎</a></h2>
+<p>Vous pouvez télécharger une copie au format pdf du diaporama de synthèse de cours :</p>
+<p><span class='centre'><a class="md-button" href="../../../pdf/C18/C18-cours.pdf" target="_blank">Diaporama de cours <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M64 464h32v48H64c-35.3 0-64-28.7-64-64V64C0 28.7 28.7 0 64 0h165.5c17 0 33.3 6.7 45.3 18.7l90.5 90.5c12 12 18.7 28.3 18.7 45.3V288h-48V160h-80c-17.7 0-32-14.3-32-32V48H64c-8.8 0-16 7.2-16 16v384c0 8.8 7.2 16 16 16zm112-112h32c30.9 0 56 25.1 56 56s-25.1 56-56 56h-16v32c0 8.8-7.2 16-16 16s-16-7.2-16-16V368c0-8.8 7.2-16 16-16zm32 80c13.3 0 24-10.7 24-24s-10.7-24-24-24h-16v48h16zm96-80h32c26.5 0 48 21.5 48 48v64c0 26.5-21.5 48-48 48h-32c-8.8 0-16-7.2-16-16V368c0-8.8 7.2-16 16-16zm32 128c8.8 0 16-7.2 16-16v-64c0-8.8-7.2-16-16-16h-16v96h16zm80-112c0-8.8 7.2-16 16-16h48c8.8 0 16 7.2 16 16s-7.2 16-16 16h-32v32h32c8.8 0 16 7.2 16 16s-7.2 16-16 16h-32v48c0 8.8-7.2 16-16 16s-16-7.2-16-16V368z"/></svg></span></a></span></p>
+<div class="admonition warning">
+<p class="admonition-title">Attention</p>
+<p>Ce diaporama n'est qu'une synthèse de cours et ne donne que quelques points de repères pour de vos révisions.</p>
+</div>
+<h2 id="gestions-de-musiciens">Gestions de musiciens<a class="headerlink" href="#gestions-de-musiciens" title="Permanent link">⚓︎</a></h2>
+<div class="admonition exo">
+<p class="admonition-title">D'après 2023, sujet zéro A</p>
+</div>
+<p><em>On pourra utiliser les mots clés SQL suivants :</em></p>
+<p><code>AND</code>, <code>SELECT</code>, <code>FROM</code>, <code>WHERE</code>, <code>JOIN</code>, <code>INSERT INTO</code>, <code>VALUES</code>, <code>COUNT</code>, <code>ORDER BY</code>, <code>OR</code>, <code>ON</code>, <code>SET</code>, <code>UPDATE</code>.</p>
+<p>On étudie une base de données permettant la gestion de l'organisation d'un festival de musique de jazz, dont voici le schéma relationnel comportant trois relations :</p>
+<ul>
+<li>la relation <code><strong>groupes</strong> (<span class="cle_primaire">id_groupe</span>, nom, style, nb_pers)</code></li>
+<li>la relation <code><strong>musiciens</strong> (<span class="cle_primaire">id_musicien</span>, nom, prenom, instru, #id_groupe)</code></li>
+<li>la relation <code><strong>concerts</strong> (<span class="cle_primaire">id_concert</span>, scene, heure_debut, heure_fin, #id_groupe)</code></li>
+</ul>
+<p>Dans ce schéma relationnel :</p>
+<ul>
+<li>les clés primaires sont soulignées ;</li>
+<li>les clés étrangères sont précédées d'un #.
+Ainsi <code>concerts.id_groupe</code> est une clé étrangère faisant référence à <code>groupes.id_groupe</code>.</li>
+</ul>
+<p>Voici un extrait des tables <strong><code>groupes</code></strong>, <strong><code>musiciens</code></strong> et <strong><code>concerts</code></strong> :</p>
+<div class="admonition note">
+<p class="admonition-title">Extrait de <strong><code>groupes</code></strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"><code>id_groupe</code></th>
+<th style="text-align: center;"><code>nom</code></th>
+<th style="text-align: center;"><code>style</code></th>
+<th style="text-align: center;"><code>nb_pers</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><code>12</code></td>
+<td style="text-align: center;"><code>'Weather Report'</code></td>
+<td style="text-align: center;"><code>'Jazz Fusion'</code></td>
+<td style="text-align: center;"><code>5</code></td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>25</code></td>
+<td style="text-align: center;"><code>'The 3 Sounds'</code></td>
+<td style="text-align: center;"><code>'Soul Jazz'</code></td>
+<td style="text-align: center;"><code>4</code></td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>87</code></td>
+<td style="text-align: center;"><code>'Return to Forever'</code></td>
+<td style="text-align: center;"><code>'Jazz Fusion'</code></td>
+<td style="text-align: center;"><code>8</code></td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>96</code></td>
+<td style="text-align: center;"><code>'The Jazz Messenger'</code></td>
+<td style="text-align: center;"><code>'Hard Bop'</code></td>
+<td style="text-align: center;"><code>3</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Extrait de <strong><code>musiciens</code></strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"><code>id_musicien</code></th>
+<th style="text-align: center;"><code>nom</code></th>
+<th style="text-align: center;"><code>prenom</code></th>
+<th style="text-align: center;"><code>instru</code></th>
+<th style="text-align: center;"><code>id_groupe</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><code>12</code></td>
+<td style="text-align: center;"><code>'Garrett'</code></td>
+<td style="text-align: center;"><code>'Kenny'</code></td>
+<td style="text-align: center;"><code>'saxophone alto'</code></td>
+<td style="text-align: center;"><code>96</code></td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>13</code></td>
+<td style="text-align: center;"><code>'Garrett'</code></td>
+<td style="text-align: center;"><code>'Kenny'</code></td>
+<td style="text-align: center;"><code>'flute'</code></td>
+<td style="text-align: center;"><code>25</code></td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>58</code></td>
+<td style="text-align: center;"><code>'Corea'</code></td>
+<td style="text-align: center;"><code>'Chick'</code></td>
+<td style="text-align: center;"><code>'piano'</code></td>
+<td style="text-align: center;"><code>87</code></td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>97</code></td>
+<td style="text-align: center;"><code>'Clarke'</code></td>
+<td style="text-align: center;"><code>'Stanley'</code></td>
+<td style="text-align: center;"><code>'basse'</code></td>
+<td style="text-align: center;"><code>87</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Extrait de <strong><code>concerts</code></strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"><code>id_concert</code></th>
+<th style="text-align: center;"><code>scene</code></th>
+<th style="text-align: center;"><code>heure_debut</code></th>
+<th style="text-align: center;"><code>heure_fin</code></th>
+<th style="text-align: center;"><code>id_groupe</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><code>10</code></td>
+<td style="text-align: center;"><code>1</code></td>
+<td style="text-align: center;"><code>'20 h 00'</code></td>
+<td style="text-align: center;"><code>'20 h 45'</code></td>
+<td style="text-align: center;"><code>12</code></td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>24</code></td>
+<td style="text-align: center;"><code>2</code></td>
+<td style="text-align: center;"><code>'20 h 00'</code></td>
+<td style="text-align: center;"><code>'20 h 45'</code></td>
+<td style="text-align: center;"><code>35</code></td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>36</code></td>
+<td style="text-align: center;"><code>1</code></td>
+<td style="text-align: center;"><code>'21 h 00'</code></td>
+<td style="text-align: center;"><code>'22 h 00'</code></td>
+<td style="text-align: center;"><code>96</code></td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>45</code></td>
+<td style="text-align: center;"><code>3</code></td>
+<td style="text-align: center;"><code>'18 h 00'</code></td>
+<td style="text-align: center;"><code>'18 h 30'</code></td>
+<td style="text-align: center;"><code>87</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>1.</strong>  Citer les attributs de la table <strong><code>groupes</code></strong>.</p>
+<details class="success">
+<summary>Réponse</summary>
+<p>Les attributs de la table groupes sont : <code>id_groupe</code>, <code>nom</code>, <code>style</code> et <code>nb_pers</code>.</p>
+</details>
+<p><strong>2.</strong>  Justifier que l'attribut <code>nom</code> de la table <strong><code>musiciens</code></strong> ne peut pas être une clé primaire.</p>
+<details class="success">
+<summary>Réponse</summary>
+<p>Une clé primaire doit être unique. Le nom <code>'Garrett'</code> apparait plusieurs fois, donc le nom ne peut être une clé primaire.</p>
+<p>On notera que le couple <code>(nom, prenom)</code> n'est pas non plus une clé primaire de cette table pour la même raison.</p>
+<p>De la même façon, le triplet <code>(nom, prenom, intru)</code> ne peut pas non plus être utilisé comme clé primaire : le même musicien peut tout à fait jouer du même instrument dans deux groupes différents.</p>
+</details>
+<p><strong>3.</strong> En s'appuyant uniquement sur l'extrait des tables fourni ci-dessus écrire ce que renvoie la requête :</p>
+<div class="highlight"><span class="filename">🗂️ Requête SQL</span><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">nom</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">groupes</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">style</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Jazz Fusion&#39;</span><span class="p">;</span>
+</code></pre></div>
+<details class="success">
+<summary>Réponse</summary>
+<p>La requête renvoie : <code>'Weather Report'</code> et <code>'Return to Forever'</code>.</p>
+</details>
+<p><strong>4.</strong> Le concert dont l'<code>id_concert</code> est <code>36</code> finira à 22 h 30 au lieu de 22 h 00. </p>
+<p>Recopier sur la copie et compléter la requête SQL ci-dessous permettant de mettre à jour la relation <strong><code>concerts</code></strong> pour modifier l'horaire de fin de ce concert.</p>
+<div class="highlight"><span class="filename">🗂️ Requête SQL</span><pre><span></span><code><span class="k">UPDATE</span><span class="w"> </span><span class="n">concerts</span>
+<span class="k">SET</span><span class="w"> </span><span class="p">...</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">;</span>
+</code></pre></div>
+<details class="success">
+<summary>Réponse</summary>
+<div class="highlight"><span class="filename">🗂️ Requête SQL</span><pre><span></span><code><span class="k">UPDATE</span><span class="w"> </span><span class="n">concerts</span>
+<span class="k">SET</span><span class="w"> </span><span class="n">heure_fin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;22 h 30&#39;</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">id_concert</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">36</span><span class="p">;</span>
+</code></pre></div>
+</details>
+<p><strong>5.</strong> Donner une seule requête SQL permettant de récupérer le nom de tous les groupes qui jouent sur la scène 1.</p>
+<details class="success">
+<summary>Réponse</summary>
+<div class="highlight"><span class="filename">🗂️ Requête SQL</span><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">groupes</span><span class="p">.</span><span class="n">nom</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">groupes</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="n">concerts</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">concerts</span><span class="p">.</span><span class="n">id_groupe</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">groupes</span><span class="p">.</span><span class="n">id_groupe</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">concerts</span><span class="p">.</span><span class="n">scene</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+</code></pre></div>
+</details>
+<p><strong>6.</strong> Fournir une seule requête SQL permettant d'ajouter dans la relation <strong><code>groupes</code></strong> le groupe <code>'Smooth Jazz Fourplay'</code>, de style <code>'Free Jazz'</code>, composé de 4 membres. Ce groupe aura un <code>id_groupe</code> de 15. </p>
+<details class="success">
+<summary>Réponse</summary>
+<div class="highlight"><span class="filename">🗂️ Requête SQL</span><pre><span></span><code><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">groupes</span><span class="w"> </span><span class="p">(</span><span class="n">id_groupe</span><span class="p">,</span><span class="w"> </span><span class="n">nom</span><span class="p">,</span><span class="w"> </span><span class="n">style</span><span class="p">,</span><span class="w"> </span><span class="n">nb_pers</span><span class="p">)</span>
+<span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Smooth Jazz Fourplay&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Free Jazz&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">);</span>
+</code></pre></div>
+</details>
+<p>Les données sont ensuite récupérées pour être analysées par la société qui produit les festivals de musique. Pour ce faire, elle utilise la programmation en Python afin d'effectuer certaines opérations plus complexes.</p>
+<p>Elle stocke les données relatives aux musiciens sous forme d'un tableau de dictionnaires dans laquelle a été ajouté le nombre de concerts effectués par chaque musicien :</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">musiciens</span><span class="p">)</span>
+  <span class="p">[{</span><span class="s1">&#39;id_musicien&#39;</span><span class="p">:</span> <span class="mi">12</span><span class="p">,</span> <span class="s1">&#39;nom&#39;</span><span class="p">:</span> <span class="s1">&#39;Garrett&#39;</span><span class="p">,</span> <span class="s1">&#39;prenom&#39;</span><span class="p">:</span> <span class="s1">&#39;Kenny&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;instru&#39;</span><span class="p">:</span> <span class="s1">&#39;saxophone alto&#39;</span><span class="p">,</span> <span class="s1">&#39;id_groupe&#39;</span> <span class="p">:</span> <span class="mi">96</span><span class="p">,</span> <span class="s1">&#39;nb_concerts&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">},</span>
+   <span class="p">{</span><span class="s1">&#39;id_musicien&#39;</span><span class="p">:</span> <span class="mi">13</span><span class="p">,</span> <span class="s1">&#39;nom&#39;</span><span class="p">:</span> <span class="s1">&#39;Garrett&#39;</span><span class="p">,</span> <span class="s1">&#39;prenom&#39;</span><span class="p">:</span> <span class="s1">&#39;Kenny&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;instru&#39;</span><span class="p">:</span> <span class="s1">&#39;flute&#39;</span><span class="p">,</span> <span class="s1">&#39;id_groupe&#39;</span> <span class="p">:</span> <span class="mi">25</span><span class="p">,</span> <span class="s1">&#39;nb_concerts&#39;</span><span class="p">:</span> <span class="mi">9</span><span class="p">},</span>
+   <span class="p">{</span><span class="s1">&#39;id_musicien&#39;</span><span class="p">:</span> <span class="mi">58</span><span class="p">,</span> <span class="s1">&#39;nom&#39;</span><span class="p">:</span> <span class="s1">&#39;Corea&#39;</span><span class="p">,</span> <span class="s1">&#39;prenom&#39;</span><span class="p">:</span> <span class="s1">&#39;Chick&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;instru&#39;</span><span class="p">:</span> <span class="s1">&#39;piano&#39;</span><span class="p">,</span> <span class="s1">&#39;id_groupe&#39;</span> <span class="p">:</span> <span class="mi">87</span><span class="p">,</span> <span class="s1">&#39;nb_concerts&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">},</span>
+   <span class="p">{</span><span class="s1">&#39;id_musicien&#39;</span><span class="p">:</span> <span class="mi">97</span><span class="p">,</span> <span class="s1">&#39;nom&#39;</span><span class="p">:</span> <span class="s1">&#39;Clarke&#39;</span><span class="p">,</span> <span class="s1">&#39;prenom&#39;</span><span class="p">:</span> <span class="s1">&#39;Stanley&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;instru&#39;</span><span class="p">:</span> <span class="s1">&#39;basse&#39;</span><span class="p">,</span> <span class="s1">&#39;id_groupe&#39;</span> <span class="p">:</span> <span class="mi">87</span><span class="p">,</span> <span class="s1">&#39;nb_concerts&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">},</span>
+   <span class="o">...</span>
+  <span class="p">]</span>
+</code></pre></div>
+<p><strong>7.</strong>  Écrire la fonction <code>recherche_nom</code> ayant pour unique paramètre un tableau de dictionnaires (comme <code>musiciens</code> présenté précédemment) renvoyant une liste contenant le nom de tous les musiciens ayant participé à au moins 4 concerts.</p>
+<details class="success">
+<summary>Réponse</summary>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">def</span> <span class="nf">recherche_nom</span><span class="p">(</span><span class="n">musiciens</span><span class="p">):</span>
+    <span class="n">resultat</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">musicien</span> <span class="ow">in</span> <span class="n">musiciens</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">musicien</span><span class="p">[</span><span class="s1">&#39;nb_concerts&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">4</span><span class="p">:</span>
+            <span class="n">resultat</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">musicien</span><span class="p">[</span><span class="s1">&#39;nom&#39;</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">resultat</span>
+</code></pre></div>
+</details>
+<h2 id="centres-etrangers-j1">Centres Etrangers J1<a class="headerlink" href="#centres-etrangers-j1" title="Permanent link">⚓︎</a></h2>
+<div class="admonition exo">
+<p class="admonition-title">D'après 2022, Centres étrangers, J1,Ex. 4</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Rappel sur le langage SQL</p>
+<p>Types de données</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>CHAR(t)</code></td>
+<td>Texte fixe de <code>t</code> caractères</td>
+</tr>
+<tr>
+<td><code>VARCHAR(t)</code></td>
+<td>Texte de t caractères variables</td>
+</tr>
+<tr>
+<td><code>TEXT</code></td>
+<td>Texte de <span class="arithmatex">\(65\,535\)</span> caractères maximum</td>
+</tr>
+<tr>
+<td><code>INT</code></td>
+<td>Nombre entier de <span class="arithmatex">\(-2^{31}\)</span> à <span class="arithmatex">\(2^{31} - 1\)</span> (signé) ou de <span class="arithmatex">\(0\)</span> à <span class="arithmatex">\(2^{32} - 1\)</span> (non signé)</td>
+</tr>
+<tr>
+<td><code>FLOAT</code></td>
+<td>Réel à virgule flottante (approximation)</td>
+</tr>
+<tr>
+<td><code>DATE</code></td>
+<td>Date format <code>AAAA-MM-JJ</code></td>
+</tr>
+</tbody>
+</table>
+<p>Quelques exemples de syntaxe SQL :</p>
+<ul>
+<li>Insérer des enregistrements :<ul>
+<li><code class="highlight"><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">Table1</span><span class="w"> </span><span class="p">(</span><span class="n">attribut1</span><span class="p">,</span><span class="w"> </span><span class="n">attribut2</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="n">valeur1</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="n">valeur2</span><span class="p">);</span></code></li>
+</ul>
+</li>
+<li>Modifier des enregistrements :<ul>
+<li><code class="highlight"><span class="k">UPDATE</span><span class="w"> </span><span class="n">Table1</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">attribut1</span><span class="o">=</span><span class="n">valeur1</span><span class="p">,</span><span class="w"> </span><span class="n">attribut2</span><span class="o">=</span><span class="n">valeur2</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">Selecteur</span><span class="p">;</span></code></li>
+</ul>
+</li>
+<li>Supprimer des enregistrements :<ul>
+<li><code class="highlight"><span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Table1</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">Selecteur</span><span class="p">;</span></code></li>
+</ul>
+</li>
+<li>Sélectionner des enregistrements :<ul>
+<li><code class="highlight"><span class="k">SELECT</span><span class="w"> </span><span class="n">attributs</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Table1</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">Selecteur</span><span class="p">;</span></code></li>
+</ul>
+</li>
+<li>Sélectionner des enregistrements dans un ordre ascendant :<ul>
+<li><code class="highlight"><span class="k">SELECT</span><span class="w"> </span><span class="n">attributs</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Table1</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">Selecteur</span><span class="w"> </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">attribut</span><span class="w"> </span><span class="k">ASC</span><span class="p">;</span></code></li>
+</ul>
+</li>
+<li>Sélectionner des enregistrements sans doublon :<ul>
+<li><code class="highlight"><span class="k">SELECT</span><span class="w"> </span><span class="k">DISTINCT</span><span class="w"> </span><span class="n">attributs</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Table1</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">Selecteur</span><span class="p">;</span></code></li>
+</ul>
+</li>
+<li>Effectuer une jointure :<ul>
+<li><code class="highlight"><span class="k">SELECT</span><span class="w"> </span><span class="n">attributs</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Table1</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">Table2</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">Table1</span><span class="p">.</span><span class="n">cle1</span><span class="o">=</span><span class="n">Table2</span><span class="p">.</span><span class="n">cle2</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">Selecteur</span><span class="p">;</span></code></li>
+</ul>
+</li>
+</ul>
+</div>
+<p>Dans le cadre d'une étude sur le réchauffement climatique, un centre météorologique rassemble des données. On considère que la base de données contient deux relations (tables). La relation <strong><code>Centres</code></strong> qui contient l'identifiant des centres météorologiques, la ville, la latitude, la longitude et l'altitude du centre. La relation <strong><code>Mesures</code></strong> qui contient l'identifiant de la mesure, l'identifiant du centre, la date de la mesure, la température, la pression et la pluviométrie mesurées.</p>
+<p>Le schéma relationnel de la relation <strong><code>Centres</code></strong> est le suivant :</p>
+<p><code class="highlight"><span class="n">Centres</span><span class="p">(</span><span class="n">id_centre</span><span class="p">:</span><span class="w"> </span><span class="nb">INT</span><span class="p">,</span><span class="w"> </span><span class="n">nom_ville</span><span class="p">:</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">,</span><span class="w"> </span><span class="n">latitude</span><span class="p">:</span><span class="w"> </span><span class="nb">FLOAT</span><span class="p">,</span><span class="w"> </span><span class="n">longitude</span><span class="p">:</span><span class="w"> </span><span class="nb">FLOAT</span><span class="p">,</span><span class="w"> </span><span class="n">altitude</span><span class="p">:</span><span class="w"> </span><span class="nb">INT</span><span class="p">)</span></code></p>
+<p>Le schéma relationnel de la relation <strong><code>Mesures</code></strong> est le suivant :</p>
+<p><code class="highlight"><span class="n">Mesures</span><span class="p">(</span><span class="n">id_mesure</span><span class="p">:</span><span class="w"> </span><span class="nb">INT</span><span class="p">,</span><span class="w"> </span><span class="n">id_centre</span><span class="p">:</span><span class="w"> </span><span class="nb">INT</span><span class="p">,</span><span class="w"> </span><span class="n">date_mesure</span><span class="p">:</span><span class="w"> </span><span class="nb">DATE</span><span class="p">,</span><span class="w"> </span><span class="n">temperature</span><span class="p">:</span><span class="w"> </span><span class="nb">FLOAT</span><span class="p">,</span><span class="w"> </span><span class="n">pression</span><span class="p">:</span><span class="w"> </span><span class="nb">INT</span><span class="p">,</span><span class="w"> </span><span class="n">pluviometrie</span><span class="p">:</span><span class="w"> </span><span class="nb">INT</span><span class="p">)</span></code></p>
+<p>On fournit ci-dessous le contenu des deux relations.</p>
+<div class="admonition abstract">
+<p class="admonition-title">Relation <strong><code>Centres</code></strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;"><code>id_centre</code></th>
+<th style="text-align: left;"><code>nom_ville</code></th>
+<th style="text-align: right;"><code>latitude</code></th>
+<th style="text-align: right;"><code>longitude</code></th>
+<th style="text-align: right;"><code>altitude</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;"><code>213</code></td>
+<td style="text-align: left;"><code>'Amiens'</code></td>
+<td style="text-align: right;"><code>49.894</code></td>
+<td style="text-align: right;"><code>2.293</code></td>
+<td style="text-align: right;"><code>60</code></td>
+</tr>
+<tr>
+<td style="text-align: right;"><code>138</code></td>
+<td style="text-align: left;"><code>'Grenoble'</code></td>
+<td style="text-align: right;"><code>45.185</code></td>
+<td style="text-align: right;"><code>5.723</code></td>
+<td style="text-align: right;"><code>550</code></td>
+</tr>
+<tr>
+<td style="text-align: right;"><code>263</code></td>
+<td style="text-align: left;"><code>'Brest'</code></td>
+<td style="text-align: right;"><code>48.388</code></td>
+<td style="text-align: right;"><code>-4.49</code></td>
+<td style="text-align: right;"><code>52</code></td>
+</tr>
+<tr>
+<td style="text-align: right;"><code>185</code></td>
+<td style="text-align: left;"><code>'Tignes'</code></td>
+<td style="text-align: right;"><code>45.469</code></td>
+<td style="text-align: right;"><code>6.909</code></td>
+<td style="text-align: right;"><code>2594</code></td>
+</tr>
+<tr>
+<td style="text-align: right;"><code>459</code></td>
+<td style="text-align: left;"><code>'Nice'</code></td>
+<td style="text-align: right;"><code>43.706</code></td>
+<td style="text-align: right;"><code>7.262</code></td>
+<td style="text-align: right;"><code>260</code></td>
+</tr>
+<tr>
+<td style="text-align: right;"><code>126</code></td>
+<td style="text-align: left;"><code>'Le Puy-en-Velay'</code></td>
+<td style="text-align: right;"><code>45.042</code></td>
+<td style="text-align: right;"><code>3.888</code></td>
+<td style="text-align: right;"><code>744</code></td>
+</tr>
+<tr>
+<td style="text-align: right;"><code>317</code></td>
+<td style="text-align: left;"><code>'Gérardmer'</code></td>
+<td style="text-align: right;"><code>48.073</code></td>
+<td style="text-align: right;"><code>6.879</code></td>
+<td style="text-align: right;"><code>855</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">Relation <strong><code>Mesures</code></strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;"><code>id_mesure</code></th>
+<th style="text-align: right;"><code>id_centre</code></th>
+<th style="text-align: left;"><code>date_mesure</code></th>
+<th style="text-align: right;"><code>temperature</code></th>
+<th style="text-align: right;"><code>pression</code></th>
+<th style="text-align: right;"><code>pluviometrie</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;"><code>1566</code></td>
+<td style="text-align: right;"><code>138</code></td>
+<td style="text-align: left;"><code>'2021-10-29'</code></td>
+<td style="text-align: right;"><code>8.0</code></td>
+<td style="text-align: right;"><code>1015</code></td>
+<td style="text-align: right;"><code>3</code></td>
+</tr>
+<tr>
+<td style="text-align: right;"><code>1568</code></td>
+<td style="text-align: right;"><code>213</code></td>
+<td style="text-align: left;"><code>'2021-10-29'</code></td>
+<td style="text-align: right;"><code>15.1</code></td>
+<td style="text-align: right;"><code>1011</code></td>
+<td style="text-align: right;"><code>0</code></td>
+</tr>
+<tr>
+<td style="text-align: right;"><code>2174</code></td>
+<td style="text-align: right;"><code>126</code></td>
+<td style="text-align: left;"><code>'2021-10-30'</code></td>
+<td style="text-align: right;"><code>18.2</code></td>
+<td style="text-align: right;"><code>1023</code></td>
+<td style="text-align: right;"><code>0</code></td>
+</tr>
+<tr>
+<td style="text-align: right;"><code>2200</code></td>
+<td style="text-align: right;"><code>185</code></td>
+<td style="text-align: left;"><code>'2021-10-30'</code></td>
+<td style="text-align: right;"><code>5.6</code></td>
+<td style="text-align: right;"><code>989</code></td>
+<td style="text-align: right;"><code>20</code></td>
+</tr>
+<tr>
+<td style="text-align: right;"><code>2232</code></td>
+<td style="text-align: right;"><code>459</code></td>
+<td style="text-align: left;"><code>'2021-10-31'</code></td>
+<td style="text-align: right;"><code>25.0</code></td>
+<td style="text-align: right;"><code>1035</code></td>
+<td style="text-align: right;"><code>0</code></td>
+</tr>
+<tr>
+<td style="text-align: right;"><code>2514</code></td>
+<td style="text-align: right;"><code>213</code></td>
+<td style="text-align: left;"><code>'2021-10-31'</code></td>
+<td style="text-align: right;"><code>17.4</code></td>
+<td style="text-align: right;"><code>1020</code></td>
+<td style="text-align: right;"><code>0</code></td>
+</tr>
+<tr>
+<td style="text-align: right;"><code>2563</code></td>
+<td style="text-align: right;"><code>126</code></td>
+<td style="text-align: left;"><code>'2021-11-01'</code></td>
+<td style="text-align: right;"><code>10.1</code></td>
+<td style="text-align: right;"><code>1005</code></td>
+<td style="text-align: right;"><code>15</code></td>
+</tr>
+<tr>
+<td style="text-align: right;"><code>2592</code></td>
+<td style="text-align: right;"><code>459</code></td>
+<td style="text-align: left;"><code>'2021-11-01'</code></td>
+<td style="text-align: right;"><code>23.3</code></td>
+<td style="text-align: right;"><code>1028</code></td>
+<td style="text-align: right;"><code>2</code></td>
+</tr>
+<tr>
+<td style="text-align: right;"><code>3425</code></td>
+<td style="text-align: right;"><code>317</code></td>
+<td style="text-align: left;"><code>'2021-11-02'</code></td>
+<td style="text-align: right;"><code>9.0</code></td>
+<td style="text-align: right;"><code>1012</code></td>
+<td style="text-align: right;"><code>13</code></td>
+</tr>
+<tr>
+<td style="text-align: right;"><code>3430</code></td>
+<td style="text-align: right;"><code>138</code></td>
+<td style="text-align: left;"><code>'2021-11-02'</code></td>
+<td style="text-align: right;"><code>7.5</code></td>
+<td style="text-align: right;"><code>996</code></td>
+<td style="text-align: right;"><code>16</code></td>
+</tr>
+<tr>
+<td style="text-align: right;"><code>3611</code></td>
+<td style="text-align: right;"><code>263</code></td>
+<td style="text-align: left;"><code>'2021-11-03'</code></td>
+<td style="text-align: right;"><code>13.9</code></td>
+<td style="text-align: right;"><code>1005</code></td>
+<td style="text-align: right;"><code>8</code></td>
+</tr>
+<tr>
+<td style="text-align: right;"><code>3625</code></td>
+<td style="text-align: right;"><code>126</code></td>
+<td style="text-align: left;"><code>'2021-11-03'</code></td>
+<td style="text-align: right;"><code>10.8</code></td>
+<td style="text-align: right;"><code>1008</code></td>
+<td style="text-align: right;"><code>8</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>1.a.</strong> Proposer une clé primaire pour la relation <strong><code>Mesures</code></strong>. Justifier votre choix.</p>
+<details class="success">
+<summary>Réponse</summary>
+<ul>
+<li><code>id_centre</code> n'est pas unique, elle ne peut pas servir de clé primaire.</li>
+<li><code>date_mesure</code> et <code>pluviometrie</code> non plus.</li>
+<li><code>temperature</code> et <code>pression</code> sont uniques, certes, pour l'instant, mais probablement pas ensuite, c'est un mauvais choix.</li>
+</ul>
+<p><code>id_mesure</code> permet d'identifier de manière unique chaque mesure de la table ; c'est <strong>la</strong> bonne clé primaire pour cette relation.</p>
+</details>
+<p><strong>1.b.</strong> Avec quel attribut peut-on faire une jointure entre la relation <strong><code>Centres</code></strong> et la relation <strong><code>Mesures</code></strong> ?</p>
+<details class="success">
+<summary>Réponse</summary>
+<p>La clé étrangère <code>id_centre</code> dans la table <strong><code>Mesures</code></strong> fait référence de manière unique à la clé primaire <code>id_centre</code> de la table <strong><code>Centres</code></strong>.</p>
+<p>Une jointure pourra être sans équivoque en utilisant l'égalité de ces deux champs.</p>
+</details>
+<p><strong>2.a.</strong> Qu'affiche la requête suivante ?</p>
+<div class="highlight"><span class="filename">🗂️ Requête SQL</span><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">Centres</span><span class="w"> </span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">altitude</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">500</span><span class="p">;</span>
+</code></pre></div>
+<details class="success">
+<summary>Réponse</summary>
+<p>La requête affiche tous les champs de la table <strong><code>Centres</code></strong> pour lesquels l'altitude est strictement supérieure à 500 m.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;"><code>id_centre</code></th>
+<th style="text-align: left;"><code>nom_ville</code></th>
+<th style="text-align: right;"><code>latitude</code></th>
+<th style="text-align: right;"><code>longitude</code></th>
+<th style="text-align: right;"><code>altitude</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;"><code>138</code></td>
+<td style="text-align: left;"><code>'Grenoble'</code></td>
+<td style="text-align: right;"><code>45.185</code></td>
+<td style="text-align: right;"><code>5.723</code></td>
+<td style="text-align: right;"><code>550</code></td>
+</tr>
+<tr>
+<td style="text-align: right;"><code>185</code></td>
+<td style="text-align: left;"><code>'Tignes'</code></td>
+<td style="text-align: right;"><code>45.469</code></td>
+<td style="text-align: right;"><code>6.909</code></td>
+<td style="text-align: right;"><code>2594</code></td>
+</tr>
+<tr>
+<td style="text-align: right;"><code>126</code></td>
+<td style="text-align: left;"><code>'Le Puy-en-Velay'</code></td>
+<td style="text-align: right;"><code>45.042</code></td>
+<td style="text-align: right;"><code>3.888</code></td>
+<td style="text-align: right;"><code>744</code></td>
+</tr>
+<tr>
+<td style="text-align: right;"><code>317</code></td>
+<td style="text-align: left;"><code>'Gérardmer'</code></td>
+<td style="text-align: right;"><code>48.073</code></td>
+<td style="text-align: right;"><code>6.879</code></td>
+<td style="text-align: right;"><code>855</code></td>
+</tr>
+</tbody>
+</table>
+</details>
+<p><strong>2.b.</strong> On souhaite récupérer le nom de la ville des centres météorologiques situés à une altitude comprise entre 700 m et 1200 m, inclus. Écrire la requête SQL correspondante.</p>
+<details class="success">
+<summary>Réponse</summary>
+<div class="highlight"><span class="filename">🗂️ Requête SQL</span><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">nom_ville</span><span class="w"> </span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">Centres</span><span class="w"> </span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">altitude</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">700</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">altitude</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">1200</span><span class="p">;</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><code>nom_ville</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>'Le Puy-en-Velay'</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>'Gérardmer'</code></td>
+</tr>
+</tbody>
+</table>
+</details>
+<p><strong>2.c.</strong> On souhaite récupérer la liste des longitudes et des noms des villes des centres météorologiques dont la longitude est supérieure à <code>5.0</code> La liste devra être triée par ordre alphabétique des noms de ville. Écrire la requête SQL correspondante.</p>
+<details class="success">
+<summary>Réponse</summary>
+<div class="highlight"><span class="filename">🗂️ Requête SQL</span><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">longitude</span><span class="p">,</span><span class="w"> </span><span class="n">nom_ville</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">Centres</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">longitude</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">5</span><span class="p">.</span><span class="mi">0</span>
+<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">nom_ville</span><span class="w"> </span><span class="k">ASC</span><span class="p">;</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;"><code>longitude</code></th>
+<th style="text-align: left;"><code>nom_ville</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;"><code>6.879</code></td>
+<td style="text-align: left;"><code>'Gérardmer'</code></td>
+</tr>
+<tr>
+<td style="text-align: right;"><code>5.723</code></td>
+<td style="text-align: left;"><code>'Grenoble'</code></td>
+</tr>
+<tr>
+<td style="text-align: right;"><code>7.262</code></td>
+<td style="text-align: left;"><code>'Nice'</code></td>
+</tr>
+<tr>
+<td style="text-align: right;"><code>6.909</code></td>
+<td style="text-align: left;"><code>'Tignes'</code></td>
+</tr>
+</tbody>
+</table>
+</details>
+<p><strong>3.a.</strong> Qu'affiche la requête suivante ?</p>
+<div class="highlight"><span class="filename">🗂️ Requête SQL</span><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">Mesures</span><span class="w"> </span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">date_mesure</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;2021-10-30&#39;</span><span class="p">;</span>
+</code></pre></div>
+<details class="success">
+<summary>Réponse</summary>
+<p>La requête affiche tous les champs des enregistrements de la table <strong><code>Mesures</code></strong> pour la date du 30 octobre 2021.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;"><code>id_mesure</code></th>
+<th style="text-align: right;"><code>id_centre</code></th>
+<th style="text-align: left;"><code>date_mesure</code></th>
+<th style="text-align: right;"><code>temperature</code></th>
+<th style="text-align: right;"><code>pression</code></th>
+<th style="text-align: right;"><code>pluviometrie</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;"><code>2174</code></td>
+<td style="text-align: right;"><code>126</code></td>
+<td style="text-align: left;"><code>'2021-10-30'</code></td>
+<td style="text-align: right;"><code>18.2</code></td>
+<td style="text-align: right;"><code>1023</code></td>
+<td style="text-align: right;"><code>0</code></td>
+</tr>
+<tr>
+<td style="text-align: right;"><code>2200</code></td>
+<td style="text-align: right;"><code>185</code></td>
+<td style="text-align: left;"><code>'2021-10-30'</code></td>
+<td style="text-align: right;"><code>5.6</code></td>
+<td style="text-align: right;"><code>989</code></td>
+<td style="text-align: right;"><code>20</code></td>
+</tr>
+</tbody>
+</table>
+</details>
+<p><strong>3.b.</strong> Écrire une requête SQL permettant d'ajouter une mesure prise le 8 novembre 2021 dans le centre numéro 138, où la température était de 11°C, la pression de 1013 hPa et la pluviométrie de 0 mm. La donnée dont l'attribut est <code>id_mesure</code> aura pour valeur 3650.</p>
+<details class="success">
+<summary>Réponse</summary>
+<div class="highlight"><span class="filename">🗂️ Requête SQL</span><pre><span></span><code><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">Mesures</span><span class="w"> </span><span class="p">(</span><span class="n">id_mesure</span><span class="p">,</span><span class="w"> </span><span class="n">id_centre</span><span class="p">,</span><span class="w"> </span><span class="n">date_mesure</span><span class="p">,</span><span class="w"> </span><span class="n">temperature</span><span class="p">,</span><span class="w"> </span><span class="n">pression</span><span class="p">,</span><span class="w"> </span><span class="n">pluviometrie</span><span class="p">)</span>
+<span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">3650</span><span class="p">,</span><span class="w"> </span><span class="mi">138</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;2021-11-08&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">11</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1013</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+</code></pre></div>
+</details>
+<p><strong>4.a.</strong> Expliquer ce que renvoie la requête SQL suivante ?</p>
+<div class="highlight"><span class="filename">🗂️ Requête SQL</span><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">Centres</span><span class="w"> </span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">latitude</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="k">MIN</span><span class="p">(</span><span class="n">latitude</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Centres</span><span class="p">);</span>
+</code></pre></div>
+<details class="success">
+<summary>Réponse</summary>
+<p>La requête imbriquée <code class="highlight"><span class="k">SELECT</span><span class="w"> </span><span class="k">MIN</span><span class="p">(</span><span class="n">latitude</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Centres</span><span class="p">;</span></code> renvoie <code>43.706</code> qui est la plus petite latitude parmi celle de la table <strong><code>Centres</code></strong>. Elle correspond à la latitude de Nice, la ville du centre le plus au Sud de cette table.</p>
+<p>Cette requête renvoie donc tous les champs du centre situé le plus au sud parmi ceux de la table <strong><code>Centres</code></strong>.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;"><code>id_centre</code></th>
+<th style="text-align: left;"><code>nom_ville</code></th>
+<th style="text-align: right;"><code>latitude</code></th>
+<th style="text-align: right;"><code>longitude</code></th>
+<th style="text-align: right;"><code>altitude</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;"><code>459</code></td>
+<td style="text-align: left;"><code>'Nice'</code></td>
+<td style="text-align: right;"><code>43.706</code></td>
+<td style="text-align: right;"><code>7.262</code></td>
+<td style="text-align: right;"><code>260</code></td>
+</tr>
+</tbody>
+</table>
+</details>
+<p><strong>4.b.</strong> Écrire une requête SQL donnant la liste des villes dans lesquelles on a enregistré une température inférieure à 10°C en octobre 2021. On utilisera le mot clé <code class="highlight"><span class="k">DISTINCT</span></code> afin d'éviter d'avoir des doublons. On rappelle que l'on peut utiliser les opérateurs de comparaison avec les dates.</p>
+<details class="success">
+<summary>Réponses</summary>
+<div class="highlight"><span class="filename">🗂️ Requête SQL</span><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="k">DISTINCT</span><span class="w"> </span><span class="n">nom_ville</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">Centres</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="n">Mesures</span>
+<span class="k">ON</span><span class="w"> </span><span class="n">Centres</span><span class="p">.</span><span class="n">id_centre</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Mesures</span><span class="p">.</span><span class="n">id_centre</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">Mesures</span><span class="p">.</span><span class="n">temperature</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">10</span><span class="p">.</span><span class="mi">0</span>
+<span class="k">AND</span><span class="w"> </span><span class="n">Mesures</span><span class="p">.</span><span class="n">date_mesure</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="s1">&#39;2021-10-01&#39;</span>
+<span class="k">AND</span><span class="w"> </span><span class="n">Mesures</span><span class="p">.</span><span class="nb">date</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="s1">&#39;2021-11-01&#39;</span><span class="p">;</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><code>nom_ville</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>'Grenoble'</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>'Tignes'</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>'Gérardmer'</code></td>
+</tr>
+</tbody>
+</table>
+</details>
+<h2 id="evaluations-deleves-par-competence">Évaluations d'élèves par compétence<a class="headerlink" href="#evaluations-deleves-par-competence" title="Permanent link">⚓︎</a></h2>
+<div class="admonition exo">
+<p class="admonition-title">D'après 2022, Centres étrangers, J2, Ex. 3</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Rappel sur le langage SQL</p>
+<p>Types de données</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>CHAR</code></td>
+<td>Chaine de caractères</td>
+</tr>
+<tr>
+<td><code>INT</code></td>
+<td>Nombre entier de <span class="arithmatex">\(-2^{31}\)</span> à <span class="arithmatex">\(2^{31} - 1\)</span> (signé) ou de <span class="arithmatex">\(0\)</span> à <span class="arithmatex">\(2^{32} - 1\)</span> (non signé)</td>
+</tr>
+<tr>
+<td><code>FLOAT</code></td>
+<td>Réel à virgule flottante (approximation)</td>
+</tr>
+<tr>
+<td><code>DATE</code></td>
+<td>Date format <code>AAAA-MM-JJ</code></td>
+</tr>
+<tr>
+<td><code>DATETIME</code></td>
+<td>Date et heure format <code>AAAA-MM-JJHH:MI:SS</code></td>
+</tr>
+</tbody>
+</table>
+<p>Quelques exemples de syntaxe SQL :</p>
+<ul>
+<li>Insérer des enregistrements :<ul>
+<li><code class="highlight"><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">Table1</span><span class="w"> </span><span class="p">(</span><span class="n">attribut1</span><span class="p">,</span><span class="w"> </span><span class="n">attribut2</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="n">valeur1</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="n">valeur2</span><span class="p">);</span></code></li>
+</ul>
+</li>
+<li>Modifier des enregistrements :<ul>
+<li><code class="highlight"><span class="k">UPDATE</span><span class="w"> </span><span class="n">Table1</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">attribut1</span><span class="o">=</span><span class="n">valeur1</span><span class="p">,</span><span class="w"> </span><span class="n">attribut2</span><span class="o">=</span><span class="n">valeur2</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">Selecteur</span><span class="p">;</span></code></li>
+</ul>
+</li>
+<li>Supprimer des enregistrements :<ul>
+<li><code class="highlight"><span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Table1</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">Selecteur</span><span class="p">;</span></code></li>
+</ul>
+</li>
+<li>Sélectionner des enregistrements :<ul>
+<li><code class="highlight"><span class="k">SELECT</span><span class="w"> </span><span class="n">attributs</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Table1</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">Selecteur</span><span class="p">;</span></code></li>
+</ul>
+</li>
+<li>Effectuer une jointure :<ul>
+<li><code class="highlight"><span class="k">SELECT</span><span class="w"> </span><span class="n">attributs</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Table1</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">Table2</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">Table1</span><span class="p">.</span><span class="n">cle1</span><span class="o">=</span><span class="n">Table2</span><span class="p">.</span><span class="n">cle2</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">Selecteur</span><span class="p">;</span></code></li>
+</ul>
+</li>
+</ul>
+</div>
+<p>Les enseignants d'un établissement imaginaire proposent des parcours d'entrainement au numérique à leurs élèves en créant des séries d'exercices appelées <strong><code>Evaluations</code></strong>. Les différentes informations sont stockées dans une base de données.</p>
+<p>Les informations de chaque campagne créée sont stockées dans la table <strong><code>Evaluations</code></strong> dont la structure est la suivante :</p>
+<table>
+<thead>
+<tr>
+<th>Attribut</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Code_evaluation</code></td>
+<td><code>CHAR</code></td>
+</tr>
+<tr>
+<td><code>Nom_evaluation</code></td>
+<td><code>CHAR</code></td>
+</tr>
+<tr>
+<td><code>Auteur</code></td>
+<td><code>CHAR</code></td>
+</tr>
+<tr>
+<td><code>Date_evaluation</code></td>
+<td><code>CHAR</code></td>
+</tr>
+<tr>
+<td><code>Code_competences</code></td>
+<td><code>INT</code></td>
+</tr>
+</tbody>
+</table>
+<p>Un extrait de la table <strong><code>Evaluations</code></strong> est donné ci-dessous :</p>
+<div class="admonition abstract">
+<p class="admonition-title"><em>Tableau 1</em></p>
+<table>
+<thead>
+<tr>
+<th><code>Code_evaluation</code></th>
+<th><code>Nom_evaluation</code></th>
+<th><code>Auteur</code></th>
+<th><code>Date_evaluation</code></th>
+<th><code>Code_competences</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>'EXKVLX886'</code></td>
+<td><code>'Term7'</code></td>
+<td><code>'Peltier'</code></td>
+<td><code>'13/10/2021'</code></td>
+<td><code>1453</code></td>
+</tr>
+<tr>
+<td><code>'AZVBYB689'</code></td>
+<td><code>'Groupe3'</code></td>
+<td><code>'Lacour'</code></td>
+<td><code>'07/10/2021'</code></td>
+<td><code>1276</code></td>
+</tr>
+<tr>
+<td><code>'PRJUYR491'</code></td>
+<td><code>'Term5'</code></td>
+<td><code>'Peltier'</code></td>
+<td><code>'07/10/2021'</code></td>
+<td><code>1453</code></td>
+</tr>
+<tr>
+<td><code>'RTKVLX656'</code></td>
+<td><code>'campagneSTMG'</code></td>
+<td><code>'Beley'</code></td>
+<td><code>'03/10/2021'</code></td>
+<td><code>476</code></td>
+</tr>
+<tr>
+<td><code>'DZLYYR479'</code></td>
+<td><code>'Term5'</code></td>
+<td><code>'Serhani'</code></td>
+<td><code>'27/09/2021'</code></td>
+<td><code>1659</code></td>
+</tr>
+<tr>
+<td><code>'XJVBTX585'</code></td>
+<td><code>'grNSI2'</code></td>
+<td><code>'Eisen'</code></td>
+<td><code>'24/09/2021'</code></td>
+<td><code>532</code></td>
+</tr>
+<tr>
+<td><code>'CRLYYR439'</code></td>
+<td><code>'1ere6'</code></td>
+<td><code>'Caille'</code></td>
+<td><code>'13/09/2021'</code></td>
+<td><code>532</code></td>
+</tr>
+<tr>
+<td><code>'AZVBYB789'</code></td>
+<td><code>'rentreeHGGSP'</code></td>
+<td><code>'Martin'</code></td>
+<td><code>'13/09/2021'</code></td>
+<td><code>386</code></td>
+</tr>
+<tr>
+<td><code>'OBJUYR491'</code></td>
+<td><code>'Web_2nde'</code></td>
+<td><code>'Boucher'</code></td>
+<td><code>'07/09/2021'</code></td>
+<td><code>452</code></td>
+</tr>
+<tr>
+<td><code>'AGTBYB689'</code></td>
+<td><code>'rechercheBTS'</code></td>
+<td><code>'Beley'</code></td>
+<td><code>'07/09/2021'</code></td>
+<td><code>1341</code></td>
+</tr>
+<tr>
+<td><code>'DQVBTX905'</code></td>
+<td><code>'2nde2'</code></td>
+<td><code>'Nguyen'</code></td>
+<td><code>'07/09/2021'</code></td>
+<td><code>452</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>1.a.</strong> Dans la table <strong><code>Evaluations</code></strong>, quel est le seul attribut pouvant servir de clé primaire ? Justifier votre réponse.</p>
+<details class="success">
+<summary>Réponse</summary>
+<p>Le seul attribut a avoir des valeurs unique est <code>Code_evaluation</code>, tous les autres peuvent créer des ambigüités lors de la désignation d'une entrée.</p>
+<p>La clé primaire doit donc être <code>Code_evaluation</code>.</p>
+</details>
+<p><strong>1.b.</strong> Écrire la requête SQL d'insertion qui a permis d'enregistrer la campagne <code>Term7</code> dans la table <strong><code>Evaluations</code></strong>. Les informations relatives à cette campagne sont données dans la première ligne du tableau 1 précédent.</p>
+<details class="success">
+<summary>Réponse</summary>
+<div class="highlight"><span class="filename">🗂️ Requête SQL</span><pre><span></span><code><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">Evaluations</span><span class="w"> </span>
+<span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;EXKVLX886&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Term7&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Peltier&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;13/10/2021&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">1453</span><span class="p">);</span>
+</code></pre></div>
+</details>
+<p><strong>2.</strong> On suppose maintenant que la table <strong><code>Evaluations</code></strong> contient uniquement les 11 enregistrements présents dans le tableau 1.</p>
+<p><strong>2.a.</strong> Combien de lignes s'affichent après l'exécution de la requête suivante ?</p>
+<div class="highlight"><span class="filename">🗂️ Requête SQL</span><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">auteur</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Evaluations</span><span class="p">;</span>
+</code></pre></div>
+<details class="success">
+<summary>Réponse</summary>
+<p>Les résultats ne sont pas regroupés par auteur donc tous les auteurs sont renvoyés y compris les doublons : il y a 11 lignes.</p>
+</details>
+<p><strong>2.b.</strong> Recopier les lignes issues de la requête suivante :</p>
+<div class="highlight"><span class="filename">🗂️ Requête SQL</span><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">Nom_evaluation</span><span class="p">,</span><span class="w"> </span><span class="n">Date_evaluation</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Evaluations</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">auteur</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Peltier&#39;</span><span class="p">;</span>
+</code></pre></div>
+<details class="success">
+<summary>Réponse</summary>
+<table>
+<thead>
+<tr>
+<th><code>Nom_evaluation</code></th>
+<th><code>Date_evaluation</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Term7</code></td>
+<td><code>13/10/2021</code></td>
+</tr>
+<tr>
+<td><code>Term5</code></td>
+<td><code>07/10/2021</code></td>
+</tr>
+</tbody>
+</table>
+</details>
+<p><strong>2.c.</strong> Rédiger une requête permettant de connaitre le nom des campagnes prévoyant un entrainement ciblé sur le web (<code>Code_competences</code> <span class="arithmatex">\(452\)</span>).</p>
+<details class="success">
+<summary>Réponse</summary>
+<div class="highlight"><span class="filename">🗂️ Requête SQL</span><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">Nom_evaluation</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">Evaluations</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">Code_competences</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">452</span><span class="p">;</span>
+</code></pre></div>
+</details>
+<p><strong>3.</strong> Le système de gestion de bases de données dispose également d'une table <strong><code>Resultats</code></strong> dont la structure est la suivante :</p>
+<table>
+<thead>
+<tr>
+<th>Attribut</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Code_evaluation</code></td>
+<td><code>CHAR</code></td>
+</tr>
+<tr>
+<td><code>Num_eleve</code></td>
+<td><code>INT</code></td>
+</tr>
+<tr>
+<td><code>Score</code></td>
+<td><code>INT</code></td>
+</tr>
+</tbody>
+</table>
+<p>Si l'élève s'est connecté à la campagne, mais n'a pas cliqué sur « envoyer les résultats », son score vaut -1.</p>
+<p><strong>3.a.</strong> Qu'imposerait le choix du couple <code>(Code_evaluation, Num_eleve)</code> comme clé primaire pour la table <strong><code>Resultats</code></strong> ?</p>
+<details class="success">
+<summary>Réponse</summary>
+<p>On fait l'hypothèse que les <code>Num_eleve</code> sont tous uniques (un par élève).</p>
+<p>Une clé primaire ne doit être associée qu'à une entrée de la table. Choisir ce couple comme clé primaire imposerait que chaque élève ne fasse l'évaluation <strong>qu'une seule fois</strong>.</p>
+</details>
+<p>Un extrait de la relation est donné ci-dessous :</p>
+<table>
+<thead>
+<tr>
+<th><code>Code_evaluation</code></th>
+<th><code>Num_eleve</code></th>
+<th><code>Scores</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>'PRJUYR491'</code></td>
+<td><code>17</code></td>
+<td><code>300</code></td>
+</tr>
+<tr>
+<td><code>'CRLYYR439'</code></td>
+<td><code>654</code></td>
+<td><code>-1</code></td>
+</tr>
+<tr>
+<td><code>'PRJUYR491'</code></td>
+<td><code>1454</code></td>
+<td><code>220</code></td>
+</tr>
+<tr>
+<td><code>'RTKVLX656'</code></td>
+<td><code>554</code></td>
+<td><code>255</code></td>
+</tr>
+<tr>
+<td><code>'DZLYYR479'</code></td>
+<td><code>17</code></td>
+<td><code>-1</code></td>
+</tr>
+<tr>
+<td><code>'XJVBTX585'</code></td>
+<td><code>1664</code></td>
+<td><code>12</code></td>
+</tr>
+<tr>
+<td><code>'CRLYYR439'</code></td>
+<td><code>18703</code></td>
+<td><code>0</code></td>
+</tr>
+<tr>
+<td><code>'PRJUYR491'</code></td>
+<td><code>1565</code></td>
+<td><code>422</code></td>
+</tr>
+<tr>
+<td><code>'XJVBTX585'</code></td>
+<td><code>12</code></td>
+<td><code>643</code></td>
+</tr>
+<tr>
+<td><code>'CRLYYR439'</code></td>
+<td><code>168</code></td>
+<td><code>19</code></td>
+</tr>
+<tr>
+<td><code>'DZLYYR479'</code></td>
+<td><code>17</code></td>
+<td><code>140</code></td>
+</tr>
+<tr>
+<td><code>'XJVBTX585'</code></td>
+<td><code>1658</code></td>
+<td><code>647</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>3.b.</strong> Écrire une requête permettant d'obtenir les numéros des élèves (<code>Num_eleve</code>) qui ont travaillé la compétence <code>532</code>.</p>
+<details class="success">
+<summary>Réponse</summary>
+<div class="highlight"><span class="filename">🗂️ Requête SQL</span><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">Num_eleve</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">Resultats</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="n">Evaluations</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">Resultats</span><span class="p">.</span><span class="n">Code_evaluation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Evaluations</span><span class="p">.</span><span class="n">Code_evaluation</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">Evaluation</span><span class="p">.</span><span class="n">Code_competences</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">532</span>
+</code></pre></div>
+</details>
+<p><strong>4.a.</strong> Proposer la structure d'une table <strong><code>Eleves</code></strong> permettant d'identifier les noms, prénoms et les classes des élèves.</p>
+<details class="success">
+<summary>Réponse</summary>
+<p>Là encore on fait l'hypothèse que chaque élève possède un <code>Num_eleve</code> unique.</p>
+<table>
+<thead>
+<tr>
+<th>Attribut</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Num_eleve</code></td>
+<td><code>CHAR</code></td>
+</tr>
+<tr>
+<td><code>Nom</code></td>
+<td><code>CHAR</code></td>
+</tr>
+<tr>
+<td><code>Prenom</code></td>
+<td><code>CHAR</code></td>
+</tr>
+<tr>
+<td><code>Classe</code></td>
+<td><code>CHAR</code></td>
+</tr>
+</tbody>
+</table>
+</details>
+<p><strong>4.b.</strong> Proposer une clé primaire pour cette table.</p>
+<details class="success">
+<summary>Réponse</summary>
+<p>La clé primaire serait <code>Num_eleve</code>.</p>
+</details>
+<h2 id="donnees-de-visites-de-pages-web">Données de visites de pages Web<a class="headerlink" href="#donnees-de-visites-de-pages-web" title="Permanent link">⚓︎</a></h2>
+<div class="admonition exo">
+<p class="admonition-title">D'après 2022, Polynésie, J1, Ex. 3</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">SQL</p>
+<p>L'énoncé de cet exercice peut utiliser les mots du langage SQL suivants :</p>
+<p><code>SELECT, FROM, WHERE, JOIN ON, INSERT INTO, VALUES, UPDATE, SET, DELETE, COUNT, DISTINCT, AND, OR, AS, ORDER BY, ASC, DESC</code></p>
+</div>
+<p>Un site web recueille des données de navigation dans une base de données afin d'étudier les profils de ses visiteurs.<br />
+Chaque requête d'interrogation d'une page de ce site est enregistrée dans une première table dénommée <strong><code>Visites</code></strong> sous la forme d'un 5-uplet : <code>(identifiant, adresse IP, date et heure de visite, nom de la page, navigateur)</code>.</p>
+<p>Le chargement de la page <code>index.html</code> par <code>192.168.1.91</code> le 12 juillet 1998 à 22 h 48 aura par exemple été enregistré de la façon suivante :</p>
+<p><code>(1534, "192.168.1.91", "1998-07-12 22:48:00", "index.html", "Internet explorer 4.1")</code>.</p>
+<p>Un extrait de cette table vous est donné ci-dessous :</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Identifiant</th>
+<th style="text-align: left;">ip</th>
+<th style="text-align: left;">dateheure</th>
+<th style="text-align: left;">nompage</th>
+<th style="text-align: left;">navigateur</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">...</td>
+<td style="text-align: left;">...</td>
+<td style="text-align: left;">...</td>
+<td style="text-align: left;">...</td>
+<td style="text-align: left;">...</td>
+</tr>
+<tr>
+<td style="text-align: left;">1534</td>
+<td style="text-align: left;"><code>"192.168.1.91"</code></td>
+<td style="text-align: left;"><code>"1998-07-12 22:48:00"</code></td>
+<td style="text-align: left;"><code>"index.html"</code></td>
+<td style="text-align: left;"><code>"Internet explorer 4.1"</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">1535</td>
+<td style="text-align: left;"><code>"192.168.1.91"</code></td>
+<td style="text-align: left;"><code>"1998-07-12 22:49:05"</code></td>
+<td style="text-align: left;"><code>"exercices.html"</code></td>
+<td style="text-align: left;"><code>"Internet explorer 4.1"</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">1536</td>
+<td style="text-align: left;"><code>"192.168.1.151"</code></td>
+<td style="text-align: left;"><code>"1998-07-12 22:59:44"</code></td>
+<td style="text-align: left;"><code>"index.html"</code></td>
+<td style="text-align: left;"><code>"Netscape 6"</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">1537</td>
+<td style="text-align: left;"><code>"192.168.1.151"</code></td>
+<td style="text-align: left;"><code>"1998-07-12 23:00:00"</code></td>
+<td style="text-align: left;"><code>"espace_enseignant.html"</code></td>
+<td style="text-align: left;"><code>"Netscape 6"</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">1538</td>
+<td style="text-align: left;"><code>"192.168.1.91"</code></td>
+<td style="text-align: left;"><code>"1998-07-12 23:29:00"</code></td>
+<td style="text-align: left;"><code>"icorrection.html"</code></td>
+<td style="text-align: left;"><code>"Internet explorer 4.1"</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">...</td>
+<td style="text-align: left;">...</td>
+<td style="text-align: left;">...</td>
+<td style="text-align: left;">...</td>
+<td style="text-align: left;">...</td>
+</tr>
+</tbody>
+</table>
+<p><strong>1.a)</strong> Donner une commande d'interrogation en langage SQL permettant d'obtenir l'ensemble des 2-uplets <code>(adresse IP, nom de la page)</code> de cette table.</p>
+<details class="success">
+<summary>Réponse</summary>
+<div class="highlight"><span class="filename">🗂️ Requête SQL</span><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">ip</span><span class="p">,</span><span class="w"> </span><span class="n">nompage</span><span class="w"> </span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">Visites</span><span class="p">;</span>
+</code></pre></div>
+</details>
+<p><strong>1.b)</strong> Donner une commande en langage SQL permettant d'obtenir l'ensemble des adresses IP ayant interrogé le site, sans doublon.</p>
+<details class="success">
+<summary>Réponse</summary>
+<div class="highlight"><span class="filename">🗂️ Requête SQL</span><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="k">DISTINCT</span><span class="w"> </span><span class="n">ip</span><span class="w"> </span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">Visites</span><span class="p">;</span>
+</code></pre></div>
+</details>
+<p><strong>1.c)</strong> Donner une commande en langage SQL permettant d'obtenir la liste des noms des pages visitées par l'adresse IP <code>192.168.1.91</code></p>
+<details class="success">
+<summary>Réponse</summary>
+<div class="highlight"><span class="filename">🗂️ Requête SQL</span><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">nompage</span><span class="w"> </span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">Visites</span><span class="w"> </span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">ip</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;192.168.1.91&#39;</span><span class="p">;</span>
+</code></pre></div>
+</details>
+<p>Ce site web met en place, sur chacune de ses pages, un programme en JavaScript qui envoie au serveur, à intervalle régulier de 15 secondes, le temps en secondes (<code>duree</code>) de présence sur la page. Ces envois contiennent tous la valeur de <code>identifiant</code> correspondant au chargement initial de la page.<br />
+Par exemple, si le visiteur du 12 juillet 1998 est resté 65 secondes sur la page, celle-ci a envoyé au serveur les 4 doublets <code>(1534, 15)</code>, <code>(1534, 30)</code>, <code>(1534, 45)</code> et <code>(1534, 60)</code>.</p>
+<p>Ces données sont enregistrées dans une table nommée <strong><code>Pings</code></strong>.</p>
+<p>En plus de l'inscription d'une ligne dans la table <strong><code>Visites</code></strong>, chaque chargement d'une nouvelle page provoque l'insertion d'une ligne dans la table <strong><code>Pings</code></strong> comprenant l'identifiant de ce chargement et une durée de <code>0</code>.</p>
+<p>Enfin, chaque ligne de la table <strong><code>Pings</code></strong> est unique, et ses deux colonnes contiennent toujours un <code>identifiant</code> et une <code>duree</code>.</p>
+<p>L'attribut <code>identifiant</code> de la table <strong><code>Pings</code></strong> fait référence à l'attribut du même nom de la table <strong><code>Visites</code></strong> et les deux partagent les mêmes valeurs.</p>
+<p>Un extrait de cette table vous est donné ci-dessous :</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Identifiant</th>
+<th style="text-align: left;">duree</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">...</td>
+<td style="text-align: left;">...</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>1534</code></td>
+<td style="text-align: left;"><code>0</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>1534</code></td>
+<td style="text-align: left;"><code>15</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>1534</code></td>
+<td style="text-align: left;"><code>30</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>1534</code></td>
+<td style="text-align: left;"><code>45</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>1534</code></td>
+<td style="text-align: left;"><code>60</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">...</td>
+<td style="text-align: left;">...</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>1536</code></td>
+<td style="text-align: left;"><code>0</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>1537</code></td>
+<td style="text-align: left;"><code>0</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>1537</code></td>
+<td style="text-align: left;"><code>15</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">...</td>
+<td style="text-align: left;">...</td>
+</tr>
+</tbody>
+</table>
+<p><strong>2.a)</strong> De quelle table l'attribut <code>identifiant</code> est-il la clé primaire ?</p>
+<details class="success">
+<summary>Réponse</summary>
+<p>L'attribut <code>identifiant</code> est la clé primaire de la table <strong><code>Visites</code></strong>.</p>
+<p>Remarque : dans la table <strong><code>Pings</code></strong>, le doublet <code>(identifiant, duree)</code>  est clé primaire composite.</p>
+</details>
+<p><strong>2.b)</strong> De quelle table l'attribut <code>identifiant</code> est-il une clé étrangère ?</p>
+<details class="success">
+<summary>Réponse</summary>
+<p>L'attribut <code>identifiant</code> est clé étrangère dans la table <strong><code>Pings</code></strong>.</p>
+</details>
+<p><strong>2.c)</strong> On suppose que ces clés et règles (unicité, non nullité) ont été déclarées lors de la création des tables. Quelles vérifications sont automatiquement effectuées par le système de gestion de base de données ?</p>
+<details class="success">
+<summary>Réponse</summary>
+<p>Lors d'un enregistrement dans la table <strong><code>Pings</code></strong>, le système de gestion de base de données va vérifier :</p>
+<ul>
+<li>la contrainte de domaine : le doublet inséré doit être un doublet du type spécifié dans la définition de la table, par exemple (entier, entier)</li>
+<li>la contrainte d'unicité : on ne peut pas insérer deux fois le même doublet ;</li>
+<li>les contraintes de non nullité : ni le champ <code>identifiant</code>, ni le champ <code>duree</code> ne peuvent être <code>NULL</code></li>
+<li>la contrainte d'intégrité référentielle : la valeur de l'attribut de la clé étrangère doit être inclus dans les valeurs de la clé primaire à laquelle il fait référence.</li>
+</ul>
+</details>
+<p><strong>3.</strong> Le serveur reçoit le doublet <code>(identifiant, duree)</code> suivant : <code>(1534, 105)</code>. Écrire la commande SQL d'insertion qui permet d'ajouter cet enregistrement à la table <strong><code>Pings</code></strong>.</p>
+<details class="success">
+<summary>Réponse</summary>
+<div class="highlight"><span class="filename">🗂️ Requête SQL</span><pre><span></span><code><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">Pings</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">1534</span><span class="p">,</span><span class="w"> </span><span class="mi">105</span><span class="p">);</span>
+</code></pre></div>
+</details>
+<p>On envisage ensuite d'optimiser la table en se contentant d'une seule ligne par identifiant dans la table <strong><code>Pings</code></strong> : les valeurs de l'attribut <code>duree</code> devraient alors être mises à jour à chaque réception d'un nouveau doublet <code>(identifiant, duree)</code>.</p>
+<p><strong>4.a)</strong> Écrire la requête de mise à jour permettant de fixer à 120 la valeur de l'attribut <code>duree</code> associée à l'identifiant 1534 dans la table <strong><code>Pings</code></strong>.</p>
+<details class="success">
+<summary>Réponse</summary>
+<div class="highlight"><span class="filename">🗂️ Requête SQL</span><pre><span></span><code><span class="k">UPDATE</span><span class="w"> </span><span class="n">Pings</span><span class="w"> </span>
+<span class="k">SET</span><span class="w"> </span><span class="n">duree</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">120</span><span class="w"> </span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">identifiant</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1534</span><span class="p">;</span>
+</code></pre></div>
+<p>Remarque : Dans le cadre de cette optimisation, l'attribut <code>identifiant</code> est clé primaire.</p>
+</details>
+<p><strong>4.b)</strong> Expliquer pourquoi on ne peut pas être certain que les données envoyées par une page web, depuis le navigateur d'un client, via plusieurs requêtes formulées en JavaScript, arrivent au serveur dans l'ordre dans lequel elles ont été émises.</p>
+<details class="success">
+<summary>Réponse</summary>
+<p>Dans le protocole IP, les paquets sont routés indépendamment et peuvent donc éventuellement suivre des chemins différents s'il existe plusieurs itinéraires disponibles, ce qui peut impacter la durée d'acheminement. Une requête A envoyée avant une requête B peut donc arriver après cette dernière.</p>
+<p>Ainsi, on ne peut pas être certain que les données envoyées par une page web, depuis le navigateur d'un client, via plusieurs requêtes formulées en JavaScript, arrivent au serveur dans l'ordre dans lequel elles ont été émises.</p>
+</details>
+<p><strong>4.c)</strong> En déduire qu'il est préférable d'utiliser une requête d'insertion plutôt qu'une requête de mise à jour pour ajouter des données à la table <strong><code>Pings</code></strong>.</p>
+<details class="success">
+<summary>Réponse</summary>
+<p>Il est préférable d'utiliser une requête d'insertion plutôt qu'une requête de mise à jour pour ajouter des données à la table <strong><code>Pings</code></strong> afin de s'assurer de conserver dans la table <strong><code>Pings</code></strong> un enregistrement représentatif du temps passé par un utilisateur sur une page donnée (dans ce cas, lors d'une requête sur la table <strong><code>Pings</code></strong>, il faudrait alors rechercher la valeur maximale relative à un identifiant de connexion donné).</p>
+<p>Remarque : il est en réalité techniquement possible d'empêcher de stocker une valeur qui diminuerait la durée, mais cela est hors programme.</p>
+</details>
+<p><strong>5.</strong> Écrire une requête SQL utilisant le mot-clé <code>JOIN</code> et une clause <code>WHERE</code>, permettant de trouver les noms de toutes les pages qui ont été consultées plus d'une minute par au moins un utilisateur.</p>
+<details class="success">
+<summary>Réponse</summary>
+<p><div class="highlight"><span class="filename">🗂️ Requête SQL</span><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="k">DISTINCT</span><span class="w"> </span><span class="n">Visites</span><span class="p">.</span><span class="n">nompage</span><span class="w"> </span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">Visites</span><span class="w"> </span>
+<span class="k">JOIN</span><span class="w"> </span><span class="n">Pings</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">Visites</span><span class="p">.</span><span class="n">identifiant</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Pings</span><span class="p">.</span><span class="n">identifiant</span><span class="w"> </span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">Pings</span><span class="p">.</span><span class="n">duree</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">60</span><span class="p">;</span>
+</code></pre></div>
+Remarque 1 : le "par au moins un utilisateur" me fait utiliser le <code>DISTINCT</code> parce qu'il y aura des doublons si plusieurs utilisateurs ont consultée la même page assez longtemps, indépendamment de l'optimisation ou non.</p>
+<p>Remarque 2 : dans le cas où la clé est composite, il y aura en plus plusieurs fois la même page pour une même consultation si la durée est &gt;= 75. Ce n'est pas important pour lister les pages, mais ça l'est si on veut les compter ensuite (y compris si on fait du <code>GROUP BY</code>).</p>
+<p>Remarque 3 : dans le cas où l'optimisation a été faite, ces doublons de même consultation n'existeront pas, mais le cas de multiples utilisateurs consultant la même page reste. La requête est inchangée.</p>
+</details>
+
+
+
+
+
+                
+
+<style>
+    .jp-RenderedHTMLCommon p {
+        font-size: 0.8rem;
+        line-height: 1.6;
+    }
+
+    .jp-RenderedHTMLCommon li {
+        font-size: .8rem;
+        line-height: 1.6;
+    }
+
+    .jp-RenderedHTMLCommon h1 {
+        margin: 0 0 1.25em;
+        color: var(--md-default-fg-color--light);
+        font-weight: 300;
+        font-size: 2em;
+        line-height: 1.3;
+        letter-spacing: -0.01em;
+    }
+
+    .jp-RenderedHTMLCommon h2 {
+        margin: 1.6em 0 .64em;
+        font-weight: 300;
+        font-size: 1.965em;
+        line-height: 1.4;
+        letter-spacing: -0.01em;
+    }
+
+    .jp-RenderedHTMLCommon h3 {
+        margin: 1.6em 0 .8em;
+        font-weight: 400;
+        font-size: 1.57em;
+        line-height: 1.5;
+        letter-spacing: -0.01em;
+    }
+
+    .jp-RenderedHTMLCommon hr {
+        border: none;
+    }
+</style>
+
+
+
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Retour en haut de la page
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.expand", "navigation.top", "navigation.sections", "navigation.indexes", "navigation.tracking", "header.autohide", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.81fa17fe.min.js"></script>
+      
+        <script src="../../../xtra/mathjax.js"></script>
+      
+        <script src="../../../javascripts/config.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/gh/rod2ik/cdn@main/mkdocs/javascripts/massilia-admonitions.js"></script>
+      
+    
+  </body>
+</html>

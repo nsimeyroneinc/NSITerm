@@ -1,0 +1,7 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{SELECT}\PYG{+w}{ }\PYG{n+nb}{date}
+\PYG{k}{FROM}\PYG{+w}{ }\PYG{n}{Articles}
+\PYG{k}{JOIN}\PYG{+w}{ }\PYG{n}{Traitements}\PYG{+w}{ }\PYG{k}{ON}\PYG{+w}{ }\PYG{n}{Articles}\PYG{p}{.}\PYG{n}{idArticle}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{Traitements}\PYG{p}{.}\PYG{n}{article}
+\PYG{k}{JOIN}\PYG{+w}{ }\PYG{n}{Themes}\PYG{+w}{ }\PYG{k}{ON}\PYG{+w}{ }\PYG{n}{Traitements}\PYG{p}{.}\PYG{n}{theme}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{Themes}\PYG{p}{.}\PYG{n}{idTheme}
+\PYG{k}{WHERE}\PYG{+w}{ }\PYG{n}{Themes}\PYG{p}{.}\PYG{n}{themes}\PYG{+w}{ }\PYG{k}{LIKE}\PYG{+w}{ }\PYG{l+s+ss}{\PYGZdq{}Sport\PYGZdq{}}
+\end{Verbatim}

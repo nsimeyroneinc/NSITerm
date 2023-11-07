@@ -1,0 +1,93 @@
+\PassOptionsToPackage{dvipsnames,table}{xcolor}
+\documentclass[10pt]{beamer}
+\usetheme[options]{Madrid} 
+\usepackage{../../latex/Cours}
+
+\begin{document}
+	\input{\detokenize{../../latex/MacrosCours.tex}}
+\setcounter{numchap}{22}
+
+\newcommand{\GR}{\cnum Graphes}
+
+\pythonmode
+
+
+% Aspect historique, définition
+\begin{frame}
+	\mframe{\GR}
+	\begin{block}{Aspect historique}
+		\begin{itemize}[label=\textbullet]
+			\item<1-> C'est le mathématicien suisse Leonhard Euler (1707-1783) qui est à l'origine de la création de la théorie des graphes.
+			\item<2-> Il en pose les bases en résolvant le problème des 7 ponts de  Königsberg en 1740.
+			\item<3-> Les graphes interviennent à présent dans de nombreux problèmes (recherche de chemins, réseau, \dots) en informatique comme en mathématiques.
+		\end{itemize}
+	\end{block}
+	\begin{alertblock}{Définition}
+		\onslide<4->{Un \textcolor{red}{graphe} est la donnée :}
+		\begin{itemize}[label=\textbullet]
+			\item<5->{D'un ensemble de sommet $S$ (on dit aussi noeuds ou points)}
+			\item<6->{D'un ensemble d'arêtes $E$, chaque arête étant une paire de sommets}
+		\end{itemize}
+	\end{alertblock}
+\end{frame}
+
+% Vocabulaire
+\begin{frame}
+	\mframe{\GR}
+	\begin{block}{Vocabulaire}
+		\begin{itemize}[label=\textbullet]
+			\item<1-> On dit que deux sommets sont \textcolor{blue}{adjacents} lorsqu'une arête les relie. 			\item<2-> Les \textcolor{blue}{voisins} d'un sommet sont les sommets adjacents à ce sommet.
+			\item<3-> Le \textcolor{blue}{degré (ou ordre) du graphe} est son nombre de sommets.
+			\item<4-> Le \textcolor{blue}{degré d'un sommet} est le nombre d'arête liées à ce sommet.
+			\item<5-> Un graphe est dit \textcolor{blue}{complet} lorsque deux sommets quelconques sont reliés par une arête.
+			\item<6-> Le graphe est dit \textcolor{blue}{orienté} lorsque les \og les arêtes sont fléchées \fg
+			\item<7-> Une \textcolor{blue}{chaîne} est une suite d'arêtes consécutives. Sa longueur est le nombre d'arêtes qu'elle comporte.
+			\item<8-> Un \textcolor{blue}{cycle} est une chaîne dont l'origine est aussi l'extrémité.
+			\item<9-> Un graphe est dit \textcolor{blue}{simple} lorsqu'il y a au plus une arête entre deux sommets quelconques.
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+
+% Implémentation des graphes par matrice d'adjacence
+\begin{frame}
+	\mframe{\GR}
+	\begin{alertblock}{Représentation par matrice d'adjacence}
+		On peut représenter un graphe à $n$ sommets par sa \textcolor{blue}{matrice d'adjacence} $M$, c'est à dire un tableau de $n$ lignes et $n$ colonnes :
+		\begin{itemize}[label=\textbullet]
+			\item<2-> On numérote les sommets du graphe
+			\item<3-> S'il y a une arête du sommet $i$ vers le sommet $j$ alors on place un 1 à la ligne $i$ et à la colonne $j$ de $M$
+			\item<4-> Sinon on place un 0
+		\end{itemize}
+	\end{alertblock}
+	\begin{block}{Remarques}
+		\begin{itemize}[label=\textbullet]
+			\item<5-> Si le graphe n'est pas orienté alors la matrice est symétrique par rapport à sa première diagonale.
+			\item<6-> On peut représenter les graphes pondérés en écrivant le poids à la place du 1 pour chaque arête.
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+
+% Implémentation des graphes par liste d'adjacence
+\begin{frame}
+	\mframe{\GR}
+	\begin{alertblock}{Représentation par listes d'adjacence}
+		On peut représenter un graphe à l'aide de listes d'adjacences, c'est à dire en mémorisant pour chaque sommet du graphe la liste de ses voisins.
+		\begin{itemize}[label=\textbullet]
+			\item<2-> On crée pour chaque sommet du graphe une liste
+			\item<3-> S'il y a une arête du sommet $S_i$ vers le sommet $S_j$ alors  $S_j$ est dans la liste de $S_i$
+		\end{itemize}
+	\end{alertblock}
+	\begin{block}{Remarques}
+		\begin{itemize}[label=\textbullet]
+			\item<5-> Lorsqu'un graphe a "peu" d'arête cette implémentation est plus intéressante en terme d'occupation mémoire que celle par matrice d'adjacence.
+			\item<6-> En Python, on utilisera un dictionnaire pour représenter les listes d'adjacences, les clés sont les sommets et les valeurs les listes associées
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+
+
+
+\end{document}

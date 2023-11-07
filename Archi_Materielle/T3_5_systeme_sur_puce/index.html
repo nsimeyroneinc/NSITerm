@@ -1,0 +1,2075 @@
+<!-- Ajout pour le bouton de téléchargement et le style des jupyter notebook   https://github.com/danielfrg/mkdocs-jupyter -->
+
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Cours et TD de l'année en cours">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../images/dragon.svg">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.8">
+    
+    
+      
+        <title>T3 5 systeme sur puce - NSI Terminale 2022-2023</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.4b4a2bd9.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.356b1318.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rod2ik/cdn@main/mkdocs/css/massilia-admonitions.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#c21-systeme-a-puces" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="../.." title="NSI Terminale 2022-2023" class="md-header__button md-logo" aria-label="NSI Terminale 2022-2023" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="m352 124.5-51.9-13c-6.5-1.6-11.3-7.1-12-13.8s2.8-13.1 8.7-16.1l40.8-20.4-43.2-32.4c-5.5-4.1-7.8-11.3-5.6-17.9S297.1 0 304 0h160c30.2 0 58.7 14.2 76.8 38.4l57.6 76.8c6.2 8.3 9.6 18.4 9.6 28.8 0 26.5-21.5 48-48 48h-21.5c-17 0-33.3-6.7-45.3-18.7L480 160h-32v21.5c0 24.8 12.8 47.9 33.8 61.1l106.6 66.6c32.1 20.1 51.6 55.2 51.6 93.1 0 60.6-49.1 109.7-109.8 109.7H32.3c-3.3 0-6.6-.4-9.6-1.4-9.2-2.8-16.7-9.6-20.3-18.5C1 488.7.2 485.2 0 481.4c-.2-3.7.3-7.3 1.3-10.7 2.8-9.2 9.6-16.7 18.6-20.4 3-1.2 6.2-2 9.5-2.2L433.3 412c8.3-.7 14.7-7.7 14.7-16.1 0-4.3-1.7-8.4-4.7-11.4l-44.4-44.4c-30-30-46.9-70.7-46.9-113.1V124.5zm160-52.2v-.6.6zm-1.3 7.4-46.4-11.6c-.2 1.3-.3 2.6-.3 3.9 0 13.3 10.7 24 24 24 10.6 0 19.5-6.8 22.7-16.3zm-379.8 36.8c16.3-14.5 40.4-16.2 58.5-4.1l130.6 87V227c0 32.8 8.4 64.8 24 93H112c-6.7 0-12.7-4.2-15-10.4s-.5-13.3 4.6-17.7l69.4-59.6-152.6 23.5c-7 1.1-13.9-2.6-16.9-9S0 232.7 5.3 228l125.6-111.5z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            NSI Terminale 2022-2023
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              T3 5 systeme sur puce
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue"  aria-label="Basculer en mode sombre"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Basculer en mode sombre" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9v1Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="blue"  aria-label="Basculer en mode clair"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Basculer en mode clair" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Recherche">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Effacer" aria-label="Effacer" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Onglets" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  Accueil
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../StructureDonnees/index_structDonnees/" class="md-tabs__link">
+          
+  
+    
+  
+  T1 - Struct. données
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../BasesDonnees/index_bd/" class="md-tabs__link">
+          
+  
+    
+  
+  T2 - Bases données
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../index_archi/" class="md-tabs__link">
+          
+  
+    
+  
+  T3 - Archi. mat.
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Programmation/index_prog/" class="md-tabs__link">
+          
+  
+    
+  
+  T4 - Prog.
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Algo/index_algo/" class="md-tabs__link">
+          
+  
+    
+  
+  T5 Algo.
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../BAC/bac_explication/" class="md-tabs__link">
+          
+  
+    
+  
+  BAC 📝
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../epreuve_pratique/" class="md-tabs__link">
+          
+  
+    
+  
+  Annales E.P. 💻
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../divers/prog/" class="md-tabs__link">
+          
+  
+    
+  
+  Extras
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../credit/" class="md-tabs__link">
+        
+  
+    
+  
+  Crédits
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="NSI Terminale 2022-2023" class="md-nav__button md-logo" aria-label="NSI Terminale 2022-2023" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="m352 124.5-51.9-13c-6.5-1.6-11.3-7.1-12-13.8s2.8-13.1 8.7-16.1l40.8-20.4-43.2-32.4c-5.5-4.1-7.8-11.3-5.6-17.9S297.1 0 304 0h160c30.2 0 58.7 14.2 76.8 38.4l57.6 76.8c6.2 8.3 9.6 18.4 9.6 28.8 0 26.5-21.5 48-48 48h-21.5c-17 0-33.3-6.7-45.3-18.7L480 160h-32v21.5c0 24.8 12.8 47.9 33.8 61.1l106.6 66.6c32.1 20.1 51.6 55.2 51.6 93.1 0 60.6-49.1 109.7-109.8 109.7H32.3c-3.3 0-6.6-.4-9.6-1.4-9.2-2.8-16.7-9.6-20.3-18.5C1 488.7.2 485.2 0 481.4c-.2-3.7.3-7.3 1.3-10.7 2.8-9.2 9.6-16.7 18.6-20.4 3-1.2 6.2-2 9.5-2.2L433.3 412c8.3-.7 14.7-7.7 14.7-16.1 0-4.3-1.7-8.4-4.7-11.4l-44.4-44.4c-30-30-46.9-70.7-46.9-113.1V124.5zm160-52.2v-.6.6zm-1.3 7.4-46.4-11.6c-.2 1.3-.3 2.6-.3 3.9 0 13.3 10.7 24 24 24 10.6 0 19.5-6.8 22.7-16.3zm-379.8 36.8c16.3-14.5 40.4-16.2 58.5-4.1l130.6 87V227c0 32.8 8.4 64.8 24 93H112c-6.7 0-12.7-4.2-15-10.4s-.5-13.3 4.6-17.7l69.4-59.6-152.6 23.5c-7 1.1-13.9-2.6-16.9-9S0 232.7 5.3 228l125.6-111.5z"/></svg>
+
+    </a>
+    NSI Terminale 2022-2023
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Accueil
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    T1 - Struct. données
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            T1 - Struct. données
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../StructureDonnees/index_structDonnees/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Structures de données
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    T2 - Bases données
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            T2 - Bases données
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BasesDonnees/index_bd/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Base de données
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BasesDonnees/Modele_Relationnel/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📓 C1 Modèle relationnel
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BasesDonnees/Cours_TP_SQL/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📓 C2 Langage SQL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BasesDonnees/SQL_BAC/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📝 S2 BAC SQL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BasesDonnees/SQL_BAC_correction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📝 S2 BAC SQL Correction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    T3 - Archi. mat.
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            T3 - Archi. mat.
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index_archi/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Architecture matérielle et OS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    T4 - Prog.
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            T4 - Prog.
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programmation/index_prog/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Programmation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programmation/T1_1_Recursivite/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📓 C3 Récursivité
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    T5 Algo.
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            T5 Algo.
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Algo/index_algo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Algorithmique
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    BAC 📝
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            BAC 📝
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BAC/bac_explication/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Information
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    2023
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_2">
+            <span class="md-nav__icon md-icon"></span>
+            2023
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annales/2023/EE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Epreuves écrites
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_3" id="__nav_7_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    2022
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_3">
+            <span class="md-nav__icon md-icon"></span>
+            2022
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annales/2022/EE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Epreuves écrites
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_4" id="__nav_7_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    2021
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_4">
+            <span class="md-nav__icon md-icon"></span>
+            2021
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annales/2021/EE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Epreuves écrites
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Annales E.P. 💻
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Annales E.P. 💻
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../epreuve_pratique/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Déroulement
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../divers/Consigne_EP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Consigne
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../divers/lien/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    S'entrainer en ligne pour l'épreuve pratique
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_4" id="__nav_8_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    2023
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_4">
+            <span class="md-nav__icon md-icon"></span>
+            2023
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annales/2023/EP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Epreuves pratiques
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Extras
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Extras
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../divers/prog/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Divers concours programmation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Projet/forcebrute/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Force brute
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Projet/cryptographie/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cryptographie
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Projet/cryptographie2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cryptographie bis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Projet/pyxel/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    pyxel
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../divers/sujet0_geipi.pdf" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Epreuve GEIPI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../credit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Crédits
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#architecture-de-von-neumann" class="md-nav__link">
+    Architecture de Von Neumann
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qcm" class="md-nav__link">
+    QCM
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#systeme-sur-puce" class="md-nav__link">
+    Système sur puce
+  </a>
+  
+    <nav class="md-nav" aria-label="Système sur puce">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#composition-dun-pc-actuel" class="md-nav__link">
+    Composition d'un pc actuel
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tout-un-pc-sur-une-seule-puce-les-soc" class="md-nav__link">
+    Tout un pc sur une seule puce : les SoC
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cours" class="md-nav__link">
+    Cours
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bac" class="md-nav__link">
+    BAC
+  </a>
+  
+    <nav class="md-nav" aria-label="BAC">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercice-1-dapres-france-remplacement-2022" class="md-nav__link">
+    Exercice 1 : D'aprés France Remplacement 2022
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercice-2-dapres-polynesie-j2-2021" class="md-nav__link">
+    Exercice 2 : D'aprés Polynésie J2 2021
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+
+
+
+
+
+                  
+
+
+<h1 id="c21-systeme-a-puces"><span class='numchapitre'>C21</span> Système à puces <span style='float:right;'><span class="twemoji" title="Architectures matérielles, systèmes d'exploitation et réseaux"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M176 24c0-13.3-10.7-24-24-24s-24 10.7-24 24v40c-35.3 0-64 28.7-64 64H24c-13.3 0-24 10.7-24 24s10.7 24 24 24h40v56H24c-13.3 0-24 10.7-24 24s10.7 24 24 24h40v56H24c-13.3 0-24 10.7-24 24s10.7 24 24 24h40c0 35.3 28.7 64 64 64v40c0 13.3 10.7 24 24 24s24-10.7 24-24v-40h56v40c0 13.3 10.7 24 24 24s24-10.7 24-24v-40h56v40c0 13.3 10.7 24 24 24s24-10.7 24-24v-40c35.3 0 64-28.7 64-64h40c13.3 0 24-10.7 24-24s-10.7-24-24-24h-40v-56h40c13.3 0 24-10.7 24-24s-10.7-24-24-24h-40v-56h40c13.3 0 24-10.7 24-24s-10.7-24-24-24h-40c0-35.3-28.7-64-64-64V24c0-13.3-10.7-24-24-24s-24 10.7-24 24v40h-56V24c0-13.3-10.7-24-24-24s-24 10.7-24 24v40h-56V24zm-16 104h192c17.7 0 32 14.3 32 32v192c0 17.7-14.3 32-32 32H160c-17.7 0-32-14.3-32-32V160c0-17.7 14.3-32 32-32zm192 32H160v192h192V160z"/></svg></span></span><a class="headerlink" href="#c21-systeme-a-puces" title="Permanent link">⚓︎</a></h1>
+<h2 id="architecture-de-von-neumann">Architecture de Von Neumann<a class="headerlink" href="#architecture-de-von-neumann" title="Permanent link">⚓︎</a></h2>
+<p><img alt="" class="center" src="../data/inside.jpg" width="50%" /></p>
+<p>On distingue 4 zones essentielles :</p>
+<ul>
+<li>le <strong>CPU</strong> (Central Processing Unit) qui contient lui-même :  <ul>
+<li>l'<strong>Unité Arithmétique et Logique</strong> (UAL) dans laquelle sont effectuées les opérations de base (addition, multiplication...) Cette zone comporte notamment les <strong>registres</strong> (peu nombreux, de l'ordre de la dizaine) qui sont les espaces de travail ultra-rapides dans lesquels l'UAL va effectuer ses calculs. Une fois ceux-ci effectués, les valeurs des registres repartent dans la mémoire.  </li>
+<li>l'<strong>Unité de contrôle</strong>, qui va séquencer les opérations. Lorsqu'on parle d'un processeur à 3 GHz, cela signifie (approximativement) que Unité de Contrôle va envoyer l'ordre d'une nouvelle opération à l'UAL 3 milliards de fois par seconde.</li>
+</ul>
+</li>
+<li>la <strong>mémoire</strong>, qui contient <strong>à la fois</strong> les données à traiter <strong>et</strong> les instructions du programme. Cette idée de stocker <strong>au même endroit données et programme</strong> est l'idée centrale de l'architecture von Neumann.</li>
+<li>les <strong>bus</strong> de communication (des fils électriques permettant de transporter les données entre les différents composants).</li>
+<li>les <strong>Entrées/Sorties</strong>, permettant de gérer les informations avec l'extérieur.</li>
+</ul>
+<p><img alt="" class="center" src="../data/Von_Neumann_architecture_fr.svg.png" width="50%" /></p>
+<h2 id="qcm">QCM<a class="headerlink" href="#qcm" title="Permanent link">⚓︎</a></h2>
+<div class="admonition fabquestion">
+<p class="admonition-title"><strong>1.</strong> Dans le modèle d'architecture de Von Neumann, quel est le rôle de l'unité de contrôle ?</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Réponses</label><label for="__tabbed_1_2">Correction</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<ul class="task-list">
+<li class="task-list-item"><input type="checkbox"/> a) Gérer le séquençage (l'ordre) des opérations</li>
+<li class="task-list-item"><input type="checkbox"/> b) Effectuer les opérations</li>
+<li class="task-list-item"><input type="checkbox"/> c) Lire les données</li>
+<li class="task-list-item"><input type="checkbox"/> d) Stocker les données</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<ul class="task-list">
+<li class="task-list-item"><input type="checkbox" checked/> a) <mark>Gérer le séquençage (l'ordre) des opérations</mark> </li>
+<li class="task-list-item"><input type="checkbox"/> b) <del>Effectuer les opérations</del> </li>
+<li class="task-list-item"><input type="checkbox"/> c) <del>Lire les données</del> </li>
+<li class="task-list-item"><input type="checkbox"/> d) <del>Stocker les données</del> </li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="admonition fabquestion">
+<p class="admonition-title"><strong>2.</strong> Dans le modèle d'architecture de Von Neumann, que signifie UAL ?</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Réponses</label><label for="__tabbed_2_2">Correction</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<ul class="task-list">
+<li class="task-list-item"><input type="checkbox"/> a) Unité Active de Lecture</li>
+<li class="task-list-item"><input type="checkbox"/> b) Unité Additive et Logique</li>
+<li class="task-list-item"><input type="checkbox"/> c) Unité Arithmétique et Logique</li>
+<li class="task-list-item"><input type="checkbox"/> d) Unité Active et logique</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<ul class="task-list">
+<li class="task-list-item"><input type="checkbox"/> a) <del>Unité Active de Lecture</del> </li>
+<li class="task-list-item"><input type="checkbox"/> b) <del>Unité Additive et Logique</del> </li>
+<li class="task-list-item"><input type="checkbox" checked/> c) <mark>Unité Arithmétique et Logique</mark> </li>
+<li class="task-list-item"><input type="checkbox"/> d) <del>Unité Active et logique</del> </li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="admonition fabquestion">
+<p class="admonition-title"><strong>3.</strong> Quel est le rôle de l'unité arithmétique et logique dans un ordinateur ?</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Réponses</label><label for="__tabbed_3_2">Correction</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<ul class="task-list">
+<li class="task-list-item"><input type="checkbox"/> a) Afficher les informations</li>
+<li class="task-list-item"><input type="checkbox"/> b) Définir l'ordre des opérations</li>
+<li class="task-list-item"><input type="checkbox"/> c) Effectuer les opérations</li>
+<li class="task-list-item"><input type="checkbox"/> d) Stocker les informations</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<ul class="task-list">
+<li class="task-list-item"><input type="checkbox"/> a) <del>Afficher les informations</del> </li>
+<li class="task-list-item"><input type="checkbox"/> b) <del>Définir l'ordre des opérations</del> </li>
+<li class="task-list-item"><input type="checkbox" checked/> c) <mark>Effectuer les opérations</mark> </li>
+<li class="task-list-item"><input type="checkbox"/> d) <del>Stocker les informations</del> </li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="admonition fabquestion">
+<p class="admonition-title"><strong>4.</strong> Le composant élémentaire d'un ordinateur, circuit électronique ne pouvant être que dans deux états (0 ou 1) s'appelle :</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Réponses</label><label for="__tabbed_4_2">Correction</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<ul class="task-list">
+<li class="task-list-item"><input type="checkbox"/> a) Un transistor</li>
+<li class="task-list-item"><input type="checkbox"/> b) Une radio</li>
+<li class="task-list-item"><input type="checkbox"/> c) Un processeur</li>
+<li class="task-list-item"><input type="checkbox"/> d) Une porte logique</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<ul class="task-list">
+<li class="task-list-item"><input type="checkbox" checked/> a) <mark>Un transistor</mark> </li>
+<li class="task-list-item"><input type="checkbox"/> b) <del>Une radio</del> </li>
+<li class="task-list-item"><input type="checkbox"/> c) <del>Un processeur</del> </li>
+<li class="task-list-item"><input type="checkbox"/> d) <del>Une porte logique</del> </li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<h2 id="systeme-sur-puce">Système sur puce<a class="headerlink" href="#systeme-sur-puce" title="Permanent link">⚓︎</a></h2>
+<h3 id="composition-dun-pc-actuel">Composition d'un pc actuel<a class="headerlink" href="#composition-dun-pc-actuel" title="Permanent link">⚓︎</a></h3>
+<p><img alt="image" class="center" src="../data/inside.jpg" width="50%" /></p>
+<p>Chaque composant a un rôle spécifique. Ils communiquent entre eux par des <strong>bus</strong> de différentes vitesses. Chaque composant est remplaçable, et il est possible d'ajouter de nouveaux composants sur la carte mère qui possède des slots d'extension.</p>
+<h3 id="tout-un-pc-sur-une-seule-puce-les-soc">Tout un pc sur une seule puce : les SoC<a class="headerlink" href="#tout-un-pc-sur-une-seule-puce-les-soc" title="Permanent link">⚓︎</a></h3>
+<h4 id="lintegration-de-composants-differents-au-sein-dune-meme-puce">L'intégration de composants différents au sein d'une même puce<a class="headerlink" href="#lintegration-de-composants-differents-au-sein-dune-meme-puce" title="Permanent link">⚓︎</a></h4>
+<p>Le principe d'un <strong>système sur puce</strong> ou <strong>System On a Chip</strong> (SoC) est d'intégrer au sein d'une puce unique un ensemble de composants habituellement physiquement dissociés dans un ordinateur classique (ordinateur de bureau ou ordinateur portable).</p>
+<p>On peut retrouver ainsi au sein d'une <strong>même puce</strong> :</p>
+<ul>
+<li>le microprocesseur (CPU)</li>
+<li>la carte graphique (GPU)</li>
+<li>la mémoire RAM</li>
+</ul>
+<p>+ éventuellement des composants de communication (WiFi, Bluetooth...)</p>
+<div class="admonition abstract">
+<p class="admonition-title">Avantages et inconvénients d'un SoC <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/2764.svg" title=":heart:" /></p>
+<p><img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/2705.svg" title=":white_check_mark:" /> <strong>Avantages</strong></p>
+<ul>
+<li>moindre consommation électrique</li>
+<li>moindre encombrement</li>
+<li>pas besoin de refroidissement</li>
+<li>meilleure sécurité (vue globale sur la sécurité qui n'est plus dépendante d'une multitude de composants)</li>
+<li>moindre coût (forte automisation du processus, gros volumes de production)</li>
+</ul>
+<p><img alt="📛" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f4db.svg" title=":name_badge:" /> <strong>Inconvénients</strong></p>
+<ul>
+<li>Impossibilité de choisir indépendamment ses composants</li>
+<li>Pas de mise à jour possible / remplacement / ajout d'un composant</li>
+<li>La panne d'un seul composant entraîne la panne totale du SoC</li>
+</ul>
+</div>
+<h2 id="cours">Cours<a class="headerlink" href="#cours" title="Permanent link">⚓︎</a></h2>
+<p>Vous pouvez télécharger une copie au format pdf du diaporama de synthèse de cours :</p>
+<p><span class='centre'><a class="md-button" href="../pdf/../../pdf/C21/C21-cours.pdf" target="_blank">Diaporama de cours <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M64 464h32v48H64c-35.3 0-64-28.7-64-64V64C0 28.7 28.7 0 64 0h165.5c17 0 33.3 6.7 45.3 18.7l90.5 90.5c12 12 18.7 28.3 18.7 45.3V288h-48V160h-80c-17.7 0-32-14.3-32-32V48H64c-8.8 0-16 7.2-16 16v384c0 8.8 7.2 16 16 16zm112-112h32c30.9 0 56 25.1 56 56s-25.1 56-56 56h-16v32c0 8.8-7.2 16-16 16s-16-7.2-16-16V368c0-8.8 7.2-16 16-16zm32 80c13.3 0 24-10.7 24-24s-10.7-24-24-24h-16v48h16zm96-80h32c26.5 0 48 21.5 48 48v64c0 26.5-21.5 48-48 48h-32c-8.8 0-16-7.2-16-16V368c0-8.8 7.2-16 16-16zm32 128c8.8 0 16-7.2 16-16v-64c0-8.8-7.2-16-16-16h-16v96h16zm80-112c0-8.8 7.2-16 16-16h48c8.8 0 16 7.2 16 16s-7.2 16-16 16h-32v32h32c8.8 0 16 7.2 16 16s-7.2 16-16 16h-32v48c0 8.8-7.2 16-16 16s-16-7.2-16-16V368z"/></svg></span></a></span></p>
+<div class="admonition warning">
+<p class="admonition-title">Attention</p>
+<p>Ce diaporama n'est qu'une synthèse de cours et ne donne que quelques points de repères pour de vos révisions.</p>
+</div>
+<h2 id="bac">BAC<a class="headerlink" href="#bac" title="Permanent link">⚓︎</a></h2>
+<h3 id="exercice-1-dapres-france-remplacement-2022"><img alt="▪" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/25aa.svg" title=":black_small_square:" />   Exercice 1 : <em>D'aprés France Remplacement 2022</em><a class="headerlink" href="#exercice-1-dapres-france-remplacement-2022" title="Permanent link">⚓︎</a></h3>
+<p>Parmi les schémas suivants, lequel représente le mieux une architecture de Von Neumann :</p>
+<p><img alt="" class="center" src="../images_21_NSIJ2PO2-ex4/archi5.png" width="75%" /></p>
+<h3 id="exercice-2-dapres-polynesie-j2-2021"><img alt="▪" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/25aa.svg" title=":black_small_square:" />   Exercice 2 : <em>D'aprés Polynésie J2 2021</em><a class="headerlink" href="#exercice-2-dapres-polynesie-j2-2021" title="Permanent link">⚓︎</a></h3>
+<p>Cet exercice traite principalement du thème « architectures matérielles, systèmes d'exploitation et réseaux ». </p>
+<p>Cet exercice mobilise des connaissances sur le routage et sur l'évolution des architectures des machines. </p>
+<p><strong>Partie A : Routage dans un réseau informatique</strong></p>
+<ol>
+<li>
+<p>Expliquer pourquoi le protocole TCP-IP prévoit un découpage en paquets et une encapsulation des fichiers transférés d'un ordinateur à un autre via Internet. </p>
+</li>
+<li>
+<p>On souhaite modéliser un réseau informatique par un graphe pondéré pour identifier le chemin optimal pour un paquet. 
+   a. Préciser ce que représentent les sommets et les arêtes du graphe.<br />
+   b. Préciser si le protocole RIP utilise le nombre de sauts ou le délai de réception comme poids des arêtes. </p>
+</li>
+</ol>
+<p><strong>Partie B : Système d’exploitation</strong></p>
+<p>Un système d’exploitation doit assurer la gestion des processus et des ressources.  </p>
+<ol>
+<li>Dans ce contexte, expliquer et illustrer par un exemple ce qu’est une situation d’interblocage (deadlock). </li>
+<li>Citer des mécanismes permettant d’éviter ces situations. </li>
+</ol>
+<p><strong>Partie C : Architectures matérielles Architecture Von Neumann</strong></p>
+<blockquote>
+<p>« L'architecture dite architecture de Von Neumann est un modèle pour un ordinateur qui utilise une structure de stockage unique pour conserver à la fois les instructions et les données demandées ou produites par le calcul. De telles machines sont aussi connues sous le nom d’ordinateur à programme enregistré. »</p>
+</blockquote>
+<p>Elle décompose l'ordinateur en 4 éléments : l'unité de contrôle (appelé aussi unité de commande), l'unité arithmétique et logique (UAL), la mémoire et les entrées-sorties. Les deux premiers éléments sont rassemblés dans le processeur (CPU en anglais pour Control Processing Unit).</p>
+<ol>
+<li>Recopier et compléter le schéma de cette architecture ci-dessous en faisant apparaître les communications entre les différents éléments. </li>
+</ol>
+<p><img alt="" class="center" src="../images_21_NSIJ2PO2-ex4/archi1.png" width="75%" /></p>
+<ol>
+<li>Dans quel(s) élément(s) sont situés le « compteur de programme » (CP ou IP en anglais pour Instruction Pointer) et le « registre d'instruction » (RI ou IR en anglais pour Instruction Register). Préciser leurs rôles. </li>
+</ol>
+<p><strong>Architecture de Harvard</strong></p>
+<blockquote>
+<p>« L'architecture de type Harvard est une conception qui sépare physiquement la mémoire de données et la mémoire programme. L'accès à chacune des deux mémoires s'effectue via deux bus distincts. […] L'architecture Harvard est souvent utilisée dans les processeurs numériques de signal (DSP) et les microcontrôleurs. »  </p>
+</blockquote>
+<ol>
+<li>Recopier et compléter le schéma de cette architecture ci-dessous et faire apparaître les communications entre les différents éléments. </li>
+</ol>
+<p><img alt="" class="center" src="../images_21_NSIJ2PO2-ex4/archi2.png" width="75%" /></p>
+<ol>
+<li>Expliquer ce qu'est une mémoire morte et une mémoire vive. Expliquer brièvement pourquoi, dans les microcontrôleurs, la mémoire programme est une mémoire morte. </li>
+</ol>
+<p><strong>Partie D : Système sur puce</strong>  </p>
+<blockquote>
+<p>« Un "système sur une puce", souvent désigné dans la littérature scientifique par le terme anglais "system on a chip" (d'où son abréviation SoC), est un système complet embarqué sur une seule puce ("circuit intégré"), pouvant comprendre de la mémoire, un ou plusieurs microprocesseurs, des périphériques d'interface, ou tout autre composant nécessaire à la réalisation de la fonction attendue. »   </p>
+</blockquote>
+<ol>
+<li>Citer un des avantages d'avoir plusieurs processeurs. </li>
+<li>Expliquer pourquoi les systèmes sur puces intègrent en général des bus ayant des vitesses de transmission différentes. </li>
+<li>Citer un des avantages d'un circuit imprimé de petite taille. </li>
+<li>Citer un des inconvénients de cette miniaturisation. </li>
+</ol>
+<details class="reponse">
+<summary>Reponse</summary>
+<p><strong>Partie A</strong></p>
+<ol>
+<li>[0.25 point] Pour permettre une détection et une correction plus facile des erreurs.  </li>
+<li>a. [0.25 point] Les sommets sont les routeurs ou ordinateurs. Les arrêtes sont les liaisons entre ces éléments.<br />
+   b. [0.25 point] Le nombre de sauts.  </li>
+</ol>
+<p><strong>Partie B</strong>  </p>
+<ol>
+<li>[0.5point] On suppose que l’on a deux processus A et B bloquant respectivement les ressources c et d. Si Battend cetAattendd, il y ainterblocage.  </li>
+<li>[0.25 point] On peut veiller à ce qu’un processus libère une ressource avant d’en attendre une autre.  </li>
+</ol>
+<p><strong>Partie C</strong>  </p>
+<ol>
+<li>
+<p>[0.25 point] 
+<img alt="" class="center" src="../images_21_NSIJ2PO2-ex4/archi3.png" width="75%" />  </p>
+</li>
+<li>
+<p>[0.5 point] Unité arithmétique et logique Sorties Entrées Le CP est situé dans l’unité de contrôle, il contient l’adresse mémoire de l’instruction en cours d’exécution. Le RIest aussi situé dans l’unité de contrôle, il contient l’instruction en cours d’exécution. </p>
+</li>
+<li>[0.25 point] 
+<img alt="" class="center" src="../images_21_NSIJ2PO2-ex4/archi4.png" width="75%" />   </li>
+<li>[0.5 point] Une mémoire morte se conserve sans alimentation contrairement à une mémoire vive. La mémoire programme est une mémoire morte dans un microcontrôleur car il faut la conserver lorsqu’on coupe l’alimentation. </li>
+</ol>
+<p><strong>Partie D</strong> </p>
+<ol>
+<li>[0.25 point] On peut effectuer plusieurs tâches en parallèle. </li>
+<li>[0.25 point] Les vitesses d’échange avec les entrées / sorties peuvent être différentes de ceux avec la mémoire.  </li>
+<li>[0.25 point] Les échanges entre les éléments sont plus rapides.    </li>
+<li>[0.25 point] Il est impossible de changer un seul élément en cas de panne, il faut tout changer. La puissance de calcul est généralement plus faible.</li>
+</ol>
+</details>
+<details class="quote">
+<summary>Bibliographie / Sitographie</summary>
+<ul>
+<li>Numérique et Sciences Informatiques, Terminale, T. BALABONSKI, S. CONCHON, J.-C. FILLIATRE, K. NGUYEN, éditions ELLIPSES.</li>
+<li>Prépabac NSI, Terminale, G.CONNAN, V.PETROV, G.ROZSAVOLGYI, L.SIGNAC, éditions HATIER.</li>
+<li>Site de G.Glassus</li>
+</ul>
+</details>
+
+
+
+
+
+                
+
+<style>
+    .jp-RenderedHTMLCommon p {
+        font-size: 0.8rem;
+        line-height: 1.6;
+    }
+
+    .jp-RenderedHTMLCommon li {
+        font-size: .8rem;
+        line-height: 1.6;
+    }
+
+    .jp-RenderedHTMLCommon h1 {
+        margin: 0 0 1.25em;
+        color: var(--md-default-fg-color--light);
+        font-weight: 300;
+        font-size: 2em;
+        line-height: 1.3;
+        letter-spacing: -0.01em;
+    }
+
+    .jp-RenderedHTMLCommon h2 {
+        margin: 1.6em 0 .64em;
+        font-weight: 300;
+        font-size: 1.965em;
+        line-height: 1.4;
+        letter-spacing: -0.01em;
+    }
+
+    .jp-RenderedHTMLCommon h3 {
+        margin: 1.6em 0 .8em;
+        font-weight: 400;
+        font-size: 1.57em;
+        line-height: 1.5;
+        letter-spacing: -0.01em;
+    }
+
+    .jp-RenderedHTMLCommon hr {
+        border: none;
+    }
+</style>
+
+
+
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Retour en haut de la page
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.expand", "navigation.top", "navigation.sections", "navigation.indexes", "navigation.tracking", "header.autohide", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.81fa17fe.min.js"></script>
+      
+        <script src="../../xtra/mathjax.js"></script>
+      
+        <script src="../../javascripts/config.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/gh/rod2ik/cdn@main/mkdocs/javascripts/massilia-admonitions.js"></script>
+      
+    
+  </body>
+</html>

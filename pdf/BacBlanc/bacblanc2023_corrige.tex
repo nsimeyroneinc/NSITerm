@@ -1,0 +1,432 @@
+\documentclass[a4paper, 11pt]{article}
+
+\title{
+  \rule{\linewidth}{0.8pt}
+  \Large{\scshape{\textbf{Numérique et Science Informatique}}}
+
+  \vspace{0.5cm}
+  \large{\textit{Bac Blanc - Corrigé}}
+
+  \rule[10pt]{\linewidth}{0.8pt}
+    }
+\author{}
+\date{20 février 2023}
+
+%-------------------------------------------------------
+% Les packages
+%-------------------------------------------------------
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+% \usepackage{multicol} % les colonnes
+\usepackage[french]{babel}
+\addto\captionsfrench{\def\tablename{Tableau}}
+\addto\captionsfrench{\def\figurename{Figure}}
+\usepackage{lmodern}
+\usepackage{hyperref} % liens hypertextes
+% \usepackage{graphicx} % insertion d'images
+\usepackage{booktabs} % Les tableaux
+\usepackage{amssymb} % symboles maths
+\usepackage{amsmath} % symboles maths
+% \usepackage{blindtext} % faux texte
+\usepackage{float} % positionnement des tableaux et autres flottants
+\usepackage{multirow} % lignes fusionnées dans les tableaux 
+\usepackage{lastpage} % compter les pages
+
+%-------------------------------------------------------
+% Figure geogebra -> tikz
+%-------------------------------------------------------
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows, positioning, snakes, calc, shapes.misc, decorations.shapes, decorations.markings, backgrounds}
+
+%-------------------------------------------------------
+% Dimension de la page
+%-------------------------------------------------------
+%\usepackage[a4paper, total={17cm, 25cm}, includehead, headsep=12pt]{geometry} %taille de la page et marges
+\usepackage[a4paper,vmargin=1.5cm,hmargin=1.5cm,tmargin=2cm,bmargin=1.5cm]{geometry}
+%-------------------------------------------------------
+% Longueurs personnelles
+%-------------------------------------------------------
+% \setlength{\textfloatsep}{0.1cm}
+\setlength{\parskip}{6pt}
+\setlength{\parindent}{15pt}
+% \setlength{\textfloatsep}{10pt plus 1.0pt minus 2.0pt}
+% \setlength{\floatsep}{10pt plus 1.0pt minus 2.0pt}
+% \setlength{\intextsep}{10pt plus 1.0pt minus 2.0pt}
+\newlength{\aftercode}
+\setlength{\aftercode}{20pt}
+
+%-------------------------------------------------------
+% Les entêtes et pied de pages
+%-------------------------------------------------------
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\scriptsize Terminale - NSI}
+\fancyhead[R]{\scriptsize Bac Blanc}
+\fancyfoot[C]{\scriptsize - $\thepage$/\pageref{LastPage} -}
+\renewcommand{\headrulewidth}{0.3pt}
+\renewcommand{\footrulewidth}{0.3pt}
+
+%-------------------------------------------------------
+% La numérotation des questions et des listes
+%-------------------------------------------------------
+\usepackage[shortlabels]{enumitem}
+\setlist[itemize,1]{label=\textbullet} % le label des listes de niveau 1 est un bullet
+\setlist[itemize,2]{label=$\circ$} % le label des listes de niveau 2 est un bullet vide
+\setlist[itemize,3]{label=$\diamond$} % le label des listes de niveau 3 est un diamant
+
+
+%-------------------------------------------------------
+% L'environnement Exercice
+%-------------------------------------------------------
+\newcounter{exercice}
+\newenvironment{Exercice}[1][]{
+    \refstepcounter{exercice}
+    \par
+    \noindent
+    {\large
+    \underline{\textit{Exercice~\theexercice~:}}~#1}
+    % \vspace{\parskip}
+    \par}
+    {\vspace{1em}}
+
+%-------------------------------------------------------
+% Dossiers contenant les images
+%-------------------------------------------------------
+\graphicspath{ 
+	{images/}
+}
+
+%-------------------------------------------------------
+% L'environnement Question
+%-------------------------------------------------------
+\newcounter{question}[exercice]
+\newenvironment{Question}{
+    \refstepcounter{question}
+    \begin{list}{}{%
+      \setlength{\labelindent}{\parindent}
+      \setlength{\leftmargin}{2\parindent}
+      \setlength{\parsep}{\parskip} % Espacement vertical des sous-paragraphes
+    }
+    \item[\medskip\textbf{\thequestion.}]}
+    {\end{list}}
+
+%-------------------------------------------------------
+% L'environnement subQuestion
+%-------------------------------------------------------
+\newcounter{subquestion}[question]
+\newenvironment{subQuestion}{
+    \refstepcounter{subquestion}
+    \begin{list}{}{%
+      \setlength{\leftmargin}{12pt}
+      \setlength{\labelwidth}{8pt}
+      \setlength{\labelsep}{4pt}
+      \setlength{\listparindent}{0em}
+      \setlength{\itemindent}{0em}
+      \setlength{\parsep}{\parskip} % Espacement vertical des sous-paragraphes
+    }
+    \item[\medskip\textbf{\alph{subquestion}.}]}
+    {\end{list}}
+  
+
+%-------------------------------------------------------
+% Création de couleurs
+%-------------------------------------------------------
+\usepackage{xcolor}
+\definecolor{bg_gris}{rgb}{0.95,0.95,0.95}
+
+%-------------------------------------------------------
+% Mise en forme du code
+%-------------------------------------------------------
+\usepackage[newfloat=false]{minted}
+\setminted{autogobble, tabsize=4, breaklines, breakafter=_, linenos, numberblanklines=false, resetmargins, frame=leftline}
+% Environnement python code
+\newminted{python}{} % permet d'utiliser \begin{pythoncode} pour écrire du python
+
+% Environnement mintinlinepy
+\newmintinline[mintinlinepy]{python}{breaklines, breakafter=_} % permet d'utiliser \mintinlinepy{...} pour écrire du python en ligne
+    
+% Environnement textcode
+\newminted{text}{} % permet d'utiliser \begin{textcode} pour écrire du code en français
+% \BeforeBeginEnvironment{textcode}{\vspace{-2\parskip}\begin{listing}[H]}
+% \AfterEndEnvironment{textcode}{\end{listing}\vspace{-\aftercode}}
+
+% Environnement textcode
+\newmintinline[mintinlinetext]{text}{breaklines, breakafter=_} % permet d'utiliser \mintinlinetext{...} pour écrire du code en ligne en français
+
+
+% Environnement de code sur plusieurs pages
+\usepackage{caption}
+\newenvironment{longcode}{\captionsetup{type=listing}}{}
+
+%-------------------------------------------------------
+% Commandes personnelles
+%-------------------------------------------------------
+\newcommand{\python}{\texttt{python}}
+% \renewcommand{\thesection}{\Alph{section}.}
+%-------------------------------------------------------
+
+% Le document
+%-------------------------------------------------------
+\begin{document}
+
+%-------------------------------------------------------
+% La page de titre
+%-------------------------------------------------------
+\maketitle
+\thispagestyle{fancy}
+
+\begin{Exercice}[\textit{Base de données} \hfill 8 points]
+
+  \begin{Question}
+    La table \mintinline{SQL}{Articles} utilise des clés étrangères des tables 
+    \mintinline{SQL}{Auteurs} et \mintinline{SQL}{Themes}. Si ces dernières sont vides, il n'est pas possible de lier
+    les valeurs et donc on ne peut pas insérer de valeurs.
+  \end{Question}
+
+  \begin{Question}
+    On saisit \mintinline{SQL}{INSERT INTO Traitements (article, theme) VALUES  (2, 4)}
+\end{Question}
+
+\begin{Question}
+    On saisit \mintinline{SQL}{UPDATE Auteurs SET nom = "Jèraus" WHERE idAuteur = 2}
+  \end{Question}
+
+  \begin{Question}
+    \begin{subQuestion}
+        Le titre des articles parus après le $1^{er}$ janvier 2022 inclus :
+        \begin{minted}{SQL}
+SELECT titre 
+FROM Articles
+WHERE dateParution >= 20220101
+        \end{minted}
+    \end{subQuestion}
+    \begin{subQuestion}
+        Le titre des articles écrits par l'auteur Étienne Zola :
+        \begin{minted}{SQL}
+SELECT titre
+FROM Articles
+WHERE auteur = 3
+        \end{minted}
+    \end{subQuestion}
+    \begin{subQuestion}
+        Le nombre d'articles écrits par l'auteur Jacques Pulitzer (présent dans la table \mintinline{SQL}{Auteurs} mais on ne connaît pas son \mintinline{SQL}{idAuteur}) :
+        \begin{minted}{SQL}
+SELECT count(*)
+FROM Articles
+JOIN auteurs ON Articles.auteur = Auteurs.idAuteur
+WHERE nom LIKE "Pulitzer" AND prenom LIKE "Jacques"
+        \end{minted}
+    \end{subQuestion}
+    \begin{subQuestion}
+        Les dates de parution des articles traitant du thème \og Sport \fg\:
+        \begin{minted}{SQL}
+SELECT date
+FROM Articles
+JOIN Traitements ON Articles.idArticle = Traitements.article
+JOIN Themes ON Traitements.theme = Themes.idTheme
+WHERE Themes.themes LIKE "Sport"
+        \end{minted}
+    \end{subQuestion}
+  \end{Question}
+
+\end{Exercice}
+
+\newpage
+
+\begin{Exercice}[\textit{Arbres binaires équilibrés} \hfill 12 points]
+
+  \noindent{\textbf{Partie A :}}
+  \setcounter{question}{0}
+
+  \begin{Question}
+    \begin{subQuestion}
+      On obtient :
+
+      \begin{figure}[H]
+        \begin{center}
+          \footnotesize{
+            \begin{tikzpicture}[level distance=1cm,level 1/.style={sibling distance=4cm},
+                level 2/.style={sibling distance=2cm},
+                level 3/.style={sibling distance=1.5cm}]
+              \tikzstyle{every node}=[draw, circle, minimum size=7mm, inner sep=1mm]
+    
+              \node at (0,0) (9) {9} []
+              child {node (6) {6}
+                  child {node (3) {3}
+                      child {node (2) {2}}
+                      child {node[draw=none] {} edge from parent [draw=none]}
+                    }
+                  child {node (7) {7}
+                    }
+                }
+              child {node (15) {15}
+                  child {node[draw=none] {} edge from parent [draw=none]}
+                  child {node (18) {18}
+                      child {node (16) {16}}
+                      child {node[draw=none] {} edge from parent [draw=none]}
+                    }
+                };
+
+                \node[draw=none, xshift=-6mm, yshift=0mm] at (9) {0};
+                \node[draw=none, xshift=-6mm, yshift=0mm] at (6) {-1};
+                \node[draw=none, xshift=-6mm, yshift=0mm] at (15) {2};
+                \node[draw=none, xshift=-6mm, yshift=0mm] at (3) {-1};
+                \node[draw=none, xshift=-6mm, yshift=0mm] at (7) {0};
+                \node[draw=none, xshift=-6mm, yshift=0mm] at (18) {-1};
+                \node[draw=none, xshift=-6mm, yshift=0mm] at (2) {0};
+                \node[draw=none, xshift=-6mm, yshift=0mm] at (16) {0};
+    
+            \end{tikzpicture}
+          }
+        \end{center}
+      \end{figure}
+    \end{subQuestion}
+    \begin{subQuestion}
+      Cet arbre n'est pas équilibré car le nœud de valeur 15 a une balance de 2.
+    \end{subQuestion}
+  \end{Question}
+
+
+  \begin{Question}
+    \begin{subQuestion}
+      On obtient \mintinlinepy{[0, 45, 40, 48, 17, 43, 46, 49, 14, 19]}
+    \end{subQuestion}
+
+    \begin{subQuestion}
+      On obtient :
+
+      \begin{figure}[H]
+        \begin{center}
+          \footnotesize{
+            \begin{tikzpicture}[level distance=1cm,level 1/.style={sibling distance=4cm},
+                level 2/.style={sibling distance=2cm},
+                level 3/.style={sibling distance=1.5cm}]
+              \tikzstyle{every node}=[draw, circle, minimum size=7mm, inner sep=1mm]
+    
+              \node at (0,0) {35} []
+              child {node {30}
+                child {node {20}
+                  child {node {2}}
+                  child {node[draw=none] {} edge from parent [draw=none]}
+                }
+                child {node {23}}
+              }
+              child {node {12}
+                child{node {10}}
+                child{node {5}}
+              };
+            \end{tikzpicture}
+          }
+        \end{center}
+      \end{figure}   
+    \end{subQuestion}
+  \end{Question}
+
+
+  \begin{Question}
+    \begin{subQuestion}
+      \mintinlinepy{f(arbre, 1)} renvoie 3. En effet, si l'arbre est vide ou si la valeur de sa racine est \mintinlinepy{None}, on renvoie $0$. Dans le cas contraire, on renvoie
+      $1$ plus de maximum des résultats des sous-arbres gauches et droits (indices \mintinlinepy{2*i} et \mintinlinepy{2*i+1}). On calcule ainsi la hauteur de l'arbre.
+    \end{subQuestion}
+    \begin{subQuestion}
+      La fonction \mintinlinepy{f} permet de calculer la hauteur d'un arbre.
+    \end{subQuestion}
+  \end{Question}
+
+  \begin{Question}
+    \begin{minted}[]{python}
+def estEquilibre(arbre: list, i : int) -> bool:
+   if i >= len(arbre) or arbre[i] is None:
+        return True
+    else:
+        balance = f(arbre, 2*i+1) - f(arbre, 2*i)
+        reponse = balance in [-1, 0, 1]
+        return reponse and estEquilibre(arbre,2*i) and estEquilibre(arbre, 2*i+1)
+\end{minted}
+  \end{Question}
+
+  \noindent{\textbf{Partie B :}}
+  \setcounter{question}{0}
+
+  \begin{Question}
+    \begin{itemize}
+      \item Parcours \textit{préfixe} : 45, 40, 17, 14, 19, 43, 48, 46, 49
+      \item Parcours \textit{infixe} : 14, 17, 19, 40, 43, 45, 46, 48, 49 
+      \item Parcours \textit{suffixe} : 14, 19, 17, 43, 40, 46, 49, 48, 45
+    \end{itemize}
+  \end{Question}
+
+  \begin{Question}
+    On obtient :
+
+      \begin{figure}[H]
+        \begin{center}
+          \footnotesize{
+            \begin{tikzpicture}[level distance=1cm,level 1/.style={sibling distance=4cm},
+                level 2/.style={sibling distance=2cm},
+                level 3/.style={sibling distance=1.5cm}]
+              \tikzstyle{every node}=[draw, circle, minimum size=7mm, inner sep=1mm]
+    
+              \node at (0,0) {23}
+                child {node {21}
+                  child {node {20}}
+                  child {node {22}}
+                }
+                child {node {25}
+                  child {node {24}}
+                  child {node[draw=none] {} edge from parent [draw=none]}
+                };
+            \end{tikzpicture}
+          }
+        \end{center}
+      \end{figure}   
+  \end{Question}
+  
+  \begin{Question}
+    On propose :
+\begin{minted}{python}
+def infixe(arbre: list) -> list:
+    pile = []
+    visites = []
+    n = 1
+    repetition = True
+    while repetition :
+        while n < len(arbre) and arbre[n] is not None :
+            pile.append(n)
+            n = 2*n
+        if len(pile) == 0 :
+            repetition = False
+        else :
+            n = pile.pop()
+            visites.append(arbre[n])
+            n = 2*n+1
+    return visites
+\end{minted}
+  \end{Question}
+
+  \begin{Question}
+    On propose :
+\begin{minted}{python}
+def construitABR(i, ordre):
+    while len(nouveau) <= i:
+        nouveau.append(None)
+
+    i_milieu = len(ordre)//2
+    nouveau[i] = ordre[i_milieu]
+    
+    gauche = ordre[:i_milieu]
+    if len(gauche) > 0:
+        construitABR(2*i, gauche)
+    
+    droite = ordre[(i_milieu+1):]
+    if len(droite) > 0:
+        construitABR(2*i+1, droite)
+\end{minted}
+  \end{Question}
+
+\end{Exercice}
+
+\end{document}

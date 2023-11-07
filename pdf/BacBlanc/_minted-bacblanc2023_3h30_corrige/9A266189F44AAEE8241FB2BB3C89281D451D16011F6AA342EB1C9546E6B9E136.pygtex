@@ -1,0 +1,6 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{SELECT}\PYG{+w}{ }\PYG{k}{count}\PYG{p}{(}\PYG{o}{*}\PYG{p}{)}
+\PYG{k}{FROM}\PYG{+w}{ }\PYG{n}{Articles}
+\PYG{k}{JOIN}\PYG{+w}{ }\PYG{n}{auteurs}\PYG{+w}{ }\PYG{k}{ON}\PYG{+w}{ }\PYG{n}{Articles}\PYG{p}{.}\PYG{n}{auteur}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{Auteurs}\PYG{p}{.}\PYG{n}{idAuteur}
+\PYG{k}{WHERE}\PYG{+w}{ }\PYG{n}{nom}\PYG{+w}{ }\PYG{k}{LIKE}\PYG{+w}{ }\PYG{l+s+ss}{\PYGZdq{}Pulitzer\PYGZdq{}}\PYG{+w}{ }\PYG{k}{AND}\PYG{+w}{ }\PYG{n}{prenom}\PYG{+w}{ }\PYG{k}{LIKE}\PYG{+w}{ }\PYG{l+s+ss}{\PYGZdq{}Jacques\PYGZdq{}}
+\end{Verbatim}

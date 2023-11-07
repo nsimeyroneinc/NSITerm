@@ -1,0 +1,2261 @@
+<!-- Ajout pour le bouton de téléchargement et le style des jupyter notebook   https://github.com/danielfrg/mkdocs-jupyter -->
+
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Cours et TD de l'année en cours">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../images/dragon.svg">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.8">
+    
+    
+      
+        <title>TD Graphe - NSI Terminale 2022-2023</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.4b4a2bd9.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.356b1318.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rod2ik/cdn@main/mkdocs/css/massilia-admonitions.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#un-peu-de-vocabulaire-sur-les-graphes" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="../.." title="NSI Terminale 2022-2023" class="md-header__button md-logo" aria-label="NSI Terminale 2022-2023" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="m352 124.5-51.9-13c-6.5-1.6-11.3-7.1-12-13.8s2.8-13.1 8.7-16.1l40.8-20.4-43.2-32.4c-5.5-4.1-7.8-11.3-5.6-17.9S297.1 0 304 0h160c30.2 0 58.7 14.2 76.8 38.4l57.6 76.8c6.2 8.3 9.6 18.4 9.6 28.8 0 26.5-21.5 48-48 48h-21.5c-17 0-33.3-6.7-45.3-18.7L480 160h-32v21.5c0 24.8 12.8 47.9 33.8 61.1l106.6 66.6c32.1 20.1 51.6 55.2 51.6 93.1 0 60.6-49.1 109.7-109.8 109.7H32.3c-3.3 0-6.6-.4-9.6-1.4-9.2-2.8-16.7-9.6-20.3-18.5C1 488.7.2 485.2 0 481.4c-.2-3.7.3-7.3 1.3-10.7 2.8-9.2 9.6-16.7 18.6-20.4 3-1.2 6.2-2 9.5-2.2L433.3 412c8.3-.7 14.7-7.7 14.7-16.1 0-4.3-1.7-8.4-4.7-11.4l-44.4-44.4c-30-30-46.9-70.7-46.9-113.1V124.5zm160-52.2v-.6.6zm-1.3 7.4-46.4-11.6c-.2 1.3-.3 2.6-.3 3.9 0 13.3 10.7 24 24 24 10.6 0 19.5-6.8 22.7-16.3zm-379.8 36.8c16.3-14.5 40.4-16.2 58.5-4.1l130.6 87V227c0 32.8 8.4 64.8 24 93H112c-6.7 0-12.7-4.2-15-10.4s-.5-13.3 4.6-17.7l69.4-59.6-152.6 23.5c-7 1.1-13.9-2.6-16.9-9S0 232.7 5.3 228l125.6-111.5z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            NSI Terminale 2022-2023
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              TD Graphe
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue"  aria-label="Basculer en mode sombre"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Basculer en mode sombre" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9v1Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="blue"  aria-label="Basculer en mode clair"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Basculer en mode clair" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Recherche">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Effacer" aria-label="Effacer" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Onglets" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  Accueil
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../StructureDonnees/index_structDonnees/" class="md-tabs__link">
+          
+  
+    
+  
+  T1 - Struct. données
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../BasesDonnees/index_bd/" class="md-tabs__link">
+          
+  
+    
+  
+  T2 - Bases données
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Archi_Materielle/index_archi/" class="md-tabs__link">
+          
+  
+    
+  
+  T3 - Archi. mat.
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Programmation/index_prog/" class="md-tabs__link">
+          
+  
+    
+  
+  T4 - Prog.
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Algo/index_algo/" class="md-tabs__link">
+          
+  
+    
+  
+  T5 Algo.
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../BAC/bac_explication/" class="md-tabs__link">
+          
+  
+    
+  
+  BAC 📝
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../epreuve_pratique/" class="md-tabs__link">
+          
+  
+    
+  
+  Annales E.P. 💻
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../divers/prog/" class="md-tabs__link">
+          
+  
+    
+  
+  Extras
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../credit/" class="md-tabs__link">
+        
+  
+    
+  
+  Crédits
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="NSI Terminale 2022-2023" class="md-nav__button md-logo" aria-label="NSI Terminale 2022-2023" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="m352 124.5-51.9-13c-6.5-1.6-11.3-7.1-12-13.8s2.8-13.1 8.7-16.1l40.8-20.4-43.2-32.4c-5.5-4.1-7.8-11.3-5.6-17.9S297.1 0 304 0h160c30.2 0 58.7 14.2 76.8 38.4l57.6 76.8c6.2 8.3 9.6 18.4 9.6 28.8 0 26.5-21.5 48-48 48h-21.5c-17 0-33.3-6.7-45.3-18.7L480 160h-32v21.5c0 24.8 12.8 47.9 33.8 61.1l106.6 66.6c32.1 20.1 51.6 55.2 51.6 93.1 0 60.6-49.1 109.7-109.8 109.7H32.3c-3.3 0-6.6-.4-9.6-1.4-9.2-2.8-16.7-9.6-20.3-18.5C1 488.7.2 485.2 0 481.4c-.2-3.7.3-7.3 1.3-10.7 2.8-9.2 9.6-16.7 18.6-20.4 3-1.2 6.2-2 9.5-2.2L433.3 412c8.3-.7 14.7-7.7 14.7-16.1 0-4.3-1.7-8.4-4.7-11.4l-44.4-44.4c-30-30-46.9-70.7-46.9-113.1V124.5zm160-52.2v-.6.6zm-1.3 7.4-46.4-11.6c-.2 1.3-.3 2.6-.3 3.9 0 13.3 10.7 24 24 24 10.6 0 19.5-6.8 22.7-16.3zm-379.8 36.8c16.3-14.5 40.4-16.2 58.5-4.1l130.6 87V227c0 32.8 8.4 64.8 24 93H112c-6.7 0-12.7-4.2-15-10.4s-.5-13.3 4.6-17.7l69.4-59.6-152.6 23.5c-7 1.1-13.9-2.6-16.9-9S0 232.7 5.3 228l125.6-111.5z"/></svg>
+
+    </a>
+    NSI Terminale 2022-2023
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Accueil
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    T1 - Struct. données
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            T1 - Struct. données
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../StructureDonnees/index_structDonnees/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Structures de données
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    T2 - Bases données
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            T2 - Bases données
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BasesDonnees/index_bd/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Base de données
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BasesDonnees/Modele_Relationnel/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📓 C1 Modèle relationnel
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BasesDonnees/Cours_TP_SQL/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📓 C2 Langage SQL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BasesDonnees/SQL_BAC/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📝 S2 BAC SQL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BasesDonnees/SQL_BAC_correction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📝 S2 BAC SQL Correction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    T3 - Archi. mat.
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            T3 - Archi. mat.
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Archi_Materielle/index_archi/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Architecture matérielle et OS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    T4 - Prog.
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            T4 - Prog.
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programmation/index_prog/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Programmation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programmation/T1_1_Recursivite/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📓 C3 Récursivité
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    T5 Algo.
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            T5 Algo.
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Algo/index_algo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Algorithmique
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    BAC 📝
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            BAC 📝
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BAC/bac_explication/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Information
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    2023
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_2">
+            <span class="md-nav__icon md-icon"></span>
+            2023
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annales/2023/EE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Epreuves écrites
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_3" id="__nav_7_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    2022
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_3">
+            <span class="md-nav__icon md-icon"></span>
+            2022
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annales/2022/EE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Epreuves écrites
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_4" id="__nav_7_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    2021
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_4">
+            <span class="md-nav__icon md-icon"></span>
+            2021
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annales/2021/EE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Epreuves écrites
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Annales E.P. 💻
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Annales E.P. 💻
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../epreuve_pratique/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Déroulement
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../divers/Consigne_EP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Consigne
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../divers/lien/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    S'entrainer en ligne pour l'épreuve pratique
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_4" id="__nav_8_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    2023
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_4">
+            <span class="md-nav__icon md-icon"></span>
+            2023
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annales/2023/EP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Epreuves pratiques
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Extras
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Extras
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../divers/prog/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Divers concours programmation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Projet/forcebrute/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Force brute
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Projet/cryptographie/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cryptographie
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Projet/cryptographie2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cryptographie bis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Projet/pyxel/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    pyxel
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../divers/sujet0_geipi.pdf" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Epreuve GEIPI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../credit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Crédits
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#un-peu-de-vocabulaire-sur-les-graphes" class="md-nav__link">
+    Un peu de vocabulaire sur les graphes
+  </a>
+  
+    <nav class="md-nav" aria-label="Un peu de vocabulaire sur les graphes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vocabulaire-des-graphes-non-orientes" class="md-nav__link">
+    Vocabulaire des graphes non orientés
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vocabulaire-des-graphes-orientes" class="md-nav__link">
+    Vocabulaire des graphes orientés
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#graphes-values-ou-ponderees" class="md-nav__link">
+    Graphes valués ou pondérées
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reseaux-sociaux-modelisation-par-un-graphe" class="md-nav__link">
+    Réseaux sociaux : modélisation par un graphe
+  </a>
+  
+    <nav class="md-nav" aria-label="Réseaux sociaux : modélisation par un graphe">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#principe-de-la-modelisation-par-un-graphe-non-oriente" class="md-nav__link">
+    Principe de la modélisation par un graphe non orienté
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation-dun-graphe-non-oriente-a-laide-dune-matrice-dadjacence" class="md-nav__link">
+    Implémentation d'un graphe non orienté à l'aide d'une matrice d'adjacence
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation-dun-graphe-oriente-a-laide-dune-matrice-dadjacence" class="md-nav__link">
+    Implémentation d'un graphe orienté à l'aide d'une matrice d'adjacence
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#representation-par-matrice-dadjacence-exercice" class="md-nav__link">
+    Représentation par matrice d'adjacence -- Exercice
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#representation-par-listes-des-successeurs" class="md-nav__link">
+    Représentation par listes des successeurs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#efficacite-des-representations" class="md-nav__link">
+    Efficacité des représentations
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+
+
+
+
+
+                  
+
+
+  <h1>TD Graphe</h1>
+
+<p>Le programme de N.S.I en Terminale :</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Contenus</th>
+<th style="text-align: left;">Capacités attendues</th>
+<th style="text-align: center;">Commentaires</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Graphes - structures relationnelles.</td>
+<td style="text-align: left;">Modéliser des situations sous forme de graphes</td>
+<td style="text-align: center;">On s'appuie sur des exemples comme le réseau routier, le réseau électrique, Internet, les réseaux sociaux.</td>
+</tr>
+<tr>
+<td style="text-align: center;">Sommets, arcs, arêtes, graphes orientés ou non orientés.</td>
+<td style="text-align: left;">Écrire les implémentations correspondantes d'un graphe : matrice d'adjacence, liste de successeurs/de prédécesseurs.</td>
+<td style="text-align: center;">Le choix de la représentation dépend du traitement qu'on veut mettre en place :</td>
+</tr>
+<tr>
+<td style="text-align: center;">Passer d'une représentation à une autre.</td>
+<td style="text-align: left;">on fait le lien avec la rubrique « algorithmique »</td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<p>Initiée par le grand mathématicien suisse <strong>Euler</strong>, avec le célèbre
+problème des 7 ponts de Königsberg, les applications de la théorie des
+graphes et de la recherche opérationnelle sont aujourd'hui immenses tant
+au plan civil que militaire :</p>
+<ul>
+<li>aide à la prise de décision ;  </li>
+<li>recherche de la meilleure stratégie ;</li>
+<li>optimisation (plus court chemin, GPS, coût minimal, ordonnancement des  tâches ...) ;  </li>
+<li>réseaux de transports (autoroutes, chemins de fer, métro, lignes aériennes ...) ;  </li>
+<li>transport de l'énergie (électricité, gaz ...) ;  </li>
+<li>transport de l'informations : internet, réseaux sociaux ...  </li>
+</ul>
+<p>La théorie des graphes n'est pas une branche indépendante des mathématiques, elle se rattache à la programmation linéaire, la programmation convexe (où le concept plus général de fonction convexe remplace les fonctions linéaires et affines), le calcul des probabilités.<br />
+Les graphes sont une <strong><em>structure de données</em></strong> très riche permettant de <strong><em>modéliser des situations variées de relations</em></strong> entre un ensemble d'entités :</p>
+<ul>
+<li>entre les ordinateurs du réseau internet ;<br />
+<img alt="" class="center" src="../data/internet.png" width="350px" />  </li>
+<li>entre des personnes sur un réseau social ;<br />
+<img alt="" class="center" src="../data/reseau_sociaux.png" width="350px" />  </li>
+<li>entre les villes dans un réseau routier ou de distribution ;<br />
+<img alt="" class="center" src="../data/reseau_routier.png" width="350px" />   </li>
+<li>entre les atomes d'une molécule ;<br />
+<img alt="" class="center" src="../data/moleculle.png" width="350px" />   </li>
+<li>etc  </li>
+</ul>
+<h2 id="un-peu-de-vocabulaire-sur-les-graphes">Un peu de vocabulaire sur les graphes<a class="headerlink" href="#un-peu-de-vocabulaire-sur-les-graphes" title="Permanent link">⚓︎</a></h2>
+<div class="admonition voc">
+<p class="admonition-title">Ce qu'il faut retenir</p>
+<p>D’un point de vue mathématique, un graphe est la donnée</p>
+<ul>
+<li>d’un certain nombre de points du plan, appelés <strong><em>sommets</em></strong> ,  </li>
+<li>certains étant reliés par des segments de droites ou de courbes     (simples) appelés <strong><em>arêtes</em></strong> ,  </li>
+<li>la disposition des sommets et la forme choisie pour les arêtes n’intervenant pas.  </li>
+<li>Le nombre de sommets du graphe est son <strong><em>ordre</em></strong>.  </li>
+</ul>
+</div>
+<p>Sauf indication contraire, un graphe sera considéré comme non orienté et
+les arêtes pourront être parcourues dans les deux sens.  </p>
+<h3 id="vocabulaire-des-graphes-non-orientes">Vocabulaire des graphes non orientés<a class="headerlink" href="#vocabulaire-des-graphes-non-orientes" title="Permanent link">⚓︎</a></h3>
+<div class="admonition voc">
+<p class="admonition-title">Ce qu'il faut retenir</p>
+<p>Dans le cas des graphes non orientés, les relations entre deux sommets se font dans les deux sens.
+On appelle ses relations des arêtes (edges en anglais), et on a les définitions suivantes :  </p>
+<ul>
+<li><strong><em>Sommets adjacents</em></strong> : deux sommets sont adjacents s’ils sont reliés entre eux par une arête.<br />
+On dit que l’arête est incidente aux deux sommets.  </li>
+<li><strong><em>Voisins d’un sommet x</em></strong> : ce sont tous les sommets reliés à x par une arête.  </li>
+<li><strong><em>Degré d’un sommet x</em></strong> : nombre d’arêtes incidentes au sommet, on le note d (x).  </li>
+<li><strong><em>Chaîne</em></strong> : séquence ordonnée d’arêtes telle que chaque arête a une extrémité en commun avec l’arête suivante.  </li>
+<li><strong><em>Cycle</em></strong> : dans un graphe non orienté, un cycle est une suite d’arêtes consécutives (chaîne) dont les deux sommets extrémités sont identiques.  </li>
+<li><strong><em>Boucle</em></strong> : il peut exister des arêtes entre un sommet x et lui-même. Elles sont appelés boucles.  </li>
+</ul>
+</div>
+<p><img alt="" class="center" src="../data/graphe11.png" width="450px" /></p>
+<div class="admonition exo">
+<p class="admonition-title">Exercice 1 </p>
+<ul>
+<li>Citer des sommets adjacents.  </li>
+<li>Donner le degré de chacun des sommets.  </li>
+<li>Citer une chaîne.  </li>
+<li>Donner un cycle.  </li>
+<li>Y-t-il une boucle ?</li>
+</ul>
+</div>
+<h3 id="vocabulaire-des-graphes-orientes">Vocabulaire des graphes orientés<a class="headerlink" href="#vocabulaire-des-graphes-orientes" title="Permanent link">⚓︎</a></h3>
+<div class="admonition voc">
+<p class="admonition-title">Ce qu'il faut retenir</p>
+<p>Dans le cas des graphes orientés, les arêtes ont un sens et elles sont appelées arcs. Par exemple,<br />
+l’arête a = (x, y) indique qu’il y a un arc d’origine x et d’extrémité finale y. De plus, on a les définitions suivantes.  </p>
+<ul>
+<li><strong><em>Successeurs et prédécesseurs d’un sommet x</em></strong> : dans un graphe orienté on ne parle plus de voisins d’un sommet mais de ses successeurs et de ses prédécesseurs : le successeurs de x sont tous les sommets y tels qu’il existe un arc (x, y) (de x vers y) et les prédécesseurs de x sont tous les sommets w tels qu’il existe un arc (w, x) (de w vers x).  </li>
+<li><strong><em>Chemin</em></strong> : séquence ordonnée d’arcs consécutifs (on parlait de chaîne dans un graphe non orienté).  </li>
+<li><strong><em>Circuit</em></strong> : dans un graphe orienté, un circuit est une suite d’arcs consécutifs (chemin) dont les deux sommets extrémités sont identiques.  </li>
+<li><strong><em>Degré d’un sommet x</em></strong> : cette notion existe aussi dans le cas des graphes orientés. On distingue le degré entrant d’un sommet x (noté <span class="arithmatex">\(d_-(x)\)</span>= nombre de prédécesseurs de x) et le degré sortant d’un sommet x (noté <span class="arithmatex">\(d_+(x)\)</span>= nombre de successeurs de x ). Le degré d’un sommet x vaut <span class="arithmatex">\(d (x) = d_+(x) + d_-(x)\)</span>.
+• <strong><em>Boucle</em></strong> : ce sont les arcs entre un sommet et lui-même.</li>
+</ul>
+</div>
+<p><img alt="" class="center" src="../data/graphe12.png" width="350px" /></p>
+<div class="admonition exo">
+<p class="admonition-title">Exercice 2</p>
+<ul>
+<li>Citer le(s) successeurs de A et le(s) prédécesseur(s) de A.  </li>
+<li>Donner le degré de chacun des sommets.  </li>
+<li><span class="arithmatex">\(A,B,F\)</span> est-il un chemin.  </li>
+<li>Donner un circuit.  </li>
+<li>Y-t-il une boucle ?</li>
+</ul>
+</div>
+<h3 id="graphes-values-ou-ponderees">Graphes valués ou pondérées<a class="headerlink" href="#graphes-values-ou-ponderees" title="Permanent link">⚓︎</a></h3>
+<div class="admonition voc">
+<p class="admonition-title">Ce qu'il faut retenir</p>
+<p>Certains graphes (orientés ou non) sont dits valués : on ajoute un coût (ou valuation, ou poids) à chaque arête/arc. Dans le cas d'un graphe représentant un réseau routier, le coût sur chaque arête pourrait, par exemple, être la distance entre deux villes.</p>
+</div>
+<p><img alt="" src="../data/graphe13.png" /></p>
+<h2 id="reseaux-sociaux-modelisation-par-un-graphe">Réseaux sociaux : modélisation par un graphe<a class="headerlink" href="#reseaux-sociaux-modelisation-par-un-graphe" title="Permanent link">⚓︎</a></h2>
+<p>Au premier trimestre 2020, Facebook© revendiquait 2,6 milliards d'utilisateurs actifs chaque mois, en hausse de 9,2% par rapport à début 2019. Le réseau social américain a passé la barre symbolique des 2 milliards au deuxième trimestre 2017. A noter que 42% des utilisateurs actifs mensuels de Facebook viennent d'Asie-Pacifique, 15,6% sont Européens et 9,7% sont Nord-américains. Facebook permet à ses utilisateurs d'entrer des informations personnelles et d'interagir avec
+d'autres utilisateurs. Les interactions entre utilisateurs reposent sur la notion « d'amis ».</p>
+<h3 id="principe-de-la-modelisation-par-un-graphe-non-oriente">Principe de la modélisation par un graphe non orienté<a class="headerlink" href="#principe-de-la-modelisation-par-un-graphe-non-oriente" title="Permanent link">⚓︎</a></h3>
+<p>Imaginez un réseau social ayant 7 abonnés (L, M, N, O, P, Q et R) où :</p>
+<ul>
+<li>
+<p>L est ami avec M, N, O et P ;</p>
+</li>
+<li>
+<p>M est ami avec L et P ;</p>
+</li>
+<li>
+<p>N est ami avec L, O et P ;</p>
+</li>
+<li>
+<p>O est ami avec L,N,P,Q et R ;</p>
+</li>
+<li>
+<p>P est ami avec O,L et M ;</p>
+</li>
+<li>
+<p>Q est ami avec N et O ;</p>
+</li>
+<li>
+<p>R est ami avec O.</p>
+</li>
+</ul>
+<p>La description de ce réseau social, malgré son faible nombre d'abonnés,
+est déjà quelque peu compliquée, alors imaginez cette même description
+avec un réseau social comportant des millions d'entre eux !<br />
+Il existe un moyen plus "visuel" pour représenter ce réseau social :<br />
+on peut représenter chaque abonné par un cercle (avec le nom de l'abonné
+situé dans le cercle) et chaque relation "X est ami avec Y" par un
+segment de droite reliant X et Y ("X est ami avec Y" et "Y est ami
+avec X" étant représenté par le même segment de droite). Le mini-réseau
+social décrit précédemment peut être modélisé sous la forme du graphe
+ci-dessous :</p>
+<p><img alt="" src="../data/graphe14.png" /></p>
+<div class="admonition voc">
+<p class="admonition-title">Un peu de vocabulaire sur les graphes des réseaux sociaux...</p>
+<ul>
+<li>La <strong><em>distance</em></strong> entre deux sommets d’un graphe est le nombre minimum d’arêtes pour aller du sommet à un autre.<br />
+Exemple : entre L et R la distance est 2.  </li>
+<li>L’<strong><em>écartement</em></strong> d’un sommet est la distance maximale existant entre ce sommet et les autres sommets du graphe.<br />
+Exemple : pour le sommet Q, la plus grande distance avec un autre sommet est 3 ; l’écartement est donc de 3.  </li>
+<li>Le <strong><em>centre</em></strong> d’un graphe est le sommet d’écartement minimal (le centre n’est pas nécessairement unique).<br />
+Exemple : les sommets Q et R ont un écartement de 3, les autres un écartement de 2 ; les centres sont donc L, N, O, P.  </li>
+<li>Le <strong><em>rayon</em></strong> d’un graphe est l’écartement d’un centre du graphe.<br />
+Exemple : les centres L, N, O, P ont un écartement de 2 ; le rayon du graphe est donc 2.  </li>
+<li>Le <strong><em>diamètre</em></strong> d’un graphe est la distance maximale entre deux sommets du graphe.<br />
+Exemple : l’écartement max étant 3 (entre Q et M ou entre R et M), le diamètre du graphe est 3.</li>
+</ul>
+</div>
+<div class="admonition exo">
+<p class="admonition-title">Exercice 3</p>
+<ul>
+<li>
+<p>Construisez un graphe de réseau social à partir des informations suivantes :</p>
+</li>
+<li>
+<p>A est ami avec B, D et E ;  </p>
+</li>
+<li>B est ami avec A, C et D ;  </li>
+<li>C est ami avec B et D ;  </li>
+<li>D est ami avec A, B, C et E ;  </li>
+<li>E est ami avec A et F ;  </li>
+<li>
+<p>F est ami avec E.</p>
+</li>
+<li>
+<p>Compléter le tableau ci-dessous des distances entre sommets : <br />
+<img alt="" src="../data/tableau1.png" />    </p>
+</li>
+<li>
+<p>Quel est le centre du graphe  </p>
+</li>
+<li>Quel est le rayon du graphe ?  </li>
+<li>Quel est le diamètre du graphe ?</li>
+</ul>
+</div>
+<h3 id="implementation-dun-graphe-non-oriente-a-laide-dune-matrice-dadjacence">Implémentation d'un graphe non orienté à l'aide d'une matrice d'adjacence<a class="headerlink" href="#implementation-dun-graphe-non-oriente-a-laide-dune-matrice-dadjacence" title="Permanent link">⚓︎</a></h3>
+<p>Un <strong>graphe non orienté</strong> peut être transcrit sous la forme d'une
+matrice d'adjacence qui sera simple à coder dans un programme Python.</p>
+<div class="admonition voc">
+<p class="admonition-title">Matrice d'adjacence</p>
+<p>Une matrice M est un tableau de nombres, qui peut être représenté en machine par un tableau de tableaux (ou une liste de listes) noté matrice. Chaque nombre de cette matrice est repéré par son numéro de ligne <span class="arithmatex">\(i\)</span> et son numéro de colonne <span class="arithmatex">\(j\)</span>.<br />
+On note ce nombre <span class="arithmatex">\(M_{i,j}\)</span> et on peut y accéder par l'instruction <code>matrice[i][j]</code>.<br />
+Un graphe à <span class="arithmatex">\(n\)</span> sommets peut être représentée par une matrice d'adjacence de taille <span class="arithmatex">\(n \times n\)</span>, où la valeur du coefficient d'indice <span class="arithmatex">\(i,j\)</span> dépend de l'existence d'une arête ou d'un arc reliant les sommets <span class="arithmatex">\(i\)</span> et <span class="arithmatex">\(j\)</span>.</p>
+</div>
+<p><strong>Comment construire une matrice d'adjacence ?</strong></p>
+<p>Il faut savoir qu'à chaque ligne correspond un sommet du graphe et qu'à
+chaque colonne correspond aussi un sommet du graphe. À chaque
+intersection ligne <span class="arithmatex">\(i\)</span>-colonne <span class="arithmatex">\(j\)</span> (ligne <span class="arithmatex">\(i\)</span> correspond au sommet <span class="arithmatex">\(i\)</span>
+et colonne <span class="arithmatex">\(j\)</span> correspond au sommet <span class="arithmatex">\(j\)</span>), on place un 1 s'il existe une
+arête entre le sommet <span class="arithmatex">\(i\)</span> et le sommet <span class="arithmatex">\(j\)</span>, et un zéro s'il n'existe pas
+d'arête entre le sommet <span class="arithmatex">\(i\)</span> et le sommet <span class="arithmatex">\(j\)</span>.</p>
+<p>En d'autre terme, pour construire la matrice d'adjacence associée à un
+graphe, il suffit, pour chaque intersection ligne / colonne, de répondre
+à la question :<br />
+Est-ce que le sommet « X » est relié directement au sommet « Y » par une
+arête ?<br />
+Si la réponse est OUI → 1<br />
+Si la réponse est NON → 0  </p>
+<p><strong>Graphe non orienté est ami avec</strong></p>
+<p><img alt="" src="../data/graphe15.png" /></p>
+<p>En Python on code une matrice d'adjacence sous la forme d'une liste de listes. Chaque sous-liste représente une colonne de la matrice d'adjacence.</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="c1">#Matrice d&#39;adjacence :</span>
+<span class="n">m</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+     <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+     <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+     <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+     <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+     <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+<span class="p">]</span>
+</code></pre></div>
+<div class="admonition ugli-note">
+<p class="admonition-title">Remarque</p>
+<ul>
+<li>Une matrice d’adjacence est qualifiée de matrice carrée car elle comporte toujours le même nombre de lignes et de colonnes.</li>
+<li>Dans le cadre d’un graphe non orienté de type « est ami avec », les éléments de la matrice d’adjacence associée sont symétrique par rapport à la grande diagonale des 0.</li>
+</ul>
+</div>
+<div class="admonition exo">
+<p class="admonition-title">Exercice 4</p>
+<ul>
+<li>Compléter la matrice d'adjacence et écrire son codage Python correspondant au graphe non orienté suivant traduisant la relation « est ami avec »</li>
+</ul>
+<p><img alt="" src="../data/graphe16.png" /></p>
+<ul>
+<li>Écrire un programme Python permettant de calculer le nombre d'amis de chaque utilisateur du réseau « d'amitiés » précédent à partir de la matrice d'adjacence.</li>
+</ul>
+</div>
+<h3 id="implementation-dun-graphe-oriente-a-laide-dune-matrice-dadjacence">Implémentation d'un graphe orienté à l'aide d'une matrice d'adjacence<a class="headerlink" href="#implementation-dun-graphe-oriente-a-laide-dune-matrice-dadjacence" title="Permanent link">⚓︎</a></h3>
+<p>Dans le modèle du mini-réseau social précédent, le graphe est non
+orienté : il traduit seulement le fait qu'un utilisateur est ami avec un
+autre (relation bijective). La notion de « followers » que l'on
+rencontre dans de nombreux réseaux sociaux (Twitter en est un exemple),
+nécessite quant à elle d'orienter les arêtes du graphe (elles deviennent
+alors des arcs) afin de traduire la relation « X » suit « Y ».<br />
+Ainsi dans l'exemple de graphe orienté ci-dessous, Alice (origine) suit
+Zoé et Chloé (extrémités).</p>
+<p><strong>Graphe orienté est ami avec</strong></p>
+<p><img alt="" src="../data/graphe17.png" />
+<img alt="" src="../data/tableau2.png" /></p>
+<div class="admonition exo">
+<p class="admonition-title">Exercice 5</p>
+<ul>
+<li>Comment peut-on obtenir facilement le nombre de personnes suivies par une personne donnée ? Écrire la fonction Python correspondante.  </li>
+<li>Comment peut-on obtenir facilement le nombre de personnes qui suivent une personne donnée ? Écrire la fonction Python correspondante.  </li>
+<li>Compléter le programme Python afin qu'il affiche, pour une personne donnée, le nombre de personnes qu'elle suit et le nombre de personnes qui la suivent?</li>
+</ul>
+</div>
+<h2 id="representation-par-matrice-dadjacence-exercice">Représentation par matrice d'adjacence -- Exercice<a class="headerlink" href="#representation-par-matrice-dadjacence-exercice" title="Permanent link">⚓︎</a></h2>
+<p>On considère le graphe non orienté suivant :</p>
+<p><img alt="" src="../data/graphe18.png" /></p>
+<div class="admonition fabquestion">
+<p class="admonition-title">Question</p>
+<p>Écrire la matrice d'adjacence</p>
+</div>
+<div class="admonition voc">
+<p class="admonition-title">Ce qu'il faut retenir</p>
+<p>Dans le cas d'un graphe non orienté, la matrice d'adjacence est nécessairement symétrique par rapport à sa diagonale :<br />
+on a <span class="arithmatex">\(M_{i,j}=M_{j,i}\)</span>.gr</p>
+</div>
+<p>On considère le graphe orienté suivant :</p>
+<p><img alt="" src="../data/graphe19.png" /></p>
+<div class="admonition fabquestion">
+<p class="admonition-title">Question</p>
+<p>Écrire la matrice d'adjacence</p>
+</div>
+<div class="admonition voc">
+<p class="admonition-title">Ce qu'il faut retenir</p>
+<p>Comme les arcs ont un sens, la matrice d'adjacence d'un graphe orienté n'est généralement pas symétrique.</p>
+</div>
+<h2 id="representation-par-listes-des-successeurs">Représentation par listes des successeurs<a class="headerlink" href="#representation-par-listes-des-successeurs" title="Permanent link">⚓︎</a></h2>
+<p>Une autre façon de représenter un graphe est d'associer à chaque sommet
+la liste des sommets auxquels il est relié. Dans le cas d'un graphe
+orienté, on parle de liste de successeurs, alors que dans le cas d'un
+graphe non orienté on parle de liste de voisins.</p>
+<p>Une façon simple et efficace est d'utiliser un dictionnaire où chaque
+sommet est associé à la liste de ses successeurs/voisins.</p>
+<p><strong>Exemple : Graphe non orienté</strong></p>
+<p><img alt="" src="../data/graphe20.png" /></p>
+<p>Ce graphe peut être représenté par le dictionnaire suivant, où les clés
+sont les sommets et les valeurs sont les listes de voisins.</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">graphe1</span> <span class="o">=</span> <span class="p">{</span>
+ <span class="s2">&quot;A&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="s2">&quot;F&quot;</span><span class="p">,</span> <span class="s2">&quot;G&quot;</span><span class="p">],</span>
+ <span class="s2">&quot;B&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="s2">&quot;F&quot;</span><span class="p">],</span>
+ <span class="s2">&quot;C&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="s2">&quot;D&quot;</span><span class="p">,</span> <span class="s2">&quot;F&quot;</span><span class="p">],</span>
+ <span class="s2">&quot;D&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="s2">&quot;E&quot;</span><span class="p">],</span>
+ <span class="s2">&quot;E&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;D&quot;</span><span class="p">,</span> <span class="s2">&quot;E&quot;</span><span class="p">,</span> <span class="s2">&quot;F&quot;</span><span class="p">],</span>
+ <span class="s2">&quot;F&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="s2">&quot;E&quot;</span><span class="p">,</span> <span class="s2">&quot;G&quot;</span><span class="p">],</span>
+ <span class="s2">&quot;G&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;F&quot;</span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Exemple : Graphe orienté</strong></p>
+<p><img alt="" src="../data/graphe21.png" /></p>
+<div class="admonition fabquestion">
+<p class="admonition-title">Question</p>
+<p>Complétez le programme suivant :</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">graphe2</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;A&quot;</span><span class="p">:</span> <span class="o">...</span>
+    <span class="s2">&quot;B&quot;</span><span class="p">:</span> <span class="o">...</span>
+    <span class="s2">&quot;C&quot;</span><span class="p">:</span> <span class="o">...</span>
+    <span class="s2">&quot;D&quot;</span><span class="p">:</span> <span class="o">...</span>
+    <span class="s2">&quot;E&quot;</span><span class="p">:</span> <span class="o">...</span>
+    <span class="s2">&quot;F&quot;</span><span class="p">:</span> <span class="o">...</span>
+    <span class="s2">&quot;G&quot;</span><span class="p">:</span> <span class="o">...</span>
+    <span class="p">}</span>
+</code></pre></div>
+</div>
+<p><strong>Un autre exemple</strong></p>
+<p><img alt="" src="../data/graphe22.png" /></p>
+<p>Le code suivant permet d'implémenter un graphe en langage Python</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">graphe</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>    <span class="c1"># création d&#39;un dictionnaire vide </span>
+<span class="n">graphe</span><span class="p">[</span><span class="s2">&quot;A&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;B&quot;</span><span class="p">,</span><span class="s2">&quot;C&quot;</span><span class="p">,</span><span class="s2">&quot;E&quot;</span><span class="p">,</span><span class="s2">&quot;F&quot;</span><span class="p">,</span><span class="s2">&quot;H&quot;</span><span class="p">]</span> <span class="c1"># liens de A vers les sommets listés</span>
+<span class="n">graphe</span><span class="p">[</span><span class="s2">&quot;B&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;A&quot;</span><span class="p">,</span><span class="s2">&quot;D&quot;</span><span class="p">,</span><span class="s2">&quot;H&quot;</span><span class="p">]</span>
+<span class="n">graphe</span><span class="p">[</span><span class="s2">&quot;C&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;A&quot;</span><span class="p">,</span><span class="s2">&quot;F&quot;</span><span class="p">,</span> <span class="s2">&quot;G&quot;</span><span class="p">,</span><span class="s2">&quot;H&quot;</span><span class="p">]</span>
+<span class="n">graphe</span><span class="p">[</span><span class="s2">&quot;D&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;B&quot;</span><span class="p">,</span><span class="s2">&quot;H&quot;</span><span class="p">]</span>
+<span class="n">graphe</span><span class="p">[</span><span class="s2">&quot;E&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;A&quot;</span><span class="p">,</span><span class="s2">&quot;H&quot;</span><span class="p">]</span>
+<span class="n">graphe</span><span class="p">[</span><span class="s2">&quot;F&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;A&quot;</span><span class="p">,</span><span class="s2">&quot;C&quot;</span><span class="p">]</span>
+<span class="n">graphe</span><span class="p">[</span><span class="s2">&quot;G&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;C&quot;</span><span class="p">,</span><span class="s2">&quot;H&quot;</span><span class="p">]</span>
+<span class="n">graphe</span><span class="p">[</span><span class="s2">&quot;H&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;A&quot;</span><span class="p">,</span><span class="s2">&quot;B&quot;</span><span class="p">,</span><span class="s2">&quot;C&quot;</span><span class="p">,</span><span class="s2">&quot;D&quot;</span><span class="p">,</span><span class="s2">&quot;E&quot;</span><span class="p">,</span><span class="s2">&quot;G&quot;</span><span class="p">]</span>
+</code></pre></div>
+<div class="admonition ugli-note">
+<p class="admonition-title">Rappel</p>
+<p>Vous avez vu l’an dernier dans le cours sur les dictionnaires, qu’il est possible :  </p>
+<ul>
+<li>d’obtenir l’ensemble des clés avec la méthode keys() en sachant que graphe.keys() est un itérable,  </li>
+<li>d’obtenir l’ensemble des clés avec la méthode values() en sachant que graphe.values() est un itérable.  </li>
+</ul>
+</div>
+<div class="admonition fabquestion">
+<p class="admonition-title">Question</p>
+<p>En s'aidant de la remarque précédente, proposer une fonction ordre en langage Python qui reçoit en paramètre un dictionnaire et renvoie l'ordre de ce graphe. </p>
+</div>
+<div class="admonition fabquestion">
+<p class="admonition-title">Question</p>
+<p>Tester votre fonction ordre en utilisant le graphe de l'exemple introductif, implémenté en langage Python ci-dessus.</p>
+</div>
+<div class="admonition fabquestion">
+<p class="admonition-title">Question</p>
+<p>Écrire une fonction <code>sommets_adjacents</code> qui prend en paramètre un dictionnaire ainsi qu'un sommet sous forme de chaîne de caractères et qui renvoie la liste des sommets adjacents à ce sommet entré comme paramètre.</p>
+</div>
+<div class="admonition fabquestion">
+<p class="admonition-title">Question</p>
+<p>Tester la fonction sommets_adjacents sur le sommet A.</p>
+</div>
+<div class="admonition fabquestion">
+<p class="admonition-title">Question</p>
+<p>Proposer des préconditions.</p>
+</div>
+<div class="admonition fabquestion">
+<p class="admonition-title">Question</p>
+<p>Proposer une fonction <code>lister_aretes</code> qui prend en paramètre un dictionnaire et renvoie la liste des arêtes d'un graphe. Une arête sera représentée par un tuple à deux éléments. ( Attention aux doublons)</p>
+</div>
+<div class="admonition fabquestion">
+<p class="admonition-title">Question</p>
+<p>Écrire une fonction degre qui prend en paramètre un dictionnaire ainsi qu'un sommet sous forme de chaîne de caractères et qui renvoie le degré de ce sommet entré comme paramètre.</p>
+</div>
+<div class="admonition fabquestion">
+<p class="admonition-title">Question</p>
+<p>Tester la fonction degre.</p>
+</div>
+<div class="admonition fabquestion">
+<p class="admonition-title">Question</p>
+<p>Proposer des préconditions.</p>
+</div>
+<div class="admonition fabquestion">
+<p class="admonition-title">Question</p>
+<p>Proposer une fonction nombre_aretes qui prend en paramètre un dictionnaire et renvoie le nombre d'arêtes d'un graphe.</p>
+</div>
+<h2 id="efficacite-des-representations">Efficacité des représentations<a class="headerlink" href="#efficacite-des-representations" title="Permanent link">⚓︎</a></h2>
+<p>La matrice d'adjacence est simple à mettre en œuvre mais nécessite un
+espace mémoire proportionnel à <span class="arithmatex">\(n \times n\)</span> (où <span class="arithmatex">\(n\)</span> est le nombre de
+sommets). Ainsi, un graphe de 1000 sommets nécessitent une matrice d'un
+million de nombres même si le graphe contient peu d'arêtes/arcs. Pour le
+même graphe contenant peu d'arêtes/arcs, le dictionnaire ne mémoriserait
+pour chaque sommet que les voisins/successeurs (les 1) sans avoir à
+mémoriser les autres (les 0). En revanche, pour un graphe contenant
+beaucoup d'arêtes/arcs, la dictionnaire occuperait plus d'espace mémoire
+que la matrice d'adjacence.</p>
+<p>Cela implique en outre que l'accès aux voisins/successeurs d'un sommet
+est plus rapide avec le dictionnaire car il n'est pas nécessaire de
+parcourir toute la ligne de la matrice (<span class="arithmatex">\(n\)</span> valeurs) alors même que
+celle-ci peut ne contenir que très peu de 1.</p>
+<p>De plus, l'utilisation d'un dictionnaire permet de nommer les sommets
+sans ambiguïté et ne les limite pas à des entiers comme c'est le cas
+pour la matrice d'adjacence (même si on peut associer chacun de ces
+entiers au sommet correspondant, ce que nous avons fait précédemment).</p>
+<p>Enfin, au lieu d'utiliser le type liste (list de Python ici) pour
+mémoriser les voisins/successeurs, on peut avantageusement utiliser le
+type ensemble (type prédéfini set de Python) qui est une structure de
+données permettant un accès plus efficace aux éléments (l'implémentation
+se fait par des tables de hachage, hors programme de NSI).</p>
+
+
+
+
+
+                
+
+<style>
+    .jp-RenderedHTMLCommon p {
+        font-size: 0.8rem;
+        line-height: 1.6;
+    }
+
+    .jp-RenderedHTMLCommon li {
+        font-size: .8rem;
+        line-height: 1.6;
+    }
+
+    .jp-RenderedHTMLCommon h1 {
+        margin: 0 0 1.25em;
+        color: var(--md-default-fg-color--light);
+        font-weight: 300;
+        font-size: 2em;
+        line-height: 1.3;
+        letter-spacing: -0.01em;
+    }
+
+    .jp-RenderedHTMLCommon h2 {
+        margin: 1.6em 0 .64em;
+        font-weight: 300;
+        font-size: 1.965em;
+        line-height: 1.4;
+        letter-spacing: -0.01em;
+    }
+
+    .jp-RenderedHTMLCommon h3 {
+        margin: 1.6em 0 .8em;
+        font-weight: 400;
+        font-size: 1.57em;
+        line-height: 1.5;
+        letter-spacing: -0.01em;
+    }
+
+    .jp-RenderedHTMLCommon hr {
+        border: none;
+    }
+</style>
+
+
+
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Retour en haut de la page
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.expand", "navigation.top", "navigation.sections", "navigation.indexes", "navigation.tracking", "header.autohide", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.81fa17fe.min.js"></script>
+      
+        <script src="../../xtra/mathjax.js"></script>
+      
+        <script src="../../javascripts/config.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/gh/rod2ik/cdn@main/mkdocs/javascripts/massilia-admonitions.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,3 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{SELECT}\PYG{p}{,}\PYG{+w}{ }\PYG{k}{FROM}\PYG{p}{,}\PYG{+w}{ }\PYG{k}{WHERE}\PYG{p}{,}\PYG{+w}{ }\PYG{k}{JOIN}\PYG{p}{,}\PYG{+w}{ }\PYG{k}{ON}\PYG{p}{,}\PYG{+w}{ }\PYG{k}{INSERT}\PYG{+w}{ }\PYG{k}{INTO}\PYG{p}{,}\PYG{+w}{ }\PYG{k}{UPDATE}\PYG{p}{,}\PYG{+w}{  }\PYG{k}{SET}\PYG{p}{,}\PYG{+w}{ }\PYG{k}{VALUES}\PYG{p}{,}\PYG{+w}{ }\PYG{k}{COUNT}\PYG{p}{,}\PYG{+w}{ }\PYG{k}{OR}\PYG{p}{,}\PYG{+w}{ }\PYG{k}{AND}\PYG{p}{,}\PYG{+w}{ }\PYG{k}{LIKE}
+\end{Verbatim}

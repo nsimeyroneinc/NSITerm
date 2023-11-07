@@ -1,0 +1,2295 @@
+<!-- Ajout pour le bouton de téléchargement et le style des jupyter notebook   https://github.com/danielfrg/mkdocs-jupyter -->
+
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Cours et TD de l'année en cours">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../images/dragon.svg">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.8">
+    
+    
+      
+        <title>T3 1 arbre - NSI Terminale 2022-2023</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.4b4a2bd9.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.356b1318.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rod2ik/cdn@main/mkdocs/css/massilia-admonitions.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#c10-les-arbres" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="../.." title="NSI Terminale 2022-2023" class="md-header__button md-logo" aria-label="NSI Terminale 2022-2023" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="m352 124.5-51.9-13c-6.5-1.6-11.3-7.1-12-13.8s2.8-13.1 8.7-16.1l40.8-20.4-43.2-32.4c-5.5-4.1-7.8-11.3-5.6-17.9S297.1 0 304 0h160c30.2 0 58.7 14.2 76.8 38.4l57.6 76.8c6.2 8.3 9.6 18.4 9.6 28.8 0 26.5-21.5 48-48 48h-21.5c-17 0-33.3-6.7-45.3-18.7L480 160h-32v21.5c0 24.8 12.8 47.9 33.8 61.1l106.6 66.6c32.1 20.1 51.6 55.2 51.6 93.1 0 60.6-49.1 109.7-109.8 109.7H32.3c-3.3 0-6.6-.4-9.6-1.4-9.2-2.8-16.7-9.6-20.3-18.5C1 488.7.2 485.2 0 481.4c-.2-3.7.3-7.3 1.3-10.7 2.8-9.2 9.6-16.7 18.6-20.4 3-1.2 6.2-2 9.5-2.2L433.3 412c8.3-.7 14.7-7.7 14.7-16.1 0-4.3-1.7-8.4-4.7-11.4l-44.4-44.4c-30-30-46.9-70.7-46.9-113.1V124.5zm160-52.2v-.6.6zm-1.3 7.4-46.4-11.6c-.2 1.3-.3 2.6-.3 3.9 0 13.3 10.7 24 24 24 10.6 0 19.5-6.8 22.7-16.3zm-379.8 36.8c16.3-14.5 40.4-16.2 58.5-4.1l130.6 87V227c0 32.8 8.4 64.8 24 93H112c-6.7 0-12.7-4.2-15-10.4s-.5-13.3 4.6-17.7l69.4-59.6-152.6 23.5c-7 1.1-13.9-2.6-16.9-9S0 232.7 5.3 228l125.6-111.5z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            NSI Terminale 2022-2023
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              T3 1 arbre
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue"  aria-label="Basculer en mode sombre"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Basculer en mode sombre" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9v1Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="blue"  aria-label="Basculer en mode clair"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Basculer en mode clair" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Recherche">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Effacer" aria-label="Effacer" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Onglets" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  Accueil
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../index_structDonnees/" class="md-tabs__link">
+          
+  
+    
+  
+  T1 - Struct. données
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../BasesDonnees/index_bd/" class="md-tabs__link">
+          
+  
+    
+  
+  T2 - Bases données
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Archi_Materielle/index_archi/" class="md-tabs__link">
+          
+  
+    
+  
+  T3 - Archi. mat.
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Programmation/index_prog/" class="md-tabs__link">
+          
+  
+    
+  
+  T4 - Prog.
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Algo/index_algo/" class="md-tabs__link">
+          
+  
+    
+  
+  T5 Algo.
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../BAC/bac_explication/" class="md-tabs__link">
+          
+  
+    
+  
+  BAC 📝
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../epreuve_pratique/" class="md-tabs__link">
+          
+  
+    
+  
+  Annales E.P. 💻
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../divers/prog/" class="md-tabs__link">
+          
+  
+    
+  
+  Extras
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../credit/" class="md-tabs__link">
+        
+  
+    
+  
+  Crédits
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="NSI Terminale 2022-2023" class="md-nav__button md-logo" aria-label="NSI Terminale 2022-2023" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="m352 124.5-51.9-13c-6.5-1.6-11.3-7.1-12-13.8s2.8-13.1 8.7-16.1l40.8-20.4-43.2-32.4c-5.5-4.1-7.8-11.3-5.6-17.9S297.1 0 304 0h160c30.2 0 58.7 14.2 76.8 38.4l57.6 76.8c6.2 8.3 9.6 18.4 9.6 28.8 0 26.5-21.5 48-48 48h-21.5c-17 0-33.3-6.7-45.3-18.7L480 160h-32v21.5c0 24.8 12.8 47.9 33.8 61.1l106.6 66.6c32.1 20.1 51.6 55.2 51.6 93.1 0 60.6-49.1 109.7-109.8 109.7H32.3c-3.3 0-6.6-.4-9.6-1.4-9.2-2.8-16.7-9.6-20.3-18.5C1 488.7.2 485.2 0 481.4c-.2-3.7.3-7.3 1.3-10.7 2.8-9.2 9.6-16.7 18.6-20.4 3-1.2 6.2-2 9.5-2.2L433.3 412c8.3-.7 14.7-7.7 14.7-16.1 0-4.3-1.7-8.4-4.7-11.4l-44.4-44.4c-30-30-46.9-70.7-46.9-113.1V124.5zm160-52.2v-.6.6zm-1.3 7.4-46.4-11.6c-.2 1.3-.3 2.6-.3 3.9 0 13.3 10.7 24 24 24 10.6 0 19.5-6.8 22.7-16.3zm-379.8 36.8c16.3-14.5 40.4-16.2 58.5-4.1l130.6 87V227c0 32.8 8.4 64.8 24 93H112c-6.7 0-12.7-4.2-15-10.4s-.5-13.3 4.6-17.7l69.4-59.6-152.6 23.5c-7 1.1-13.9-2.6-16.9-9S0 232.7 5.3 228l125.6-111.5z"/></svg>
+
+    </a>
+    NSI Terminale 2022-2023
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Accueil
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    T1 - Struct. données
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            T1 - Struct. données
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index_structDonnees/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Structures de données
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    T2 - Bases données
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            T2 - Bases données
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BasesDonnees/index_bd/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Base de données
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BasesDonnees/Modele_Relationnel/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📓 C1 Modèle relationnel
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BasesDonnees/Cours_TP_SQL/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📓 C2 Langage SQL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BasesDonnees/SQL_BAC/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📝 S2 BAC SQL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BasesDonnees/SQL_BAC_correction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📝 S2 BAC SQL Correction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    T3 - Archi. mat.
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            T3 - Archi. mat.
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Archi_Materielle/index_archi/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Architecture matérielle et OS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    T4 - Prog.
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            T4 - Prog.
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programmation/index_prog/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Programmation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programmation/T1_1_Recursivite/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📓 C3 Récursivité
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    T5 Algo.
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            T5 Algo.
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Algo/index_algo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Algorithmique
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    BAC 📝
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            BAC 📝
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BAC/bac_explication/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Information
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    2023
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_2">
+            <span class="md-nav__icon md-icon"></span>
+            2023
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annales/2023/EE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Epreuves écrites
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_3" id="__nav_7_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    2022
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_3">
+            <span class="md-nav__icon md-icon"></span>
+            2022
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annales/2022/EE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Epreuves écrites
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_4" id="__nav_7_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    2021
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_4">
+            <span class="md-nav__icon md-icon"></span>
+            2021
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annales/2021/EE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Epreuves écrites
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Annales E.P. 💻
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Annales E.P. 💻
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../epreuve_pratique/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Déroulement
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../divers/Consigne_EP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Consigne
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../divers/lien/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    S'entrainer en ligne pour l'épreuve pratique
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_4" id="__nav_8_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    2023
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_4">
+            <span class="md-nav__icon md-icon"></span>
+            2023
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annales/2023/EP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Epreuves pratiques
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Extras
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Extras
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../divers/prog/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Divers concours programmation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Projet/forcebrute/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Force brute
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Projet/cryptographie/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cryptographie
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Projet/cryptographie2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cryptographie bis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Projet/pyxel/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    pyxel
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../divers/sujet0_geipi.pdf" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Epreuve GEIPI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../credit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Crédits
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#activites" class="md-nav__link">
+    Activités
+  </a>
+  
+    <nav class="md-nav" aria-label="Activités">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#activite-1-vocabulaire" class="md-nav__link">
+    Activité 1 : Vocabulaire
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activite-2-arbre-binaire" class="md-nav__link">
+    Activité 2 : Arbre binaire
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activite-3-relation-entre-la-hauteur-et-la-taille-dun-arbre-binaire" class="md-nav__link">
+    Activité 3 : Relation entre la hauteur et la taille d'un arbre binaire
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activite-4-parcours-en-largeur-bfs-breadth-first-search-dabord-dun-arbre-binaire" class="md-nav__link">
+    Activité 4 : Parcours en largeur (BFS : Breadth First Search) d'abord d'un arbre binaire
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activite-5-parcours-en-profondeur-dun-arbre-binaire" class="md-nav__link">
+    Activité 5 : Parcours en profondeur d'un arbre binaire
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cours" class="md-nav__link">
+    Cours
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercices" class="md-nav__link">
+    Exercices
+  </a>
+  
+    <nav class="md-nav" aria-label="Exercices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercice-1-dom" class="md-nav__link">
+    Exercice 1 : DOM
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercice-2-vocabulaire-sur-les-arbres" class="md-nav__link">
+    Exercice 2 : Vocabulaire sur les arbres
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercice-3-representer-un-arbre-binaire" class="md-nav__link">
+    Exercice 3 : Représenter un arbre binaire
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercice-4-representer-un-arbre-binaire-par-un-triplet" class="md-nav__link">
+    Exercice 4 : Représenter un arbre binaire par un triplet
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+
+
+
+
+
+                  
+
+
+<h1 id="c10-les-arbres"><span class='numchapitre'>C10</span> Les arbres <span style='float:right;'><span class="twemoji" title="Structures de données"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M0 80c0-26.5 21.5-48 48-48h96c26.5 0 48 21.5 48 48v16h192V80c0-26.5 21.5-48 48-48h96c26.5 0 48 21.5 48 48v96c0 26.5-21.5 48-48 48h-96c-26.5 0-48-21.5-48-48v-16H192v16c0 1.7-.1 3.4-.3 5L272 288h96c26.5 0 48 21.5 48 48v96c0 26.5-21.5 48-48 48h-96c-26.5 0-48-21.5-48-48v-96c0-1.7.1-3.4.3-5L144 224H48c-26.5 0-48-21.5-48-48V80z"/></svg></span></span><a class="headerlink" href="#c10-les-arbres" title="Permanent link">⚓︎</a></h1>
+<h2 id="activites">Activités<a class="headerlink" href="#activites" title="Permanent link">⚓︎</a></h2>
+<h3 id="activite-1-vocabulaire"><img alt="▪" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/25aa.svg" title=":black_small_square:" />   Activité 1 : <em>Vocabulaire</em><a class="headerlink" href="#activite-1-vocabulaire" title="Permanent link">⚓︎</a></h3>
+<ol>
+<li>
+<p>Après execution d'une commande dans un terminal Linux on a obtenu l'affichage ci-dessous :</p>
+<p><img alt="arborescence de repertoires" class="center" src="../../files/C9/arborescence.png" /></p>
+<ol>
+<li>De quelle commande s'agissait-il ? (Rechercher la commande sur internet) Quelle est sa traduction en français ?</li>
+<li>Que sont <code>Maths</code> et <code>NSI</code> pour le système d'exploitation ?</li>
+<li>Un point (<strong>.</strong>) figure en haut du schéma, quelle en est la signification ?</li>
+<li>Que signifie le lien entre <code>NSI</code> et <code>Projet</code> ?</li>
+</ol>
+</li>
+<li>
+<p>Le schéma ci-dessus est un exemple d'<strong>arbre</strong> (on parle d'ailleurs de l'arborescence des dossiers dans un système d'exploitation). Un arbre est constitué de <strong>noeuds</strong> et un lien entre deux noeuds s'appelle une <strong>arête</strong>.</p>
+<ol>
+<li>Citer trois noeuds de l'arbre ci-dessus et donner un exemple d'arête.</li>
+<li>Quel noeud est le répertoire parent de <code>Systèmes</code>  ? On dira dans le vocabulaire des arbres que le noeud <code>Systèmes</code> est un <strong>fils</strong> de ce noeud.</li>
+<li>Citer tous les fils du noeud <code>NSI</code>.</li>
+<li>Dans un arbre, un seul et unique noeud n'est le fils de personne, on l'appelle la <strong>racine</strong> de l'arbre. De qui s'agit-il ici ?</li>
+<li>Nommer les noeuds n'ayant aucun fils (on les appelle <strong>feuilles</strong> de l'arbre).</li>
+<li>Une <strong>branche</strong> est une suite (finie) de noeuds depuis la racine vers une feuille. Donner une branche de cette arbre constituée de trois noeuds.</li>
+<li>Donner la <strong>taille</strong> de cet arbre (c'est à dire son nombre de noeuds).</li>
+<li>Donner l'<strong>arité</strong> de cet arbre, c'est à dire le nombre maximal de fils qu'un noeud peut avoir.</li>
+<li>
+<p>Donner la <strong>hauteur</strong> de cet arbre c'est à dire le nombre maximal de noeuds dans une branche.</p>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<div class="highlight"><span class="filename">📋 Texte</span><pre><span></span><code>La hauteur d&#39;un arbre est parfois définie comme le plus grand nombre d&#39;arêtes dans une branche. Dans les sujets de &lt;span style=&quot;font-variant:small-caps;&quot;&gt;bac&lt;/span&gt; faire attention à la définition utilisée qui est normalement donnée dans l&#39;énoncé.
+</code></pre></div>
+</div>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="activite-2-arbre-binaire"><img alt="▪" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/25aa.svg" title=":black_small_square:" />   Activité 2 : <em>Arbre binaire</em><a class="headerlink" href="#activite-2-arbre-binaire" title="Permanent link">⚓︎</a></h3>
+<div class="admonition jeretiens">
+<p class="admonition-title">Arbre binaire</p>
+<p>Un <strong>arbre binaire</strong> est un arbre dont tous les noeuds ont au plus deux fils.</p>
+</div>
+<pre class="mermaid"><code>    graph TD
+    A["A"] --&gt; B["B"]
+    A --&gt; C["C"]
+    subgraph sous arbre droit 
+        C --&gt; W[" "]
+        C --&gt; G["G"]
+        W --&gt; W1[" "]
+        W --&gt; W2[" "]
+        G --&gt; J["J"]
+        G --&gt; K["K"]
+    end
+    subgraph sous arbre gauche
+        B --&gt; D["D"]
+        B --&gt; F["F"]
+        D --&gt; E["E"]
+        D --&gt; H["H"]
+        F --&gt; I["I"]
+        F --&gt; T[" "]
+    end
+    style W opacity:0
+    linkStyle 2 stroke:#FFFFFF,stroke-width:0px
+    linkStyle 4 stroke:#FFFFFF,stroke-width:0px
+    linkStyle 5 stroke:#FFFFFF,stroke-width:0px
+    linkStyle 13 stroke:#FFFFFF,stroke-width:0px
+    style W1 opacity:0
+    style W2 opacity:0
+    style T opacity:0
+    style W opacity:0
+</code></pre>
+<ol>
+<li>Quelle est la taille de cet arbre ?  </li>
+<li>Listez les noeuds internes puis les feuilles.  </li>
+<li>Quelle est la hauteur de cet arbre ?  </li>
+<li>Quels sont les fils du noeud B ?  </li>
+<li>Quel est le sous-abre gauche du noeud B ?  </li>
+<li>Quel est le sous-abre gauche du noeud C ?  </li>
+</ol>
+<h3 id="activite-3-relation-entre-la-hauteur-et-la-taille-dun-arbre-binaire"><img alt="▪" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/25aa.svg" title=":black_small_square:" />   Activité 3 : <em>Relation entre la hauteur et la taille d'un arbre binaire</em><a class="headerlink" href="#activite-3-relation-entre-la-hauteur-et-la-taille-dun-arbre-binaire" title="Permanent link">⚓︎</a></h3>
+<ol>
+<li>On note <span class="arithmatex">\(h\)</span> la hauteur d'un arbre binaire et <span class="arithmatex">\(n\)</span> sa taille, on suppose dans la suite que <span class="arithmatex">\(n \geq 2\)</span>. En rappelant les définitions de la hauteur et de la taille d'un arbre, justifier que <span class="arithmatex">\(n \geq h\)</span>.</li>
+<li>
+<p>On numérote les noeuds d'un arbre binaire de la suivante :  </p>
+<ul>
+<li>la racine porte le numéro 1,</li>
+<li>le fils gauche d'un noeud porte le numéro de son père suivi d'un 0,</li>
+<li>le fils droit d'un noeud porte le numéro de son père suivi d'un 1.</li>
+</ul>
+</li>
+</ol>
+<p>On a entamé la numérotation de l'arbre binaire ci-dessous, recopier cet arbre et compléter cette numérotation.</p>
+<pre class="mermaid"><code>    graph TD
+    A["A : 1"] --&gt; B["B : 10"]
+    A --&gt; C["C : 11"]
+    B --&gt; D["D : ..."]
+    B --&gt; E["E : 101"]
+    C --&gt; V1[" "]
+    C --&gt; F["F: ..."]
+    V1 --&gt; V2[" "]
+    V1 --&gt; V3[" "]
+    D --&gt; G["G: ..."]
+    D --&gt; H["H: ..."]
+    F --&gt; I["I: ..."]
+    F --&gt; V2[" "]
+    E --&gt; V4[" "]
+    E --&gt; V5[" "]
+    style V1 opacity:0;
+    linkStyle 4 stroke:#FFFFFF,stroke-width:0px
+    style V2 opacity:0;
+    linkStyle 6 stroke:#FFFFFF,stroke-width:0px
+    style V3 opacity:0;
+    linkStyle 7 stroke:#FFFFFF,stroke-width:0px
+    style V2 opacity:0;
+    linkStyle 11 stroke:#FFFFFF,stroke-width:0px
+    style V4 opacity:0;
+    linkStyle 12 stroke:#FFFFFF,stroke-width:0px
+    style V5 opacity:0;
+    linkStyle 13 stroke:#FFFFFF,stroke-width:0px</code></pre>
+<ol>
+<li>Justifier que sur un niveau donné de l'arbre tous les numéros de noeud ont le même nombre de caractères.</li>
+<li>En déduire en fonction de <span class="arithmatex">\(h\)</span>, le nombre de caractères formant le numéro des feuilles</li>
+<li>En utilisant vos connaissances sur la numérotation binaire d'un entier positif, prouver que <span class="arithmatex">\(n \leq 2^h - 1\)</span>.</li>
+</ol>
+<h3 id="activite-4-parcours-en-largeur-bfs-breadth-first-search-dabord-dun-arbre-binaire"><img alt="▪" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/25aa.svg" title=":black_small_square:" />   Activité 4 : <em>Parcours en largeur (</em>BFS : Breadth First Search<em>) d'abord d'un arbre binaire</em><a class="headerlink" href="#activite-4-parcours-en-largeur-bfs-breadth-first-search-dabord-dun-arbre-binaire" title="Permanent link">⚓︎</a></h3>
+<div class="admonition methode">
+<p class="admonition-title">Parcours en largeur d'abord  (BFS)</p>
+<p>Le parcours en largeur d'abord est un parcours étage par étage (de haut en bas) et de gauche à droite.</p>
+</div>
+<p><img alt="BFS.png" class="center" src="../data/BFS.png" /></p>
+<p>L'ordre des lettres parcourues est donc T-Y-O-P-H-N.</p>
+<blockquote>
+<p>Un parcours en largeur d'abord n'est pas récursif.</p>
+</blockquote>
+<ol>
+<li>
+<p>Indiquez dans quel ordre les noeuds sont explorés dans le cas d'un parcours en largeur de l'arbre <code>A1</code> suivant.</p>
+<pre class="mermaid"><code>    graph TD
+    A["2"] --&gt; B["8"]
+    A --&gt; C["9"]
+    B --&gt; D["4"]
+    B --&gt; E["5"]
+    C --&gt; V1[" "]
+    C --&gt; F["3"]
+    V1 --&gt; V2[" "]
+    V1 --&gt; V3[" "]
+    style V1 opacity:0;
+    linkStyle 4 stroke:#FFFFFF,stroke-width:0px
+    style V2 opacity:0;
+    linkStyle 6 stroke:#FFFFFF,stroke-width:0px
+    style V3 opacity:0;
+    linkStyle 7 stroke:#FFFFFF,stroke-width:0px
+    style V2 opacity:0;</code></pre>
+</li>
+<li>
+<p>Indiquez dans quel ordre les noeuds sont explorés dans le cas d'un parcours en largeur de l'arbre <code>A2</code> suivant.</p>
+<pre class="mermaid"><code>    graph TD
+    A["1"] --&gt; B["2"]
+    A --&gt; C["5"]
+    B --&gt; D["3"]
+    B --&gt; E["4"]
+    C --&gt; V1["6"]
+    C --&gt; F[" "]
+    V1 --&gt; V2["7"]
+    V1 --&gt; V3["8"]
+    D --&gt; G[" "]
+    D --&gt; H[" "]
+    F --&gt; I[" "]
+    F --&gt; V6[" "]
+    E --&gt; V4[" "]
+    E --&gt; V5[" "]
+    style F opacity:0;
+    linkStyle 5 stroke:#FFFFFF,stroke-width:0px
+    style G opacity:0;
+    linkStyle 8 stroke:#FFFFFF,stroke-width:0px
+    style H opacity:0;
+    linkStyle 9 stroke:#FFFFFF,stroke-width:0px
+    style I opacity:0;
+    linkStyle 10 stroke:#FFFFFF,stroke-width:0px
+    style V6 opacity:0;
+    linkStyle 11 stroke:#FFFFFF,stroke-width:0px
+    style V4 opacity:0;
+    linkStyle 12 stroke:#FFFFFF,stroke-width:0px
+    style V5 opacity:0;
+    linkStyle 13 stroke:#FFFFFF,stroke-width:0px</code></pre>
+</li>
+</ol>
+<h3 id="activite-5-parcours-en-profondeur-dun-arbre-binaire"><img alt="▪" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/25aa.svg" title=":black_small_square:" />   Activité 5 : <em>Parcours en profondeur d'un arbre binaire</em><a class="headerlink" href="#activite-5-parcours-en-profondeur-dun-arbre-binaire" title="Permanent link">⚓︎</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Dans le cas où on explore complètement l'un des deux sous-arbres avant le second on parle d'un <strong>parcours en profondeur</strong>. On utilise le terme <em>profondeur</em> car dans ce cas on tente toujours de visiter le noeud le plus éloigné de la racine à condition qu'il soit le fils d'un noeud déjà visité.<br />
+On distingue trois ordres particuliers pour explorer en profondeur les sous-arbres gauche, droit et la racine du noeud courant : </p>
+<ul>
+<li><strong>ordre préfixe</strong> : le noeud courant est traité, puis son sous-arbre gauche et son sous-arbre droit.  </li>
+<li><strong>ordre infixe</strong> : le noeud courant est traité entre son sous-arbre gauche et son sous-arbre droit.  </li>
+<li><strong>ordre suffixe</strong> : le noeud courant est traité après son sous-arbre gauche et son sous-arbre droit. </li>
+</ul>
+</div>
+<h4 id="parcours-prefixe">Parcours préfixe<a class="headerlink" href="#parcours-prefixe" title="Permanent link">⚓︎</a></h4>
+<p>Le parcours <strong>préfixe</strong> est un parcours <strong>en profondeur d'abord</strong>. </p>
+<div class="admonition methode">
+<p class="admonition-title">Méthode du parcours préfixe :</p>
+<p>(parfois aussi appelé <em>préordre</em>)  </p>
+<ul>
+<li>Chaque nœud est visité avant que ses fils le soient.</li>
+<li>On part de la racine, puis on visite son fils gauche (et éventuellement le fils gauche de celui-ci, etc.) avant de remonter et de redescendre vers le fils droit.</li>
+</ul>
+</div>
+<p><img alt="prefixe.png" class="center" src="../data/prefixe.png" /></p>
+<p>L'ordre des lettres parcourues est donc T-Y-P-O-H-N.</p>
+<details class="video">
+<summary>Vidéo explicative d'un parcours préfixe</summary>
+<p><iframe width="1193" height="671" src="https://www.youtube.com/embed/XH0vkaWPu-k" title="parcours préfixe d'un arbre binaire" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+</details>
+<h4 id="parcours-infixe">Parcours infixe<a class="headerlink" href="#parcours-infixe" title="Permanent link">⚓︎</a></h4>
+<div class="admonition methode">
+<p class="admonition-title">Parcours infixe</p>
+<p>Le parcours <strong>infixe</strong> est aussi un parcours en profondeur d'abord.</p>
+<p><strong>Méthode du parcours infixe :</strong> (parfois aussi appelé <em>en ordre</em>)  </p>
+<ul>
+<li>Chaque nœud est visité <strong>après son fils gauche mais avant son fils droit</strong>.</li>
+<li>On part donc de la feuille la plus à gauche et on remonte par vagues sucessives. Un nœud ne peut pas être visité si son fils gauche ne l'a pas été.</li>
+</ul>
+</div>
+<p><img alt="infixe.png" class="center" src="../data/infixe.png" /></p>
+<p>L'ordre des lettres parcourues est donc P-Y-T-H-O-N.</p>
+<details class="video">
+<summary>Vidéo explicative d'un parcours infixe</summary>
+<p><iframe width="1193" height="671" src="https://www.youtube.com/embed/oB2saWLbESU" title="parcours infixe d'un arbre binaire" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+</details>
+<h4 id="parcours-suffixe">Parcours suffixe<a class="headerlink" href="#parcours-suffixe" title="Permanent link">⚓︎</a></h4>
+<div class="admonition methode">
+<p class="admonition-title">Parcours suffixe</p>
+<p>Le parcours <strong>suffixe</strong> est aussi un parcours en profondeur d'abord.</p>
+<p><strong>Méthode du parcours suffixe :</strong> (parfois aussi appelé <em>post ordre</em>)  </p>
+<ul>
+<li>Chaque nœud est visité <strong>après ses fils le soient</strong>.</li>
+<li>On part donc de la feuille la plus à gauche, et on ne remonte à un nœud père que si ses fils ont tous été visités. </li>
+</ul>
+</div>
+<p><img alt="postfixe.png" class="center" src="../data/postfixe.png" /></p>
+<p>L'ordre des lettres parcourues est donc P-Y-H-N-O-T.</p>
+<h4 id="comment-ne-pas-se-melanger-entre-le-pre-in-post-fixe">Comment ne pas se mélanger entre le pré / in / post fixe ?<a class="headerlink" href="#comment-ne-pas-se-melanger-entre-le-pre-in-post-fixe" title="Permanent link">⚓︎</a></h4>
+<ul>
+<li><em>pré</em> veut dire <em>avant</em>  </li>
+<li><em>in</em> veut dire <em>au milieu</em>  </li>
+<li><em>post</em> veut dire <em>après</em>  </li>
+</ul>
+<p>Ces trois mots-clés parlent de la place du <strong>père</strong> par rapport à ses fils. <br />
+Ensuite, il faut toujours se souvenir qu'on traite le fils gauche avant le fils droit.  </p>
+<ul>
+<li>préfixe : le père doit être le premier par rapport à ses fils.  </li>
+<li>infixe : le père doit être entre son fils gauche (traité en premier) et son fils droit.  </li>
+<li>postfixe : le père ne doit être traité que quand ses deux fils (gauche d'abord, droite ensuite) l'ont été.  </li>
+</ul>
+<p>Un parcours préfixe commencera toujours par la racine, alors qu'un parcours postfixe finira toujours par la racine. Dans un parcours infixe, la racine sera «au milieu» (pas nécessairement parfaitement).</p>
+<h4 id="exercices-dapplication">Exercices d'application<a class="headerlink" href="#exercices-dapplication" title="Permanent link">⚓︎</a></h4>
+<div class="admonition exo">
+<p class="admonition-title">Exercice</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:5"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><input id="__tabbed_1_5" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Énoncé</label><label for="__tabbed_1_2">Corr. largeur</label><label for="__tabbed_1_3">Corr. préfixe</label><label for="__tabbed_1_4">Corr. infixe</label><label for="__tabbed_1_5">Corr. postfixe</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<pre class="mermaid"><code>graph TD  
+    A(1) --&gt; B(2) 
+    B --&gt; C(4)
+    B --&gt; D(5)
+    A --&gt; E(3)
+    D --&gt; F(7)
+    D --&gt; G(8)
+    E --&gt; H(" ")
+    E --&gt; I(6)
+    I --&gt; J(9)
+    I --&gt; K(" ")
+    linkStyle 6 stroke-width:0px;
+    style H opacity:0;
+    linkStyle 9 stroke-width:0px;
+    style K opacity:0;</code></pre>
+<p>Donner le rendu de chaque parcours :</p>
+<ol>
+<li>Parcours en largeur </li>
+<li>Parcours préfixe</li>
+<li>Parcours infixe</li>
+<li>Parcours postfixe</li>
+</ol>
+</div>
+<div class="tabbed-block">
+<p>largeur : 1 2 3 4 5 6 7 8 9</p>
+</div>
+<div class="tabbed-block">
+<p>préfixe : 1 2 4 5 7 8 3 6 9</p>
+</div>
+<div class="tabbed-block">
+<p>infixe : 4 2 7 5 8 1 3 9 6</p>
+</div>
+<div class="tabbed-block">
+<p>postfixe : 4 7 8 5 2 9 6 3 1</p>
+</div>
+</div>
+</div>
+</div>
+<div class="admonition exo">
+<p class="admonition-title">Exercice</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:5"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><input id="__tabbed_2_4" name="__tabbed_2" type="radio" /><input id="__tabbed_2_5" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Énoncé</label><label for="__tabbed_2_2">Corr. largeur</label><label for="__tabbed_2_3">Corr. préfixe</label><label for="__tabbed_2_4">Corr. infixe</label><label for="__tabbed_2_5">Corr. postfixe</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<pre class="mermaid"><code>graph TD  
+    A(9) --&gt; B(8) 
+    B --&gt; C(6)
+    B --&gt; D(2)
+    A --&gt; E(7)
+    D --&gt; F(1)
+    D --&gt; G(" ")
+    E --&gt; H(" ")
+    E --&gt; I(5)
+    I --&gt; J(4)
+    I --&gt; K(3)
+    linkStyle 5 stroke-width:0px;
+    style G opacity:0;
+    linkStyle 6 stroke-width:0px;
+    style H opacity:0;</code></pre>
+<p>Donner le rendu de chaque parcours :</p>
+<ol>
+<li>Parcours en largeur </li>
+<li>Parcours préfixe</li>
+<li>Parcours infixe</li>
+<li>Parcours postfixe</li>
+</ol>
+</div>
+<div class="tabbed-block">
+<p>largeur : 9 8 7 6 2 5 1 4 3</p>
+</div>
+<div class="tabbed-block">
+<p>préfixe : 9 8 6 2 1 7 5 4 3</p>
+</div>
+<div class="tabbed-block">
+<p>infixe : 6 8 1 2 9 7 4 5 3</p>
+</div>
+<div class="tabbed-block">
+<p>postfixe : 6 1 2 8 4 3 5 7 9</p>
+</div>
+</div>
+</div>
+</div>
+<h2 id="cours">Cours<a class="headerlink" href="#cours" title="Permanent link">⚓︎</a></h2>
+<p>Vous pouvez télécharger une copie au format pdf du diaporama de synthèse de cours :</p>
+<p><span class='centre'><a class="md-button" href="../pdf/../../pdf/C10/C10-cours.pdf" target="_blank">Diaporama de cours <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M64 464h32v48H64c-35.3 0-64-28.7-64-64V64C0 28.7 28.7 0 64 0h165.5c17 0 33.3 6.7 45.3 18.7l90.5 90.5c12 12 18.7 28.3 18.7 45.3V288h-48V160h-80c-17.7 0-32-14.3-32-32V48H64c-8.8 0-16 7.2-16 16v384c0 8.8 7.2 16 16 16zm112-112h32c30.9 0 56 25.1 56 56s-25.1 56-56 56h-16v32c0 8.8-7.2 16-16 16s-16-7.2-16-16V368c0-8.8 7.2-16 16-16zm32 80c13.3 0 24-10.7 24-24s-10.7-24-24-24h-16v48h16zm96-80h32c26.5 0 48 21.5 48 48v64c0 26.5-21.5 48-48 48h-32c-8.8 0-16-7.2-16-16V368c0-8.8 7.2-16 16-16zm32 128c8.8 0 16-7.2 16-16v-64c0-8.8-7.2-16-16-16h-16v96h16zm80-112c0-8.8 7.2-16 16-16h48c8.8 0 16 7.2 16 16s-7.2 16-16 16h-32v32h32c8.8 0 16 7.2 16 16s-7.2 16-16 16h-32v48c0 8.8-7.2 16-16 16s-16-7.2-16-16V368z"/></svg></span></a></span></p>
+<div class="admonition warning">
+<p class="admonition-title">Attention</p>
+<p>Ce diaporama n'est qu'une synthèse de cours et ne donne que quelques points de repères pour de vos révisions.</p>
+</div>
+<h2 id="exercices">Exercices<a class="headerlink" href="#exercices" title="Permanent link">⚓︎</a></h2>
+<h3 id="exercice-1-dom"><img alt="▪" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/25aa.svg" title=":black_small_square:" />   Exercice 1 : <em>DOM</em><a class="headerlink" href="#exercice-1-dom" title="Permanent link">⚓︎</a></h3>
+<p>On considère le code  <span style="font-variant:small-caps;">html</span> suivant :
+<div class="highlight"><span class="filename">HTML</span><pre><span></span><code><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;fr&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Exemple<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span> Un titre <span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span> Bonjour ! <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">table</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Case 1<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span> Case 2<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
+Ce document peut se représenter par un arbre :
+<pre class="mermaid"><code>    graph TD
+    HTML["html"] --&gt; HEAD["head"]
+    HTML["html"] --&gt; BODY["body"]
+    HEAD --&gt; META["meta"]
+    HEAD --&gt; TITLE["title"]
+    BODY --&gt; H1["h1"]
+    BODY --&gt; P["p"]
+    BODY --&gt; TABLE["table"] 
+    TABLE --&gt; TR["tr"]
+    TR --&gt; TD1["td"]
+    TR --&gt; TD2["td"]</code></pre></p>
+<ol>
+<li>Que représentent les noeuds de cet arbre ?</li>
+<li>Que signifie du point de vue du <span style="font-variant:small-caps;">html</span> une arête de cet arbre ?</li>
+<li>Quelle est la racine de cet arbre ?</li>
+<li>Donner les feuilles de cet arbre.</li>
+<li>Donner une branche de cet arbre.</li>
+<li>Donner l'arité de cet arbre.</li>
+<li>Donner la hauteur de cet arbre.</li>
+</ol>
+<h3 id="exercice-2-vocabulaire-sur-les-arbres"><img alt="▪" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/25aa.svg" title=":black_small_square:" />   Exercice 2 : <em>Vocabulaire sur les arbres</em><a class="headerlink" href="#exercice-2-vocabulaire-sur-les-arbres" title="Permanent link">⚓︎</a></h3>
+<p>On considère l'arbre ci-dessous :</p>
+<pre class="mermaid"><code>    graph TD
+    A["A"] --&gt; L["L"]
+    A --&gt; G["G"]
+    L --&gt; O["O"]
+    L --&gt; R["R"]
+    G --&gt; V1[" "]
+    G --&gt; I["I"]
+    O --&gt; T["T"]
+    O --&gt; H["H"]
+    R --&gt; M["M"]
+    R --&gt; E["E"]
+    I --&gt; S["S"]
+    I --&gt; V2[" "]
+    style V1 opacity:0;
+    linkStyle 4 stroke:#FFFFFF,stroke-width:0px
+    style V2 opacity:0;
+    linkStyle 11 stroke:#FFFFFF,stroke-width:0px</code></pre>
+<ol>
+<li>Justifier qu'il s'agit d'un arbre binaire. Quelle est sa taille ?</li>
+<li>Quelle est sa racine ? Nommer les feuilles.</li>
+<li>Donner une branche de cet arbre.</li>
+<li>Donner la hauteur de cet arbre.</li>
+<li>Donner une branche de longueur 3 dans cet arbre  </li>
+<li>On considère le sous arbre gauche de la racine, quel est l'arité de chaque noeud ? Que peut-on dire du sous arbre gauche ?</li>
+<li>Même question pour le sous arbre droit de la racine.</li>
+</ol>
+<h3 id="exercice-3-representer-un-arbre-binaire"><img alt="▪" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/25aa.svg" title=":black_small_square:" />   Exercice 3 : <em>Représenter un arbre binaire</em><a class="headerlink" href="#exercice-3-representer-un-arbre-binaire" title="Permanent link">⚓︎</a></h3>
+<ol>
+<li>Dessiner tous les arbres binaires à 3 noeuds. Attention à bien distinguer le fils droit du fils gauche.</li>
+<li>Dessiner un arbre binaire de taille 4 et de profondeur 4.</li>
+<li>Dessiner un arbre binaire de taille 4 et de profondeur 3.</li>
+<li>
+<p>Quelle est la taille maximale d'un arbre binaire de hauteur 10 ? Justifier </p>
+<div class="admonition aide">
+<p class="admonition-title">Aide</p>
+<p>On pourra utiliser sans justification, la formule vue en cours qui permet d'encadrer la taille d'un arbre en fonction de sa hauteur.</p>
+</div>
+</li>
+</ol>
+<h3 id="exercice-4-representer-un-arbre-binaire-par-un-triplet"><img alt="▪" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/25aa.svg" title=":black_small_square:" />   Exercice 4 : <em>Représenter un arbre binaire par un triplet</em><a class="headerlink" href="#exercice-4-representer-un-arbre-binaire-par-un-triplet" title="Permanent link">⚓︎</a></h3>
+<p>On rappelle qu'on peut définir un arbre binaire de façon récursive, en effet, un arbre binaire est soit vide (noté <span class="arithmatex">\(\Delta\)</span>), soit un triplet <span class="arithmatex">\((etiquette,sag,sad)\)</span> où <span class="arithmatex">\(sag\)</span> (pour sous arbre gauche) et <span class="arithmatex">\(sad\)</span> (pour sous arbre droit) sont eux-mêmes des arbres binaires. </p>
+<p>On considère les arbres suivants :</p>
+<ul>
+<li><span class="arithmatex">\(A = (7,\Delta,\Delta)\)</span></li>
+<li><span class="arithmatex">\(B = (2,(3,\Delta,(9,\Delta,\Delta)),(10,\Delta,\Delta))\)</span></li>
+<li><span class="arithmatex">\(C = (4,(1,(8,\Delta,\Delta),(7,\Delta,\Delta)),(3,(6,\Delta,\Delta),(5,\Delta,\Delta)))\)</span></li>
+</ul>
+<p>Pour chacun de ces arbres :</p>
+<ol>
+<li>Faire un schéma pour le représenter.</li>
+<li>Donner sa taille, sa hauteur, son nombre de feuilles.</li>
+</ol>
+
+
+
+
+
+                
+
+<style>
+    .jp-RenderedHTMLCommon p {
+        font-size: 0.8rem;
+        line-height: 1.6;
+    }
+
+    .jp-RenderedHTMLCommon li {
+        font-size: .8rem;
+        line-height: 1.6;
+    }
+
+    .jp-RenderedHTMLCommon h1 {
+        margin: 0 0 1.25em;
+        color: var(--md-default-fg-color--light);
+        font-weight: 300;
+        font-size: 2em;
+        line-height: 1.3;
+        letter-spacing: -0.01em;
+    }
+
+    .jp-RenderedHTMLCommon h2 {
+        margin: 1.6em 0 .64em;
+        font-weight: 300;
+        font-size: 1.965em;
+        line-height: 1.4;
+        letter-spacing: -0.01em;
+    }
+
+    .jp-RenderedHTMLCommon h3 {
+        margin: 1.6em 0 .8em;
+        font-weight: 400;
+        font-size: 1.57em;
+        line-height: 1.5;
+        letter-spacing: -0.01em;
+    }
+
+    .jp-RenderedHTMLCommon hr {
+        border: none;
+    }
+</style>
+
+
+
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Retour en haut de la page
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.expand", "navigation.top", "navigation.sections", "navigation.indexes", "navigation.tracking", "header.autohide", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.81fa17fe.min.js"></script>
+      
+        <script src="../../xtra/mathjax.js"></script>
+      
+        <script src="../../javascripts/config.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/gh/rod2ik/cdn@main/mkdocs/javascripts/massilia-admonitions.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,689 @@
+\documentclass[a4paper, 11pt]{article}
+
+\title{
+  \rule{\linewidth}{0.8pt}
+  \Large{\scshape{\textbf{Numérique et Sciences Informatiques}}}
+
+  \vspace{0.5cm}
+  \large{\textit{Épreuve type BAC}}
+
+  \rule[10pt]{\linewidth}{0.8pt}
+    }
+\author{}
+\date{20 février 2023}
+
+%-------------------------------------------------------
+% Les packages
+%-------------------------------------------------------
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+% \usepackage{multicol} % les colonnes
+\usepackage[french]{babel}
+\addto\captionsfrench{\def\tablename{Tableau}}
+\addto\captionsfrench{\def\figurename{Figure}}
+\usepackage{lmodern}
+\usepackage{hyperref} % liens hypertextes
+% \usepackage{graphicx} % insertion d'images
+\usepackage{booktabs} % Les tableaux
+\usepackage{amssymb} % symboles maths
+\usepackage{amsmath} % symboles maths
+% \usepackage{blindtext} % faux texte
+\usepackage{float} % positionnement des tableaux et autres flottants
+\usepackage{multirow} % lignes fusionnées dans les tableaux 
+\usepackage{lastpage} % compter les pages
+
+%-------------------------------------------------------
+% Figure geogebra -> tikz
+%-------------------------------------------------------
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows, positioning, snakes, calc, shapes.misc, decorations.shapes, decorations.markings, backgrounds}
+
+%-------------------------------------------------------
+% Dimension de la page
+%-------------------------------------------------------
+%\usepackage[a4paper, total={17cm, 25cm}, includehead, headsep=12pt]{geometry} %taille de la page et marges
+\usepackage[a4paper,vmargin=1.5cm,hmargin=1.5cm,tmargin=2cm,bmargin=1.5cm]{geometry}
+%-------------------------------------------------------
+% Longueurs personnelles
+%-------------------------------------------------------
+% \setlength{\textfloatsep}{0.1cm}
+\setlength{\parskip}{6pt}
+\setlength{\parindent}{15pt}
+% \setlength{\textfloatsep}{10pt plus 1.0pt minus 2.0pt}
+% \setlength{\floatsep}{10pt plus 1.0pt minus 2.0pt}
+% \setlength{\intextsep}{10pt plus 1.0pt minus 2.0pt}
+\newlength{\aftercode}
+\setlength{\aftercode}{20pt}
+
+%-------------------------------------------------------
+% Les entêtes et pied de pages
+%-------------------------------------------------------
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\scriptsize Terminale - NSI}
+\fancyhead[R]{\scriptsize Bac Blanc}
+\fancyfoot[C]{\scriptsize - $\thepage$/\pageref{LastPage} -}
+\renewcommand{\headrulewidth}{0.3pt}
+\renewcommand{\footrulewidth}{0.3pt}
+
+%-------------------------------------------------------
+% La numérotation des questions et des listes
+%-------------------------------------------------------
+\usepackage[shortlabels]{enumitem}
+\setlist[itemize,1]{label=\textbullet} % le label des listes de niveau 1 est un bullet
+\setlist[itemize,2]{label=$\circ$} % le label des listes de niveau 2 est un bullet vide
+\setlist[itemize,3]{label=$\diamond$} % le label des listes de niveau 3 est un diamant
+
+
+%-------------------------------------------------------
+% L'environnement Exercice
+%-------------------------------------------------------
+\newcounter{exercice}
+\newenvironment{Exercice}[1][]{
+    \refstepcounter{exercice}
+    \par
+    \noindent
+    {\large
+    \underline{\textit{Exercice~\theexercice~:}}~#1}
+    % \vspace{\parskip}
+    \par}
+    {\vspace{1em}}
+
+%-------------------------------------------------------
+% Dossiers contenant les images
+%-------------------------------------------------------
+\graphicspath{ 
+	{images/}
+}
+
+%-------------------------------------------------------
+% L'environnement Question
+%-------------------------------------------------------
+\newcounter{question}[exercice]
+\newenvironment{Question}{
+    \refstepcounter{question}
+    \begin{list}{}{%
+      \setlength{\labelindent}{\parindent}
+      \setlength{\leftmargin}{2\parindent}
+      \setlength{\parsep}{\parskip} % Espacement vertical des sous-paragraphes
+    }
+    \item[\medskip\textbf{\thequestion.}]}
+    {\end{list}}
+
+%-------------------------------------------------------
+% L'environnement subQuestion
+%-------------------------------------------------------
+\newcounter{subquestion}[question]
+\newenvironment{subQuestion}{
+    \refstepcounter{subquestion}
+    \begin{list}{}{%
+      \setlength{\leftmargin}{12pt}
+      \setlength{\labelwidth}{8pt}
+      \setlength{\labelsep}{4pt}
+      \setlength{\listparindent}{0em}
+      \setlength{\itemindent}{0em}
+      \setlength{\parsep}{\parskip} % Espacement vertical des sous-paragraphes
+    }
+    \item[\medskip\textbf{\alph{subquestion}.}]}
+    {\end{list}}
+  
+
+%-------------------------------------------------------
+% Création de couleurs
+%-------------------------------------------------------
+\usepackage{xcolor}
+\definecolor{bg_gris}{rgb}{0.95,0.95,0.95}
+
+%-------------------------------------------------------
+% Mise en forme du code
+%-------------------------------------------------------
+\usepackage[newfloat=false]{minted}
+\setminted{autogobble, tabsize=4, breaklines, breakafter=_, linenos, numberblanklines=false, resetmargins, frame=leftline}
+% Environnement python code
+\newminted{python}{} % permet d'utiliser \begin{pythoncode} pour écrire du python
+
+% Environnement mintinlinepy
+\newmintinline[mintinlinepy]{python}{breaklines, breakafter=_} % permet d'utiliser \mintinlinepy{...} pour écrire du python en ligne
+    
+% Environnement textcode
+\newminted{text}{} % permet d'utiliser \begin{textcode} pour écrire du code en français
+% \BeforeBeginEnvironment{textcode}{\vspace{-2\parskip}\begin{listing}[H]}
+% \AfterEndEnvironment{textcode}{\end{listing}\vspace{-\aftercode}}
+
+% Environnement textcode
+\newmintinline[mintinlinetext]{text}{breaklines, breakafter=_} % permet d'utiliser \mintinlinetext{...} pour écrire du code en ligne en français
+
+
+% Environnement de code sur plusieurs pages
+\usepackage{caption}
+\newenvironment{longcode}{\captionsetup{type=listing}}{}
+
+%-------------------------------------------------------
+% Commandes personnelles
+%-------------------------------------------------------
+\newcommand{\python}{\texttt{python}}
+% \renewcommand{\thesection}{\Alph{section}.}
+%-------------------------------------------------------
+
+% Le document
+%-------------------------------------------------------
+\begin{document}
+
+%-------------------------------------------------------
+% La page de titre
+%-------------------------------------------------------
+\maketitle
+\thispagestyle{fancy}
+
+% \vspace*{-2cm}
+
+\begin{center}
+  Durée de l'épreuve : 2 heures 00
+\end{center}
+
+\vspace*{1cm}
+
+L'usage de la calculatrice et du dictionnaire n'est pas autorisé.
+
+Dès que ce sujet vous est remis, assurez-vous qu'il est complet.
+Ce sujet comporte \pageref{LastPage} pages numérotées de 1/\pageref{LastPage} à \pageref{LastPage}/\pageref{LastPage}.
+
+\vfill
+\makebox[\textwidth]
+{Nom :\enspace\hrulefill}
+
+\vspace{0.5cm}
+
+\makebox[\textwidth]
+{Classe:\enspace\hrulefill}
+
+\vfill
+
+\newpage
+% %-------------------------------------------------------
+% % La table des matières
+% %-------------------------------------------------------
+% \setcounter{tocdepth}{3}
+% \tableofcontents
+% \newpage
+
+
+\begin{Exercice}[\textit{Base de données}\hfill 8 points]
+
+  Dans cet exercice, on pourra utiliser les mots clés suivants du langage \mintinlinetext{SQL} : \mintinline{SQL}{SELECT, FROM, WHERE, JOIN, ON, INSERT INTO, UPDATE,
+ SET, VALUES, COUNT, OR, AND, LIKE}.
+
+  Les articles d'un journal sont recensés dans une base de données \mintinline{SQL}{Journal}. Cette base contient des informations sur chaque article (titre,
+  auteur et date de parution). Chaque auteur est caractérisé par son nom et son prénom. On associe de plus à certains articles des thèmes.
+
+  Le schéma relationnel de la base de données est donné ci-dessous :
+  \begin{itemize}
+    \item \mintinline{SQL}{Articles} (\underline{idArticle}, \mintinline{SQL}{titre, #auteur, dateParution)}
+    \item \mintinline{SQL}{Auteurs} (\underline{idAuteur} \mintinline{SQL}{, nom, prenom)}
+    \item \mintinline{SQL}{Themes} (\underline{idTheme} \mintinline{SQL}{, theme)}
+    \item \mintinline{SQL}{Traitements} (\underline{idTraitement} \mintinline{SQL}{, #article, #theme)}
+  \end{itemize}
+
+  Dans ce schéma, les clés primaires sont soulignées et les clés étrangères sont précédées du symbole \mintinline{SQL}{#}.
+
+  L'attribut \mintinline{SQL}{auteur} de la relation \mintinline{SQL}{Articles} est une clé étrangère faisant référence
+  à l'attribut \mintinline{SQL}{idAuteur} de la relation \mintinline{SQL}{Auteurs}.
+
+  L'attribut \mintinline{SQL}{article} de la relation \mintinline{SQL}{Traitements} est une clé étrangère faisant référence
+  à l'attribut \mintinline{SQL}{idArticle} de la relation \mintinline{SQL}{Articles}.
+
+  L'attribut \mintinline{SQL}{theme} de la relation \mintinline{SQL}{Traitements} est une clé étrangère faisant référence
+  à l'attribut \mintinline{SQL}{idTheme} de la relation \mintinline{SQL}{Themes}.
+
+  Tous les attributs dont le nom est préfixé par \mintinline{SQL}{id} sont des nombres entiers ainsi que l'attribut \mintinline{SQL}{dateParution} (les dates
+  sont notées au format \mintinline{SQL}{aaaaMMjj}, par exemple \mintinline{SQL}{20220103} pour le 3 janvier 2022). Les autres attributs sont des chaînes de caractères.
+
+  Les entrées de la relation \mintinline{SQL}{Traitements} correspondent aux thèmes abordés par des articles. Un article peut aborder 0, 1 ou plusieurs thèmes.
+
+  \begin{Question}
+    Expliquer pourquoi il n'est pas possible d'insérer une entrée dans la relation \mintinline{SQL}{Articles} si les relations
+    \mintinline{SQL}{Auteurs} et \mintinline{SQL}{Themes} sont vides.
+  \end{Question}
+
+  On fournit les extraits suivants de chacune des relations.
+
+  \begin{table}[H]
+    \begin{center}
+      \texttt{
+        \begin{tabular}{llll}
+          \multicolumn{2}{l}{Articles}                                 \\
+          \toprule
+          idArticle & titre                        & auteur & dateParution     \\
+          \midrule
+          1         & Présidence française de l'UE & 2      & 20220112 \\
+          2         & Les bleues en demies !       & 3      & 20220110 \\
+          \bottomrule
+        \end{tabular}
+      }
+    \end{center}
+  \end{table}
+
+  \begin{minipage}{0.45\textwidth}
+    \begin{table}[H]
+      \begin{center}
+        \texttt{
+          \begin{tabular}{lll}
+            \multicolumn{3}{l}{Auteurs}   \\
+            \toprule
+            idAuteur & nom     & prenom  \\
+            \midrule
+            1         & Londres & Alfred  \\
+            2         & Jeraus  & Jean    \\
+            3         & Zola    & Étienne \\
+            \bottomrule
+          \end{tabular}
+        }
+      \end{center}
+    \end{table}
+  \end{minipage}
+  \begin{minipage}{0.45\textwidth}
+    \begin{table}[H]
+      \begin{center}
+        \texttt{
+          \begin{tabular}{ll}
+            \multicolumn{2}{l}{Themes} \\
+            \toprule
+            idTheme & themes           \\
+            \midrule
+            1       & Politique        \\
+            2       & Sport            \\
+            3       & Europe           \\
+            4       & Handball         \\
+            \bottomrule
+          \end{tabular}
+        }
+      \end{center}
+    \end{table}
+  \end{minipage}
+
+  \begin{table}[H]
+    \begin{center}
+      \texttt{
+        \begin{tabular}{lll}
+          \multicolumn{3}{l}{Traitements} \\
+          \toprule
+          idTraitement & article & theme  \\
+          \midrule
+          1            & 1       & 1      \\
+          2            & 1       & 3      \\
+          3            & 2       & 2      \\
+          4            & 2       & 3      \\
+          \bottomrule
+        \end{tabular}
+      }
+    \end{center}
+  \end{table}
+
+  \begin{Question}
+    L'article nommé \og \textit{Les bleues en demies !} \fg\ portait sur la coupe d'Europe de handball. Écrire une requête \mintinline{SQL}{SQL} permettant d'ajouter le
+    thème \mintinline{SQL}{handball} à cet article dans la table (ou relation) \mintinline{SQL}{Traitements}.
+  \end{Question}
+
+  \begin{Question}
+    Le journaliste \og Jean Jèraus \fg\ tient à ce que son nom soit écrit avec l'accent grave. Ce n'est pas le cas pour l'instant dans la base de données.
+    Écrire la requête \mintinline{SQL}{SQL} permettant de mettre à jour les informations afin de satisfaire sa demande.
+  \end{Question}
+
+  \begin{Question}
+    Pour chacun des items suivants, écrire une requête \mintinline{SQL}{SQL} permettant d'extraire les informations demandées.
+    \begin{subQuestion}
+      Le titre des articles parus après le $1^{er}$ janvier 2022 inclus.
+    \end{subQuestion}
+    \begin{subQuestion}
+      Le titre des articles écrits par l'auteur Étienne Zola (on sait que son \mintinline{SQL}{idAuteur} est le \mintinline{SQL}{3}).
+    \end{subQuestion}
+    \begin{subQuestion}
+      Le nombre d'articles écrits par l'auteur Jacques Pulitzer (présent dans la table \mintinline{SQL}{Auteurs} mais on ne connaît pas son \mintinline{SQL}{idAuteur}).
+    \end{subQuestion}
+    \begin{subQuestion}
+      Les dates de parution des articles traitant du thème \og Sport \fg.
+    \end{subQuestion}
+  \end{Question}
+
+\end{Exercice}
+
+\begin{Exercice}[\textit{Arbres binaires équilibrés}\hfill 12 points]
+  On s'intéresse dans cet exercice aux arbres binaires \textbf{équilibrés}.
+
+  On dit qu'un arbre binaire est équilibré si, quel que soit le nœud considéré, les hauteurs des sous-arbres issus de ses fils gauche
+  et droit ne diffèrent au maximum que de 1. Dans la figure \ref{equilibre}, l'arbre de gauche est équilibré alors que celui de droite ne l'est pas.
+
+  On considère que la hauteur d'un arbre réduit à sa racine vaut 1. La hauteur d'un arbre vide vaut donc 0.
+
+  \begin{figure}[!ht]
+    \begin{center}
+      \begin{tikzpicture}[level distance=0.8cm]
+        \tikzstyle{every node}=[draw, circle, minimum size=3mm, inner sep=0mm]
+
+        \node at (0,0) {} [level 1/.style={sibling distance=4cm},
+          level 2/.style={sibling distance=2cm},
+          level 3/.style={sibling distance=1cm}]
+        child {node {}
+            child {node {}
+                child {node[draw=none] {} edge from parent [draw=none]}
+                child {node {}}
+              }
+            child {node {}
+                child {node {}}
+                child {node {}}
+              }
+          }
+        child {node {}
+            child {node {}
+                child {node {}}
+                child {node[draw=none] {} edge from parent [draw=none]}
+              }
+            child {node {}
+              }
+          };
+
+
+        \node at (9,0) {} [level 1/.style={sibling distance=4cm},
+          level 2/.style={sibling distance=2cm},
+          level 3/.style={sibling distance=1cm}]
+        child {node {}
+            child {node {}
+                child {node[draw=none] {} edge from parent [draw=none]}
+                child {node {}}
+              }
+            child {node {}
+                child {node {}}
+                child {node {}}
+              }
+          }
+        child {node[fill=black] {}
+            child {node {}
+                child {node {}}
+                child {node[draw=none] {} edge from parent [draw=none]}
+              }
+            child {node[draw=none] {} edge from parent [draw=none]}
+          };
+      \end{tikzpicture}
+    \end{center}
+    \caption{Un arbre binaire équilibré (à gauche) et un non-équilibré (à droite)}
+    \label{equilibre}
+  \end{figure}
+
+  \noindent{\textbf{Partie A}}
+  \setcounter{question}{0}
+
+  Afin de déterminer si un arbre est équilibré ou non, on calcule la \textbf{balance} de chaque nœud. Cette grandeur est égale à la différence des hauteurs de son fils
+  droit et de son fils gauche. Dans la figure \ref{equilibre}, le nœud colorié en noir a une balance de $-2$. En effet, il n'a pas de fils droit et son fils gauche a une
+  hauteur de 2 : sa balance vaut donc $0-2=-2$.
+
+  Un arbre binaire est équilibré si la balance de chacun de ses nœuds vaut $-1$, $0$ ou $1$.
+
+  \begin{Question}
+    \begin{subQuestion}
+      On considère l'arbre de la figure \ref{arbreQ1}. Compléter la figure sur cet énoncé en indiquant à côté de chaque nœud sa balance.
+    \end{subQuestion}
+    \begin{subQuestion}
+      Cet arbre est-il équilibré ?
+    \end{subQuestion}
+  \end{Question}
+
+  \begin{figure}[H]
+    \begin{center}
+      \footnotesize{
+
+        \begin{tikzpicture}[level distance=1cm,level 1/.style={sibling distance=4cm},
+            level 2/.style={sibling distance=2cm},
+            level 3/.style={sibling distance=1.5cm}]
+          \tikzstyle{every node}=[draw, circle, minimum size=7mm, inner sep=1mm]
+
+          \node at (0,0) {9} []
+          child {node {6}
+              child {node {3}
+                  child {node {2}}
+                  child {node[draw=none] {} edge from parent [draw=none]}
+                }
+              child {node {7}
+                }
+            }
+          child {node {15}
+              child {node[draw=none] {} edge from parent [draw=none]}
+              child {node {18}
+                  child {node {16}}
+                  child {node[draw=none] {} edge from parent [draw=none]}
+                }
+            };
+
+        \end{tikzpicture}
+      }
+    \end{center}
+    \caption{}
+    \label{arbreQ1}
+  \end{figure}
+
+  On implémente les arbres binaires à l'aide de listes \python. Dans ce cadre :
+  \begin{itemize}
+    \item On place la valeur \texttt{0} dans la cellule d'indice $0$. \textbf{Cette valeur sera ignorée dans les différents traitements}
+    \item la valeur de la racine de l'arbre est dans la cellule d'indice $1$
+    \item si l'on considère un nœud dont la valeur est stockée dans la cellule $n$ :
+          \begin{itemize}
+            \item la valeur de son fils gauche est stockée dans la cellule $2n$
+            \item la valeur de son fils droit est stockée dans la cellule $2n+1$
+          \end{itemize}
+    \item si un nœud est vide, on stocke une valeur absurde dans le tableau (\mintinlinepy{None} en \python)
+    \item le tableau se termine à la dernière valeur non-vide
+  \end{itemize}
+
+  \newcounter{index}
+  \begin{figure}[!ht]
+    \centering
+    \footnotesize{
+      \begin{tikzpicture}
+        \setcounter{index}{0}
+        \coordinate (s) at (0,0);
+        \foreach \num in {0,9,6,15,3,7,/,18,2,/,/,/,/,/,16}{
+            \node[minimum size=8mm, draw, rectangle] at (s) (\theindex) {\num};
+            \node at ($(s)+(0,0.6)$) (i\theindex) {\footnotesize \theindex};
+            \stepcounter{index}
+            \coordinate (s) at ($(s) + (0.8,0)$);
+          }
+        \draw [->] (i2.north) to [out=45,in=150] (i4.north);
+        \draw [->] (i2.north) to [out=45,in=150] (i5.north);
+        \draw [->] (i7.north) to [out=30,in=150] (i14.north);
+
+        \node[draw=none, anchor=north, rectangle] at ($(7)+(0.3,-1)$) {
+          \begin{minipage}{14.7cm}
+            \normalsize{
+              \mintinlinepy{[0, 9, 6, 15, 3, 7, None, 18, 2, None, None, None, None, None, 16]}
+            }
+          \end{minipage}
+        };
+      \end{tikzpicture}
+    }
+    \caption{Représentation de l'arbre de la figure \ref{arbreQ1} dans un tableau et une liste \python}
+  \end{figure}
+
+  \begin{Question}
+    \begin{subQuestion}
+      Donner la liste \python\ représentant l'arbre de la figure \ref{arbreQ2}.
+
+      \begin{figure}[!ht]
+        \centering
+        \footnotesize{
+
+          \begin{tikzpicture}[level distance=1cm,level 1/.style={sibling distance=4cm},
+              level 2/.style={sibling distance=2cm},
+              level 3/.style={sibling distance=1.5cm}]
+            \tikzstyle{every node}=[draw, circle, minimum size=7mm, inner sep=1mm]
+
+            \node {45}
+            child {node {40}
+                child {node {17} {
+                        child {node {14}}
+                        child {node {19}}
+                      }}
+                child {node {43}}
+              }
+            child {node {48}
+                child {node {46}}
+                child {node {49}}
+              };
+          \end{tikzpicture}
+        }
+        \caption{}
+        \label{arbreQ2}
+      \end{figure}
+    \end{subQuestion}
+
+    \begin{subQuestion}
+      Dessiner l'arbre représenté par la liste suivante \mintinlinepy{[0, 35, 30, 12, 20, 23, 10, 5, 2]}.
+    \end{subQuestion}
+  \end{Question}
+
+
+  On fournit la fonction \mintinlinepy{f} prenant en argument un arbre donné sous la forme d'une liste \python\ ainsi que l'indice du nœud
+  racine d'un de ses sous-arbres et renvoyant un nombre entier.
+  \begin{minted}{python}
+def f(arbre: list, i: int) -> int:
+    if i >= len(arbre) or arbre[i] is None:
+        return 0
+    else:
+        g = f(arbre, 2*i)
+        d = f(arbre, 2*i + 1)
+        return 1 + max(g, d)
+    \end{minted}
+
+  \begin{Question}
+    \begin{subQuestion}
+      On considère la variable \mintinlinepy{arbre} égale à \mintinlinepy{[0, 30, 20, 40, 18, 25, None, 47]}. Que renvoie l'appel \mintinlinepy{f(arbre, 1)} ? Justifier.
+    \end{subQuestion}
+    \begin{subQuestion}
+      Que permet de calculer la fonction \mintinlinepy{f}?
+    \end{subQuestion}
+  \end{Question}
+
+  \begin{Question}
+    Compléter sur cet énoncé le code de la fonction suivante indiquant si un arbre est équilibré ou non. On rappelle que par définition un arbre vide est équilibré. \mintinlinepy{arbre} est la liste \python\ contenant un arbre et \mintinlinepy{i} l'indice d'un nœud, racine du sous-arbre étudié.
+    \begin{minted}[baselinestretch=1.2, samepage]{python}
+def estEquilibre(arbre: list, i : int) -> bool:
+   if i >= len(arbre) or arbre[i] is None:
+        return ......
+    else:
+        balance = f(arbre, .....) - f(arbre, .....)
+        reponse = balance in [..., ..., ...]
+        return reponse and estEquilibre(arbre,.....) and .........(.........,.....)
+\end{minted}
+  \end{Question}
+
+  \noindent{\textbf{Partie B :}}
+  \setcounter{question}{0}
+
+  On s'intéresse dans cette sous-partie aux arbres binaires de recherche. On rappelle que dans un tel arbre, quel que soit le nœud considéré, son fils gauche, s'il existe, a une valeur
+  qui lui est inférieure ou égale et son fils droit, s'il existe, une valeur qui lui est strictement supérieure. Les différents arbres dessinés plus haut sont tous des arbres
+  binaires de recherche.
+
+  \begin{Question}
+    Donner les parcours \textit{préfixe}, \textit{infixe} et \textit{suffixe} de l'arbre de la figure \ref{arbreQ2}.
+  \end{Question}
+
+  Dans le cas où un arbre binaire de recherche n'est pas équilibré, la méthode ci-dessous permet de construire un arbre binaire de recherche équilibré
+  contenant les mêmes valeurs :
+  \begin{center}
+    \fbox{
+      \begin{minipage}{0.95\textwidth}
+        \begin{enumerate}[label=\small{(\arabic*)}, leftmargin=*]
+          \item Déterminer l'ordre de parcours \textit{infixe} de l'arbre. Le stocker dans une liste \mintinlinepy{ordre}
+          \item Créer un arbre vide nommé \mintinlinepy{nouveau} (une liste contenant la valeur 0 selon l'implémentation choisie ici). La liste \mintinlinepy{nouveau} sera réutilisée dans la suite de 
+          l'algorithme sans avoir besoin d'être passée en argument de fonctions
+          \item La variable \mintinlinepy{i} prend la valeur 1 (indice de la racine de \mintinlinepy{nouveau})
+          \item Appeler la fonction récursive \mintinlinepy{construireABR(i, ordre)} qui :
+                \begin{enumerate}[label=\small{(\alph*)}]
+                  \item Ajoute la valeur \mintinlinepy{None} à la liste \mintinlinepy{nouveau} jusqu'à ce qu'elle soit de longueur \mintinlinepy{i+1}
+                  \item Donne la valeur du \og milieu \fg\ de \mintinlinepy{ordre} à \mintinlinepy{nouveau[i]}
+                  \item Détermine la \mintinlinepy{moitié gauche de ordre}
+                  \item Si celle-ci est non-vide, appelle \mintinlinepy{construireABR(2*i, moitié gauche de ordre)}
+                  \item Détermine la \mintinlinepy{moitié droite de ordre}
+                  \item Si celle-ci est non-vide, appelle \mintinlinepy{construireABR(2*i+1, moitié droite de ordre)}
+                \end{enumerate}
+        \end{enumerate}
+      \end{minipage}
+    }
+  \end{center}
+
+  La \mintinlinepy{moitié gauche de ordre} (resp. \mintinlinepy{moitié droite de ordre}) est la liste des valeurs de \mintinlinepy{ordre} d'indice
+  strictement inférieur (resp. supérieur) à celui du milieu. On la crée facilement en faisant \mintinlinepy{ordre[:len(ordre)//2]}
+  (resp. \mintinlinepy{ordre[(len(ordre)//2+1):]})
+
+  Cette méthode, appliquée à l'ordre de parcours \mintinlinepy{[8, 10, 15, 17]} permet de construire l'arbre stocké dans la liste \mintinlinepy{[0, 15, 10, 17, 8]}.
+
+  \begin{figure}[H]
+    \centering
+    \footnotesize{
+      \begin{tikzpicture}[level distance=1.5cm,level 1/.style={sibling distance=3cm},
+          level 2/.style={sibling distance=2cm},
+          level 3/.style={sibling distance=1.5cm}]
+        \tikzstyle{every node}=[draw, circle, minimum size=7mm, inner sep=1mm]
+
+        \node (R) {15}
+        child {node {10}
+            child {node {8}}
+            child {node[draw=none] {} edge from parent [draw=none]}
+          }
+        child {node {17}};
+
+        \node[minimum size=7mm, inner sep=1mm, draw, rectangle, right=8cm of R, fill=lightgray!50] (150) {15};
+        \node[minimum size=7mm, inner sep=1mm, draw, rectangle, left=0cm of 150] (100) {10};
+        \node[minimum size=7mm, inner sep=1mm, draw, rectangle, left=0cm of 100] (80) {8};
+        \node[minimum size=7mm, inner sep=1mm, draw, rectangle, right=0cm of 150] (170) {17};
+
+        \node[minimum size=7mm, inner sep=1mm, draw, rectangle, fill=lightgray!50] (101) at ($(100)+(-1.2,-1.5)$) {10};
+        \node[minimum size=7mm, inner sep=1mm, draw, rectangle, left=0cm of 101] (81) {8};
+        \node[minimum size=7mm, inner sep=1mm, draw, rectangle, fill=lightgray!50] (171) at ($(170)+(1.2,-1.5)$) {17};
+
+        \node[minimum size=7mm, inner sep=1mm, draw, rectangle, fill=lightgray!50] (82) at ($(81)+(-0.6,-1.5)$) {8};
+
+        \draw[-latex, thick] (100.south west) -- (101.north west) node [midway, left, draw=none, rectangle, xshift=-1mm] {\footnotesize{\textit{moitié gauche}}};
+        \draw[-latex, thick] (81.south) -- (82.north) node [midway, left, draw=none, rectangle] {\footnotesize{\textit{moitié gauche}}};
+        \draw[-latex, thick] (170.south) -- (171.north) node [midway, right, draw=none, rectangle, xshift=1mm] {\footnotesize{\textit{moitié droite}}};
+      \end{tikzpicture}
+    }
+    \caption*{}
+  \end{figure}
+
+
+  \begin{Question}
+    Dessiner l'arbre construit par cette méthode lorsque l'ordre proposé est \mintinlinepy{[20, 21, 22, 23, 24, 25]}.
+  \end{Question}
+
+  On donne ci-dessous le pseudo-code d'une fonction renvoyant l'ordre de parcours infixe d'un arbre fourni sous forme d'une liste \python. Cette fonction utilise une pile.
+  \begin{minted}{text}
+Fonction infixe(arbre) :
+    p est une Pile vide
+    visites est une liste vide
+    n est égal à 1 # l'indice du nœud étudié dans arbre
+    repetition est égal à Vrai
+    Tant que repetition est Vrai :
+        Tant que n < longueur(arbre) et arbre[n] n'est pas None :
+            Ajouter n à la pile
+            n est égal à l'indice du fils gauche du nœud d'indice n
+        Si la longueur de la pile est nulle :
+            repetition est égal à Faux
+        Sinon :
+            Dépiler une valeur de la pile dans n
+            Ajouter arbre[n] à la fin de visites
+            n est égal à l'indice du fils droit du nœud d'indice n
+    Renvoyer visites
+\end{minted}
+  \begin{Question}
+    Transcrire cette fonction en \python. On pourra utiliser une liste \python\ afin d'implémenter la structure de pile.
+  \end{Question}
+
+  \begin{Question}
+    Écrire en \python\ le code de la fonction \mintinlinepy{construireABR} décrite plus haut (point \small{(4)} de l'encadré).
+  \end{Question}
+
+\end{Exercice}
+
+\end{document}

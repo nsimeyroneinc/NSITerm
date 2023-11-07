@@ -1,0 +1,2141 @@
+<!-- Ajout pour le bouton de téléchargement et le style des jupyter notebook   https://github.com/danielfrg/mkdocs-jupyter -->
+
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Cours et TD de l'année en cours">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../images/dragon.svg">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.8">
+    
+    
+      
+        <title>T4 2 dictionnaires - NSI Terminale 2022-2023</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.4b4a2bd9.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.356b1318.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rod2ik/cdn@main/mkdocs/css/massilia-admonitions.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#c19-les-dictionnaires" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="../.." title="NSI Terminale 2022-2023" class="md-header__button md-logo" aria-label="NSI Terminale 2022-2023" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="m352 124.5-51.9-13c-6.5-1.6-11.3-7.1-12-13.8s2.8-13.1 8.7-16.1l40.8-20.4-43.2-32.4c-5.5-4.1-7.8-11.3-5.6-17.9S297.1 0 304 0h160c30.2 0 58.7 14.2 76.8 38.4l57.6 76.8c6.2 8.3 9.6 18.4 9.6 28.8 0 26.5-21.5 48-48 48h-21.5c-17 0-33.3-6.7-45.3-18.7L480 160h-32v21.5c0 24.8 12.8 47.9 33.8 61.1l106.6 66.6c32.1 20.1 51.6 55.2 51.6 93.1 0 60.6-49.1 109.7-109.8 109.7H32.3c-3.3 0-6.6-.4-9.6-1.4-9.2-2.8-16.7-9.6-20.3-18.5C1 488.7.2 485.2 0 481.4c-.2-3.7.3-7.3 1.3-10.7 2.8-9.2 9.6-16.7 18.6-20.4 3-1.2 6.2-2 9.5-2.2L433.3 412c8.3-.7 14.7-7.7 14.7-16.1 0-4.3-1.7-8.4-4.7-11.4l-44.4-44.4c-30-30-46.9-70.7-46.9-113.1V124.5zm160-52.2v-.6.6zm-1.3 7.4-46.4-11.6c-.2 1.3-.3 2.6-.3 3.9 0 13.3 10.7 24 24 24 10.6 0 19.5-6.8 22.7-16.3zm-379.8 36.8c16.3-14.5 40.4-16.2 58.5-4.1l130.6 87V227c0 32.8 8.4 64.8 24 93H112c-6.7 0-12.7-4.2-15-10.4s-.5-13.3 4.6-17.7l69.4-59.6-152.6 23.5c-7 1.1-13.9-2.6-16.9-9S0 232.7 5.3 228l125.6-111.5z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            NSI Terminale 2022-2023
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              T4 2 dictionnaires
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue"  aria-label="Basculer en mode sombre"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Basculer en mode sombre" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9v1Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="blue"  aria-label="Basculer en mode clair"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Basculer en mode clair" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Recherche">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Effacer" aria-label="Effacer" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Onglets" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  Accueil
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../index_structDonnees/" class="md-tabs__link">
+          
+  
+    
+  
+  T1 - Struct. données
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../BasesDonnees/index_bd/" class="md-tabs__link">
+          
+  
+    
+  
+  T2 - Bases données
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Archi_Materielle/index_archi/" class="md-tabs__link">
+          
+  
+    
+  
+  T3 - Archi. mat.
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Programmation/index_prog/" class="md-tabs__link">
+          
+  
+    
+  
+  T4 - Prog.
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Algo/index_algo/" class="md-tabs__link">
+          
+  
+    
+  
+  T5 Algo.
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../BAC/bac_explication/" class="md-tabs__link">
+          
+  
+    
+  
+  BAC 📝
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../epreuve_pratique/" class="md-tabs__link">
+          
+  
+    
+  
+  Annales E.P. 💻
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../divers/prog/" class="md-tabs__link">
+          
+  
+    
+  
+  Extras
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../credit/" class="md-tabs__link">
+        
+  
+    
+  
+  Crédits
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="NSI Terminale 2022-2023" class="md-nav__button md-logo" aria-label="NSI Terminale 2022-2023" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="m352 124.5-51.9-13c-6.5-1.6-11.3-7.1-12-13.8s2.8-13.1 8.7-16.1l40.8-20.4-43.2-32.4c-5.5-4.1-7.8-11.3-5.6-17.9S297.1 0 304 0h160c30.2 0 58.7 14.2 76.8 38.4l57.6 76.8c6.2 8.3 9.6 18.4 9.6 28.8 0 26.5-21.5 48-48 48h-21.5c-17 0-33.3-6.7-45.3-18.7L480 160h-32v21.5c0 24.8 12.8 47.9 33.8 61.1l106.6 66.6c32.1 20.1 51.6 55.2 51.6 93.1 0 60.6-49.1 109.7-109.8 109.7H32.3c-3.3 0-6.6-.4-9.6-1.4-9.2-2.8-16.7-9.6-20.3-18.5C1 488.7.2 485.2 0 481.4c-.2-3.7.3-7.3 1.3-10.7 2.8-9.2 9.6-16.7 18.6-20.4 3-1.2 6.2-2 9.5-2.2L433.3 412c8.3-.7 14.7-7.7 14.7-16.1 0-4.3-1.7-8.4-4.7-11.4l-44.4-44.4c-30-30-46.9-70.7-46.9-113.1V124.5zm160-52.2v-.6.6zm-1.3 7.4-46.4-11.6c-.2 1.3-.3 2.6-.3 3.9 0 13.3 10.7 24 24 24 10.6 0 19.5-6.8 22.7-16.3zm-379.8 36.8c16.3-14.5 40.4-16.2 58.5-4.1l130.6 87V227c0 32.8 8.4 64.8 24 93H112c-6.7 0-12.7-4.2-15-10.4s-.5-13.3 4.6-17.7l69.4-59.6-152.6 23.5c-7 1.1-13.9-2.6-16.9-9S0 232.7 5.3 228l125.6-111.5z"/></svg>
+
+    </a>
+    NSI Terminale 2022-2023
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Accueil
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    T1 - Struct. données
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            T1 - Struct. données
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index_structDonnees/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Structures de données
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    T2 - Bases données
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            T2 - Bases données
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BasesDonnees/index_bd/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Base de données
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BasesDonnees/Modele_Relationnel/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📓 C1 Modèle relationnel
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BasesDonnees/Cours_TP_SQL/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📓 C2 Langage SQL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BasesDonnees/SQL_BAC/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📝 S2 BAC SQL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BasesDonnees/SQL_BAC_correction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📝 S2 BAC SQL Correction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    T3 - Archi. mat.
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            T3 - Archi. mat.
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Archi_Materielle/index_archi/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Architecture matérielle et OS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    T4 - Prog.
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            T4 - Prog.
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programmation/index_prog/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Programmation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programmation/T1_1_Recursivite/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📓 C3 Récursivité
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    T5 Algo.
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            T5 Algo.
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Algo/index_algo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Algorithmique
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    BAC 📝
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            BAC 📝
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BAC/bac_explication/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Information
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    2023
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_2">
+            <span class="md-nav__icon md-icon"></span>
+            2023
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annales/2023/EE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Epreuves écrites
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_3" id="__nav_7_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    2022
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_3">
+            <span class="md-nav__icon md-icon"></span>
+            2022
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annales/2022/EE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Epreuves écrites
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_4" id="__nav_7_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    2021
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_4">
+            <span class="md-nav__icon md-icon"></span>
+            2021
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annales/2021/EE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Epreuves écrites
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Annales E.P. 💻
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Annales E.P. 💻
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../epreuve_pratique/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Déroulement
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../divers/Consigne_EP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Consigne
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../divers/lien/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    S'entrainer en ligne pour l'épreuve pratique
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_4" id="__nav_8_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    2023
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_4">
+            <span class="md-nav__icon md-icon"></span>
+            2023
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annales/2023/EP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Epreuves pratiques
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Extras
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Extras
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../divers/prog/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Divers concours programmation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Projet/forcebrute/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Force brute
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Projet/cryptographie/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cryptographie
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Projet/cryptographie2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cryptographie bis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Projet/pyxel/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    pyxel
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../divers/sujet0_geipi.pdf" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Epreuve GEIPI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../credit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Crédits
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#exercices" class="md-nav__link">
+    Exercices
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+
+
+
+
+
+                  
+
+
+<h1 id="c19-les-dictionnaires"><span class='numchapitre'>C19</span> Les dictionnaires <span style='float:right;'><span class="twemoji" title="Structures de données"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M0 80c0-26.5 21.5-48 48-48h96c26.5 0 48 21.5 48 48v16h192V80c0-26.5 21.5-48 48-48h96c26.5 0 48 21.5 48 48v96c0 26.5-21.5 48-48 48h-96c-26.5 0-48-21.5-48-48v-16H192v16c0 1.7-.1 3.4-.3 5L272 288h96c26.5 0 48 21.5 48 48v96c0 26.5-21.5 48-48 48h-96c-26.5 0-48-21.5-48-48v-96c0-1.7.1-3.4.3-5L144 224H48c-26.5 0-48-21.5-48-48V80z"/></svg></span></span><a class="headerlink" href="#c19-les-dictionnaires" title="Permanent link">⚓︎</a></h1>
+<h2 id="exercices">Exercices<a class="headerlink" href="#exercices" title="Permanent link">⚓︎</a></h2>
+<div class="admonition example">
+<p class="admonition-title">Exercice  1</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Énoncé</label><label for="__tabbed_1_2">Correction</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>L’ARN contient le codage des protéines, composées de chaines d’acides aminés.</p>
+<p>Le dictionnaire ci-dessous donne les correspondances entre les codons, des séquences d’ARN constitués de trois nucléotides, et les acides aminés.</p>
+<p>La séquence AUG, par exemple, correspond à la méthionine, notée M.</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">🐍 Script Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">dico_gen</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;UUU&#39;</span> <span class="p">:</span> <span class="s1">&#39;F&#39;</span><span class="p">,</span> <span class="s1">&#39;UUC&#39;</span> <span class="p">:</span> <span class="s1">&#39;F&#39;</span><span class="p">,</span> <span class="s1">&#39;UUG&#39;</span> <span class="p">:</span> <span class="s1">&#39;L&#39;</span><span class="p">,</span> <span class="s1">&#39;UUA&#39;</span> <span class="p">:</span> <span class="s1">&#39;L&#39;</span><span class="p">,</span> <span class="s1">&#39;UCU&#39;</span> <span class="p">:</span> <span class="s1">&#39;S&#39;</span><span class="p">,</span>
+<span class="s1">&#39;UCC&#39;</span> <span class="p">:</span> <span class="s1">&#39;S&#39;</span><span class="p">,</span> <span class="s1">&#39;UCG&#39;</span> <span class="p">:</span> <span class="s1">&#39;S&#39;</span><span class="p">,</span> <span class="s1">&#39;UCA&#39;</span> <span class="p">:</span> <span class="s1">&#39;S&#39;</span><span class="p">,</span> <span class="s1">&#39;UAU&#39;</span> <span class="p">:</span> <span class="s1">&#39;Y&#39;</span><span class="p">,</span> <span class="s1">&#39;UAC&#39;</span> <span class="p">:</span> <span class="s1">&#39;Y&#39;</span><span class="p">,</span>
+<span class="s1">&#39;UAG&#39;</span> <span class="p">:</span> <span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="s1">&#39;UAA&#39;</span> <span class="p">:</span> <span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="s1">&#39;UGU&#39;</span> <span class="p">:</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;UGC&#39;</span> <span class="p">:</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;UGG&#39;</span> <span class="p">:</span> <span class="s1">&#39;W&#39;</span><span class="p">,</span>
+<span class="s1">&#39;UGA&#39;</span> <span class="p">:</span> <span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="s1">&#39;CUU&#39;</span> <span class="p">:</span> <span class="s1">&#39;L&#39;</span><span class="p">,</span> <span class="s1">&#39;CUC&#39;</span> <span class="p">:</span> <span class="s1">&#39;L&#39;</span><span class="p">,</span> <span class="s1">&#39;CUG&#39;</span> <span class="p">:</span> <span class="s1">&#39;L&#39;</span><span class="p">,</span> <span class="s1">&#39;CUA&#39;</span> <span class="p">:</span> <span class="s1">&#39;L&#39;</span><span class="p">,</span>
+<span class="s1">&#39;CCU&#39;</span> <span class="p">:</span> <span class="s1">&#39;P&#39;</span><span class="p">,</span> <span class="s1">&#39;CCC&#39;</span> <span class="p">:</span> <span class="s1">&#39;P&#39;</span><span class="p">,</span> <span class="s1">&#39;CCG&#39;</span> <span class="p">:</span> <span class="s1">&#39;P&#39;</span><span class="p">,</span> <span class="s1">&#39;CCA&#39;</span> <span class="p">:</span> <span class="s1">&#39;P&#39;</span><span class="p">,</span> <span class="s1">&#39;CGU&#39;</span> <span class="p">:</span> <span class="s1">&#39;R&#39;</span><span class="p">,</span>
+<span class="s1">&#39;CGC&#39;</span> <span class="p">:</span> <span class="s1">&#39;R&#39;</span><span class="p">,</span> <span class="s1">&#39;CGG&#39;</span> <span class="p">:</span> <span class="s1">&#39;R&#39;</span><span class="p">,</span> <span class="s1">&#39;CGA&#39;</span> <span class="p">:</span> <span class="s1">&#39;R&#39;</span><span class="p">,</span> <span class="s1">&#39;CAU&#39;</span> <span class="p">:</span> <span class="s1">&#39;H&#39;</span><span class="p">,</span> <span class="s1">&#39;CAC&#39;</span> <span class="p">:</span> <span class="s1">&#39;H&#39;</span><span class="p">,</span>
+<span class="s1">&#39;CAG&#39;</span> <span class="p">:</span> <span class="s1">&#39;Q&#39;</span><span class="p">,</span> <span class="s1">&#39;CAA&#39;</span> <span class="p">:</span> <span class="s1">&#39;Q&#39;</span><span class="p">,</span> <span class="s1">&#39;ACU&#39;</span> <span class="p">:</span> <span class="s1">&#39;T&#39;</span><span class="p">,</span> <span class="s1">&#39;ACC&#39;</span> <span class="p">:</span> <span class="s1">&#39;T&#39;</span><span class="p">,</span> <span class="s1">&#39;ACG&#39;</span> <span class="p">:</span> <span class="s1">&#39;T&#39;</span><span class="p">,</span>
+<span class="s1">&#39;ACA&#39;</span> <span class="p">:</span> <span class="s1">&#39;T&#39;</span><span class="p">,</span> <span class="s1">&#39;AUG&#39;</span> <span class="p">:</span> <span class="s1">&#39;M&#39;</span><span class="p">,</span> <span class="s1">&#39;AUU&#39;</span> <span class="p">:</span> <span class="s1">&#39;I&#39;</span><span class="p">,</span> <span class="s1">&#39;AUC&#39;</span> <span class="p">:</span> <span class="s1">&#39;I&#39;</span><span class="p">,</span> <span class="s1">&#39;AUA&#39;</span> <span class="p">:</span> <span class="s1">&#39;I&#39;</span><span class="p">,</span>
+<span class="s1">&#39;AAU&#39;</span> <span class="p">:</span> <span class="s1">&#39;N&#39;</span><span class="p">,</span> <span class="s1">&#39;AAC&#39;</span> <span class="p">:</span> <span class="s1">&#39;N&#39;</span><span class="p">,</span> <span class="s1">&#39;AAG&#39;</span> <span class="p">:</span> <span class="s1">&#39;K&#39;</span><span class="p">,</span> <span class="s1">&#39;AAA&#39;</span> <span class="p">:</span> <span class="s1">&#39;K&#39;</span><span class="p">,</span> <span class="s1">&#39;AGU&#39;</span> <span class="p">:</span> <span class="s1">&#39;S&#39;</span><span class="p">,</span>
+<span class="s1">&#39;AGC&#39;</span> <span class="p">:</span> <span class="s1">&#39;S&#39;</span><span class="p">,</span> <span class="s1">&#39;AGG&#39;</span> <span class="p">:</span> <span class="s1">&#39;R&#39;</span><span class="p">,</span> <span class="s1">&#39;AGA&#39;</span> <span class="p">:</span> <span class="s1">&#39;R&#39;</span><span class="p">,</span> <span class="s1">&#39;GUU&#39;</span> <span class="p">:</span> <span class="s1">&#39;V&#39;</span><span class="p">,</span> <span class="s1">&#39;GUC&#39;</span> <span class="p">:</span> <span class="s1">&#39;V&#39;</span><span class="p">,</span>
+<span class="s1">&#39;GUG&#39;</span> <span class="p">:</span> <span class="s1">&#39;V&#39;</span><span class="p">,</span> <span class="s1">&#39;GUA&#39;</span> <span class="p">:</span> <span class="s1">&#39;V&#39;</span><span class="p">,</span> <span class="s1">&#39;GCU&#39;</span> <span class="p">:</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;GCC&#39;</span> <span class="p">:</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;GCG&#39;</span> <span class="p">:</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span>
+<span class="s1">&#39;GCA&#39;</span> <span class="p">:</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;GGU&#39;</span> <span class="p">:</span> <span class="s1">&#39;G&#39;</span><span class="p">,</span> <span class="s1">&#39;GGC&#39;</span> <span class="p">:</span> <span class="s1">&#39;G&#39;</span><span class="p">,</span> <span class="s1">&#39;GGG&#39;</span> <span class="p">:</span> <span class="s1">&#39;G&#39;</span><span class="p">,</span> <span class="s1">&#39;GGA&#39;</span> <span class="p">:</span> <span class="s1">&#39;G&#39;</span><span class="p">,</span>
+<span class="s1">&#39;GAU&#39;</span> <span class="p">:</span> <span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="s1">&#39;GAC&#39;</span> <span class="p">:</span> <span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="s1">&#39;GAG&#39;</span> <span class="p">:</span> <span class="s1">&#39;E&#39;</span><span class="p">,</span> <span class="s1">&#39;GAA&#39;</span> <span class="p">:</span> <span class="s1">&#39;E&#39;</span><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>Écrire une fonction <code>traduction</code> qui traduit une chaine d’ARN en protéine. On suppose que la longueur
+de la chaine d’ARN est un multiple de trois. Ainsi, <code>traduction('UUCAGUGGG')</code> renverra <code>'FSG'</code>.</p>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">🐍 Script Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">traduction</span><span class="p">(</span><span class="n">arn</span><span class="p">:</span><span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    traduit la chaîne arn en suite d&#39;acides aminés.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="n">proteine</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">arn</span><span class="p">),</span> <span class="mi">3</span><span class="p">):</span>
+        <span class="n">codon</span> <span class="o">=</span> <span class="n">arn</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">arn</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">arn</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">2</span><span class="p">]</span> <span class="c1"># ou arn[i:i+3]</span>
+        <span class="n">acide</span> <span class="o">=</span> <span class="n">dico_gen</span><span class="p">[</span><span class="n">codon</span><span class="p">]</span>
+        <span class="n">proteine</span> <span class="o">+=</span> <span class="n">acide</span>
+    <span class="k">return</span> <span class="n">proteine</span>
+
+<span class="k">assert</span> <span class="n">traduction</span><span class="p">(</span><span class="s1">&#39;UUCAGUGGG&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;FSG&#39;</span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Exercice  2</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Énoncé</label><label for="__tabbed_2_2">Correction</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Une ville souhaite gérer son parc de vélos en location partagée. L’ensemble de la flotte de vélos est stocké dans une table de données représentée en langage Python par un dictionnaire contenant des associations de type <code>id_velo : dict_velo</code> où <code>id_velo</code> est un nombre entier compris entre 1 et 199 qui correspond à l'identifiant unique du vélo et <code>dict_velo</code> est un dictionnaire dont les clés sont : <code>"type"</code>, <code>"etat"</code>, <code>"station"</code>.
+Les valeurs associées aux clés <code>"type"</code>, <code>"etat"</code>, <code>"station"</code> de <code>dict_velo</code> sont de type chaînes de caractères ou nombre entier :</p>
+<ul>
+<li><code>"type"</code> : chaîne de caractères qui peut prendre la valeur <code>"electrique"</code> ou <code>"classique"</code>;</li>
+<li><code>"état"</code> : nombre entier qui peut prendre la valeur 1 si le vélo est disponible, 0 si le vélo est en déplacement, -1 si le vélo est en panne;</li>
+<li><code>"station"</code> : chaînes de caractères qui identifie la station où est garé le vélo.</li>
+</ul>
+<p>Dans le cas où le vélo est en déplacement ou en panne, <code>"station"</code> correspond à celle
+où il a été dernièrement stationné.
+Voici un extrait de la table de données :</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">flotte</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="mi">12</span> <span class="p">:</span> <span class="p">{</span><span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;electrique&quot;</span><span class="p">,</span> <span class="s2">&quot;etat&quot;</span> <span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;station&quot;</span> <span class="p">:</span> <span class="s2">&quot;Prefecture&quot;</span><span class="p">},</span>
+    <span class="mi">80</span> <span class="p">:</span> <span class="p">{</span><span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;classique&quot;</span><span class="p">,</span> <span class="s2">&quot;etat&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;station&quot;</span> <span class="p">:</span> <span class="s2">&quot;Saint-Leu&quot;</span><span class="p">},</span>
+    <span class="mi">45</span> <span class="p">:</span> <span class="p">{</span><span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;classique&quot;</span><span class="p">,</span> <span class="s2">&quot;etat&quot;</span> <span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;station&quot;</span> <span class="p">:</span> <span class="s2">&quot;Baraban&quot;</span><span class="p">},</span>
+    <span class="mi">41</span> <span class="p">:</span> <span class="p">{</span><span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;classique&quot;</span><span class="p">,</span> <span class="s2">&quot;etat&quot;</span> <span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;station&quot;</span> <span class="p">:</span> <span class="s2">&quot;Citadelle&quot;</span><span class="p">},</span>
+    <span class="mi">26</span> <span class="p">:</span> <span class="p">{</span><span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;classique&quot;</span><span class="p">,</span> <span class="s2">&quot;etat&quot;</span> <span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;station&quot;</span> <span class="p">:</span> <span class="s2">&quot;Coliseum&quot;</span><span class="p">},</span>
+    <span class="mi">28</span> <span class="p">:</span> <span class="p">{</span><span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;electrique&quot;</span><span class="p">,</span> <span class="s2">&quot;etat&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;station&quot;</span> <span class="p">:</span> <span class="s2">&quot;Coliseum&quot;</span><span class="p">},</span>
+    <span class="mi">74</span> <span class="p">:</span> <span class="p">{</span><span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;electrique&quot;</span><span class="p">,</span> <span class="s2">&quot;etat&quot;</span> <span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;station&quot;</span> <span class="p">:</span> <span class="s2">&quot;Jacobins&quot;</span><span class="p">},</span>
+    <span class="mi">13</span> <span class="p">:</span> <span class="p">{</span><span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;classique&quot;</span><span class="p">,</span> <span class="s2">&quot;etat&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;station&quot;</span> <span class="p">:</span> <span class="s2">&quot;Citadelle&quot;</span><span class="p">},</span>
+    <span class="mi">83</span> <span class="p">:</span> <span class="p">{</span><span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;classique&quot;</span><span class="p">,</span> <span class="s2">&quot;etat&quot;</span> <span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;station&quot;</span> <span class="p">:</span> <span class="s2">&quot;Saint-Leu&quot;</span><span class="p">},</span>
+    <span class="mi">22</span> <span class="p">:</span> <span class="p">{</span><span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;electrique&quot;</span><span class="p">,</span> <span class="s2">&quot;etat&quot;</span> <span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;station&quot;</span> <span class="p">:</span> <span class="s2">&quot;Joffre&quot;</span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><code>flotte</code> étant une variable globale du programme.</p>
+<p>Toutes les questions de cet exercice se réfèrent à l'extrait de la table flotte fourni ci-dessus.</p>
+<ol>
+<li>
+<p><strong>a.</strong> Que renvoie l'instruction <code>flotte[26]</code> ?</p>
+<p><strong>b.</strong> Que renvoie l'instruction <code>flotte[80]["etat"]</code> ?</p>
+<p><strong>c.</strong> Que renvoie l'instruction <code>flotte[99]["etat"]</code> ?</p>
+</li>
+<li>
+<p>Voici le script d'une fonction :
+    <div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">def</span> <span class="nf">proposition</span><span class="p">(</span><span class="n">choix</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">flotte</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">flotte</span><span class="p">[</span><span class="n">v</span><span class="p">][</span><span class="s2">&quot;type&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">choix</span> <span class="ow">and</span> <span class="n">flotte</span><span class="p">[</span><span class="n">v</span><span class="p">][</span><span class="s2">&quot;etat&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">flotte</span><span class="p">[</span><span class="n">v</span><span class="p">][</span><span class="s2">&quot;station&quot;</span><span class="p">]</span>
+</code></pre></div></p>
+<p><strong>a.</strong> Quelles sont les valeurs possibles de la variable <code>choix</code> ?</p>
+<p><strong>b.</strong> Expliquer ce que renvoie la fonction lorsque l'on choisit comme paramètre l'une des valeurs possibles de la variable <code>choix</code>.</p>
+</li>
+<li>
+<p><strong>a.</strong> Écrire un script en langage Python qui affiche les identifiants <code>(id_velo)</code> de tous les vélos disponibles à la station<code>"Citadelle"</code>.</p>
+<p><strong>b.</strong> Écrire un script en langage Python qui permet d'afficher l'identifiant <code>(id_velo)</code> et la station de tous les vélos électriques qui ne sont pas en panne.</p>
+</li>
+<li>
+<p>On dispose d'une table de données des positions GPS de toutes les stations, dont un extrait est donné ci-dessous. Cette table est stockée sous forme d’un dictionnaire.
+    Chaque élément du dictionnaire est du type: <code class="highlight"><span class="s1">&#39;nom de la station&#39;</span> <span class="p">:</span> <span class="p">(</span><span class="n">latitude</span><span class="p">,</span> <span class="n">longitude</span><span class="p">)</span></code>:</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">stations</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;Prefecture&#39;</span> <span class="p">:</span> <span class="p">(</span><span class="mf">49.8905</span><span class="p">,</span> <span class="mf">2.2967</span><span class="p">)</span> <span class="p">,</span>
+    <span class="s1">&#39;Saint-Leu&#39;</span> <span class="p">:</span> <span class="p">(</span><span class="mf">49.8982</span><span class="p">,</span> <span class="mf">2.3017</span><span class="p">),</span>
+    <span class="s1">&#39;Coliseum&#39;</span> <span class="p">:</span> <span class="p">(</span><span class="mf">49.8942</span><span class="p">,</span> <span class="mf">2.2874</span><span class="p">),</span>
+    <span class="s1">&#39;Jacobins&#39;</span> <span class="p">:</span> <span class="p">(</span><span class="mf">49.8912</span><span class="p">,</span> <span class="mf">2.3016</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>On <strong>admet</strong> que l'on dispose d'une fonction <code>distance</code> permettant de renvoyer la distance en mètres entre deux positions données par leurs coordonnées GPS (latitude et longitude).</p>
+<details class="info">
+<summary>A titre indicatif</summary>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="ch">#!/usr/bin/python3</span>
+<span class="c1"># -*- coding: utf-8 -*-</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Source pour le calcul:</span>
+<span class="sd">https://geodesie.ign.fr/contenu/fichiers/Distance_longitude_latitude.pdf</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sin</span><span class="p">,</span> <span class="n">cos</span><span class="p">,</span> <span class="n">acos</span><span class="p">,</span> <span class="n">pi</span>
+
+<span class="c1">#############################################################################</span>
+<span class="k">def</span> <span class="nf">dms2dd</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">s</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Convertit un angle &quot;degrés minutes secondes&quot; en &quot;degrés décimaux&quot;</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">d</span> <span class="o">+</span> <span class="n">m</span><span class="o">/</span><span class="mi">60</span> <span class="o">+</span> <span class="n">s</span><span class="o">/</span><span class="mi">3600</span>
+
+<span class="c1">#############################################################################</span>
+<span class="k">def</span> <span class="nf">dd2dms</span><span class="p">(</span><span class="n">dd</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Convertit un angle &quot;degrés décimaux&quot; en &quot;degrés minutes secondes&quot;</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">dd</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="n">dd</span><span class="o">-</span><span class="n">d</span><span class="p">)</span><span class="o">*</span><span class="mi">60</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">m</span><span class="p">)</span><span class="o">*</span><span class="mi">60</span>
+    <span class="k">return</span> <span class="n">d</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">s</span>
+
+<span class="c1">#############################################################################</span>
+<span class="k">def</span> <span class="nf">deg2rad</span><span class="p">(</span><span class="n">dd</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Convertit un angle &quot;degrés décimaux&quot; en &quot;radians&quot;</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">dd</span><span class="o">/</span><span class="mi">180</span><span class="o">*</span><span class="n">pi</span>
+
+<span class="c1">#############################################################################</span>
+<span class="k">def</span> <span class="nf">rad2deg</span><span class="p">(</span><span class="n">rd</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Convertit un angle &quot;radians&quot; en &quot;degrés décimaux&quot;</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">rd</span><span class="o">/</span><span class="n">pi</span><span class="o">*</span><span class="mi">180</span>
+
+<span class="c1">#############################################################################</span>
+<span class="k">def</span> <span class="nf">distanceGPS</span><span class="p">(</span><span class="n">latA</span><span class="p">,</span> <span class="n">longA</span><span class="p">,</span> <span class="n">latB</span><span class="p">,</span> <span class="n">longB</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Retourne la distance en mètres entre les 2 points A et B connus grâce à</span>
+<span class="sd">    leurs coordonnées GPS (en radians).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># cooordonnées GPS en radians du 1er point (ici, mairie de Tours)</span>
+    <span class="n">lat1</span> <span class="o">=</span> <span class="n">deg2rad</span><span class="p">(</span><span class="n">latA</span><span class="p">)</span> <span class="c1"># Nord</span>
+    <span class="n">long1</span> <span class="o">=</span> <span class="n">deg2rad</span><span class="p">(</span><span class="n">longA</span><span class="p">)</span> <span class="c1"># Est</span>
+
+    <span class="c1"># cooordonnées GPS en radians du 2ème point (ici, mairie de Limoges)</span>
+    <span class="n">lat2</span> <span class="o">=</span> <span class="n">deg2rad</span><span class="p">(</span><span class="n">latB</span><span class="p">)</span> <span class="c1"># Nord</span>
+    <span class="n">long2</span> <span class="o">=</span> <span class="n">deg2rad</span><span class="p">(</span><span class="n">longB</span><span class="p">)</span> <span class="c1"># Est</span>
+    <span class="c1"># Rayon de la terre en mètres (sphère IAG-GRS80)</span>
+    <span class="n">RT</span> <span class="o">=</span> <span class="mi">6378137</span>
+    <span class="c1"># angle en radians entre les 2 points</span>
+    <span class="n">S</span> <span class="o">=</span> <span class="n">acos</span><span class="p">(</span><span class="n">sin</span><span class="p">(</span><span class="n">lat1</span><span class="p">)</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="n">lat2</span><span class="p">)</span> <span class="o">+</span> <span class="n">cos</span><span class="p">(</span><span class="n">lat1</span><span class="p">)</span><span class="o">*</span><span class="n">cos</span><span class="p">(</span><span class="n">lat2</span><span class="p">)</span><span class="o">*</span><span class="n">cos</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">long2</span><span class="o">-</span><span class="n">long1</span><span class="p">)))</span>
+    <span class="c1"># distance entre les 2 points, comptée sur un arc de grand cercle</span>
+    <span class="k">return</span> <span class="n">S</span><span class="o">*</span><span class="n">RT</span>
+
+<span class="c1">#############################################################################</span>
+
+<span class="n">latA</span><span class="p">,</span><span class="n">longA</span> <span class="o">=</span><span class="p">(</span><span class="mf">45.7979357138</span><span class="p">,</span><span class="mf">3.0466174294755</span><span class="p">)</span>
+<span class="n">latB</span><span class="p">,</span><span class="n">longB</span> <span class="o">=</span> <span class="p">(</span><span class="mf">45.54537315298</span><span class="p">,</span><span class="mf">3.2493018197819</span><span class="p">)</span>
+<span class="n">dist</span> <span class="o">=</span> <span class="n">distanceGPS</span><span class="p">(</span><span class="n">latA</span><span class="p">,</span> <span class="n">longA</span><span class="p">,</span> <span class="n">latB</span><span class="p">,</span> <span class="n">longB</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">dist</span><span class="p">))</span>
+</code></pre></div>
+</details>
+<p>Cette fonction prend en paramètre deux tuples représentant les coordonnées des
+deux positions GPS et renvoie un nombre entier représentant cette distance en
+mètres.</p>
+<p>Écrire une fonction qui prend en paramètre les coordonnées GPS de l'utilisateur
+Écrire une fonction qui prend en paramètre les coordonnées GPS de l'utilisateur
+sous forme d’un tuple et qui renvoie, pour chaque station située à moins de 800
+mètres de l'utilisateur :</p>
+<ul>
+<li>le nom de la station ;</li>
+<li>la distance entre l'utilisateur et la station ;</li>
+<li>les identifiants des vélos disponibles dans cette station.</li>
+</ul>
+<p>Une station où aucun vélo n’est disponible ne doit pas être affichée.</p>
+</li>
+</ol>
+</div>
+<div class="tabbed-block"></div>
+</div>
+</div>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Exercice  3</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Énoncé</label><label for="__tabbed_3_2">Correction</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>La cryptographie est un ensemble de techniques permettant de chiffrer un message.</p>
+<p>Une technique de cryptographie consiste à mélanger les lettres d'un alphabet et à réécrire le message avec ces permutations. En Python, on peut créer un dictionnaire dans lequel les clés sont les lettres de l'alphabet et les valeurs sont celles de l'alphabet mélangé.</p>
+<div class="admonition note">
+<p class="admonition-title">Exemple</p>
+<p>Par exemple, si l'alphabet contient les 4 lettres A, B, C et D, et si le dictionnaire de l'alphabet mélangé est </p>
+<p><div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">alpha</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;A&quot;</span><span class="p">:</span> <span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">:</span> <span class="s2">&quot;D&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">:</span> <span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;D&quot;</span><span class="p">:</span> <span class="s2">&quot;C&quot;</span><span class="p">}</span>
+</code></pre></div>
+la chaine de caractères <code>"BAC"</code> sera chiffrée <code>"DBA"</code>.</p>
+<p>Un tel dictionnaire sera appelé <strong>dictionnaire de chiffrement</strong>.</p>
+</div>
+<ol>
+<li>
+<p>On souhaite chiffrer un message écrit avec l'alphabet A, B, C, D, E, F, G à l'aide du dictionnaire <code class="highlight"><span class="n">alpha</span> <span class="o">=</span><span class="p">{</span><span class="s2">&quot;A&quot;</span><span class="p">:</span> <span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">:</span> <span class="s2">&quot;D&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">:</span> <span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;D&quot;</span><span class="p">:</span> <span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="s2">&quot;E&quot;</span><span class="p">:</span> <span class="s2">&quot;F&quot;</span><span class="p">,</span> <span class="s2">&quot;F&quot;</span><span class="p">:</span> <span class="s2">&quot;G&quot;</span><span class="p">,</span> <span class="s2">&quot;G&quot;</span><span class="p">:</span> <span class="s2">&quot;E&quot;</span><span class="p">}</span></code></p>
+<p><strong>a.</strong> Quelle est la valeur associée à la clé <code>"D"</code> ? En Python, comment l'obtenir ?</p>
+<p><strong>b.</strong> Chiffrer la chaine de caractères <code>"BAGAGE"</code> avec le dictionnaire <code>alpha</code>.</p>
+</li>
+<li>
+<p>On considère qu'un mot est une chaine de caractères (un objet de type <code>str</code>) écrite uniquement avec les 26 lettres de l'alphabet en majuscule. Par exemple, <code>"ARBRE"</code> est un mot et <code>"L'ARBRE !"</code> n'est pas un mot à cause des caractères : <code>"'"</code>, <code>" "</code>(espace) et <code>"!"</code>.</p>
+<p>Écrire une fonction <code>chiffre</code> qui prend en paramètres <code>mot</code> un mot et <code>alpha</code> un dictionnaire de chiffrement, telle que <code>chiffre(mot, alpha)</code> renvoie <code>mot</code> sous forme de chaine chiffrée avec le dictionnaire de chiffrement <code>alpha</code>.</p>
+</li>
+<li>
+<p>On souhaite déchiffrer un mot chiffré avec cette méthode.</p>
+<p><strong>a.</strong> Si un mot est chiffré avec le dictionnaire de chiffrement <code class="highlight"><span class="n">alpha</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;A&quot;</span><span class="p">:</span> <span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">:</span> <span class="s2">&quot;D&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">:</span> <span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;D&quot;</span><span class="p">:</span> <span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="s2">&quot;E&quot;</span><span class="p">:</span> <span class="s2">&quot;F&quot;</span><span class="p">,</span> <span class="s2">&quot;F&quot;</span><span class="p">:</span> <span class="s2">&quot;G&quot;</span><span class="p">,</span> <span class="s2">&quot;G&quot;</span><span class="p">:</span> <span class="s2">&quot;E&quot;</span><span class="p">}</span></code>, donner un dictionnaire permettant de le déchiffrer.</p>
+<p><strong>b.</strong> Écrire une fonction en Python appelée <code>dico_dechiffrement</code> qui prend en paramètre <code>dico</code> un dictionnaire de chiffrement et qui renvoie un dictionnaire permettant le déchiffrement. On pourra s'inspirer du code incomplet ci-dessous ou proposer une autre solution :</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">def</span> <span class="nf">dico_dechiffrement</span><span class="p">(</span><span class="n">dico</span><span class="p">):</span>
+    <span class="n">nouveau</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">lettre</span> <span class="ow">in</span> <span class="n">dico</span><span class="p">:</span>
+        <span class="n">code</span> <span class="o">=</span> <span class="n">dico</span><span class="p">[</span><span class="o">...</span><span class="p">]</span>
+        <span class="n">nouveau</span><span class="p">[</span><span class="o">...</span><span class="p">]</span> <span class="o">=</span> <span class="o">...</span>
+    <span class="k">return</span> <span class="n">nouveau</span>
+</code></pre></div>
+<p><strong>c.</strong> Écrire une fonction telle que <code>dechiffre(mot_chiffre, dico)</code> renvoie le mot décodé, quand <code>mot_chiffre</code> est chiffré par le dictionnaire de chiffrement <code>dico</code>. On utilisera les fonctions écrites dans les questions précédentes.</p>
+</li>
+<li>
+<p>On souhaite à présent créer un dictionnaire de chiffrement. Écrire une fonction <code>dico_chiffrement</code> qui prend en paramètre <code>alphabet</code> un tableau de lettres et qui renvoie un dictionnaire de chiffrement dont les clés sont les lettres du tableau <code>alphabet</code> et les valeurs sont les lettres du tableau alphabet mélangées.</p>
+<p>On pourra utiliser la fonction <code>shuffle</code> du module <code>random</code> qui mélange en place un tableau. Par exemple, on a :</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">tableau</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="s2">&quot;D&quot;</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">shuffle</span><span class="p">(</span><span class="n">tableau</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">tableau</span>
+<span class="p">[</span><span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;D&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">]</span>
+</code></pre></div>
+</li>
+</ol>
+</div>
+<div class="tabbed-block"></div>
+</div>
+</div>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Exercice  4</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Énoncé</label><label for="__tabbed_4_2">Correction</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Afin d'organiser les répertoires et les fichiers sur un disque dur, une structure arborescente est utilisée. Les fichiers sont dans des répertoires qui sont eux-mêmes dans d'autres répertoires, etc.</p>
+<p>Dans une arborescence, chaque répertoire peut contenir des fichiers et des répertoires, qui sont identifiés par leur nom. Le contenu d'un répertoire est modélisé par la structure de données <strong>dictionnaire</strong>. Les clés de ce dictionnaire sont des chaines de caractères donnant le nom des fichiers et des répertoires contenus.</p>
+<div class="admonition note">
+<p class="admonition-title">Un répertoire</p>
+<p>Un répertoire est représenté par un dictionnaire dont chaque clé est :</p>
+<ul>
+<li>soit un nom de sous répertoire : la valeur associée est alors un dictionnaire représentant le contenu de ce sous répertoire.</li>
+<li>soit un nom de fichier : la valeur associée est alors un entier, représentant la taille du fichier en ko.</li>
+</ul>
+<p>Un fichier est donc une clé d'un répertoire(dictionnaire) dont la valeur associée est un entier.</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Exemple illustré</p>
+<p>Le répertoire appelé <code>Téléchargements</code> contient deux fichiers <code>rapport.pdf</code> et <code>jingle.mp3</code> ainsi qu'un répertoire <code>Images</code> contenant simplement le fichier <code>logo.png</code>.</p>
+<p>Il est représenté ci-dessous.</p>
+<p><img alt="" class="center" src="../images/22J1G11_ex3.png" /> </p>
+<p>Ce répertoire <code>Téléchargements</code> est modélisé en Python par le dictionnaire suivant :</p>
+<p><code class="highlight"><span class="p">{</span><span class="s2">&quot;Images&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;logo.png&quot;</span><span class="p">:</span> <span class="mi">36</span><span class="p">},</span> <span class="s2">&quot;rapport.pdf&quot;</span><span class="p">:</span> <span class="mi">450</span><span class="p">,</span> <span class="s2">&quot;jingle.mp3&quot;</span><span class="p">:</span> <span class="mi">4800</span><span class="p">}</span></code></p>
+<p>Les valeurs numériques sont exprimées en ko (kilo-octets).</p>
+<p><code class="highlight"><span class="s2">&quot;logo.png&quot;</span><span class="p">:</span> <span class="mi">36</span></code> signifie que le fichier <code>logo.png</code> occupe un espace mémoire de 36 ko sur le disque dur.</p>
+</div>
+<p>On rappelle, ci-dessous, quelques commandes sur l'utilisation d'un dictionnaire :</p>
+<ul>
+<li><code class="highlight"><span class="n">dico</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span></code> crée un dictionnaire vide appelé <code>dico</code>,</li>
+<li><code class="highlight"><span class="n">dico</span><span class="p">[</span><span class="n">cle</span><span class="p">]</span> <span class="o">=</span> <span class="n">contenu</span></code> met la valeur <code>contenu</code> pour la clé <code>cle</code> dans le dictionnaire <code>dico</code>,</li>
+<li><code class="highlight"><span class="n">dico</span><span class="p">[</span><span class="n">cle</span><span class="p">]</span></code> renvoie la valeur associée à la clé <code>cle</code> dans le dictionnaire <code>dico</code>,</li>
+<li><code class="highlight"><span class="n">cle</span> <span class="ow">in</span> <span class="n">dico</span></code> renvoie un booléen indiquant si la clé <code>cle</code> est présente dans le dictionnaire <code>dico</code>.</li>
+<li><code class="highlight"><span class="k">for</span> <span class="n">cle</span> <span class="ow">in</span> <span class="n">dico</span><span class="p">:</span></code> permet d'itérer sur les clés d'un dictionnaire.</li>
+<li><code class="highlight"><span class="nb">len</span><span class="p">(</span><span class="n">dico</span><span class="p">)</span></code> renvoie le nombre de clés d'un dictionnaire.</li>
+</ul>
+<p>L'<strong>adresse</strong> d'un fichier ou d'un répertoire correspond au nom de tous les répertoires à parcourir depuis la racine afin d'accéder au fichier ou au répertoire. Cette adresse est modélisée en Python par la liste des noms de répertoire à parcourir pour y accéder.</p>
+<p>Par exemple, l'adresse du répertoire : <code>/home/pierre/Documents/</code> est modélisée par la liste <code>["home", "pierre", "Documents"]</code>.</p>
+<ol>
+<li>
+<p>Dessiner l'arbre donné par le dictionnaire <code>docs</code> suivant, qui correspond au répertoire <code>"Documents"</code>.</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">docs</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;Administratif&quot;</span><span class="p">:{</span>
+        <span class="s2">&quot;certificat_JDC.pdf&quot;</span><span class="p">:</span> <span class="mi">1500</span><span class="p">,</span>
+        <span class="s2">&quot;attestation_recensement.pdf&quot;</span><span class="p">:</span> <span class="mi">850</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;Cours&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;NSI&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;TP.html&quot;</span><span class="p">:</span> <span class="mi">60</span><span class="p">,</span>
+            <span class="s2">&quot;dm.odt&quot;</span><span class="p">:</span> <span class="mi">345</span>
+        <span class="p">},</span>
+        <span class="s2">&quot;Philo&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;Tractatus_logico-philosophicus.epub&quot;</span><span class="p">:</span> <span class="mi">2600</span>
+        <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;liste_de_courses.txt&quot;</span><span class="p">:</span> <span class="mi">24</span>
+<span class="p">}</span>
+</code></pre></div>
+</li>
+<li>
+<p>On donne la fonction <code>parcourt</code> suivante qui prend en paramètres un répertoire racine et une liste représentant une adresse, et qui renvoie le contenu du répertoire cible correspondant à l'adresse.</p>
+<p>Exemple : Si la variable <code>docs</code> contient le dictionnaire de l'exemple de la question 1 alors <code>parcourt(docs, ["Cours", "Philo"])</code> renvoie le dictionnaire <code class="highlight"><span class="p">{</span><span class="s2">&quot;Tractatus_logico-philosophicus.epub&quot;</span><span class="p">:</span> <span class="mi">2600</span><span class="p">}</span></code>.</p>
+<p><strong>a.</strong> Recopier et compléter la ligne 4:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">🐍 Script Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">parcourt</span><span class="p">(</span><span class="n">racine</span><span class="p">,</span> <span class="n">adr</span><span class="p">):</span>
+    <span class="n">repertoire</span> <span class="o">=</span> <span class="n">racine</span>
+    <span class="k">for</span> <span class="n">nom_repertoire</span> <span class="ow">in</span> <span class="n">adr</span><span class="p">:</span>
+        <span class="n">repertoire</span> <span class="o">=</span> <span class="o">...</span>
+    <span class="k">return</span> <span class="n">repertoire</span>
+</code></pre></div></td></tr></table></div>
+<p><strong>b.</strong> Soit la fonction suivante :</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">def</span> <span class="nf">affiche</span><span class="p">(</span><span class="n">racine</span><span class="p">,</span> <span class="n">adr</span><span class="p">,</span> <span class="n">nom_fichier</span><span class="p">):</span>
+    <span class="n">repertoire</span> <span class="o">=</span> <span class="n">parcourt</span><span class="p">(</span><span class="n">racine</span><span class="p">,</span> <span class="n">adr</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">repertoire</span><span class="p">[</span><span class="n">nom_fichier</span><span class="p">])</span>
+</code></pre></div>
+<p>Qu'affiche l'instruction <code class="highlight"><span class="n">affiche</span><span class="p">(</span><span class="n">docs</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;Cours&quot;</span><span class="p">,</span> <span class="s2">&quot;NSI&quot;</span><span class="p">],</span> <span class="s2">&quot;TP.html&quot;</span><span class="p">)</span></code> sachant que la variable <code>docs</code> contient le dictionnaire de la question 1 ?</p>
+</li>
+<li>
+<p><strong>a.</strong> La fonction <code>ajoute_fichier</code> suivante, de paramètres <code>racine</code>, <code>adr</code>, <code>nom_fichier</code> et <code>taille</code>, ajoute au dictionnaire <code>racine</code>, à l'adresse <code>adr</code>, la clé <code>nom_fichier</code> associé à la valeur <code>taille</code>.</p>
+<p>Une ligne de la fonction donnée ci-dessous contient une erreur. Laquelle ? Proposer une correction.</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">🐍 Script Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">ajoute_fichier</span><span class="p">(</span><span class="n">racine</span><span class="p">,</span> <span class="n">adr</span><span class="p">,</span> <span class="n">nom_fichier</span><span class="p">,</span> <span class="n">taille</span><span class="p">):</span>
+    <span class="n">repertoire</span> <span class="o">=</span> <span class="n">parcourt</span><span class="p">(</span><span class="n">racine</span><span class="p">,</span> <span class="n">adr</span><span class="p">)</span>
+    <span class="n">taille</span> <span class="o">=</span> <span class="n">repertoire</span><span class="p">[</span><span class="n">nom_fichier</span><span class="p">]</span>
+</code></pre></div></td></tr></table></div>
+<p><strong>b.</strong> Écrire une fonction <code>ajoute_repertoire</code> de paramètres <code>racine</code>, <code>adr</code> et <code>nom_repertoire</code> qui crée un dictionnaire représentant un répertoire vide appelé <code>nom_repertoire</code> dans le dictionnaire <code>racine</code> à l'adresse <code>adr</code>.</p>
+</li>
+<li>
+<p><strong>a.</strong> </p>
+<div class="admonition info">
+<p class="admonition-title"><code>isinstance</code> pour vérifier le type d'une variable</p>
+<p><code class="highlight"><span class="nb">isinstance</span><span class="p">(</span><span class="n">variable</span><span class="p">,</span> <span class="n">A</span><span class="p">)</span></code> renvoie <code>True</code> si <code>variable</code> est de type <code>A</code> et <code>False</code> sinon.</p>
+<p><code>A</code> peut être le type <code>int</code>, <code>dict</code> ou tout autre type Python.</p>
+</div>
+<p>Écrire une fonction <code>est_fichier</code> de paramètres <code>repertoire</code> et <code>cle</code>, où <code>cle</code> est une clé du dictionnaire <code>repertoire</code>, qui détermine si <code>cle</code> correspond à un fichier ou non. Si <code>cle</code> n'est pas une clé de <code>repertoire</code>, la fonction doit provoquer une erreur.</p>
+<p>On pourra compléter le code suivant ou en proposer un autre.</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">def</span> <span class="nf">est_fichier</span><span class="p">(</span><span class="n">repertoire</span><span class="p">,</span> <span class="n">cle</span><span class="p">):</span>
+    <span class="k">return</span> <span class="o">...</span>
+</code></pre></div>
+<p><strong>b.</strong> Écrire une fonction <code>taille</code> de paramètre <code>racine</code> qui prend en paramètre un dictionnaire <code>racine</code> modélisant un répertoire et qui renvoie le total d'espace mémoire occupé par les fichiers contenus dans ce répertoire et ceux qu'il contient, de manière récursive.</p>
+</li>
+</ol>
+</div>
+<div class="tabbed-block"></div>
+</div>
+</div>
+</div>
+
+
+
+
+
+                
+
+<style>
+    .jp-RenderedHTMLCommon p {
+        font-size: 0.8rem;
+        line-height: 1.6;
+    }
+
+    .jp-RenderedHTMLCommon li {
+        font-size: .8rem;
+        line-height: 1.6;
+    }
+
+    .jp-RenderedHTMLCommon h1 {
+        margin: 0 0 1.25em;
+        color: var(--md-default-fg-color--light);
+        font-weight: 300;
+        font-size: 2em;
+        line-height: 1.3;
+        letter-spacing: -0.01em;
+    }
+
+    .jp-RenderedHTMLCommon h2 {
+        margin: 1.6em 0 .64em;
+        font-weight: 300;
+        font-size: 1.965em;
+        line-height: 1.4;
+        letter-spacing: -0.01em;
+    }
+
+    .jp-RenderedHTMLCommon h3 {
+        margin: 1.6em 0 .8em;
+        font-weight: 400;
+        font-size: 1.57em;
+        line-height: 1.5;
+        letter-spacing: -0.01em;
+    }
+
+    .jp-RenderedHTMLCommon hr {
+        border: none;
+    }
+</style>
+
+
+
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Retour en haut de la page
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.expand", "navigation.top", "navigation.sections", "navigation.indexes", "navigation.tracking", "header.autohide", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.81fa17fe.min.js"></script>
+      
+        <script src="../../xtra/mathjax.js"></script>
+      
+        <script src="../../javascripts/config.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/gh/rod2ik/cdn@main/mkdocs/javascripts/massilia-admonitions.js"></script>
+      
+    
+  </body>
+</html>

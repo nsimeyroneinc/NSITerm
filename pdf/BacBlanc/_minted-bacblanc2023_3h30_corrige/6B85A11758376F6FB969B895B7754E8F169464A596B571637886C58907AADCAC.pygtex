@@ -1,0 +1,8 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{def} \PYG{n+nf}{poidsBoite}\PYG{p}{(}\PYG{n}{boite}\PYG{p}{:} \PYG{n+nb}{list}\PYG{p}{)} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n+nb}{int}\PYG{p}{:}
+\PYG{n}{poids} \PYG{o}{=} \PYG{l+m+mi}{0}
+\PYG{k}{for} \PYG{n}{objet} \PYG{o+ow}{in} \PYG{n}{boite}\PYG{p}{:}
+\PYG{n}{poids} \PYG{o}{+=} \PYG{n}{objet}
+
+\PYG{k}{return} \PYG{n}{poids}
+\end{Verbatim}

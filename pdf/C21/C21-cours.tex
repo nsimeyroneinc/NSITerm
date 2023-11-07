@@ -1,0 +1,130 @@
+\PassOptionsToPackage{dvipsnames,table}{xcolor}
+\documentclass[10pt]{beamer}
+\usetheme[options]{Madrid} 
+
+\usepackage{../../latex/Cours}
+
+\begin{document}
+	
+	\input{\detokenize{../../latex/MacrosCours.tex}}
+\setcounter{numchap}{21}
+
+
+
+\pythonmode
+\newcommand{\SOC}{\cnum Systèmes sur puce}
+
+
+\newcommand{\Arch}{\cnum Architecture des ordinateurs}
+
+
+% Définition langage de programmation
+\begin{frame}
+	\mframe{\Arch}
+	\begin{alertblock}{Modèle de Von Neumann}
+		\begin{itemize}[label=\textbullet]
+			\item<1-> Les ordinateurs modernes sont construits autour d'un modèle défini par le mathématicien John Von Neumann en 1945 et appelé \textcolor{blue}{Architecture de Von Neumann}.
+			\item<2-> Dans ce modèle, l'ordinateur se décompose en 5 parties distinctes :
+			      \begin{itemize}[label=\textbullet]
+				      \item<3-> Les dispositifs d'\textcolor{blue}{entrée} des données (ex : clavier, souris, écran tactile, réseau \dots),
+				      \item<4-> La \textcolor{blue}{mémoire} qui stocke les données et les programmes (ex : mémoire cache, {\sc ram}, \dots)
+				      \item<5-> L'\textcolor{blue}{unité arithmétique et logique {\sc ual}} qui effectue les opérations (addition, soustraction, comparaison, \dots) sur les données.
+				      \item<6-> L'\textcolor{blue}{unité de contrôle} qui est chargé de la gestion de l'ordre des opérations (séquençage)
+				      \item<7-> Les dispositifs de \textcolor{blue}{sortie} des données (ex : écran, imprimante, \dots)
+			      \end{itemize}
+		\end{itemize}
+	\end{alertblock}
+\end{frame}
+
+%Remarque architectecture von neumann
+\begin{frame}
+	\mframe{\Arch}
+	\begin{block}{Remarques :}
+		\begin{itemize}[label=\textbullet]
+			\item<1-> Dans les ordinateurs modernes, l'{\sc ual} et l'unité de contrôle sont regroupés dans le processeur ({\sc cpu} pour Central Processing Unit en anglais)
+			\item<2-> Certains periphériques sont à la fois des dispositifs d'entrée et de sortie. Par exemple, le disque dur car on peut y lire (entrée) et écrire (sortie) des données.
+			\item<3-> Par rapport au modèle initial, les ordinateurs actuels possèdent parfois plusieurs processeurs ou coeurs.
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+
+%Schéma
+\begin{frame}
+	\mframe{\Arch}
+	\setlength{\shadowsize}{1pt}
+	\psset{linewidth=0.7pt}
+	\begin{block}{Schéma représentant l'architecture de Von Neumann :}
+		\begin{tabularx}{0.9\textwidth}{Xp{1cm}|Y|p{1cm}X}
+			\cline{3-3}
+			                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   &  &                                                            &  & \\
+			                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   &  & \textcolor{blue}{\textbf \faMicrochip \, {\Large \sc cpu}} &  & \\
+			\onslide<3->{\rnode{ram}{\psshadowbox{\makebox[2cm]{\par\noindent\rule[-1.4cm]{0pt}{3cm} \textcolor{red}{\textbf{\faMemory \ Mémoire}} }} } }                                                                                                                                                                                                                                                                                                                                                                                                      &  &
+			\onslide<2->{\rnode{ual}{\psframebox[framearc=.3,framesep=0,linecolor=Sepia,linewidth=1pt]{\psframebox*[framearc=.3,fillcolor=grispale]{\parbox[c][1.5cm][c]{1.8cm}{\textcolor{Sepia}{\large \  \ \ \sc ual} \newline {\small Unité arithmétique et logique}}}}} \newline \rule{0pt}{0.8cm} \newline {\rnode{uc}{\psframebox[framearc=.3,framesep=0,linecolor=Sepia,linewidth=1pt]{\psframebox*[framearc=.3,fillcolor=grispale]{\parbox[c][1.5cm][c]{1.8cm}{\textcolor{Sepia}{\large  \ \  \ \sc uc} \newline {\small Unité de contrôle}}}}} }   } &  &
+			\onslide<4->{\rnode{in}{\shadowbox{\makebox[2cm]{\par\noindent\rule[-0.4cm]{0pt}{1cm} {\textcolor{red}{ \faArrowAltCircleLeft \; Entrées}} }}} \newline \rule{0pt}{0.8cm} {\rnode{out}{\shadowbox{\makebox[2cm]{\par\noindent\rule[-0.4cm]{0pt}{1cm} \textcolor{red}{ Sorties \; \faArrowAltCircleRight} }}} }   }                                                                                                                                                                                                                                                                                                      \\
+			                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   &  &                                                            &  & \\
+			\cline{3-3}
+		\end{tabularx}
+		\onslide<5->{\ncline[ linecolor=blue, linewidth=2px, offsetA=0.3cm]{<->}{ram}{ual}}
+		\onslide<6->{\ncline[linewidth=2px, linecolor=blue, offsetA=-0.7cm,nodesepA=0.3cm]{<->}{ram}{uc}}
+		\onslide<7->{\ncline[linecolor=blue,linewidth=2px]{<->}{ual}{uc}}
+		\onslide<8->{\ncline[linecolor=blue,linewidth=2px]{->}{in}{ual}}
+		\onslide<9->{\ncline[linecolor=blue,offsetA=0.2cm,offsetB=-0.2cm,nodesepA=-0.1cm,nodesepB=-0.1cm,linewidth=2px]{->}{ual}{out}}
+	\end{block}
+\end{frame}
+
+
+% Transistor et booléens
+\begin{frame}
+	\mframe{\Arch}
+	\begin{block}{Remarques :}
+		\begin{itemize}[label=\textbullet]
+			\item<1-> Le composant de base des ordinateurs est le \textit{transistor}, un composant électronique ne pouvant être que dans deux états. Soit il laisse passer le courant (état \textcolor{red}{1}), soit il ne le laisse pas passer (état \textcolor{red}{0}).
+			\item<2-> Toutes les données représentées dans un ordinateur le sont donc sous forme de 0 et de 1.
+			\item<3-> Dès les années 1850, dans des travaux sur la logique, le mathématicien britannique Georges Boole avait travaillé sur des variables ne pouvant prendre que deux valeurs 0  ou 1.
+			\item<4-> On appelle, ces variables des \textcolor{red}{booléens}. On définit trois opérations de base que nous allons détailler sur les booléens : le \textcolor{red}{non}, le \textcolor{red}{et} et le \textcolor{red}{ou}.
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+
+
+% Définition SoC
+\begin{frame}{\SOC}
+	\mframe{\SOC}
+	\begin{alertblock}{Les sytèmes sur puce}
+		\begin{itemize}[label=\textbullet]
+			\item<1-> Un ordinateur classique (modèle de Von Neumann) comprend les éléments suivants : un processeur (comprenant une unité arithmétique et logique et une unité de contôle), de la mémoire et des périphériques d'entrées et de sortie.
+			\item<2-> Un \textcolor{red}{système sur une puce}, est un circuit intégré réunissant sur le même composant (\textit{puce}) l'ensemble des composants constituant un ordinateur classique.
+		\end{itemize}
+	\end{alertblock}
+	\begin{block}{Remarques}
+		\begin{itemize}[label=\textbullet]
+			\item<3-> C'est la miniaturisation des composants électroniques qui a permit l'avènement des \textit{SoC}.
+			\item<4-> En plus du processeur et de la {\sc ram}, un \textit{SoC} inclut généralement les périphériques réseau (Wifi et Bluetooth) et un circuit graphique ({\sc gpu})
+			\item<5-> On trouve des \textit{SoC} notamment dans les téléphones portables, les consoles de jeu portable ou encore les nano ordinateurs comme le Raspberry Pi.
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+% Avantages et inconvénients SoC
+\begin{frame}{\SOC}
+	\mframe{\SOC}
+	\begin{block}{Avantages et inconvénients}
+		\begin{itemize}[label=\textbullet]
+			\item<1-> Avantages d'un \textit{SoC}:
+			\begin{itemize}[label=\textbullet]
+				\item<2-> Gain de place
+				\item<3-> Consommation réduite d'énergie
+				\item<4-> Gain de performance (circuit proches et optimisés)
+			\end{itemize}
+			\item<5-> Inconvénients d'un \textit{SoC}:
+			\begin{itemize}[label=\textbullet]
+				\item<2-> Ne peut être réparé, les composants étant intégré si l'un d'entre deux tombe en panne (par exemple le Wifi) on doit changer le \textit{SoC} entier
+				\item<3-> N'est pas évolutif, contrairement à  un ordinateur traditionnel où on peut par exemple changer les barrettes de RAM.
+			\end{itemize}
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\end{document}

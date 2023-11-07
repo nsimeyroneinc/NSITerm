@@ -1,0 +1,2842 @@
+<!-- Ajout pour le bouton de téléchargement et le style des jupyter notebook   https://github.com/danielfrg/mkdocs-jupyter -->
+
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Cours et TD de l'année en cours">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../../images/dragon.svg">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.8">
+    
+    
+      
+        <title>Compile recursivite - NSI Terminale 2022-2023</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.4b4a2bd9.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.356b1318.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rod2ik/cdn@main/mkdocs/css/massilia-admonitions.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#sujet-bac-16-recursivite" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="../../.." title="NSI Terminale 2022-2023" class="md-header__button md-logo" aria-label="NSI Terminale 2022-2023" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="m352 124.5-51.9-13c-6.5-1.6-11.3-7.1-12-13.8s2.8-13.1 8.7-16.1l40.8-20.4-43.2-32.4c-5.5-4.1-7.8-11.3-5.6-17.9S297.1 0 304 0h160c30.2 0 58.7 14.2 76.8 38.4l57.6 76.8c6.2 8.3 9.6 18.4 9.6 28.8 0 26.5-21.5 48-48 48h-21.5c-17 0-33.3-6.7-45.3-18.7L480 160h-32v21.5c0 24.8 12.8 47.9 33.8 61.1l106.6 66.6c32.1 20.1 51.6 55.2 51.6 93.1 0 60.6-49.1 109.7-109.8 109.7H32.3c-3.3 0-6.6-.4-9.6-1.4-9.2-2.8-16.7-9.6-20.3-18.5C1 488.7.2 485.2 0 481.4c-.2-3.7.3-7.3 1.3-10.7 2.8-9.2 9.6-16.7 18.6-20.4 3-1.2 6.2-2 9.5-2.2L433.3 412c8.3-.7 14.7-7.7 14.7-16.1 0-4.3-1.7-8.4-4.7-11.4l-44.4-44.4c-30-30-46.9-70.7-46.9-113.1V124.5zm160-52.2v-.6.6zm-1.3 7.4-46.4-11.6c-.2 1.3-.3 2.6-.3 3.9 0 13.3 10.7 24 24 24 10.6 0 19.5-6.8 22.7-16.3zm-379.8 36.8c16.3-14.5 40.4-16.2 58.5-4.1l130.6 87V227c0 32.8 8.4 64.8 24 93H112c-6.7 0-12.7-4.2-15-10.4s-.5-13.3 4.6-17.7l69.4-59.6-152.6 23.5c-7 1.1-13.9-2.6-16.9-9S0 232.7 5.3 228l125.6-111.5z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            NSI Terminale 2022-2023
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Compile recursivite
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue"  aria-label="Basculer en mode sombre"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Basculer en mode sombre" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9v1Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="blue"  aria-label="Basculer en mode clair"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Basculer en mode clair" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Recherche">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Effacer" aria-label="Effacer" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Onglets" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+    
+  
+  Accueil
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../StructureDonnees/index_structDonnees/" class="md-tabs__link">
+          
+  
+    
+  
+  T1 - Struct. données
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../BasesDonnees/index_bd/" class="md-tabs__link">
+          
+  
+    
+  
+  T2 - Bases données
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Archi_Materielle/index_archi/" class="md-tabs__link">
+          
+  
+    
+  
+  T3 - Archi. mat.
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Programmation/index_prog/" class="md-tabs__link">
+          
+  
+    
+  
+  T4 - Prog.
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Algo/index_algo/" class="md-tabs__link">
+          
+  
+    
+  
+  T5 Algo.
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../bac_explication/" class="md-tabs__link">
+          
+  
+    
+  
+  BAC 📝
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../epreuve_pratique/" class="md-tabs__link">
+          
+  
+    
+  
+  Annales E.P. 💻
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../divers/prog/" class="md-tabs__link">
+          
+  
+    
+  
+  Extras
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../credit/" class="md-tabs__link">
+        
+  
+    
+  
+  Crédits
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="NSI Terminale 2022-2023" class="md-nav__button md-logo" aria-label="NSI Terminale 2022-2023" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="m352 124.5-51.9-13c-6.5-1.6-11.3-7.1-12-13.8s2.8-13.1 8.7-16.1l40.8-20.4-43.2-32.4c-5.5-4.1-7.8-11.3-5.6-17.9S297.1 0 304 0h160c30.2 0 58.7 14.2 76.8 38.4l57.6 76.8c6.2 8.3 9.6 18.4 9.6 28.8 0 26.5-21.5 48-48 48h-21.5c-17 0-33.3-6.7-45.3-18.7L480 160h-32v21.5c0 24.8 12.8 47.9 33.8 61.1l106.6 66.6c32.1 20.1 51.6 55.2 51.6 93.1 0 60.6-49.1 109.7-109.8 109.7H32.3c-3.3 0-6.6-.4-9.6-1.4-9.2-2.8-16.7-9.6-20.3-18.5C1 488.7.2 485.2 0 481.4c-.2-3.7.3-7.3 1.3-10.7 2.8-9.2 9.6-16.7 18.6-20.4 3-1.2 6.2-2 9.5-2.2L433.3 412c8.3-.7 14.7-7.7 14.7-16.1 0-4.3-1.7-8.4-4.7-11.4l-44.4-44.4c-30-30-46.9-70.7-46.9-113.1V124.5zm160-52.2v-.6.6zm-1.3 7.4-46.4-11.6c-.2 1.3-.3 2.6-.3 3.9 0 13.3 10.7 24 24 24 10.6 0 19.5-6.8 22.7-16.3zm-379.8 36.8c16.3-14.5 40.4-16.2 58.5-4.1l130.6 87V227c0 32.8 8.4 64.8 24 93H112c-6.7 0-12.7-4.2-15-10.4s-.5-13.3 4.6-17.7l69.4-59.6-152.6 23.5c-7 1.1-13.9-2.6-16.9-9S0 232.7 5.3 228l125.6-111.5z"/></svg>
+
+    </a>
+    NSI Terminale 2022-2023
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Accueil
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    T1 - Struct. données
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            T1 - Struct. données
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../StructureDonnees/index_structDonnees/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Structures de données
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    T2 - Bases données
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            T2 - Bases données
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../BasesDonnees/index_bd/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Base de données
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../BasesDonnees/Modele_Relationnel/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📓 C1 Modèle relationnel
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../BasesDonnees/Cours_TP_SQL/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📓 C2 Langage SQL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../BasesDonnees/SQL_BAC/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📝 S2 BAC SQL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../BasesDonnees/SQL_BAC_correction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📝 S2 BAC SQL Correction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    T3 - Archi. mat.
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            T3 - Archi. mat.
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Archi_Materielle/index_archi/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Architecture matérielle et OS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    T4 - Prog.
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            T4 - Prog.
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Programmation/index_prog/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Programmation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Programmation/T1_1_Recursivite/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📓 C3 Récursivité
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    T5 Algo.
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            T5 Algo.
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Algo/index_algo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Algorithmique
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    BAC 📝
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            BAC 📝
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bac_explication/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Information
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    2023
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_2">
+            <span class="md-nav__icon md-icon"></span>
+            2023
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Annales/2023/EE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Epreuves écrites
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_3" id="__nav_7_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    2022
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_3">
+            <span class="md-nav__icon md-icon"></span>
+            2022
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Annales/2022/EE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Epreuves écrites
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_4" id="__nav_7_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    2021
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_4">
+            <span class="md-nav__icon md-icon"></span>
+            2021
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Annales/2021/EE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Epreuves écrites
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Annales E.P. 💻
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Annales E.P. 💻
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../epreuve_pratique/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Déroulement
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../divers/Consigne_EP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Consigne
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../divers/lien/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    S'entrainer en ligne pour l'épreuve pratique
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_4" id="__nav_8_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    2023
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_4">
+            <span class="md-nav__icon md-icon"></span>
+            2023
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Annales/2023/EP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Epreuves pratiques
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Extras
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Extras
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../divers/prog/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Divers concours programmation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Projet/forcebrute/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Force brute
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Projet/cryptographie/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cryptographie
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Projet/cryptographie2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cryptographie bis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Projet/pyxel/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    pyxel
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../divers/sujet0_geipi.pdf" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Epreuve GEIPI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../credit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Crédits
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#cours" class="md-nav__link">
+    Cours
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#france-septembre-2022-session-de-remplacement" class="md-nav__link">
+    France Septembre 2022 : Session de remplacement.
+  </a>
+  
+    <nav class="md-nav" aria-label="France Septembre 2022 : Session de remplacement.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#partie-a-analyse-du-code-et-completion" class="md-nav__link">
+    Partie A : analyse du code et complétion
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#partie-b-recursivite" class="md-nav__link">
+    Partie B : Récursivité
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sujet-b-2023" class="md-nav__link">
+    Sujet B 2023
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#centres-etrangers-j2-2022" class="md-nav__link">
+    Centres Etrangers J2 2022
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#polynesie-j1-2022" class="md-nav__link">
+    Polynésie J1 2022
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#france-j2-2021-candidat-libre" class="md-nav__link">
+    France J2 2021 - Candidat libre
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#france-septembre-2021-j1" class="md-nav__link">
+    France Septembre 2021 J1
+  </a>
+  
+    <nav class="md-nav" aria-label="France Septembre 2021 J1">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#partie-a-la-recherche-dichotomique" class="md-nav__link">
+    Partie A : La recherche dichotomique
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#partie-b-la-recherche-dichotomique-iterative" class="md-nav__link">
+    Partie B : La recherche dichotomique itérative
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#partie-c-la-recherche-dichotomique-recursive" class="md-nav__link">
+    Partie C : La recherche dichotomique récursive
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+
+
+
+
+
+                  
+
+
+<h1 id="sujet-bac-16-recursivite"><span class='numBAC'>Sujet BAC 16 : </span> &nbsp; Récursivité <span style='float:right;'><span class="twemoji" title="BAC"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M471.6 21.7c-21.9-21.9-57.3-21.9-79.2 0l-30.1 30 97.9 97.9 30.1-30.1c21.9-21.9 21.9-57.3 0-79.2l-18.7-18.6zm-299.2 220c-6.1 6.1-10.8 13.6-13.5 21.9l-29.6 88.8c-2.9 8.6-.6 18.1 5.8 24.6s15.9 8.7 24.6 5.8l88.8-29.6c8.2-2.7 15.7-7.4 21.9-13.5l167.3-167.4-98-98-167.3 167.4zM96 64c-53 0-96 43-96 96v256c0 53 43 96 96 96h256c53 0 96-43 96-96v-96c0-17.7-14.3-32-32-32s-32 14.3-32 32v96c0 17.7-14.3 32-32 32H96c-17.7 0-32-14.3-32-32V160c0-17.7 14.3-32 32-32h96c17.7 0 32-14.3 32-32s-14.3-32-32-32H96z"/></svg></span></span><a class="headerlink" href="#sujet-bac-16-recursivite" title="Permanent link">⚓︎</a></h1>
+<h2 id="cours">Cours<a class="headerlink" href="#cours" title="Permanent link">⚓︎</a></h2>
+<p>Vous pouvez télécharger une copie au format pdf du diaporama de synthèse de cours :</p>
+<p><span class='centre'><a class="md-button" href="../../../pdf/C16/C16-cours.pdf" target="_blank">Diaporama de cours <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M64 464h32v48H64c-35.3 0-64-28.7-64-64V64C0 28.7 28.7 0 64 0h165.5c17 0 33.3 6.7 45.3 18.7l90.5 90.5c12 12 18.7 28.3 18.7 45.3V288h-48V160h-80c-17.7 0-32-14.3-32-32V48H64c-8.8 0-16 7.2-16 16v384c0 8.8 7.2 16 16 16zm112-112h32c30.9 0 56 25.1 56 56s-25.1 56-56 56h-16v32c0 8.8-7.2 16-16 16s-16-7.2-16-16V368c0-8.8 7.2-16 16-16zm32 80c13.3 0 24-10.7 24-24s-10.7-24-24-24h-16v48h16zm96-80h32c26.5 0 48 21.5 48 48v64c0 26.5-21.5 48-48 48h-32c-8.8 0-16-7.2-16-16V368c0-8.8 7.2-16 16-16zm32 128c8.8 0 16-7.2 16-16v-64c0-8.8-7.2-16-16-16h-16v96h16zm80-112c0-8.8 7.2-16 16-16h48c8.8 0 16 7.2 16 16s-7.2 16-16 16h-32v32h32c8.8 0 16 7.2 16 16s-7.2 16-16 16h-32v48c0 8.8-7.2 16-16 16s-16-7.2-16-16V368z"/></svg></span></a></span></p>
+<div class="admonition warning">
+<p class="admonition-title">Attention</p>
+<p>Ce diaporama n'est qu'une synthèse de cours et ne donne que quelques points de repères pour de vos révisions.</p>
+</div>
+<h2 id="france-septembre-2022-session-de-remplacement">France Septembre 2022 : Session de remplacement.<a class="headerlink" href="#france-septembre-2022-session-de-remplacement" title="Permanent link">⚓︎</a></h2>
+<div class="admonition exo">
+<p class="admonition-title">Société immobiliére</p>
+<div class="admonition note">
+<p class="admonition-title">Thèmes abordés</p>
+<ul>
+<li>Notions de classes  </li>
+<li>Itération  </li>
+<li>Récursivité</li>
+</ul>
+</div>
+</div>
+<p>Une petite société immobilière ne voulant pas investir dans une base de données nécessitant une mise en place longue et fastidieuse a cré un fichier .csv pour stocker ses annonces. La consultation et la mise en place de ce fichier ne seront pas étudiées ici. Pour limiter notre étude, nous considérerons que les données sont stockées temporairement dans une liste v dont voici la structure simplifiée : </p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="c1">#pieces</span>
+<span class="k">class</span> <span class="nc">Piece</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">nom</span> <span class="o">=</span> <span class="n">a</span>  <span class="c1">#nom</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sup</span> <span class="o">=</span> <span class="n">b</span> <span class="c1"># superficie de la piece</span>
+
+    <span class="k">def</span> <span class="nf">sup</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">sup</span>
+
+<span class="c1">#villas</span>
+<span class="k">class</span> <span class="nc">Villa</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">,</span><span class="n">d</span><span class="p">,</span><span class="n">e</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">nom</span> <span class="o">=</span> <span class="n">a</span> <span class="c1">#nom de la villa</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sejour</span> <span class="o">=</span> <span class="n">b</span> <span class="c1">#caracteristiques sejour</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ch1</span> <span class="o">=</span> <span class="n">c</span>  <span class="c1">#caracteristiques de la 1ere chambre</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ch2</span> <span class="o">=</span> <span class="n">d</span> <span class="c1">#caracteristiques de la chambre 2</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">eqCuis</span> <span class="o">=</span> <span class="n">e</span>  <span class="c1"># equipement de la cuisine &#39;eq&#39; ou &#39;non eq&#39;</span>
+
+    <span class="k">def</span> <span class="nf">nom</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">nom</span>
+
+    <span class="k">def</span> <span class="nf">surface</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="o">...</span> <span class="o">...</span>
+
+    <span class="k">def</span> <span class="nf">equip</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">eqCuis</span>
+
+<span class="c1">#Programme principal</span>
+<span class="n">v</span><span class="o">=</span><span class="p">[]</span>
+<span class="n">v</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Villa</span><span class="p">(</span><span class="s2">&quot;Les quatre vents&quot;</span> <span class="p">,</span> <span class="n">Piece</span><span class="p">(</span><span class="s2">&quot;séjour&quot;</span><span class="p">,</span><span class="mi">40</span><span class="p">),</span><span class="n">Piece</span><span class="p">(</span><span class="s2">&quot;ch1&quot;</span><span class="p">,</span><span class="mi">10</span><span class="p">),</span><span class="n">Piece</span><span class="p">(</span><span class="s2">&quot;ch2&quot;</span><span class="p">,</span><span class="mi">20</span><span class="p">),</span><span class="s2">&quot;eq&quot;</span><span class="p">))</span>
+<span class="n">v</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Villa</span><span class="p">(</span><span class="s2">&quot;Les goélands&quot;</span> <span class="p">,</span> <span class="n">Piece</span><span class="p">(</span><span class="s2">&quot;séjour&quot;</span><span class="p">,</span><span class="mi">50</span><span class="p">),</span><span class="n">Piece</span><span class="p">(</span><span class="s2">&quot;ch1&quot;</span><span class="p">,</span><span class="mi">15</span><span class="p">),</span><span class="n">Piece</span><span class="p">(</span><span class="s2">&quot;ch2&quot;</span><span class="p">,</span><span class="mi">15</span><span class="p">),</span><span class="s2">&quot;eq&quot;</span><span class="p">))</span>
+<span class="n">v</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Villa</span><span class="p">(</span><span class="s2">&quot;Rêve d&#39;été&quot;</span> <span class="p">,</span> <span class="n">Piece</span><span class="p">(</span><span class="s2">&quot;séjour&quot;</span><span class="p">,</span><span class="mi">30</span><span class="p">),</span><span class="n">Piece</span><span class="p">(</span><span class="s2">&quot;ch1&quot;</span><span class="p">,</span><span class="mi">15</span><span class="p">),</span><span class="n">Piece</span><span class="p">(</span><span class="s2">&quot;ch2&quot;</span><span class="p">,</span><span class="mi">20</span><span class="p">),</span><span class="s2">&quot;non eq&quot;</span><span class="p">))</span>
+<span class="n">v</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Villa</span><span class="p">(</span><span class="s2">&quot;Les oliviers&quot;</span> <span class="p">,</span> <span class="n">Piece</span><span class="p">(</span><span class="s2">&quot;séjour&quot;</span><span class="p">,</span><span class="mi">30</span><span class="p">),</span><span class="n">Piece</span><span class="p">(</span><span class="s2">&quot;ch1&quot;</span><span class="p">,</span><span class="mi">10</span><span class="p">),</span><span class="n">Piece</span><span class="p">(</span><span class="s2">&quot;ch2&quot;</span><span class="p">,</span><span class="mi">20</span><span class="p">),</span><span class="s2">&quot;eq&quot;</span><span class="p">))</span>
+<span class="n">v</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Villa</span><span class="p">(</span><span class="s2">&quot;Bellevue&quot;</span> <span class="p">,</span> <span class="n">Piece</span><span class="p">(</span><span class="s2">&quot;séjour&quot;</span><span class="p">,</span><span class="mi">30</span><span class="p">),</span><span class="n">Piece</span><span class="p">(</span><span class="s2">&quot;ch1&quot;</span><span class="p">,</span><span class="mi">10</span><span class="p">),</span><span class="n">Piece</span><span class="p">(</span><span class="s2">&quot;ch2&quot;</span><span class="p">,</span><span class="mi">20</span><span class="p">),</span><span class="s2">&quot;non eq&quot;</span><span class="p">))</span>
+</code></pre></div>
+<div class="admonition bug">
+<p class="admonition-title">Bug</p>
+<ul>
+<li>Le code proposé définit pour un objet de la classe <code>Villa</code> un attribut <code>nom</code> ainsi qu'une méthode <code>nom</code>, ce qui n'est pas possible. La méthode est un <em>getter</em> qu'on pourrait renommer par exemple en <em>get_nom</em>.</li>
+<li>L'attribut  <code>eqCuis</code> ne prend que deux valeurs <code>"eq"</code> ou <code>"noneq"</code>, il serait donc plus judicieux d'en faire un booléen.</li>
+</ul>
+</div>
+<p>La structure de données retenue pour l'exercice est définie par la classe Villa.</p>
+<h3 id="partie-a-analyse-du-code-et-completion">Partie A : analyse du code et complétion<a class="headerlink" href="#partie-a-analyse-du-code-et-completion" title="Permanent link">⚓︎</a></h3>
+<div class="admonition question">
+<p class="admonition-title">Question 1</p>
+<p><strong>1.a</strong> Combien d'éléments contient la liste <code>v</code> ?<br />
+<strong>1.b</strong> Que retourne l'instruction <code>v[1]  .nom()</code> ?<br />
+Pour accéder à l'information de la surface habitable du logement, le developpeur souhaite ajouter la méthode <code>surface()</code> qui renvoie cette surface.<br />
+<strong>1.c</strong> Compléter sur votre copie la méthode <code>surface()</code><br />
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">def</span> <span class="nf">surface</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">return</span> <span class="o">...</span> <span class="o">...</span>
+</code></pre></div></p>
+</div>
+<p>L'agent immobilier veut pouvoir consulter les villas qui disposent d'une cuisine équipée. Pour cela vous devez écrire la portion du programme qui affichera la liste des villas équipées. Elle devra parcourir séquentiellement la liste et afficher à l'écran le nom de chaque villa équipée.  </p>
+<div class="admonition question">
+<p class="admonition-title">Question 2</p>
+<p>Rédigez sur votre copie la portion de programme réalissant cette sélection.  </p>
+</div>
+<h3 id="partie-b-recursivite">Partie B : Récursivité<a class="headerlink" href="#partie-b-recursivite" title="Permanent link">⚓︎</a></h3>
+<p>L'agent immobilier veut répondre à une demande de client : "Quelle est votre villa la plus grande ?". Pour cela, il souhaite disposer d'une fonction <code>max_surface()</code> qui va extraire de la liste <code>v</code>,  la villa désirée. Nous avons décidé d'écrire cette fonction de façon récursive.  </p>
+<div class="admonition question">
+<p class="admonition-title">Question 3</p>
+<p>Recopiez parmi les propositions suivantes celle qui caractèrise un appel récursif.<br />
+- appel d'une fonction par elle-même<br />
+- appel dont l'exécution est un prpocessus itératif.<br />
+- appel d'une fonction comportant une boucle.  </p>
+</div>
+<p>L'agorithme suivant a été choisi : </p>
+<p>Il faut partir d'une liste de villas :<br />
+- si cette liste contient un seul élèment, c'est le résultat;<br />
+- si la liste en continet plusieurs, il faut analyser les deux premiers élèments, élimier la villa de plus petite surface, et recommencer avec la liste tronquée.</p>
+<p>A la fin du processus, une seule villa est renvoyée.  </p>
+<p>Pour écrire cette fonction, dans un premier temps, nous alloons donc distinguer deux cas  :  </p>
+<ul>
+<li>celui àù la liste des villas ne contient qu'un villa : 
+<div class="highlight"><span class="filename">📋 Texte</span><pre><span></span><code>il faut renvoyer la villa  
+</code></pre></div></li>
+<li>celui où la liste en contient au moins deux :<br />
+<div class="highlight"><span class="filename">📋 Texte</span><pre><span></span><code>si la surface de la villa v[0] est inférieure à celle de la villa v[1]
+    il faut supprimer v[0] de la liste
+sinopn
+    il faut supprimer v[1] de la liste
+</code></pre></div></li>
+</ul>
+<div class="admonition question">
+<p class="admonition-title">Question 4</p>
+<p>Ecrivez sur votre copie le code de cette fonction en Python.<br />
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">def</span> <span class="nf">max_surface</span><span class="p">(</span><span class="n">v</span><span class="p">):</span>
+    <span class="o">...</span>
+</code></pre></div></p>
+</div>
+<details class="reponse">
+<summary>Reponse</summary>
+<ol>
+<li>
+<p>a. La liste <code>v</code> contient 5 éléments (elle était initialement vide et on y ajouté 5 éléments à l'aide de 5 <code>append</code>)</p>
+<p>b. <code>v[1]</code> est le deuxième élément de la liste <code>v</code> c'est à dire un objet de la classe <code>Villa</code> sa méthode <code>self.nom</code> renvoie l'attribut <code>nom</code> c'est à dire <code>"Les goélands"</code>.</p>
+<p>c.  Le calcul de la surface s'effectue naturellement en sommant la surface de chacune des pièces de la villa :
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">def</span> <span class="nf">surface</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">sejour</span><span class="o">.</span><span class="n">sup</span><span class="p">()</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">ch1</span><span class="o">.</span><span class="n">sup</span><span class="p">()</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">ch2</span><span class="o">.</span><span class="n">sup</span><span class="p">()</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>On parcours la liste <code>v</code> des villas et on affiche les noms de celles ayant une cuisine équipée (la méthode <code>equip</code> renvoie <code>"eq"</code> lorsque la cuisine est équipée).
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">for</span> <span class="n">villa</span> <span class="ow">in</span> <span class="n">v</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">villa</span><span class="o">.</span><span class="n">equip</span><span class="p">()</span><span class="o">==</span><span class="s2">&quot;eq&quot;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">villa</span><span class="o">.</span><span class="n">nom</span><span class="p">())</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Un appel récursif est caractérisé par <em>appel d'une fonction par elle-même</em></p>
+</li>
+<li>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">def</span> <span class="nf">max_surface</span><span class="p">(</span><span class="n">v</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">v</span><span class="p">)</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">v</span><span class="o">.</span><span class="n">nom</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">surface</span><span class="p">()</span> <span class="o">&gt;</span> <span class="n">v</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">surface</span><span class="p">():</span>
+        <span class="n">v</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">v</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">max_surface</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+</code></pre></div>
+</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Remarque</p>
+<p>Le type <code>list</code> étant mutable, la fonction ci-dessous vide en même temps la liste <code>v</code> qui contiendra à la fin un unique élément (celui ayant la surface maximale)</p>
+</div>
+</details>
+<h2 id="sujet-b-2023">Sujet B 2023<a class="headerlink" href="#sujet-b-2023" title="Permanent link">⚓︎</a></h2>
+<div class="admonition exo">
+<p class="admonition-title">Fonctions récursives</p>
+<div class="admonition note">
+<p class="admonition-title">Thèmes abordés</p>
+<ul>
+<li>Récursivité  </li>
+<li>Cet exercice est consacré à l'analyse et à l'écriture de programmes récursifs.</li>
+</ul>
+</div>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Question 1</p>
+<p><strong>1.a)</strong> Expliquer en quelques mots ce qu'est une fonction récursive.</p>
+<details class="success">
+<summary>Réponse</summary>
+<p>Une fonction récursive est une fonction qui possède un appel à elle-même dans son code source.</p>
+</details>
+<p><strong>1.b)</strong> On considère la fonction Python suivante :</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">def</span> <span class="nf">compte_rebours</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; n est un entier positif ou nul &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+        <span class="n">compte_rebours</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+</code></pre></div>
+<p>L'appel <code>compte_rebours(3)</code> affiche successivement les nombres <code>3</code>, <code>2</code>, <code>1</code> et <code>0</code>.
+Expliquer pourquoi le programme s'arrête après l'affichage du nombre <code>0</code>.</p>
+<details class="success">
+<summary>Réponse</summary>
+<p>Une fois l'affichage de <code>0</code> effectué, il y a un appel récursif <code>compte_rebours(0 - 1)</code>.</p>
+<p>Lors de cet appel récursif, <code>n</code> vaut <code>-1</code>, on ne rentre pas donc dans la structure conditionnelle.</p>
+<p>La pile d'appel récursif se vide sans qu'il ait d'autres instructions effectuées.</p>
+<p>Ainsi le programme s'arrête après avoir affiché <code>0</code> et vidé la pile d'appels récursifs.</p>
+</details>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Question 2</p>
+<p><strong>2.</strong> En mathématiques, la factorielle d'un entier naturel <span class="arithmatex">\(n\)</span> est le produit des nombres entiers strictement positifs inférieurs ou égaux à <span class="arithmatex">\(n\)</span>. Par convention, la factorielle de <span class="arithmatex">\(0\)</span> est <span class="arithmatex">\(1\)</span>. Par exemple :</p>
+<ul>
+<li>la factorielle de <span class="arithmatex">\(1\)</span> est <span class="arithmatex">\(1\)</span></li>
+<li>la factorielle de <span class="arithmatex">\(2\)</span> est <span class="arithmatex">\(2 × 1 = 2\)</span></li>
+<li>la factorielle de <span class="arithmatex">\(3\)</span> est <span class="arithmatex">\(3 × 2 × 1 = 6\)</span></li>
+<li>la factorielle de <span class="arithmatex">\(4\)</span> est <span class="arithmatex">\(4 × 3 × 2 × 1 = 24\)</span></li>
+</ul>
+<p>Recopier et compléter sur votre copie le programme donné ci-dessous afin que la fonction récursive <code>fact</code> renvoie la factorielle de l'entier passé en paramètre de cette fonction. </p>
+<p>Exemple : <code class="highlight"><span class="n">fact</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span></code> renvoie <code>24</code>.</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">def</span> <span class="nf">fact</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Renvoie le produit des entiers strictement positifs</span>
+<span class="sd">        et inférieurs ou égaux à n.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="o">...</span>  <span class="c1"># À compléter</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="o">...</span>  <span class="c1"># À compléter</span>
+</code></pre></div>
+<details class="success">
+<summary>Réponse</summary>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">def</span> <span class="nf">fact</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Renvoie le produit des entiers strictement positifs</span>
+<span class="sd">        et inférieurs ou égaux à n.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">n</span> <span class="o">*</span> <span class="n">fact</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+</code></pre></div>
+</details>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Question 3</p>
+<p><strong>3.</strong> La fonction <code>somme_entiers_rec</code> ci-dessous permet de calculer la somme des entiers, de <code>0</code> à l'entier naturel <code>n</code> passé en paramètre.</p>
+<p>Par exemple :</p>
+<ul>
+<li>Pour <code class="highlight"><span class="n">n</span> <span class="o">=</span> <span class="mi">0</span></code>, la fonction renvoie la valeur <code>0</code>.</li>
+<li>Pour <code class="highlight"><span class="n">n</span> <span class="o">=</span> <span class="mi">1</span></code>, la fonction renvoie la valeur <code>0 + 1 = 1</code>.</li>
+<li>...</li>
+<li>Pour <code class="highlight"><span class="n">n</span> <span class="o">=</span> <span class="mi">4</span></code>, la fonction renvoie la valeur <code>0 + 1 + 2 + 3 + 4 = 10</code>.</li>
+</ul>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">🐍 Script Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">somme_entiers_rec</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Renvoie, de manière récursive,</span>
+<span class="sd">    la somme des entiers de 0 à l&#39;entier naturel n.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">0</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>  <span class="c1"># pour vérification</span>
+        <span class="k">return</span> <span class="n">n</span> <span class="o">+</span> <span class="n">somme_entiers</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<p>L'instruction <code class="highlight"><span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span></code> de la ligne 7 dans le code précédent a été insérée afin de mettre en évidence le mécanisme en œuvre au niveau des appels récursifs.</p>
+<p><strong>3.a)</strong> Écrire ce qui sera affiché dans la console après l'exécution de la ligne suivante : </p>
+<div class="highlight"><span class="filename">🐍 Console Python</span><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">res</span> <span class="o">=</span> <span class="n">somme_entiers_rec</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</code></pre></div>
+<details class="success">
+<summary>Réponse</summary>
+<div class="highlight"><span class="filename">🐍 Console Python</span><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">res</span> <span class="o">=</span> <span class="n">somme_entiers_rec</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="go">3</span>
+<span class="go">2</span>
+<span class="go">1</span>
+<span class="gp">&gt;&gt;&gt;</span>
+</code></pre></div>
+<ul>
+<li>L'appel <code class="highlight"><span class="n">somme_entiers_rec</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span></code> affiche <code>3</code> puis appelle <code class="highlight"><span class="n">somme_entiers_rec</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span></code></li>
+<li>L'appel <code class="highlight"><span class="n">somme_entiers_rec</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span></code> affiche <code>2</code> puis appelle <code class="highlight"><span class="n">somme_entiers_rec</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span></code></li>
+<li>L'appel <code class="highlight"><span class="n">somme_entiers_rec</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span></code> affiche <code>3</code> puis appelle <code class="highlight"><span class="n">somme_entiers_rec</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span></code></li>
+<li>L'appel <code class="highlight"><span class="n">somme_entiers_rec</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span></code> n'affiche rien.</li>
+</ul>
+</details>
+<p><strong>3.b)</strong> Quelle valeur sera alors affectée à la variable <code>res</code> ?</p>
+<details class="success">
+<summary>Réponse</summary>
+<div class="highlight"><span class="filename">🐍 Console Python</span><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">res</span> <span class="o">=</span> <span class="n">somme_entiers_rec</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="go">3</span>
+<span class="go">2</span>
+<span class="go">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">res</span>
+<span class="go">6</span>
+</code></pre></div>
+<p>La valeur <code>6</code> est affectée à la variable <code>res</code>, la somme <span class="arithmatex">\(3+2+1+0\)</span>.</p>
+</details>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Question 4</p>
+<p><strong>4.</strong> Écrire en Python une fonction <code>somme_entiers</code> non récursive : cette fonction devra prendre en argument un entier naturel <code>n</code> et renvoyer la somme des entiers de <code>0</code> à <code>n</code> compris. Elle devra donc renvoyer le même résultat que la fonction <code>somme_entiers_rec</code> définie à la question 3.</p>
+<p>Exemple : <code class="highlight"><span class="n">somme_entiers</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span></code> renvoie <code>10</code>.</p>
+<details class="success">
+<summary>Réponse</summary>
+<p>Il y a plusieurs solutions, par exemple :</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">def</span> <span class="nf">somme_entiers</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="c1"># style itératif</span>
+    <span class="n">somme</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="n">somme</span> <span class="o">+=</span> <span class="n">x</span>
+    <span class="k">return</span> <span class="n">somme</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">def</span> <span class="nf">somme_entiers</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="c1"># style fonctionnel</span>
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
+</code></pre></div>
+</details>
+</div>
+<h2 id="centres-etrangers-j2-2022">Centres Etrangers J2 2022<a class="headerlink" href="#centres-etrangers-j2-2022" title="Permanent link">⚓︎</a></h2>
+<div class="admonition exo">
+<p class="admonition-title">Produit de chaines de caractères par un entier</p>
+<div class="admonition note">
+<p class="admonition-title">Thèmes abordés</p>
+<ul>
+<li>Programmation  </li>
+<li>Récursivité </li>
+</ul>
+</div>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Question 1</p>
+<p><strong>1.</strong> Voici une fonction codée en Python :</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Partez !&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+        <span class="n">f</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div>
+<p><strong>1.a.</strong> Qu'affiche la commande <code>f(5)</code> ?</p>
+<details class="success">
+<summary>Réponse</summary>
+<p><code>f(5)</code> affiche</p>
+<div class="highlight"><span class="filename">📋 Texte</span><pre><span></span><code>5
+4
+3
+2
+1
+Partez !
+</code></pre></div>
+</details>
+<p><strong>1.b.</strong> Pourquoi dit-on de cette fonction qu'elle est récursive ?</p>
+<details class="success">
+<summary>Réponse</summary>
+<p>Le code source de <code>f</code> contient un appel à elle-même, c'est donc une fonction récursive.</p>
+</details>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Question 2</p>
+<p><strong>2.</strong> On rappelle qu'en python l'opérateur <code>+</code> a le comportement suivant sur les chaines de caractères :</p>
+<div class="highlight"><span class="filename">🐍 Console Python</span><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">S</span> <span class="o">=</span> <span class="s1">&#39;a&#39;</span> <span class="o">+</span> <span class="s1">&#39;bc&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">S</span>
+<span class="go">&#39;abc&#39;</span>
+</code></pre></div>
+<p>Et le comportement suivant sur les listes :</p>
+<div class="highlight"><span class="filename">🐍 Console Python</span><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">L</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">L</span>
+<span class="go">[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;]</span>
+</code></pre></div>
+<p>On a besoin pour les questions suivantes de pouvoir ajouter une chaine de caractères <code>s</code> en préfixe à chaque chaine de caractères de la liste <code>chaines</code>.</p>
+<p>On appellera cette fonction <code>ajouter</code>.</p>
+<p>Par exemple, <code class="highlight"><span class="n">ajouter</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">])</span></code> doit renvoyer <code>["ab", "ac"]</code>.</p>
+<p><strong>2.a.</strong> Recopiez le code suivant et complétez <code>...</code> sur votre copie :</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">def</span> <span class="nf">ajouter</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">chaines</span><span class="p">):</span>
+    <span class="n">resultat</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">mot</span> <span class="ow">in</span> <span class="n">chaines</span><span class="p">:</span>
+        <span class="n">resultat</span> <span class="o">...</span>
+    <span class="k">return</span> <span class="n">resultat</span>
+</code></pre></div>
+<details class="success">
+<summary>Réponses</summary>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">def</span> <span class="nf">ajouter</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">chaines</span><span class="p">):</span>
+    <span class="n">resultat</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">mot</span> <span class="ow">in</span> <span class="n">chaines</span><span class="p">:</span>
+        <span class="n">resultat</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">s</span> <span class="o">+</span> <span class="n">mot</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">resultat</span>
+</code></pre></div>
+</details>
+<p><strong>2.b.</strong> Que renvoie la commande <code class="highlight"><span class="n">ajouter</span><span class="p">(</span><span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">])</span></code> ?</p>
+<details class="success">
+<summary>Réponse</summary>
+<p><code class="highlight"><span class="n">ajouter</span><span class="p">(</span><span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">])</span></code> renvoie <code>["ba", "bb", "bc"]</code>.</p>
+</details>
+<p><strong>2.c.</strong> Que renvoie la commande <code class="highlight"><span class="n">ajouter</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;&quot;</span><span class="p">])</span></code> ?</p>
+<details class="success">
+<summary>Réponse</summary>
+<p><code class="highlight"><span class="n">ajouter</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;&quot;</span><span class="p">])</span></code> renvoie <code>["a"]</code>.</p>
+</details>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Question 3</p>
+<p><strong>3.</strong> On s'intéresse ici à la fonction suivante écrite en Python où <code>s</code> est une chaine de caractères et <code>n</code> un entier naturel.</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">def</span> <span class="nf">produit</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">[</span><span class="s2">&quot;&quot;</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">resultat</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">s</span><span class="p">:</span>
+            <span class="n">resultat</span> <span class="o">=</span> <span class="n">resultat</span> <span class="o">+</span> <span class="n">ajouter</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">produit</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">resultat</span>
+</code></pre></div>
+<p><strong>3.a.</strong> Que renvoie la commande <code class="highlight"><span class="n">produit</span><span class="p">(</span><span class="s2">&quot;ab&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span></code> ? Le résultat est-il une liste vide ?</p>
+<details class="success">
+<summary>Réponse</summary>
+<p><code class="highlight"><span class="n">produit</span><span class="p">(</span><span class="s2">&quot;ab&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span></code> utilise le paramètre <code>n</code> égal à <code>0</code>, donc elle renvoie <code class="highlight"><span class="p">[</span><span class="s2">&quot;&quot;</span><span class="p">]</span></code>. (L'affichage en console sera <code class="highlight"><span class="p">[</span><span class="s1">&#39;&#39;</span><span class="p">]</span></code>)</p>
+<p><code class="highlight"><span class="p">[</span><span class="s2">&quot;&quot;</span><span class="p">]</span></code> n'est pas une liste vide, c'est une liste qui contient <strong>un</strong> élément : la chaine de caractères vide.</p>
+</details>
+<p><strong>3.b.</strong> Que renvoie la commande <code class="highlight"><span class="n">produit</span><span class="p">(</span><span class="s2">&quot;ab&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span></code> ?</p>
+<details class="success">
+<summary>Réponse</summary>
+<p><code class="highlight"><span class="n">produit</span><span class="p">(</span><span class="s2">&quot;ab&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span></code> fait une boucle <code class="highlight"><span class="k">for</span></code> avec deux tours :</p>
+<ul>
+<li>Premier tour, avec <code>c = 'a'</code>, <code>resultat</code> devient <code>["a"]</code>.</li>
+<li>Second tour, avec <code>c = 'b'</code>,  <code>resultat</code> devient <code>["a"] + ["b"]</code>.</li>
+</ul>
+<p><code class="highlight"><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">]</span></code> est renvoyé.</p>
+</details>
+<p><strong>3.c.</strong> Que renvoie la commande <code class="highlight"><span class="n">produit</span><span class="p">(</span><span class="s2">&quot;ab&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span></code> ?</p>
+<details class="success">
+<summary>Réponse</summary>
+<p><code class="highlight"><span class="n">produit</span><span class="p">(</span><span class="s2">&quot;ab&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span></code> fait une boucle <code class="highlight"><span class="k">for</span></code> avec deux tours :</p>
+<ul>
+<li>Premier tour, avec <code>c = 'a'</code>, <code>resultat</code> devient <code>["aa", "ab"]</code>.</li>
+<li>Second tour, avec <code>c = 'b'</code>,  <code>resultat</code> devient <code>["aa", "ab"] + ["ba", "bb"]</code>.</li>
+</ul>
+<p><code class="highlight"><span class="p">[</span><span class="s1">&#39;aa&#39;</span><span class="p">,</span> <span class="s1">&#39;ab&#39;</span><span class="p">,</span> <span class="s1">&#39;ba&#39;</span><span class="p">,</span> <span class="s1">&#39;bb&#39;</span><span class="p">]</span></code> est renvoyé.</p>
+</details>
+</div>
+<h2 id="polynesie-j1-2022">Polynésie J1 2022<a class="headerlink" href="#polynesie-j1-2022" title="Permanent link">⚓︎</a></h2>
+<div class="admonition exo">
+<p class="admonition-title">Construction récursive de chaine de caractères</p>
+<div class="admonition note">
+<p class="admonition-title">Thèmes abordés</p>
+<ul>
+<li>Programmation  </li>
+<li>Récursivité  </li>
+</ul>
+</div>
+</div>
+<p>On rappelle qu'une chaine de caractères peut être représentée en Python par un texte entre guillemets <code>""</code> et que :</p>
+<ul>
+<li>la fonction <code>len</code> renvoie la longueur de la chaine de caractères passée en
+paramètre ;</li>
+<li>si une variable <code>ch</code> désigne une chaine de caractères, alors <code>ch[0]</code> renvoie son premier caractère, <code>ch[1]</code> le deuxième, etc ;</li>
+<li>l'opérateur <code>+</code> permet de concaténer deux chaines de caractères.</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Exemples</p>
+<div class="highlight"><span class="filename">🐍 Console Python</span><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">texte</span> <span class="o">=</span> <span class="s2">&quot;bricot&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">texte</span><span class="p">)</span>
+<span class="go">6</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">texte</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="go">&quot;b&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">texte</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="go">&quot;r&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;a&quot;</span> <span class="o">+</span> <span class="n">texte</span>
+<span class="go">&quot;abricot&quot;</span>
+</code></pre></div>
+</div>
+<p>On s'intéresse dans cet exercice à la construction de chaines de caractères suivant certaines règles de construction.</p>
+<div class="admonition info">
+<p class="admonition-title">Règle A</p>
+<p>Une chaine est construite suivant la règle A dans les deux cas suivants :</p>
+<ul>
+<li>soit elle est égale à <code>"a"</code> ;</li>
+<li>soit elle est de la forme <code>"a" + chaine + "a"</code>, où <code>chaine</code> est une chaine de caractères construite suivant la règle A.</li>
+</ul>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Règle B</p>
+<p>Une chaine est construite suivant la règle B dans les deux cas suivants :</p>
+<ul>
+<li>soit elle est de la forme <code>"b" + chaine + "b"</code>, où <code>chaine</code> est une chaine de caractères construite suivant la règle A ;</li>
+<li>soit elle est de la forme <code>"b" + chaine + "b"</code>, où <code>chaine</code> est une chaine de caractères construite suivant la règle B.</li>
+</ul>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Fonction <code>choice</code> du module <code>random</code></p>
+<p>On a reproduit ci-dessous l'aide de la fonction <code>choice</code> du module <code>random</code>.</p>
+<div class="highlight"><span class="filename">🐍 Console Python</span><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">choice</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">help</span><span class="p">(</span><span class="n">choice</span><span class="p">)</span>
+<span class="go">Help on method choice in module random:</span>
+<span class="go">choice(seq) method of random.Random instance</span>
+<span class="go">Choose a random element from a non-empty sequence.</span>
+</code></pre></div>
+<p><code>choice(seq)</code> renvoie un élément de <code>seq</code> (qui peut être une liste) de façon pseudo-aléatoire.</p>
+</div>
+<p>La fonction <code>A</code> ci-dessous renvoie une chaine de caractères construite suivant la règle A, en choisissant aléatoirement entre les deux cas de figure de cette règle.</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">def</span> <span class="nf">A</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">choice</span><span class="p">([</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">]):</span>
+        <span class="k">return</span> <span class="s2">&quot;a&quot;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;a&quot;</span> <span class="o">+</span> <span class="n">A</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&quot;a&quot;</span>
+</code></pre></div>
+<div class="admonition question">
+<p class="admonition-title">Question 1</p>
+<p><strong>1.a.</strong> Cette fonction est-elle récursive ? Justifier.</p>
+<details class="success">
+<summary>Réponse</summary>
+<p>La fonction <code>A</code> s'appelle elle-même, donc <code>A</code> est une fonction récursive.</p>
+</details>
+<p><strong>1.b.</strong> La fonction <code>choice([True, False])</code> peut renvoyer <code>False</code> un très grand nombre de fois consécutives. Expliquer pourquoi ce cas de figure amènerait à une erreur d'exécution.</p>
+<details class="success">
+<summary>Réponse</summary>
+<p>Si <code>choice([True, False])</code> renvoie <code>False</code> consécutivement un nombre de fois supérieur à la limite de profondeur de récursion autorisée (1000 par défaut avec Python), dans ce cas une erreur d'exécution se produit.</p>
+<div class="admonition danger">
+<p class="admonition-title">Pour aller plus loin</p>
+<p>On pourrait modifier cette limite à <span class="arithmatex">\(10^6\)</span> avec le code suivant</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">setrecursionlimit</span><span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="mi">6</span><span class="p">)</span>
+</code></pre></div>
+</div>
+</details>
+</div>
+<p>Dans la suite, on considère une deuxième version de la fonction <code>A</code>. À présent, la fonction prend en paramètre un entier <code>n</code> tel que,</p>
+<ul>
+<li>si la valeur de <code>n</code> est négative ou nulle, la fonction renvoie <code>"a"</code> ;</li>
+<li>si la valeur de <code>n</code> est strictement positive, elle renvoie une chaine de caractères construite suivant la règle A avec un <code>n</code> décrémenté de 1, en choisissant aléatoirement entre les deux cas de figure de cette règle.</li>
+</ul>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">def</span> <span class="nf">A</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="o">...</span> <span class="ow">or</span> <span class="n">choice</span><span class="p">([</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">])</span> <span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;a&quot;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;a&quot;</span> <span class="o">+</span> <span class="o">...</span> <span class="o">+</span> <span class="s2">&quot;a&quot;</span>
+</code></pre></div>
+<div class="admonition question">
+<p class="admonition-title">Question 2</p>
+<p><strong>2.a.</strong> Recopier sur la copie et compléter aux emplacements des points de
+suspension <code>...</code> le code de cette nouvelle fonction <code>A</code>.</p>
+<details class="success">
+<summary>Réponse</summary>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">def</span> <span class="nf">A</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">or</span> <span class="n">choice</span><span class="p">([</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">])</span> <span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;a&quot;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;a&quot;</span> <span class="o">+</span> <span class="n">A</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;a&quot;</span>
+</code></pre></div>
+</details>
+<p><strong>2.b.</strong> Justifier le fait qu'un appel de la forme <code>A(n)</code> avec <code>n</code> un nombre entier positif inférieur à 50, termine toujours.</p>
+<details class="success">
+<summary>Réponse</summary>
+<p>Pour <span class="arithmatex">\(n &gt; 0\)</span>, l'appel à <code>A(n)</code> provoque ou bien un arrêt de la fonction, ou bien un appel récursif avec le paramètre <code>n - 1</code>.</p>
+<p>Un appel à <code>A(50)</code> pourrait provoquer dans le pire des cas 50 appels récursifs pour arriver à <code>A(0)</code> qui termine, ou alors terminer avant !</p>
+</details>
+</div>
+<p>On donne ci-après le code de la fonction récursive B qui prend en paramètre un entier <code>n</code> et qui renvoie une chaine de caractères construite suivant la règle B.</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">def</span> <span class="nf">B</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">or</span> <span class="n">choice</span><span class="p">([</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">]):</span>
+        <span class="k">return</span> <span class="s2">&quot;b&quot;</span> <span class="o">+</span> <span class="n">A</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;b&quot;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;b&quot;</span> <span class="o">+</span> <span class="n">B</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;b&quot;</span>
+</code></pre></div>
+<p>On admet que :</p>
+<ul>
+<li>les appels <code>A(-1)</code> et <code>A(0)</code> renvoient la chaine <code>"a"</code> ;</li>
+<li>l'appel <code>A(1)</code> renvoie la chaine <code>"a"</code> ou la chaine <code>"aaa"</code> ;</li>
+<li>l'appel <code>A(2)</code> renvoie la chaine <code>"a"</code>, la chaine <code>"aaa"</code> ou la chaine <code>"aaaaa"</code>.</li>
+</ul>
+<div class="admonition question">
+<p class="admonition-title">Question 3</p>
+<p><strong>3.</strong> Donner toutes les chaines possibles renvoyées par les appels <code>B(0)</code>, <code>B(1)</code> et <code>B(2)</code>.</p>
+<details class="success">
+<summary>Réponse</summary>
+<ul>
+<li><code>B(0)</code> renvoie <code>"bab"</code></li>
+<li><code>B(1)</code> renvoie <code>"bab"</code> ou <code>"bbabb"</code>.</li>
+<li><code>B(2)</code> renvoie <code>"bab"</code>, <code>"baaab"</code>, <code>"bbabb"</code> ou <code>"bbbabbb"</code>.</li>
+</ul>
+</details>
+</div>
+<p>On suppose maintenant qu'on dispose d'une fonction <code>raccourcir</code> qui prend comme paramètre une chaine de caractères de longueur supérieure ou égale à 2, et renvoie la chaine de caractères obtenue à partir de la chaine initiale en lui ôtant le premier et le dernier caractère.</p>
+<div class="admonition example">
+<p class="admonition-title">Par exemple :</p>
+<div class="highlight"><span class="filename">🐍 Console Python</span><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">raccourcir</span><span class="p">(</span><span class="s2">&quot;abricot&quot;</span><span class="p">)</span>
+<span class="go">&quot;brico&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">raccourcir</span><span class="p">(</span><span class="s2">&quot;ab&quot;</span><span class="p">)</span>
+<span class="go">&quot;&quot;</span>
+</code></pre></div>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Question 4</p>
+<p><strong>4.a.</strong> Recopier sur la copie et compléter les points de suspension <code>...</code> du code de la fonction <code>regle_A</code> ci-dessous pour qu'elle renvoie <code>True</code> si la chaine passée en paramètre est construite suivant la règle A, et <code>False</code> sinon.</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">def</span> <span class="nf">regle_A</span><span class="p">(</span><span class="n">chaine</span><span class="p">):</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">chaine</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">chaine</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;a&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">chaine</span><span class="p">[</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;a&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="n">regle_A</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">chaine</span> <span class="o">==</span> <span class="o">...</span>
+</code></pre></div>
+<details class="success">
+<summary>Réponse</summary>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">def</span> <span class="nf">regle_A</span><span class="p">(</span><span class="n">chaine</span><span class="p">):</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">chaine</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">chaine</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;a&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">chaine</span><span class="p">[</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;a&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="n">regle_A</span><span class="p">(</span><span class="n">raccourcir</span><span class="p">(</span><span class="n">chaine</span><span class="p">))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">chaine</span> <span class="o">==</span> <span class="s2">&quot;a&quot;</span>
+</code></pre></div>
+</details>
+<p><strong>4.b.</strong> Écrire le code d'une fonction <code>regle_B</code>, prenant en paramètre une chaine de caractères et renvoyant <code>True</code> si la chaine est construite suivant la règle B, et <code>False</code> sinon.</p>
+<details class="success">
+<summary>Réponse</summary>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">def</span> <span class="nf">regle_B</span><span class="p">(</span><span class="n">chaine</span><span class="p">):</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">chaine</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">chaine</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;b&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">chaine</span><span class="p">[</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;b&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span>
+            <span class="n">regle_A</span><span class="p">(</span><span class="n">raccourcir</span><span class="p">(</span><span class="n">chaine</span><span class="p">))</span> <span class="ow">or</span> <span class="n">regle_B</span><span class="p">(</span><span class="n">raccourcir</span><span class="p">(</span><span class="n">chaine</span><span class="p">))</span>
+        <span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+</code></pre></div>
+</details>
+</div>
+<h2 id="france-j2-2021-candidat-libre">France J2 2021 - Candidat libre<a class="headerlink" href="#france-j2-2021-candidat-libre" title="Permanent link">⚓︎</a></h2>
+<div class="admonition exo">
+<p class="admonition-title">Mélange d'une liste</p>
+<div class="admonition note">
+<p class="admonition-title">Thèmes abordés</p>
+<ul>
+<li>Programmation  </li>
+<li>Récursivité  </li>
+</ul>
+</div>
+</div>
+<p>On s'intéresse dans cet exercice à un algorithme de mélange des éléments d'une liste.</p>
+<div class="admonition question">
+<p class="admonition-title">Question 1</p>
+<p><strong>1.</strong> Pour la suite, il sera utile de disposer d'une fonction <code>echange</code> qui permet d'échanger dans une liste <code>valeurs</code> les éléments d'indice <code>i</code> et <code>j</code>.</p>
+<p>Expliquer pourquoi le code Python ci-dessous ne réalise pas cet échange et en proposer une modification.</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">def</span> <span class="nf">echange</span><span class="p">(</span><span class="n">valeurs</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">):</span>
+    <span class="n">valeurs</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">valeurs</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="n">valeurs</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">valeurs</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+</code></pre></div>
+<details class="success">
+<summary>Réponse</summary>
+<p>On perd la valeur initiale de <code>list[j]</code> dès la première instruction.</p>
+<p>On peut procéder de deux façons différentes :</p>
+<ul>
+<li>Avec une variable temporaire :</li>
+</ul>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">def</span> <span class="nf">echange</span><span class="p">(</span><span class="n">valeurs</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">):</span>
+    <span class="n">temp</span> <span class="o">=</span> <span class="n">valeurs</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+    <span class="n">valeurs</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">valeurs</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="n">valeurs</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">temp</span>
+</code></pre></div>
+<ul>
+<li>En utilisant l'affectation multiple :</li>
+</ul>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">def</span> <span class="nf">echange</span><span class="p">(</span><span class="n">valeurs</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">):</span>
+    <span class="n">valeurs</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">valeurs</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">valeurs</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">valeurs</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+</code></pre></div>
+</details>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Question 2</p>
+<p><strong>2.</strong> La documentation du module <code>random</code> de Python fournit les informations ci-dessous concernant la fonction <code>randint</code> :</p>
+<div class="admonition tip">
+<p class="admonition-title"><code>randint(a, b)</code></p>
+<p>Renvoie un entier aléatoire <code>N</code> tel que <code>a &lt;= N &lt;= b</code>. Alias pour <code>randrange(a, b + 1)</code>.</p>
+</div>
+<p>Parmi les valeurs ci-dessous, quelles sont celles qui peuvent être renvoyées par l'appel <code>randint(0, 10)</code> ?</p>
+<ul>
+<li><code>0</code></li>
+<li><code>1</code></li>
+<li><code>3.5</code></li>
+<li><code>9</code></li>
+<li><code>10</code></li>
+<li><code>11</code></li>
+</ul>
+<details class="success">
+<summary>Réponse</summary>
+<p>L'appel <code>randint(0, 10)</code> renvoie une valeur entière entre <code>0</code> et <code>10</code> inclus l'un et l'autres.</p>
+<p>Donc <code>0</code>, <code>1</code>, <code>9</code> et <code>10</code> sont des valeurs possibles.</p>
+</details>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Question 3</p>
+<p><strong>3.</strong> Le mélange de Fischer-Yates est un algorithme permettant de permuter aléatoirement les éléments d'une liste. On donne ci-dessous une mise en œuvre récursive de cet algorithme en Python.</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">🐍 Script Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
+
+<span class="k">def</span> <span class="nf">melange</span><span class="p">(</span><span class="n">valeurs</span><span class="p">,</span> <span class="n">i</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">valeurs</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">j</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+        <span class="n">echange</span><span class="p">(</span><span class="n">valeurs</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span>
+        <span class="n">melange</span><span class="p">(</span><span class="n">valeurs</span><span class="p">,</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<p><strong>3.a.</strong> Expliquer pourquoi la fonction <code>melange</code> se termine toujours.</p>
+<details class="success">
+<summary>Réponse</summary>
+<p>On suppose que <code>i</code> est un entier positif compris entre <code>0</code> et l'indice du dernier élément de la liste (<code class="highlight"><span class="nb">len</span><span class="p">(</span><span class="n">valeurs</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span></code>).</p>
+<p>Lors des appels récursifs, on décrémente la valeur de <code>i</code> et ces appels n'ont lieu que si cette valeur est strictement positive. Donc la fonction s'arrêtera toujours.</p>
+</details>
+<p><strong>3.b.</strong> Lors de l'appel de la fonction <code>melange</code>, la valeur du paramètre <code>i</code> doit être égal au plus grand indice possible de la liste <code>valeurs</code>.</p>
+<p>Pour une liste de longueur <span class="arithmatex">\(n\)</span>, quel est le nombre d'appels récursifs de la fonction <code>melange</code> effectués, sans compter l'appel initial ?</p>
+<details class="success">
+<summary>Réponse</summary>
+<p>Pour une liste de longueur <span class="arithmatex">\(n\)</span>, on appelle tout d'abord <code>melange(valeurs, n - 1)</code>.</p>
+<p>Le premier appel récursif est donc <code>melange(valeurs, i - 2)</code>. Il est suivi d'appels récursifs correspondants aux différents indices de <code>valeurs</code> jusqu'au dernier appel <code>melange(valeurs, 0)</code>. </p>
+<p>Donc il y a <span class="arithmatex">\(n-1\)</span> appels récursifs.</p>
+</details>
+<p><strong>3.c.</strong> On considère le script ci-dessous :</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">valeurs</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)]</span>
+<span class="n">melange</span><span class="p">(</span><span class="n">valeurs</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+</code></pre></div>
+<p>On suppose que les valeurs successivement renvoyées par la fonction <code>randint</code> sont <code>2</code>, <code>1</code>, <code>2</code> et <code>0</code>.</p>
+<p>Les deux premiers affichages produits par l'instruction <code class="highlight"><span class="nb">print</span><span class="p">(</span><span class="n">valeurs</span><span class="p">)</span></code> de la fonction <code>melange</code> sont :</p>
+<ul>
+<li>Premier affichage : <code class="highlight"><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span></code>,</li>
+<li>Deuxième affichage : <code class="highlight"><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span></code>.</li>
+</ul>
+<p>Donner les affichages suivants produits par la fonction <code>melange</code>.</p>
+<details class="success">
+<summary>Réponse</summary>
+<p>On a les étapes suivantes :</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Valeur de <code>ind</code></th>
+<th style="text-align: center;">Valeur de <code>valeurs</code> affichée</th>
+<th style="text-align: center;">Valeur renvoyée par <code>randint</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><code>ind = 4</code></td>
+<td style="text-align: center;"><code>[0, 1, 2, 3, 4]</code></td>
+<td style="text-align: center;"><code>2</code></td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>ind = 3</code></td>
+<td style="text-align: center;"><code>[0, 1, 4, 3, 2]</code></td>
+<td style="text-align: center;"><code>1</code></td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>ind = 2</code></td>
+<td style="text-align: center;"><code>[0, 3, 4, 1, 2]</code></td>
+<td style="text-align: center;"><code>2</code></td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>ind = 1</code></td>
+<td style="text-align: center;"><code>[0, 3, 4, 1, 2]</code></td>
+<td style="text-align: center;"><code>0</code></td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>ind = 0</code></td>
+<td style="text-align: center;"><code>[3, 0, 4, 1, 2]</code></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+</details>
+<p><strong>3.d.</strong> Proposer une version itérative du mélange de Fischer-Yates.</p>
+<details class="success">
+<summary>Réponse</summary>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
+
+<span class="k">def</span> <span class="nf">melange</span><span class="p">(</span><span class="n">valeurs</span><span class="p">):</span>
+    <span class="n">indice_dernier</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">valeurs</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">indice_dernier</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">j</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+        <span class="n">echange</span><span class="p">(</span><span class="n">valeurs</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span>
+</code></pre></div>
+</details>
+</div>
+<h2 id="france-septembre-2021-j1">France Septembre 2021 J1<a class="headerlink" href="#france-septembre-2021-j1" title="Permanent link">⚓︎</a></h2>
+<div class="admonition exo">
+<p class="admonition-title">Exo</p>
+<div class="admonition note">
+<p class="admonition-title">Thèmes abordés</p>
+<ul>
+<li>Algorithmique (recherche dichotomique)  </li>
+<li>Récursivité  </li>
+<li>Variant de boucle  </li>
+<li>Complexité</li>
+</ul>
+</div>
+</div>
+<h3 id="partie-a-la-recherche-dichotomique">Partie A : La recherche dichotomique<a class="headerlink" href="#partie-a-la-recherche-dichotomique" title="Permanent link">⚓︎</a></h3>
+<div class="admonition question">
+<p class="admonition-title">Question 1</p>
+<p>La recherche d’un élément dans un tableau avec une méthode dichotomique ne peut se faire que si le tableau est trié.<br />
+a) Vrai<br />
+b) Faux  </p>
+</div>
+<details class="reponse">
+<summary>Réponse</summary>
+<p>Vrai</p>
+</details>
+<div class="admonition question">
+<p class="admonition-title">Question 2</p>
+<p>Le coût d’un algorithme de recherche dichotomique est :<br />
+a) Constant : Complexité O(1)<br />
+b) Linéaire : Complexité O(n)<br />
+c) Logarithmique : Complexité O(log(n))  </p>
+</div>
+<details class="reponse">
+<summary>Réponse</summary>
+<p>c) Logarithmique</p>
+</details>
+<div class="admonition question">
+<p class="admonition-title">Question 3</p>
+<p>Justifier pourquoi l’entier fin - deb est un <strong>variant de boucle</strong> qui montre la terminaison du programme de recherche dichotomique de l’annexe. </p>
+</div>
+<details class="reponse">
+<summary>Réponse</summary>
+<p>À chaque étape, si on net rouve pas l’élément :  </p>
+<ul>
+<li>Si <code>liste[m]&gt;elem</code> alors <span class="arithmatex">\(fin_{k+1} = m - 1\)</span> et <span class="arithmatex">\(debut_{k+1} = debut_k\)</span> or <span class="arithmatex">\(m≤fin_k\)</span><br />
+donc <span class="arithmatex">\(fin_{k+1}&lt;fin_k\)</span> et ainsi <span class="arithmatex">\(fin_{k+1} - debut_{k+1} &lt; fin_k - debut_k\)</span>  </li>
+<li>Si <code>liste[m] &lt; elem</code> alors <span class="arithmatex">\(fin_{k+1} =fin_k\)</span> et <span class="arithmatex">\(debut_{k+1} = m+1\)</span> or <span class="arithmatex">\(m ≥debut_k\)</span><br />
+donc <span class="arithmatex">\(debut_{k+1} &lt; fin_k\)</span> et ainsi <span class="arithmatex">\(fin_{k+1}-debut_{k+1} &lt;fin_ - debut_k\)</span> <br />
+On a donc toujours <span class="arithmatex">\(fin_{k+1}-debut_{k+1} &lt; fin_k -debut_k\)</span>, c’est bien un <strong>variant de boucle</strong>.<br />
+Il existe donc un <span class="arithmatex">\(p\)</span> tel que <span class="arithmatex">\(fin_p &lt; debut_p\)</span> et l’algorithme se termine.  </li>
+</ul>
+</details>
+<h3 id="partie-b-la-recherche-dichotomique-iterative">Partie B : La recherche dichotomique itérative<a class="headerlink" href="#partie-b-la-recherche-dichotomique-iterative" title="Permanent link">⚓︎</a></h3>
+<p>Le programme de recherche dichotomique de l’annexe est utilisé pour effectuer des recherches dans une liste.<br />
+Dans l’ensemble de cette partie, on considère la liste : <br />
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">Lnoms</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;alice&quot;</span><span class="p">,</span> <span class="s2">&quot;bob&quot;</span><span class="p">,</span> <span class="s2">&quot;etienne&quot;</span><span class="p">,</span> <span class="s2">&quot;hector&quot;</span><span class="p">,</span> <span class="s2">&quot;lea&quot;</span><span class="p">,</span> <span class="s2">&quot;nathan&quot;</span><span class="p">,</span> <span class="s2">&quot;paul&quot;</span><span class="p">]</span>
+</code></pre></div></p>
+<div class="admonition question">
+<p class="admonition-title">Question 1</p>
+<p>Expliquer pourquoi en ligne 2, on a «fin = len(liste)-1» plutôt que «fin = 6».  </p>
+</div>
+<details class="reponse">
+<summary>Réponse</summary>
+<p>Le programme s’adapte à la longueur de la liste</p>
+</details>
+<div class="admonition question">
+<p class="admonition-title">Question 2</p>
+<p>En Python, l’opérateur // donne le quotient de la division euclidienne de deux nombres entiers.<br />
+Proposer un algorithme pour obtenir ce quotient.  </p>
+</div>
+<details class="reponse">
+<summary>Réponse</summary>
+<p>Si on cherche le quotient de a par b :<br />
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">-</span> <span class="n">b</span>
+<span class="n">q</span> <span class="o">=</span> <span class="mi">0</span> 
+<span class="k">while</span> <span class="n">c</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span> 
+    <span class="n">q</span> <span class="o">=</span> <span class="n">q</span> <span class="o">+</span> <span class="mi">1</span> 
+    <span class="n">c</span> <span class="o">=</span> <span class="n">c</span><span class="o">-</span> <span class="n">b</span>
+</code></pre></div></p>
+</details>
+<div class="admonition question">
+<p class="admonition-title">Question 3</p>
+<p>Donner la trace complète de l’exécution <code>rechercheDicho("lea", Lnoms)</code> en complétant le tableau ci-dessous sur votre copie :  </p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Variables</th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;">Condition</th>
+<th style="text-align: center;">Valeur renvoyée</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">deb</td>
+<td style="text-align: center;">fin</td>
+<td style="text-align: center;">M</td>
+<td style="text-align: center;">deb &lt;= fin</td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<details class="reponse">
+<summary>Réponse</summary>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Variables</th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;">Condition</th>
+<th style="text-align: center;">Valeur renvoyée</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">deb</td>
+<td style="text-align: center;">fin</td>
+<td style="text-align: center;">M</td>
+<td style="text-align: center;">deb &lt;= fin</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">True</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">True</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">True</td>
+<td style="text-align: center;">True</td>
+</tr>
+</tbody>
+</table>
+</details>
+<div class="admonition question">
+<p class="admonition-title">Question 4</p>
+<p>Sur votre copie, modifier le code du corps de la fonction <code>rechercheDicho()</code> pour qu’elle renvoie aussi la position (indice) de l’élément cherché ou -1 si l’élément n’est pas trouvé.<br />
+<em>On pourra indiquer sur la copie le numéro des lignes modifiées, à supprimer ou à insérer s’il y a lieu.</em>  </p>
+</div>
+<details class="reponse">
+<summary>Réponse</summary>
+<p>À la ligne 6 : <code>return True, m</code><br />
+À la ligne 12 : <code>return False,-1</code></p>
+</details>
+<h3 id="partie-c-la-recherche-dichotomique-recursive">Partie C : La recherche dichotomique récursive<a class="headerlink" href="#partie-c-la-recherche-dichotomique-recursive" title="Permanent link">⚓︎</a></h3>
+<div class="admonition question">
+<p class="admonition-title">Question 1</p>
+<p>Donner la définition d’une fonction récursive en programmation.</p>
+</div>
+<details class="reponse">
+<summary>Réponse</summary>
+<p>Une fonction est récurssive si elle s’appelle elle-même.</p>
+</details>
+<div class="admonition question">
+<p class="admonition-title">Question 2</p>
+<p>Écrire en langage naturel ou en python, l’algorithme de recherche dichotomique d’un élément dans une liste, triée de façon croissante, en utilisant une méthode récursive. Il renverra <code>True</code> si l’objet a été trouvé, <code>False</code> sinon.</p>
+</div>
+<details class="reponse">
+<summary>Réponse</summary>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">def</span> <span class="nf">dichoRecu</span><span class="p">(</span><span class="n">elem</span><span class="p">,</span> <span class="n">liste</span><span class="p">,</span> <span class="n">deb</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">fin</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span> 
+    <span class="k">if</span> <span class="n">deb</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span> 
+        <span class="n">deb</span> <span class="o">=</span> <span class="mi">0</span> 
+    <span class="k">if</span> <span class="n">fin</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span> 
+        <span class="n">fin</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">liste</span><span class="p">)</span><span class="o">-</span> <span class="mi">1</span> 
+    <span class="k">if</span> <span class="n">deb</span> <span class="o">&gt;</span> <span class="n">fin</span><span class="p">:</span> 
+        <span class="k">return</span> <span class="kc">False</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="p">(</span><span class="n">deb</span> <span class="o">+</span> <span class="n">fin</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span> 
+    <span class="k">if</span> <span class="n">liste</span><span class="p">[</span><span class="n">m</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">elem</span><span class="p">:</span> 
+        <span class="k">return</span> <span class="n">dichoRecu</span><span class="p">(</span><span class="n">elem</span><span class="p">,</span> <span class="n">liste</span><span class="p">,</span> <span class="n">deb</span><span class="p">,</span> <span class="n">m</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> 
+    <span class="k">else</span><span class="p">:</span> 
+        <span class="k">return</span> <span class="n">dichoRecu</span><span class="p">(</span><span class="n">elem</span><span class="p">,</span> <span class="n">liste</span><span class="p">,</span> <span class="n">m</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">fin</span><span class="p">)</span>
+</code></pre></div>
+</details>
+<p><strong>ANNEXE</strong> </p>
+<p>On considère la fonction de recherche dichotomique suivante : </p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">🐍 Script Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">rechercheDicho</span> <span class="p">(</span><span class="n">elem</span><span class="p">,</span> <span class="n">liste</span><span class="p">):</span>  
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Cette fonction indique si un élément se trouve dans un tableau. </span>
+<span class="sd">    Elle utilise la méthode de recherche dichotomique. </span>
+<span class="sd">    Elle prend en arguments : </span>
+<span class="sd">    - elem : élément à rechercher de type string</span>
+<span class="sd">    - liste : liste d&#39;éléments de type string triée par ordre croissant </span>
+<span class="sd">    Elle renvoie un booléen correspondant à la présence ou non de l&#39;élément </span>
+<span class="sd">    &quot;&quot;&quot;</span> 
+    <span class="n">deb</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">fin</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">liste</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="p">(</span><span class="n">deb</span><span class="o">+</span><span class="n">fin</span><span class="p">)</span><span class="o">//</span><span class="mi">2</span>
+    <span class="k">while</span> <span class="n">deb</span> <span class="o">&lt;=</span> <span class="n">fin</span> <span class="p">:</span> 
+        <span class="k">if</span> <span class="n">liste</span><span class="p">[</span><span class="n">m</span><span class="p">]</span> <span class="o">==</span> <span class="n">elem</span> <span class="p">:</span> 
+            <span class="k">return</span> <span class="kc">True</span> 
+        <span class="k">elif</span> <span class="n">liste</span><span class="p">[</span><span class="n">m</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">elem</span> <span class="p">:</span> 
+            <span class="n">fin</span> <span class="o">=</span> <span class="n">m</span><span class="o">-</span><span class="mi">1</span> 
+        <span class="k">else</span> <span class="p">:</span> 
+            <span class="n">deb</span> <span class="o">=</span> <span class="n">m</span><span class="o">+</span><span class="mi">1</span> 
+        <span class="n">m</span> <span class="o">=</span> <span class="p">(</span><span class="n">deb</span><span class="o">+</span><span class="n">fin</span><span class="p">)</span><span class="o">//</span><span class="mi">2</span> 
+    <span class="k">return</span> <span class="kc">False</span> 
+</code></pre></div></td></tr></table></div>
+
+
+
+
+
+                
+
+<style>
+    .jp-RenderedHTMLCommon p {
+        font-size: 0.8rem;
+        line-height: 1.6;
+    }
+
+    .jp-RenderedHTMLCommon li {
+        font-size: .8rem;
+        line-height: 1.6;
+    }
+
+    .jp-RenderedHTMLCommon h1 {
+        margin: 0 0 1.25em;
+        color: var(--md-default-fg-color--light);
+        font-weight: 300;
+        font-size: 2em;
+        line-height: 1.3;
+        letter-spacing: -0.01em;
+    }
+
+    .jp-RenderedHTMLCommon h2 {
+        margin: 1.6em 0 .64em;
+        font-weight: 300;
+        font-size: 1.965em;
+        line-height: 1.4;
+        letter-spacing: -0.01em;
+    }
+
+    .jp-RenderedHTMLCommon h3 {
+        margin: 1.6em 0 .8em;
+        font-weight: 400;
+        font-size: 1.57em;
+        line-height: 1.5;
+        letter-spacing: -0.01em;
+    }
+
+    .jp-RenderedHTMLCommon hr {
+        border: none;
+    }
+</style>
+
+
+
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Retour en haut de la page
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.expand", "navigation.top", "navigation.sections", "navigation.indexes", "navigation.tracking", "header.autohide", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.81fa17fe.min.js"></script>
+      
+        <script src="../../../xtra/mathjax.js"></script>
+      
+        <script src="../../../javascripts/config.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/gh/rod2ik/cdn@main/mkdocs/javascripts/massilia-admonitions.js"></script>
+      
+    
+  </body>
+</html>

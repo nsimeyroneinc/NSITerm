@@ -1,0 +1,2794 @@
+<!-- Ajout pour le bouton de téléchargement et le style des jupyter notebook   https://github.com/danielfrg/mkdocs-jupyter -->
+
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Cours et TD de l'année en cours">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../images/dragon.svg">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.8">
+    
+    
+      
+        <title>T3 4 arbre recherche BAC - NSI Terminale 2022-2023</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.4b4a2bd9.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.356b1318.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rod2ik/cdn@main/mkdocs/css/massilia-admonitions.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#sujet-bac-12-arbres-binaires-de-recherche" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="../.." title="NSI Terminale 2022-2023" class="md-header__button md-logo" aria-label="NSI Terminale 2022-2023" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="m352 124.5-51.9-13c-6.5-1.6-11.3-7.1-12-13.8s2.8-13.1 8.7-16.1l40.8-20.4-43.2-32.4c-5.5-4.1-7.8-11.3-5.6-17.9S297.1 0 304 0h160c30.2 0 58.7 14.2 76.8 38.4l57.6 76.8c6.2 8.3 9.6 18.4 9.6 28.8 0 26.5-21.5 48-48 48h-21.5c-17 0-33.3-6.7-45.3-18.7L480 160h-32v21.5c0 24.8 12.8 47.9 33.8 61.1l106.6 66.6c32.1 20.1 51.6 55.2 51.6 93.1 0 60.6-49.1 109.7-109.8 109.7H32.3c-3.3 0-6.6-.4-9.6-1.4-9.2-2.8-16.7-9.6-20.3-18.5C1 488.7.2 485.2 0 481.4c-.2-3.7.3-7.3 1.3-10.7 2.8-9.2 9.6-16.7 18.6-20.4 3-1.2 6.2-2 9.5-2.2L433.3 412c8.3-.7 14.7-7.7 14.7-16.1 0-4.3-1.7-8.4-4.7-11.4l-44.4-44.4c-30-30-46.9-70.7-46.9-113.1V124.5zm160-52.2v-.6.6zm-1.3 7.4-46.4-11.6c-.2 1.3-.3 2.6-.3 3.9 0 13.3 10.7 24 24 24 10.6 0 19.5-6.8 22.7-16.3zm-379.8 36.8c16.3-14.5 40.4-16.2 58.5-4.1l130.6 87V227c0 32.8 8.4 64.8 24 93H112c-6.7 0-12.7-4.2-15-10.4s-.5-13.3 4.6-17.7l69.4-59.6-152.6 23.5c-7 1.1-13.9-2.6-16.9-9S0 232.7 5.3 228l125.6-111.5z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            NSI Terminale 2022-2023
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              T3 4 arbre recherche BAC
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue"  aria-label="Basculer en mode sombre"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Basculer en mode sombre" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9v1Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="blue"  aria-label="Basculer en mode clair"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Basculer en mode clair" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Recherche">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Effacer" aria-label="Effacer" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Onglets" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  Accueil
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../index_structDonnees/" class="md-tabs__link">
+          
+  
+    
+  
+  T1 - Struct. données
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../BasesDonnees/index_bd/" class="md-tabs__link">
+          
+  
+    
+  
+  T2 - Bases données
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Archi_Materielle/index_archi/" class="md-tabs__link">
+          
+  
+    
+  
+  T3 - Archi. mat.
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Programmation/index_prog/" class="md-tabs__link">
+          
+  
+    
+  
+  T4 - Prog.
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Algo/index_algo/" class="md-tabs__link">
+          
+  
+    
+  
+  T5 Algo.
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../BAC/bac_explication/" class="md-tabs__link">
+          
+  
+    
+  
+  BAC 📝
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../epreuve_pratique/" class="md-tabs__link">
+          
+  
+    
+  
+  Annales E.P. 💻
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../divers/prog/" class="md-tabs__link">
+          
+  
+    
+  
+  Extras
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../credit/" class="md-tabs__link">
+        
+  
+    
+  
+  Crédits
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="NSI Terminale 2022-2023" class="md-nav__button md-logo" aria-label="NSI Terminale 2022-2023" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="m352 124.5-51.9-13c-6.5-1.6-11.3-7.1-12-13.8s2.8-13.1 8.7-16.1l40.8-20.4-43.2-32.4c-5.5-4.1-7.8-11.3-5.6-17.9S297.1 0 304 0h160c30.2 0 58.7 14.2 76.8 38.4l57.6 76.8c6.2 8.3 9.6 18.4 9.6 28.8 0 26.5-21.5 48-48 48h-21.5c-17 0-33.3-6.7-45.3-18.7L480 160h-32v21.5c0 24.8 12.8 47.9 33.8 61.1l106.6 66.6c32.1 20.1 51.6 55.2 51.6 93.1 0 60.6-49.1 109.7-109.8 109.7H32.3c-3.3 0-6.6-.4-9.6-1.4-9.2-2.8-16.7-9.6-20.3-18.5C1 488.7.2 485.2 0 481.4c-.2-3.7.3-7.3 1.3-10.7 2.8-9.2 9.6-16.7 18.6-20.4 3-1.2 6.2-2 9.5-2.2L433.3 412c8.3-.7 14.7-7.7 14.7-16.1 0-4.3-1.7-8.4-4.7-11.4l-44.4-44.4c-30-30-46.9-70.7-46.9-113.1V124.5zm160-52.2v-.6.6zm-1.3 7.4-46.4-11.6c-.2 1.3-.3 2.6-.3 3.9 0 13.3 10.7 24 24 24 10.6 0 19.5-6.8 22.7-16.3zm-379.8 36.8c16.3-14.5 40.4-16.2 58.5-4.1l130.6 87V227c0 32.8 8.4 64.8 24 93H112c-6.7 0-12.7-4.2-15-10.4s-.5-13.3 4.6-17.7l69.4-59.6-152.6 23.5c-7 1.1-13.9-2.6-16.9-9S0 232.7 5.3 228l125.6-111.5z"/></svg>
+
+    </a>
+    NSI Terminale 2022-2023
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Accueil
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    T1 - Struct. données
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            T1 - Struct. données
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index_structDonnees/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Structures de données
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    T2 - Bases données
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            T2 - Bases données
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BasesDonnees/index_bd/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Base de données
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BasesDonnees/Modele_Relationnel/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📓 C1 Modèle relationnel
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BasesDonnees/Cours_TP_SQL/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📓 C2 Langage SQL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BasesDonnees/SQL_BAC/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📝 S2 BAC SQL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BasesDonnees/SQL_BAC_correction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📝 S2 BAC SQL Correction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    T3 - Archi. mat.
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            T3 - Archi. mat.
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Archi_Materielle/index_archi/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Architecture matérielle et OS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    T4 - Prog.
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            T4 - Prog.
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programmation/index_prog/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Programmation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programmation/T1_1_Recursivite/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📓 C3 Récursivité
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    T5 Algo.
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            T5 Algo.
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Algo/index_algo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Algorithmique
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    BAC 📝
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            BAC 📝
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BAC/bac_explication/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Information
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    2023
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_2">
+            <span class="md-nav__icon md-icon"></span>
+            2023
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annales/2023/EE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Epreuves écrites
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_3" id="__nav_7_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    2022
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_3">
+            <span class="md-nav__icon md-icon"></span>
+            2022
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annales/2022/EE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Epreuves écrites
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_4" id="__nav_7_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    2021
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_4">
+            <span class="md-nav__icon md-icon"></span>
+            2021
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annales/2021/EE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Epreuves écrites
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Annales E.P. 💻
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Annales E.P. 💻
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../epreuve_pratique/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Déroulement
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../divers/Consigne_EP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Consigne
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../divers/lien/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    S'entrainer en ligne pour l'épreuve pratique
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_4" id="__nav_8_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    2023
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_4">
+            <span class="md-nav__icon md-icon"></span>
+            2023
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annales/2023/EP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Epreuves pratiques
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Extras
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Extras
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../divers/prog/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Divers concours programmation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Projet/forcebrute/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Force brute
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Projet/cryptographie/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cryptographie
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Projet/cryptographie2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cryptographie bis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Projet/pyxel/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    pyxel
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../divers/sujet0_geipi.pdf" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Epreuve GEIPI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../credit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Crédits
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#2020-sujet-0" class="md-nav__link">
+    2020, sujet 0
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2021-metropole-sujet-1" class="md-nav__link">
+    2021, Métropole sujet 1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2021-metropole-candidats-libres-2" class="md-nav__link">
+    2021, Métropole Candidats Libres 2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2021-polynesie" class="md-nav__link">
+    2021, Polynésie
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2021-centres-etrangers-sujet-1" class="md-nav__link">
+    2021, Centres Étrangers, sujet 1
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+
+
+
+
+
+                  
+
+
+<h1 id="sujet-bac-12-arbres-binaires-de-recherche"><span class='numBAC'>Sujet BAC 12 : </span> &nbsp; Arbres Binaires de Recherche <span style='float:right;'><span class="twemoji" title="BAC"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M471.6 21.7c-21.9-21.9-57.3-21.9-79.2 0l-30.1 30 97.9 97.9 30.1-30.1c21.9-21.9 21.9-57.3 0-79.2l-18.7-18.6zm-299.2 220c-6.1 6.1-10.8 13.6-13.5 21.9l-29.6 88.8c-2.9 8.6-.6 18.1 5.8 24.6s15.9 8.7 24.6 5.8l88.8-29.6c8.2-2.7 15.7-7.4 21.9-13.5l167.3-167.4-98-98-167.3 167.4zM96 64c-53 0-96 43-96 96v256c0 53 43 96 96 96h256c53 0 96-43 96-96v-96c0-17.7-14.3-32-32-32s-32 14.3-32 32v96c0 17.7-14.3 32-32 32H96c-17.7 0-32-14.3-32-32V160c0-17.7 14.3-32 32-32h96c17.7 0 32-14.3 32-32s-14.3-32-32-32H96z"/></svg></span></span><a class="headerlink" href="#sujet-bac-12-arbres-binaires-de-recherche" title="Permanent link">⚓︎</a></h1>
+<h2 id="2020-sujet-0">2020, sujet 0<a class="headerlink" href="#2020-sujet-0" title="Permanent link">⚓︎</a></h2>
+<div class="admonition exo">
+<p class="admonition-title">2020, sujet 0</p>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Question  1</p>
+<p>Déterminer la taille et la hauteur de l’arbre binaire suivant :
+<pre class="mermaid"><code>graph TD  
+    A("A") --&gt; B("B") 
+    B --&gt; C("C")
+    B --&gt; D("D")
+    A --&gt; E("E")
+    C --&gt; C1(" ")
+    C --&gt; C2(" ")
+    D --&gt; G("G")
+    D --&gt; D2(" ")
+    E --&gt; F("F")
+    E --&gt; E2(" ")
+    F --&gt; H("H")
+    F --&gt; I("I")
+    E2 --&gt; E3(" ")
+    E2 --&gt; E4(" ")
+    linkStyle 4 stroke-width:0px;
+    style C1 opacity:0;
+    linkStyle 5 stroke-width:0px;
+    style C2 opacity:0;
+    linkStyle 7 stroke-width:0px;
+    style D2 opacity:0;
+    linkStyle 9 stroke-width:0px;
+    style E2 opacity:0;
+    linkStyle 12 stroke-width:0px;
+    style E3 opacity:0;
+    linkStyle 13 stroke-width:0px;
+    style E4 opacity:0;</code></pre></p>
+</div>
+<details class="success">
+<summary>corrigé</summary>
+<p>La taille est 9, la hauteur est 4.  </p>
+</details>
+<div class="admonition question">
+<p class="admonition-title">Question  2</p>
+<p>On décide de numéroter en binaire les nœuds d’un arbre binaire de la façon suivante :  </p>
+<ul>
+<li>la racine correspond à 1 ;</li>
+<li>la numérotation pour un fils gauche s’obtient en ajoutant le chiffre 0 à droite au numéro de son
+père ;</li>
+<li>la numérotation pour un fils droit s’obtient en ajoutant le chiffre 1 à droite au numéro de son
+père ;  </li>
+</ul>
+<p>Par exemple, dans l’arbre ci-dessous, on a utilisé ce procédé pour numéroter les nœuds A, B, C, E et
+F .</p>
+<pre class="mermaid"><code>graph TD  
+    A("A : 1") --&gt; B("B : 10") 
+    B --&gt; C("C : 100")
+    B --&gt; D("D : ?")
+    A --&gt; E("E : 11")
+    C --&gt; C1(" ")
+    C --&gt; C2(" ")
+    D --&gt; G("G: ?")
+    D --&gt; D2(" ")
+    E --&gt; F("F : 110")
+    E --&gt; E2(" ")
+    F --&gt; H("H : ?")
+    F --&gt; I("I : ?")
+    E2 --&gt; E3(" ")
+    E2 --&gt; E4(" ")
+    linkStyle 4 stroke-width:0px;
+    style C1 opacity:0;
+    linkStyle 5 stroke-width:0px;
+    style C2 opacity:0;
+    linkStyle 7 stroke-width:0px;
+    style D2 opacity:0;
+    linkStyle 9 stroke-width:0px;
+    style E2 opacity:0;
+    linkStyle 12 stroke-width:0px;
+    style E3 opacity:0;
+    linkStyle 13 stroke-width:0px;
+    style E4 opacity:0;</code></pre>
+<ol>
+<li>Dans l’exemple précédent, quel est le numéro en binaire associé au nœud G ?  </li>
+<li>Quel est le nœud dont le numéro en binaire vaut 13 en décimal ?  </li>
+<li>En notant <span class="arithmatex">\(h\)</span> la hauteur de l’arbre, sur combien de bits seront numérotés les nœuds les plus en bas ?  </li>
+<li>Justifier que pour tout arbre de hauteur <span class="arithmatex">\(h\)</span> et de taille <span class="arithmatex">\(n \geqslant 2\)</span>, on a : <span class="arithmatex">\(h \leqslant n \leqslant 2^h-1\)</span>  </li>
+</ol>
+</div>
+<details class="success">
+<summary>corrigé</summary>
+<ol>
+<li>G est associé à 1010.   </li>
+<li>13 s'écrit 1101 en binaire, c'est donc le nœud I.    </li>
+<li>Les nœuds les plus en bas sont notés sur <span class="arithmatex">\(h\)</span> bits.  </li>
+<li>L'arbre de hauteur <span class="arithmatex">\(h\)</span> de taille minimale est l'arbre filiforme, qui est de taille <span class="arithmatex">\(h\)</span>.<br />
+L'arbre de hauteur <span class="arithmatex">\(h\)</span> de taille maximale est l'arbre complet, qui est de taille <span class="arithmatex">\(2^h-1\)</span>. Si <span class="arithmatex">\(n\)</span> est la taille d'un arbre quelconque de taille <span class="arithmatex">\(h\)</span>, on a donc bien $$ h \leqslant n \leqslant 2^h-1 $$.</li>
+</ol>
+</details>
+<div class="admonition question">
+<p class="admonition-title">Question  3</p>
+<p>Un arbre binaire est dit complet si tous les niveaux de l’arbre sont remplis.
+<pre class="mermaid"><code>graph TD
+    A("A") --&gt; B("B") 
+    B --&gt; D("D")
+    B --&gt; E("E")
+    A --&gt; C("C")
+    C --&gt; F("F")
+    C --&gt; G("G")
+    D --&gt; H("H")
+    D --&gt; I("I")
+    E --&gt; J("J")
+    E --&gt; K("K")
+    F --&gt; L("L")
+    F --&gt; M("M")
+    G --&gt; N("N")
+    G --&gt; O("O")</code></pre></p>
+<p>On décide de représenter un arbre binaire complet par un tableau de taille n + 1, où n est la taille de
+l’arbre, de la façon suivante :  </p>
+<ul>
+<li>La racine a pour indice 1 ;  </li>
+<li>Le fils gauche du nœud d’indice i a pour indice <span class="arithmatex">\(2 \times i\)</span> ;  </li>
+<li>Le fils droit du nœud d’indice i a pour indice <span class="arithmatex">\(2 \times i + 1\)</span> ;  </li>
+<li>On place la taille <span class="arithmatex">\(n\)</span> de l’arbre dans la case d’indice 0.  </li>
+</ul>
+<p>Répondre aux questions suivantes :  </p>
+<ol>
+<li>Déterminer le tableau qui représente l’arbre binaire complet de l’exemple précédent.  </li>
+<li>On considère le père du nœud d’indice <span class="arithmatex">\(i\)</span> avec <span class="arithmatex">\(i \geqslant 2\)</span>. Quel est son indice dans le tableau ?</li>
+</ol>
+</div>
+<details class="success">
+<summary>corrigé</summary>
+<ol>
+<li>Tableau : <code>[15, A, B, C, D, E, F, G, H, I, J, K, L, M, N, O]</code> .  </li>
+<li>Le père du nœud d'indice <code>i</code> a pour indice <code>i//2</code>.   </li>
+</ol>
+</details>
+<div class="admonition question">
+<p class="admonition-title">Question  4</p>
+<p>On se place dans le cas particulier d’un arbre binaire de recherche complet où les nœuds
+contiennent des entiers et pour lequel la valeur de chaque noeud est supérieure à celles des
+noeuds de son fils gauche, et inférieure à celles des noeuds de son fils droit.</p>
+<p>Écrire une fonction <code>recherche</code> ayant pour paramètres un arbre <code>arbre</code> et un élément <code>element</code>. Cette
+fonction renvoie <code>True</code> si <code>element</code> est dans l’arbre et <code>False</code> sinon. L’arbre sera représenté par un tableau
+comme dans la question précédente.</p>
+</div>
+<details class="success">
+<summary>corrigé</summary>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">def</span> <span class="nf">recherche</span><span class="p">(</span><span class="n">arbre</span><span class="p">,</span> <span class="n">element</span><span class="p">):</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">arbre</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">arbre</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">element</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">True</span>
+        <span class="k">if</span> <span class="n">element</span> <span class="o">&lt;</span> <span class="n">arbre</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+            <span class="n">i</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">i</span> <span class="c1"># on se place sur le fils gauche</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">i</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">i</span> <span class="o">+</span>  <span class="mi">1</span> <span class="c1"># on se place sur le fils droit</span>
+    <span class="k">return</span> <span class="kc">False</span>
+</code></pre></div>
+</details>
+<h2 id="2021-metropole-sujet-1">2021, Métropole sujet 1<a class="headerlink" href="#2021-metropole-sujet-1" title="Permanent link">⚓︎</a></h2>
+<div class="admonition exo">
+<p class="admonition-title">2021, Métropole sujet 1</p>
+</div>
+<p>Dans cet exercice, les arbres binaires de recherche ne peuvent pas comporter plusieurs fois la
+même clé. De plus, un arbre binaire de recherche limité à un nœud a une hauteur de 1.
+On considère l’arbre binaire de recherche représenté ci-dessous (figure 1), où <code>val</code> représente un entier :</p>
+<pre class="mermaid"><code>graph TD
+    A(18) --&gt; B(15) 
+    B --&gt; D(13)
+    B --&gt; E(val)
+    A --&gt; C(23)
+    C --&gt; F(19)
+    C --&gt; G(32)
+    D --&gt; H(12)
+    D --&gt; D1(" ")
+    E --&gt; E1(" ")
+    E --&gt; E2(" ")
+    F --&gt; F1(" ")
+    F --&gt; M(21)
+    G --&gt; G1(" ")
+    G --&gt; G2(" ")
+    linkStyle 7 stroke-width:0px;
+    style D1 opacity:0;
+    linkStyle 8 stroke-width:0px;
+    style E1 opacity:0;
+    linkStyle 9 stroke-width:0px;
+    style E2 opacity:0;
+    linkStyle 10 stroke-width:0px;
+    style F1 opacity:0;
+    linkStyle 12 stroke-width:0px;
+    style G1 opacity:0;
+    linkStyle 13 stroke-width:0px;
+    style G2 opacity:0;</code></pre>
+<div class="admonition question">
+<p class="admonition-title">Question  1</p>
+<p><strong>a</strong> Donner le nombre de feuilles de cet arbre et préciser leur valeur (étiquette).<br />
+<strong>b</strong> Donner le sous arbre-gauche du nœud 23.<br />
+<strong>c</strong> Donner la hauteur et la taille de l’arbre.<br />
+<strong>d</strong> Donner les valeurs entières possibles de <code>val</code> pour cet arbre binaire de recherche.</p>
+</div>
+<details class="tip">
+<summary>corrigé</summary>
+<p><strong>1.a.</strong> Il y a 4 feuilles, d'étiquette 12, <code>val</code>, 21 et 32.<br />
+<strong>1.b.</strong> Le sous-arbre gauche du nœud 23 est 19-21.<br />
+<strong>1.c.</strong> La hauteur de l'arbre est 4. Sa taille est 9.<br />
+<strong>1.d.</strong> Les valeurs possibles de <code>val</code> sont 16 et 17.  </p>
+</details>
+<p>On suppose, pour la suite de cet exercice, que <code>val</code> est égal à 16.</p>
+<div class="admonition question">
+<p class="admonition-title">Question  2</p>
+<p>On rappelle qu’un parcours infixe depuis un nœud consiste, dans l’ordre, à faire un parcours infixe sur le sous arbre-gauche, afficher le nœud puis faire un parcours infixe sur le sous-arbre droit.  <br />
+Dans le cas d’un parcours suffixe, on fait un parcours suffixe sur le sous-arbre gauche puis un parcours suffixe sur le sous-arbre droit, avant d’afficher le nœud.</p>
+<p><strong>a.</strong> Donner les valeurs d’affichage des nœuds dans le cas du parcours infixe de l’arbre. <br />
+<strong>b</strong>. Donner les valeurs d’affichage des nœuds dans le cas du parcours suffixe de l’arbre.</p>
+</div>
+<details class="tip">
+<summary>corrigé</summary>
+<p><strong>2.a.</strong> Parcours infixe : 12-13-15-16-18-19-21-23-32<br />
+<strong>2.b.</strong> Parcours suffixe : 12-13-16-15-21-19-32-23-18  </p>
+</details>
+<div class="admonition question">
+<p class="admonition-title">Question  3</p>
+<p>On considère la classe <code>Noeud</code> définie de la façon suivante en Python :</p>
+<p><div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">class</span> <span class="nc">Noeud</span><span class="p">():</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ag</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ad</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">v</span> <span class="o">=</span> <span class="n">v</span>
+
+    <span class="k">def</span> <span class="nf">insere</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="bp">self</span>
+        <span class="n">est_insere</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="k">while</span> <span class="ow">not</span> <span class="n">est_insere</span> <span class="p">:</span>
+            <span class="k">if</span> <span class="n">v</span> <span class="o">==</span> <span class="n">n</span><span class="o">.</span><span class="n">v</span><span class="p">:</span>
+                <span class="n">est_insere</span> <span class="o">=</span> <span class="kc">True</span>             <span class="o">|</span> <span class="n">Bloc</span> <span class="mi">1</span>
+            <span class="k">elif</span> <span class="n">v</span> <span class="o">&lt;</span> <span class="n">n</span><span class="o">.</span><span class="n">v</span><span class="p">:</span>                  
+                <span class="k">if</span> <span class="n">n</span><span class="o">.</span><span class="n">ag</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>           <span class="o">---</span>
+                    <span class="n">n</span> <span class="o">=</span> <span class="n">n</span><span class="o">.</span><span class="n">ag</span>                  <span class="o">|</span>
+                <span class="k">else</span><span class="p">:</span>                         <span class="o">|</span>  <span class="n">Bloc</span> <span class="mi">2</span>
+                    <span class="n">n</span><span class="o">.</span><span class="n">ag</span> <span class="o">=</span> <span class="n">Noeud</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>           <span class="o">|</span>  
+                    <span class="n">est_insere</span> <span class="o">=</span> <span class="kc">True</span>      <span class="o">---</span>   
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">n</span><span class="o">.</span><span class="n">ad</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>           <span class="o">---</span>
+                    <span class="n">n</span> <span class="o">=</span> <span class="n">n</span><span class="o">.</span><span class="n">ad</span>                  <span class="o">|</span>
+                <span class="k">else</span><span class="p">:</span>                         <span class="o">|</span> <span class="n">Bloc</span> <span class="mi">3</span>
+                    <span class="n">n</span><span class="o">.</span><span class="n">ad</span> <span class="o">=</span> <span class="n">Noeud</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>           <span class="o">|</span>
+                    <span class="n">est_insere</span> <span class="o">=</span> <span class="kc">True</span>      <span class="o">---</span> 
+
+    <span class="k">def</span> <span class="nf">insere_tout</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vals</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">vals</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">insere</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> 
+</code></pre></div>
+<strong>a.</strong> Représenter l’arbre construit suite à l’exécution de l’instruction suivante :  </p>
+<p><div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">racine</span> <span class="o">=</span> <span class="n">Noeud</span><span class="p">(</span><span class="mi">18</span><span class="p">)</span>
+<span class="n">racine</span><span class="o">.</span><span class="n">insere_tout</span><span class="p">([</span><span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">23</span><span class="p">])</span>
+</code></pre></div>
+<strong>b.</strong> Écrire les deux instructions permettant de construire l’arbre de la figure 1. On rappelle que le nombre <code>val</code> est égal à 16.</p>
+<p><strong>c.</strong> On considère l’arbre tel qu’il est présenté sur la figure 1. Déterminer l’ordre d’exécution des blocs (repérés de 1 à 3) suite à l’application de la méthode <code>insere(19)</code> au nœud racine de cet arbre.</p>
+</div>
+<details class="tip">
+<summary>corrigé</summary>
+<p><strong>a.</strong>  </p>
+<p><pre class="mermaid"><code>graph TD
+    A(18) --&gt; B(12) 
+    B --&gt; D(" ")
+    B --&gt; E(13)
+    A --&gt; C(19)
+    C --&gt; F(" ")
+    C --&gt; G(21)
+    D --&gt; H(" ")
+    D --&gt; D1(" " )
+    E --&gt; E1(" ")
+    E --&gt; E2(15)
+    F --&gt; F1(" ")
+    F --&gt; M(" ")
+    M --&gt; G1(" ")
+    M --&gt; G2(" ")
+    E2 --&gt; I(" ")
+    E2 --&gt; J(16)
+    G --&gt; K(" ")
+    G --&gt; L(32)
+    L --&gt; N(23)
+    L --&gt; O(" ")
+    linkStyle 1 stroke-width:0px;
+    style D opacity:0;    
+    linkStyle 4 stroke-width:0px;
+    style F opacity:0;
+    linkStyle 6 stroke-width:0px;
+    style H opacity:0;
+    linkStyle 7 stroke-width:0px;
+    style D1 opacity:0;
+    linkStyle 8 stroke-width:0px;
+    style E1 opacity:0;
+    linkStyle 10 stroke-width:0px;
+    style F1 opacity:0;
+    linkStyle 11 stroke-width:0px;
+    style M opacity:0;
+    linkStyle 12 stroke-width:0px;
+    style G1 opacity:0;
+    linkStyle 13 stroke-width:0px;
+    style G2 opacity:0;
+    linkStyle 14 stroke-width:0px;
+    style I opacity:0;
+    linkStyle 16 stroke-width:0px;
+    style K opacity:0;
+    linkStyle 19 stroke-width:0px;
+    style O opacity:0;</code></pre>
+<strong>b.</strong> <br />
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">racine</span> <span class="o">=</span> <span class="n">Noeud</span><span class="p">(</span><span class="mi">18</span><span class="p">)</span>
+<span class="n">racine</span><span class="o">.</span><span class="n">insere</span><span class="p">([</span><span class="mi">15</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">21</span><span class="p">])</span>
+</code></pre></div>
+(d'autres solutions sont possibles)</p>
+<p><strong>3.c.</strong> Bloc 3 - Bloc 2 - Bloc 1  </p>
+</details>
+<div class="admonition question">
+<p class="admonition-title">Question  4</p>
+<p>Écrire une méthode <code>recherche(self, v)</code> qui prend en argument un entier <code>v</code> et renvoie la valeur <code>True</code> si cet entier est une étiquette de l’arbre, <code>False</code> sinon.</p>
+</div>
+<details class="tip">
+<summary>corrigé</summary>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">🐍 Script Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">Noeud</span><span class="p">():</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ag</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ad</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">v</span> <span class="o">=</span> <span class="n">v</span>
+
+    <span class="k">def</span> <span class="nf">insere</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="bp">self</span>
+        <span class="n">est_insere</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="k">while</span> <span class="ow">not</span> <span class="n">est_insere</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">v</span> <span class="o">==</span> <span class="n">n</span><span class="o">.</span><span class="n">v</span><span class="p">:</span>
+                <span class="n">est_insere</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="k">elif</span> <span class="n">v</span> <span class="o">&lt;</span> <span class="n">n</span><span class="o">.</span><span class="n">v</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">n</span><span class="o">.</span><span class="n">ag</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="n">n</span> <span class="o">=</span> <span class="n">n</span><span class="o">.</span><span class="n">ag</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">n</span><span class="o">.</span><span class="n">ag</span> <span class="o">=</span> <span class="n">Noeud</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+                    <span class="n">est_insere</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">n</span><span class="o">.</span><span class="n">ad</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="n">n</span> <span class="o">=</span> <span class="n">n</span><span class="o">.</span><span class="n">ad</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">n</span><span class="o">.</span><span class="n">ad</span> <span class="o">=</span> <span class="n">Noeud</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+                    <span class="n">est_insere</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="k">def</span> <span class="nf">insere_tout</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vals</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">vals</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">insere</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">recherche</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
+        <span class="n">arbre</span> <span class="o">=</span> <span class="bp">self</span>
+        <span class="k">while</span> <span class="ow">not</span> <span class="n">arbre</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">arbre</span><span class="o">.</span><span class="n">v</span> <span class="o">==</span> <span class="n">v</span><span class="p">:</span>
+                <span class="k">return</span> <span class="kc">True</span>
+            <span class="k">if</span> <span class="n">v</span> <span class="o">&lt;</span> <span class="n">arbre</span><span class="o">.</span><span class="n">v</span><span class="p">:</span>
+                <span class="n">arbre</span> <span class="o">=</span> <span class="n">arbre</span><span class="o">.</span><span class="n">ag</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">arbre</span> <span class="o">=</span> <span class="n">arbre</span><span class="o">.</span><span class="n">ad</span>
+        <span class="k">return</span> <span class="kc">False</span>
+
+
+    <span class="c1"># version récursive (non demandée)</span>
+
+    <span class="k">def</span> <span class="nf">recherche_rec</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">v</span> <span class="o">==</span> <span class="n">v</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">True</span>
+        <span class="k">if</span> <span class="n">v</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">v</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">ag</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">ag</span><span class="o">.</span><span class="n">recherche_rec</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">return</span> <span class="kc">False</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">ad</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">ad</span><span class="o">.</span><span class="n">recherche_rec</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">return</span> <span class="kc">False</span>
+
+
+<span class="n">racine</span> <span class="o">=</span> <span class="n">Noeud</span><span class="p">(</span><span class="mi">18</span><span class="p">)</span>
+<span class="n">racine</span><span class="o">.</span><span class="n">insere_tout</span><span class="p">([</span><span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">23</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">racine</span><span class="o">.</span><span class="n">recherche</span><span class="p">(</span><span class="mi">149</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">racine</span><span class="o">.</span><span class="n">recherche</span><span class="p">(</span><span class="mi">12</span><span class="p">))</span>
+</code></pre></div></td></tr></table></div>
+</details>
+<h2 id="2021-metropole-candidats-libres-2">2021, Métropole Candidats Libres 2<a class="headerlink" href="#2021-metropole-candidats-libres-2" title="Permanent link">⚓︎</a></h2>
+<div class="admonition exo">
+<p class="admonition-title">2021, Métropole Candidats Libres 2</p>
+</div>
+<p>On rappelle qu’un arbre binaire est composé de nœuds, chacun des nœuds possédant éventuellement un sous-arbre gauche et éventuellement un sous-arbre droit. Un nœud sans sous-arbre est appelé feuille. La taille d’un arbre est le nombre de nœuds qu’il contient ; sa hauteur est le nombre de nœuds du plus long chemin qui joint le nœud racine à l’une des feuilles. Ainsi la hauteur d’un arbre réduit à un nœud, c’est-à-dire la racine, est 1.</p>
+<p>Dans un arbre binaire de recherche, chaque nœud contient une clé, ici un nombre entier, qui est :</p>
+<ul>
+<li>strictement supérieure à toutes les clés des nœuds du sous-arbre gauche ;  </li>
+<li>strictement inférieure à toutes les clés des nœuds du sous-arbre droit.</li>
+</ul>
+<p>Un arbre binaire de recherche est dit « bien construit » s’il n’existe pas d’arbre de hauteur inférieure qui pourrait contenir tous ses nœuds.</p>
+<p>On considère l’arbre binaire de recherche ci-dessous.</p>
+<pre class="mermaid"><code>graph TD
+    A(12) --&gt; B(10) 
+    B --&gt; D(5)
+    B --&gt; E(" ")
+    A --&gt; C(15)
+    C --&gt; F(" ")
+    C --&gt; G(20)
+    D --&gt; H(4)
+    D --&gt; D1(8)
+    E --&gt; E1(" ")
+    E --&gt; E2(" ")
+    F --&gt; F1(" ")
+    F --&gt; M(" ")
+    G --&gt; G1(" ")
+    G --&gt; G2(" ")
+    linkStyle 2 stroke-width:0px;
+    style E opacity:0;
+    linkStyle 4 stroke-width:0px;
+    style F opacity:0;
+    linkStyle 2 stroke-width:0px;
+    style E opacity:0;
+    linkStyle 8 stroke-width:0px;
+    style E1 opacity:0;
+    linkStyle 9 stroke-width:0px;
+    style E2 opacity:0;
+    linkStyle 10 stroke-width:0px;
+    style M opacity:0;
+    linkStyle 11 stroke-width:0px;
+    style F1 opacity:0;
+    linkStyle 12 stroke-width:0px;
+    style G1 opacity:0;
+    linkStyle 13 stroke-width:0px;
+    style G2 opacity:0;</code></pre>
+<div class="admonition question">
+<p class="admonition-title">Question  1</p>
+<p><strong>a.</strong> Quelle est la taille de l’arbre ci-dessus ?  </p>
+<p><strong>b.</strong> Quelle est la hauteur de l’arbre ci-dessus ?</p>
+</div>
+<details class="tip">
+<summary>corrigé</summary>
+<p><strong>1.a.</strong> La taille de l'arbre est 7.<br />
+<strong>1.b.</strong> La hauteur de l'arbre est 4.  </p>
+</details>
+<div class="admonition question">
+<p class="admonition-title">Question  2</p>
+<p>Cet arbre binaire de recherche n’est pas « bien construit ». Proposer un arbre binaire de recherche contenant les mêmes clés et dont la hauteur est plus petite que celle de l’arbre initial.</p>
+</div>
+<details class="tip">
+<summary>corrigé</summary>
+<pre class="mermaid"><code>graph TD
+    A(10) --&gt; B(5) 
+    B --&gt; D(4)
+    B --&gt; E(8)
+    A --&gt; C(15)
+    C --&gt; F(12)
+    C --&gt; G(20)</code></pre>
+</details>
+<div class="admonition question">
+<p class="admonition-title">Question  3</p>
+<p>Les classes Noeud et Arbre ci-dessous permettent de mettre en œuvre en Python la structure d’arbre binaire de recherche. La méthode <code>insere</code> permet d’insérer récursivement une nouvelle clé.</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">🐍 Script Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">Noeud</span> <span class="p">:</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cle</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cle</span> <span class="o">=</span> <span class="n">cle</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">gauche</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">droit</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">def</span> <span class="nf">insere</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cle</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">cle</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">cle</span> <span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">gauche</span> <span class="o">==</span> <span class="kc">None</span> <span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">gauche</span> <span class="o">=</span> <span class="n">Noeud</span><span class="p">(</span><span class="n">cle</span><span class="p">)</span>
+            <span class="k">else</span> <span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">gauche</span><span class="o">.</span><span class="n">insere</span><span class="p">(</span><span class="n">cle</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">cle</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">cle</span> <span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">droit</span> <span class="o">==</span> <span class="kc">None</span> <span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">droit</span> <span class="o">=</span> <span class="n">Noeud</span><span class="p">(</span><span class="n">cle</span><span class="p">)</span>
+            <span class="k">else</span> <span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">droit</span><span class="o">.</span><span class="n">insere</span><span class="p">(</span><span class="n">cle</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">Arbre</span> <span class="p">:</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cle</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">racine</span> <span class="o">=</span> <span class="n">Noeud</span><span class="p">(</span><span class="n">cle</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">insere</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cle</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">racine</span><span class="o">.</span><span class="n">insere</span><span class="p">(</span><span class="n">cle</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<p>Donner la représentation de l’arbre codé par les instructions ci-dessous.</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">a</span> <span class="o">=</span> <span class="n">Arbre</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">a</span><span class="o">.</span><span class="n">insere</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">a</span><span class="o">.</span><span class="n">insere</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">a</span><span class="o">.</span><span class="n">insere</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">a</span><span class="o">.</span><span class="n">insere</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
+<span class="n">a</span><span class="o">.</span><span class="n">insere</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">a</span><span class="o">.</span><span class="n">insere</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</code></pre></div>
+</div>
+<details class="tip">
+<summary>corrigé</summary>
+<pre class="mermaid"><code>graph TD
+    A(10) --&gt; B(8) 
+    B --&gt; D(4)
+    D --&gt; D1(" ")
+    D --&gt; D2(5)
+    B --&gt; E(" " )
+    E --&gt; E1(" ")
+    E --&gt; E2(" ")
+    A --&gt; C(20)
+    C --&gt; F(15)
+    C --&gt; G(" ")
+    F --&gt; H(12)
+    F --&gt; J(" ")
+    G --&gt; G1(" ")
+    G --&gt; G2(" ")
+    linkStyle 2 stroke-width:0px;
+    style D1 opacity:0;
+    linkStyle 4 stroke-width:0px;
+    style E opacity:0;
+    linkStyle 5 stroke-width:0px;
+    style E opacity:0;
+    linkStyle 6 stroke-width:0px;
+    style E1 opacity:0;
+    style E2 opacity:0;
+    linkStyle 9 stroke-width:0px;
+    style G opacity:0;
+    linkStyle 11 stroke-width:0px;
+    style J opacity:0;
+    linkStyle 12 stroke-width:0px;
+    style G1 opacity:0;
+    linkStyle 13 stroke-width:0px;
+    style G2 opacity:0;</code></pre>
+</details>
+<div class="admonition question">
+<p class="admonition-title">Question  4</p>
+<p>Pour calculer la hauteur d’un arbre non vide, on a écrit la méthode ci-dessous dans
+la classe Noeud.</p>
+<p><div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">def</span> <span class="nf">hauteur</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">gauche</span> <span class="o">==</span> <span class="kc">None</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">droit</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">gauche</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">droit</span><span class="o">.</span><span class="n">hauteur</span><span class="p">()</span>
+    <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">droit</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">gauche</span><span class="o">.</span><span class="n">hauteur</span><span class="p">()</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">hg</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">gauche</span><span class="o">.</span><span class="n">hauteur</span><span class="p">()</span>
+        <span class="n">hd</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">droit</span><span class="o">.</span><span class="n">hauteur</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">hg</span> <span class="o">&gt;</span> <span class="n">hd</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">hg</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">hd</span> <span class="o">+</span> <span class="mi">1</span>
+</code></pre></div>
+Écrire la méthode <code>hauteur</code> de la classe <code>Arbre</code> qui renvoie la hauteur de
+l’arbre.</p>
+</div>
+<details class="tip">
+<summary>corrigé</summary>
+<p><strong>4.</strong>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">🐍 Script Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">hauteur</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">racine</span><span class="o">.</span><span class="n">hauteur</span><span class="p">()</span>
+</code></pre></div></td></tr></table></div></p>
+</details>
+<div class="admonition question">
+<p class="admonition-title">Question  5</p>
+<p>Écrire les méthodes <code>taille</code> des classes <code>Noeud</code> et <code>Arbre</code> permettant de calculer
+la taille d’un arbre.</p>
+</div>
+<details class="tip">
+<summary>corrigé</summary>
+<p><strong>5.</strong>
+Méthode <code>taille</code>    de la classe <code>Noeud</code> :<br />
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">🐍 Script Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">taille</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">gauche</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">droit</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">gauche</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">droit</span><span class="o">.</span><span class="n">taille</span><span class="p">()</span>
+    <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">droit</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">gauche</span><span class="o">.</span><span class="n">taille</span><span class="p">()</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">gauche</span><span class="o">.</span><span class="n">taille</span><span class="p">()</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">droit</span><span class="o">.</span><span class="n">taille</span><span class="p">()</span>
+</code></pre></div></td></tr></table></div>
+Méthode <code>taille</code>    de la classe <code>Arbre</code> : 
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">🐍 Script Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">taille</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">racine</span><span class="o">.</span><span class="n">taille</span><span class="p">()</span>
+</code></pre></div></td></tr></table></div></p>
+</details>
+<div class="admonition question">
+<p class="admonition-title">Question  6</p>
+<p>On souhaite écrire une méthode <code>bien_construit</code> de la classe <code>Arbre</code> qui
+renvoie la valeur <code>True</code> si l’arbre est « bien construit » et <code>False</code> sinon.</p>
+<p>On rappelle que la taille maximale d’un arbre binaire de recherche de hauteur <span class="arithmatex">\(ℎ\)</span>
+est <span class="arithmatex">\(2^h - 1\)</span>.</p>
+<p><strong>a.</strong> Quelle est la taille minimale, notée <code>min</code> d’un arbre binaire de recherche
+« bien construit » de hauteur <span class="arithmatex">\(ℎ\)</span> ?<br />
+<strong>b.</strong> Écrire la méthode <code>bien_construit</code> demandée.</p>
+</div>
+<details class="tip">
+<summary>corrigé</summary>
+<p><strong>6.a.</strong> La configuration minimale d'un arbre bien construit de hauteur <span class="arithmatex">\(h\)</span> peut être :</p>
+<p><img alt="image" class="center" src="../data/ex3-6a.png" /></p>
+<p>La taille minimale <code>min</code> est donc égale à <span class="arithmatex">\(2^{h-1}\)</span>.</p>
+<p><strong>6.b.</strong> Intuitivement, un arbre est <em>mal construit</em> si sa hauteur est trop grande par rapport à sa taille (trop <em>étiré</em>).</p>
+<p>Donc un arbre est <em>mal construit</em> si sa taille est trop petite par rapport à sa hauteur.</p>
+<p>Donc un arbre de taille <span class="arithmatex">\(t\)</span> et de hauteur <span class="arithmatex">\(h\)</span> est <em>mal construit</em> si <span class="arithmatex">\(t &lt; 2^{h-1}\)</span>, puisqu'on a démontré que <span class="arithmatex">\(2^{h-1}\)</span> était la taille minimale.</p>
+<p>Pour tester si un arbre est <em>bien construit</em>, on va donc juste vérifier que <span class="arithmatex">\(t \geqslant 2^{h-1}\)</span> :</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">🐍 Script Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">bien_construit</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">h</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">taille</span><span class="p">()</span>
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">taille</span><span class="p">()</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="o">**</span><span class="p">(</span><span class="n">h</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+</details>
+<h2 id="2021-polynesie">2021, Polynésie<a class="headerlink" href="#2021-polynesie" title="Permanent link">⚓︎</a></h2>
+<div class="admonition exo">
+<p class="admonition-title">2021, Polynésie</p>
+</div>
+<p>Cet exercice traite principalement du thème « algorithmique, langages et programmation » et en particulier les arbres binaires de recherche. La première partie aborde les arbres en mode débranché via l'application d'un algorithme sur un exemple.<br />
+La suivante porte sur la programmation orientée objet. La dernière partie fait le lien avec les algorithmes de tri.</p>
+<p><strong>Partie A : Étude d'un exemple</strong></p>
+<p>Considérons l'arbre binaire de recherche ci-dessous :</p>
+<pre class="mermaid"><code>graph TD
+    A(5) --&gt; B(2) 
+    B --&gt; D(" ")
+    B --&gt; E(3)
+    A --&gt; C(7)
+    C --&gt; F(" ")
+    C --&gt; G(8)
+    linkStyle 1 stroke-width:0px;
+    style D opacity:0;
+    linkStyle 4 stroke-width:0px;
+    style F opacity:0;</code></pre>
+<div class="admonition question">
+<p class="admonition-title">Question  A.1</p>
+<p>Indiquer quelle valeur a le nœud racine et quels sont les fils de ce nœud.</p>
+</div>
+<details class="success">
+<summary>Réponse</summary>
+<ul>
+<li>Racine : 5  </li>
+<li>Fils gauche : 2  </li>
+<li>Fils droit : 7  </li>
+</ul>
+</details>
+<div class="admonition question">
+<p class="admonition-title">Question  A.2</p>
+<p>Indiquer quels sont les nœuds de la branche qui se termine par la feuille qui a pour valeur 3.</p>
+</div>
+<details class="success">
+<summary>Réponse</summary>
+<p>5, 2 et 3</p>
+</details>
+<div class="admonition question">
+<p class="admonition-title">Question  A.3</p>
+<p>Dessiner l’arbre obtenu après l’ajout de la valeur 6.</p>
+</div>
+<details class="success">
+<summary>Réponse</summary>
+<pre class="mermaid"><code>graph TD
+    A(5) --&gt; B(2) 
+    B --&gt; D(" ")
+    B --&gt; E(3)
+    A --&gt; C(7)
+    C --&gt; F(6)
+    C --&gt; G(8)
+    linkStyle 1 stroke-width:0px;
+    style D opacity:0;</code></pre>
+</details>
+<p><strong>Partie B : Implémentation en Python</strong></p>
+<p>Voici un extrait d’une implémentation en Python d'une classe modélisant un arbre binaire
+de recherche.</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">🐍 Script Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">ABR</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Implémentation d’un arbre binaire de recherche (ABR)&quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">valeur</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">valeur</span> <span class="o">=</span> <span class="n">valeur</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fg</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fd</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">def</span> <span class="nf">estVide</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">valeur</span> <span class="o">==</span> <span class="kc">None</span>
+
+    <span class="k">def</span> <span class="nf">insererElement</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">e</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">estVide</span><span class="p">():</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">valeur</span> <span class="o">=</span> <span class="n">e</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">e</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">valeur</span><span class="p">:</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">fg</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">fg</span><span class="o">.</span><span class="n">insererElement</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">fg</span> <span class="o">=</span> <span class="n">ABR</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">e</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">valeur</span><span class="p">:</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">fd</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">fd</span><span class="o">.</span><span class="n">insererElement</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">fd</span> <span class="o">=</span> <span class="n">ABR</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<div class="admonition question">
+<p class="admonition-title">Question  B.1</p>
+<p>Expliquer le rôle de la fonction <code>__init__</code>.</p>
+</div>
+<details class="success">
+<summary>Réponse</summary>
+<p>C’est un constructeur qui permet d’initialiser les attributs de l’instance.</p>
+</details>
+<div class="admonition question">
+<p class="admonition-title">Question  B.2</p>
+<p>Dans cette implémentation, expliquer ce qui se passe si on ajoute un élément déjà présent dans l’arbre.</p>
+</div>
+<details class="success">
+<summary>Réponse</summary>
+<p>Il ne se passe rien.</p>
+</details>
+<div class="admonition question">
+<p class="admonition-title">Question  B.3</p>
+<p>Recopier et compléter les pointillés ci-dessous permettant de créer l’arbre de la partie A.<br />
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">arbre</span> <span class="o">=</span> <span class="n">ABR</span><span class="p">(</span><span class="o">..........</span> <span class="p">)</span>
+<span class="n">arbre</span><span class="o">.</span><span class="n">insererElement</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">arbre</span><span class="o">.</span><span class="n">insererElement</span><span class="p">(</span><span class="o">..........</span> <span class="p">)</span>
+<span class="n">arbre</span><span class="o">.</span><span class="n">insererElement</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
+<span class="n">arbre</span><span class="o">.</span><span class="n">insererElement</span><span class="p">(</span><span class="o">..........</span> <span class="p">)</span>
+</code></pre></div></p>
+</div>
+<details class="success">
+<summary>Réponse</summary>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">arbre</span> <span class="o">=</span> <span class="n">ABR</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> 
+<span class="n">arbre</span><span class="o">.</span><span class="n">insereElement</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> 
+<span class="n">arbre</span><span class="o">.</span><span class="n">insereElement</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> 
+<span class="n">arbre</span><span class="o">.</span><span class="n">insereElement</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span> 
+<span class="n">arbre</span><span class="o">.</span><span class="n">insereElement</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
+</code></pre></div>
+</details>
+<p><strong>Partie C : Tri par arbre binaire de recherche</strong></p>
+<p>On souhaite trier un ensemble de valeurs entières distinctes grâce à un arbre binaire de
+recherche. Pour cela, on ajoute un à un les éléments de l’ensemble dans un arbre
+initialement vide. Il ne reste plus qu’à parcourir l’arbre afin de lire et de stocker dans un tableau résultat les valeurs dans l’ordre croissant.</p>
+<div class="admonition question">
+<p class="admonition-title">Question  C.1</p>
+<p>Donner le nom du parcours qui permet de visiter les valeurs d’un arbre binaire de recherche dans l’ordre croissant.</p>
+</div>
+<details class="success">
+<summary>Réponse</summary>
+<p>Parcours infixe.</p>
+</details>
+<div class="admonition question">
+<p class="admonition-title">Question  C.2</p>
+<p>Comparer la complexité de cette méthode de tri avec celle du tri par insertion ou du tri par sélection.</p>
+</div>
+<details class="success">
+<summary>Réponse</summary>
+<p>Elle est en <span class="arithmatex">\(O(nlog(n))\)</span> alors que les autres sont en <span class="arithmatex">\(O(n^2)\)</span>. Elle est plus efficace.</p>
+</details>
+<h2 id="2021-centres-etrangers-sujet-1">2021, Centres Étrangers, sujet 1<a class="headerlink" href="#2021-centres-etrangers-sujet-1" title="Permanent link">⚓︎</a></h2>
+<div class="admonition exo">
+<p class="admonition-title">2021, Centres Etrangers, sujet 1</p>
+</div>
+<p>Un arbre binaire est soit vide, soit un nœud qui a une valeur et au plus deux fils (le
+sous-arbre gauche et le sous-arbre droit).</p>
+<pre class="mermaid"><code>graph TD
+    X("X") --&gt; G1("G1") 
+    G1 --&gt; G2("G2")
+    G1 --&gt; G3("G3")
+    X --&gt; D1("D1")
+    D1 --&gt; D2("D2")
+    D1 --&gt; D3("D3")
+</code></pre>
+<ul>
+<li>X est un nœud, sa valeur est X.valeur</li>
+<li>G1 est le fils gauche de X, noté X.fils_gauche</li>
+<li>D1 est le fils droit de X, noté X.fils_droit</li>
+</ul>
+<p>Un arbre binaire de recherche est ordonné de la manière suivante :</p>
+<p>Pour chaque nœud X,</p>
+<ul>
+<li>les valeurs de tous les nœuds du sous-arbre gauche sont <strong>strictement
+inférieures</strong> à la valeur du nœud X</li>
+<li>les valeurs de tous les nœuds du sous-arbre droit sont <strong>supérieures ou égales</strong> à
+la valeur du nœud X.</li>
+</ul>
+<p>Ainsi, par exemple, toutes les valeurs des nœuds G1, G2 et G3 sont strictement
+inférieures à la valeur du nœud X et toutes les valeurs des nœuds D1, D2 et D3 sont
+supérieures ou égales à la valeur du nœud X.</p>
+<p>Voici un exemple d'arbre binaire de recherche dans lequel on a stocké dans cet ordre
+les valeurs : <code>[26, 3, 42, 15, 29, 19, 13, 1, 32, 37, 30]</code> </p>
+<p>L'étiquette d'un nœud indique la valeur du nœud suivie du nom du nœud.
+Les nœuds ont été nommés dans l'ordre de leur insertion dans l'arbre ci-dessous.</p>
+<p><code>'29, noeud04'</code> signifie que le nœud nommé <code>noeud04</code> possède la valeur 29.</p>
+<pre class="mermaid"><code>graph TD
+    A("26, noeud00") --&gt; B("3, noeud01") 
+    B --&gt; D("1, noeud07")
+    B --&gt; E("15, noeud03")
+    A --&gt; C("42, noeud02")
+    C --&gt; F("29, noeud04")
+    C --&gt; G(" ")
+    D --&gt; H(" ")
+    D --&gt; D1(" " )
+    E --&gt; E1("13, noeud06")
+    E --&gt; E2("19, noeud05")
+    F --&gt; F1(" ")
+    F --&gt; M("32, noeud08")
+    M --&gt; G1("30, noeud10")
+    M --&gt; G2("37, noeud09")
+    style G opacity:0;
+    linkStyle 6 stroke-width:0px;
+    style H opacity:0;
+    linkStyle 7 stroke-width:0px;
+    style D1 opacity:0;
+    style F1 opacity:0;</code></pre>
+<div class="admonition question">
+<p class="admonition-title">Question  1</p>
+<p>On insère la valeur 25 dans l'arbre, dans un nouveau nœud nommé nœud11.</p>
+<p>Recopier l'arbre binaire de recherche étudié et placer la valeur 25 sur cet arbre en coloriant en rouge le chemin parcouru.</p>
+<p>Préciser sous quel nœud la valeur 25 sera insérée et si elle est insérée en fils gauche ou en fils droit, et expliquer toutes les étapes de la décision.</p>
+</div>
+<details class="success">
+<summary>Réponse</summary>
+<p><pre class="mermaid"><code>graph TD
+    A("26, noeud00") --&gt; B("3, noeud01") 
+    B --&gt; D("1, noeud07")
+    B --&gt; E("15, noeud03")
+    A --&gt; C("42, noeud02")
+    C --&gt; F("29, noeud04")
+    C --&gt; G(" ")
+    D --&gt; H(" ")
+    D --&gt; D1(" " )
+    E --&gt; E1("13, noeud06")
+    E --&gt; E2("19, noeud05")
+    F --&gt; F1(" ")
+    F --&gt; M("32, noeud08")
+    M --&gt; G1("30, noeud10")
+    M --&gt; G2("37, noeud09")
+    E2 --&gt; O(" ")
+    E2 --&gt; P("25, noeud11")
+    style G opacity:0;
+    linkStyle 6 stroke-width:0px;
+    style H opacity:0;
+    linkStyle 7 stroke-width:0px;
+    style D1 opacity:0;
+    style F1 opacity:0;
+    linkStyle 14 stroke-width:0px;
+    style O opacity:0;
+    linkStyle 0 stroke:red;
+    linkStyle 2 stroke:red;
+    linkStyle 9 stroke:red;
+    linkStyle 15 stroke:red;</code></pre>
+On désire insérer le noeud11 (valeur 25). On part de la racine (noeud00 de valeur 26), 25 est plus petit que 26, on considère donc le sous-arbre gauche et on se retrouve au niveau du noeud01 (valeur 3).  25 est plus grand que 3, on considère donc le sous-arbre droit au noeud01 et on se retrouve au niveau du noeud03 (valeur 15). 25 est plus grand que 15, on considère donc le sous-arbre droit au noeud03 et on se retrouve au niveau du noeud05 (valeur 19). 25 est plus grand que 19, on considère donc le sous-arbre droit du noeud05, ce sous-arbre droit est vide et on insère donc le noeud11 à cet emplacement. Le noeud11 est donc inséré sous le noeud5 en fils droit</p>
+</details>
+<div class="admonition question">
+<p class="admonition-title">Question  2</p>
+<p>Préciser toutes les valeurs entières que l’on peut stocker dans le nœud fils gauche du nœud04 (vide pour l'instant), en respectant les règles sur les arbres binaires de recherche ? </p>
+</div>
+<details class="success">
+<summary>Réponse</summary>
+</details>
+<div class="admonition question">
+<p class="admonition-title">Question  3</p>
+<p>Voici un algorithme récursif permettant de parcourir et d'afficher les valeurs de l'arbre :</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">Parcours</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>  <span class="c1"># A est un arbre binaire de recherche</span>
+    <span class="n">Afficher</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">valeur</span><span class="p">)</span>
+    <span class="n">Parcours</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">fils_gauche</span><span class="p">)</span>
+    <span class="n">Parcours</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">fils_droit</span><span class="p">)</span>
+</code></pre></div>
+</div>
+<details class="success">
+<summary>Réponse</summary>
+<p>Il est possible de stocker toutes les valeurs comprises entre 26 et 29, c’est à dire : 26, 27 et 28 (on peut prendre 26 car il est précisé dans l’énoncé que “les valeurs de tous les nœuds du sous-arbre droit sont supérieures ou égales à la valeur du nœud X”</p>
+</details>
+<div class="admonition question">
+<p class="admonition-title">Question  3</p>
+<p><strong>a.</strong> Écrire la liste de toutes les valeurs dans l'ordre où elles seront affichées.<br />
+<strong>b.</strong> Choisir le type de parcours d'arbres binaires de recherche réalisé parmi les propositions suivantes : Préfixe, Suffixe ou Infixe.  </p>
+</div>
+<details class="success">
+<summary>Réponse</summary>
+<p><strong>a.</strong> 26 - 3 - 1 - 15 - 13 - 19 - 25 - 42 - 29 - 32  - 30 - 37<br />
+<strong>b.</strong> C’est un parcours  préfixe</p>
+</details>
+<div class="admonition question">
+<p class="admonition-title">Question  4</p>
+<p>En vous inspirant de l’algorithme précédent, écrire un algorithme Parcours2 permettant de parcourir et d'afficher les valeurs de l'arbre A dans l'ordre croissant.</p>
+</div>
+<details class="success">
+<summary>Réponse</summary>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">Parcours2</span><span class="p">(</span><span class="n">A</span><span class="p">)</span> 
+    <span class="n">Parcours2</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">fils_gauche</span><span class="p">)</span> 
+    <span class="n">Afficher</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">valeur</span><span class="p">)</span> 
+    <span class="n">Parcours2</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">fils_droit</span><span class="p">)</span>
+</code></pre></div>
+</details>
+
+
+
+
+
+                
+
+<style>
+    .jp-RenderedHTMLCommon p {
+        font-size: 0.8rem;
+        line-height: 1.6;
+    }
+
+    .jp-RenderedHTMLCommon li {
+        font-size: .8rem;
+        line-height: 1.6;
+    }
+
+    .jp-RenderedHTMLCommon h1 {
+        margin: 0 0 1.25em;
+        color: var(--md-default-fg-color--light);
+        font-weight: 300;
+        font-size: 2em;
+        line-height: 1.3;
+        letter-spacing: -0.01em;
+    }
+
+    .jp-RenderedHTMLCommon h2 {
+        margin: 1.6em 0 .64em;
+        font-weight: 300;
+        font-size: 1.965em;
+        line-height: 1.4;
+        letter-spacing: -0.01em;
+    }
+
+    .jp-RenderedHTMLCommon h3 {
+        margin: 1.6em 0 .8em;
+        font-weight: 400;
+        font-size: 1.57em;
+        line-height: 1.5;
+        letter-spacing: -0.01em;
+    }
+
+    .jp-RenderedHTMLCommon hr {
+        border: none;
+    }
+</style>
+
+
+
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Retour en haut de la page
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.expand", "navigation.top", "navigation.sections", "navigation.indexes", "navigation.tracking", "header.autohide", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.81fa17fe.min.js"></script>
+      
+        <script src="../../xtra/mathjax.js"></script>
+      
+        <script src="../../javascripts/config.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/gh/rod2ik/cdn@main/mkdocs/javascripts/massilia-admonitions.js"></script>
+      
+    
+  </body>
+</html>

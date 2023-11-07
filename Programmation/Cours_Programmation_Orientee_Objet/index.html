@@ -1,0 +1,2126 @@
+<!-- Ajout pour le bouton de téléchargement et le style des jupyter notebook   https://github.com/danielfrg/mkdocs-jupyter -->
+
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Cours et TD de l'année en cours">
+      
+      
+        <meta name="author" content="M.Meyroneinc-Condy">
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../images/dragon.svg">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.8">
+    
+    
+      
+        <title>Thème 1 - Structure de données - NSI Terminale 2022-2023</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.4b4a2bd9.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.356b1318.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rod2ik/cdn@main/mkdocs/css/massilia-admonitions.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#cours-programmation-orientee-objet-poo" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="../.." title="NSI Terminale 2022-2023" class="md-header__button md-logo" aria-label="NSI Terminale 2022-2023" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="m352 124.5-51.9-13c-6.5-1.6-11.3-7.1-12-13.8s2.8-13.1 8.7-16.1l40.8-20.4-43.2-32.4c-5.5-4.1-7.8-11.3-5.6-17.9S297.1 0 304 0h160c30.2 0 58.7 14.2 76.8 38.4l57.6 76.8c6.2 8.3 9.6 18.4 9.6 28.8 0 26.5-21.5 48-48 48h-21.5c-17 0-33.3-6.7-45.3-18.7L480 160h-32v21.5c0 24.8 12.8 47.9 33.8 61.1l106.6 66.6c32.1 20.1 51.6 55.2 51.6 93.1 0 60.6-49.1 109.7-109.8 109.7H32.3c-3.3 0-6.6-.4-9.6-1.4-9.2-2.8-16.7-9.6-20.3-18.5C1 488.7.2 485.2 0 481.4c-.2-3.7.3-7.3 1.3-10.7 2.8-9.2 9.6-16.7 18.6-20.4 3-1.2 6.2-2 9.5-2.2L433.3 412c8.3-.7 14.7-7.7 14.7-16.1 0-4.3-1.7-8.4-4.7-11.4l-44.4-44.4c-30-30-46.9-70.7-46.9-113.1V124.5zm160-52.2v-.6.6zm-1.3 7.4-46.4-11.6c-.2 1.3-.3 2.6-.3 3.9 0 13.3 10.7 24 24 24 10.6 0 19.5-6.8 22.7-16.3zm-379.8 36.8c16.3-14.5 40.4-16.2 58.5-4.1l130.6 87V227c0 32.8 8.4 64.8 24 93H112c-6.7 0-12.7-4.2-15-10.4s-.5-13.3 4.6-17.7l69.4-59.6-152.6 23.5c-7 1.1-13.9-2.6-16.9-9S0 232.7 5.3 228l125.6-111.5z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            NSI Terminale 2022-2023
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Thème 1 - Structure de données
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue"  aria-label="Basculer en mode sombre"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Basculer en mode sombre" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9v1Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="blue"  aria-label="Basculer en mode clair"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Basculer en mode clair" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Recherche">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Effacer" aria-label="Effacer" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Onglets" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  Accueil
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../StructureDonnees/index_structDonnees/" class="md-tabs__link">
+          
+  
+    
+  
+  T1 - Struct. données
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../BasesDonnees/index_bd/" class="md-tabs__link">
+          
+  
+    
+  
+  T2 - Bases données
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Archi_Materielle/index_archi/" class="md-tabs__link">
+          
+  
+    
+  
+  T3 - Archi. mat.
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../index_prog/" class="md-tabs__link">
+          
+  
+    
+  
+  T4 - Prog.
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Algo/index_algo/" class="md-tabs__link">
+          
+  
+    
+  
+  T5 Algo.
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../BAC/bac_explication/" class="md-tabs__link">
+          
+  
+    
+  
+  BAC 📝
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../epreuve_pratique/" class="md-tabs__link">
+          
+  
+    
+  
+  Annales E.P. 💻
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../divers/prog/" class="md-tabs__link">
+          
+  
+    
+  
+  Extras
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../credit/" class="md-tabs__link">
+        
+  
+    
+  
+  Crédits
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="NSI Terminale 2022-2023" class="md-nav__button md-logo" aria-label="NSI Terminale 2022-2023" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="m352 124.5-51.9-13c-6.5-1.6-11.3-7.1-12-13.8s2.8-13.1 8.7-16.1l40.8-20.4-43.2-32.4c-5.5-4.1-7.8-11.3-5.6-17.9S297.1 0 304 0h160c30.2 0 58.7 14.2 76.8 38.4l57.6 76.8c6.2 8.3 9.6 18.4 9.6 28.8 0 26.5-21.5 48-48 48h-21.5c-17 0-33.3-6.7-45.3-18.7L480 160h-32v21.5c0 24.8 12.8 47.9 33.8 61.1l106.6 66.6c32.1 20.1 51.6 55.2 51.6 93.1 0 60.6-49.1 109.7-109.8 109.7H32.3c-3.3 0-6.6-.4-9.6-1.4-9.2-2.8-16.7-9.6-20.3-18.5C1 488.7.2 485.2 0 481.4c-.2-3.7.3-7.3 1.3-10.7 2.8-9.2 9.6-16.7 18.6-20.4 3-1.2 6.2-2 9.5-2.2L433.3 412c8.3-.7 14.7-7.7 14.7-16.1 0-4.3-1.7-8.4-4.7-11.4l-44.4-44.4c-30-30-46.9-70.7-46.9-113.1V124.5zm160-52.2v-.6.6zm-1.3 7.4-46.4-11.6c-.2 1.3-.3 2.6-.3 3.9 0 13.3 10.7 24 24 24 10.6 0 19.5-6.8 22.7-16.3zm-379.8 36.8c16.3-14.5 40.4-16.2 58.5-4.1l130.6 87V227c0 32.8 8.4 64.8 24 93H112c-6.7 0-12.7-4.2-15-10.4s-.5-13.3 4.6-17.7l69.4-59.6-152.6 23.5c-7 1.1-13.9-2.6-16.9-9S0 232.7 5.3 228l125.6-111.5z"/></svg>
+
+    </a>
+    NSI Terminale 2022-2023
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Accueil
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    T1 - Struct. données
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            T1 - Struct. données
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../StructureDonnees/index_structDonnees/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Structures de données
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    T2 - Bases données
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            T2 - Bases données
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BasesDonnees/index_bd/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Base de données
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BasesDonnees/Modele_Relationnel/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📓 C1 Modèle relationnel
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BasesDonnees/Cours_TP_SQL/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📓 C2 Langage SQL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BasesDonnees/SQL_BAC/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📝 S2 BAC SQL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BasesDonnees/SQL_BAC_correction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📝 S2 BAC SQL Correction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    T3 - Archi. mat.
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            T3 - Archi. mat.
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Archi_Materielle/index_archi/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Architecture matérielle et OS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    T4 - Prog.
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            T4 - Prog.
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index_prog/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Programmation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../T1_1_Recursivite/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📓 C3 Récursivité
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    T5 Algo.
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            T5 Algo.
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Algo/index_algo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Algorithmique
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    BAC 📝
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            BAC 📝
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BAC/bac_explication/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Information
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    2023
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_2">
+            <span class="md-nav__icon md-icon"></span>
+            2023
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annales/2023/EE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Epreuves écrites
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_3" id="__nav_7_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    2022
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_3">
+            <span class="md-nav__icon md-icon"></span>
+            2022
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annales/2022/EE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Epreuves écrites
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_4" id="__nav_7_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    2021
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_4">
+            <span class="md-nav__icon md-icon"></span>
+            2021
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annales/2021/EE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Epreuves écrites
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Annales E.P. 💻
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Annales E.P. 💻
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../epreuve_pratique/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Déroulement
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../divers/Consigne_EP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Consigne
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../divers/lien/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    S'entrainer en ligne pour l'épreuve pratique
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_4" id="__nav_8_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    2023
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_4">
+            <span class="md-nav__icon md-icon"></span>
+            2023
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annales/2023/EP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Epreuves pratiques
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Extras
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Extras
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../divers/prog/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Divers concours programmation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Projet/forcebrute/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Force brute
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Projet/cryptographie/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cryptographie
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Projet/cryptographie2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cryptographie bis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Projet/pyxel/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    pyxel
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../divers/sujet0_geipi.pdf" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Epreuve GEIPI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../credit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Crédits
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#vocabulaire-de-la-programmation-objet" class="md-nav__link">
+    Vocabulaire de la programmation objet
+  </a>
+  
+    <nav class="md-nav" aria-label="Vocabulaire de la programmation objet">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objets-attributs-methodes" class="md-nav__link">
+    Objets, attributs, méthodes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#classes-et-objets-en-python" class="md-nav__link">
+    Classes et objets en Python
+  </a>
+  
+    <nav class="md-nav" aria-label="Classes et objets en Python">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#en-python-tout-est-objet" class="md-nav__link">
+    En Python, tout est objet !
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mise-en-pratique" class="md-nav__link">
+    Mise en pratique
+  </a>
+  
+    <nav class="md-nav" aria-label="Mise en pratique">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#une-premiere-classe-en-python" class="md-nav__link">
+    Une première classe en Python
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creation-et-initialisation-dun-objet-en-python" class="md-nav__link">
+    Création et initialisation d'un objet en Python
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ecriture-des-methodes-dediees" class="md-nav__link">
+    Ecriture des méthodes dédiées
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#methodes-speciales-en-python-hors-programme" class="md-nav__link">
+    Méthodes spéciales en Python : Hors programme
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+
+
+
+
+
+                  
+
+
+<h1 id="cours-programmation-orientee-objet-poo">Cours : Programmation Orientée Objet (POO)<a class="headerlink" href="#cours-programmation-orientee-objet-poo" title="Permanent link">⚓︎</a></h1>
+<table  class="redTable">
+        <tr>
+             <th  width="100%"; style="text-align:center;border:none;font-size:15pt;">Thème 1 - Structure de données
+            </th>
+        </tr>
+</table>
+
+<p><br></p>
+<table  class="redTable">
+        <tr >
+            <th width="20%"; style="background-color: #3B444B;color:white;text-align:center;border:none;font-size:40pt;">
+            06
+            </th>
+            <th  width="80%"; style="text-align:center;border:none;font-size:25pt;">Cours : Programmation Orientée Objet (POO)</th>
+        </tr>
+</table>
+<p><br></p>
+<p>Le paradigme objet</p>
+<p>Nous avons vu qu'il existait différentes manières de voir la programmation, on parle de différents <em>paradigmes de programmation</em>. 
+L'un d'eux est le <strong>paradigme objet</strong>. Lorsque l'on programme en utilisant ce paradigme on parle de <strong>programmation objet</strong> ou de <strong>programmation orientée objet</strong> (abrégé <em>POO</em>, ou <em>OOP</em> en anglais pour &laquo; Object-oriented programming &raquo;.</p>
+<blockquote>
+<p>Nous nous limiterons cette année, comme le programme l'indique, à une brève introduction de la programmation objet.</p>
+</blockquote>
+<h2 id="vocabulaire-de-la-programmation-objet">Vocabulaire de la programmation objet<a class="headerlink" href="#vocabulaire-de-la-programmation-objet" title="Permanent link">⚓︎</a></h2>
+<p>La programmation objet consiste à regrouper données et traitements dans une même structure appelée <strong>objet</strong>. Elle possède l'avantage de localiser en un même endroit toute l'implémentation d'une structure de données abstraite.</p>
+<h3 id="objets-attributs-methodes">Objets, attributs, méthodes<a class="headerlink" href="#objets-attributs-methodes" title="Permanent link">⚓︎</a></h3>
+<p>Concrètement, un objet est une structure de données abstraite regroupant :
+- des <strong><em>données</em></strong> associées à l'objet que l'on appelle des <strong>attributs</strong>.
+- des <strong><em>fonctions</em></strong> (ou procédures) s'appliquant sur l'objet que l'on appelle <strong>méthodes</strong>. </p>
+<h2 id="classes-et-objets-en-python">Classes et objets en Python<a class="headerlink" href="#classes-et-objets-en-python" title="Permanent link">⚓︎</a></h2>
+<h3 id="en-python-tout-est-objet">En Python, tout est objet !<a class="headerlink" href="#en-python-tout-est-objet" title="Permanent link">⚓︎</a></h3>
+<blockquote>
+<p>Vous ne le saviez sans doute pas, mais les objets vous connaissez déjà.</p>
+</blockquote>
+<p>Vous avez manipulé des objets depuis que vous programmez en Python, tout simplement car dans ce langage tout est objet. On peut le voir facilement.</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">m</span><span class="o">=</span><span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">📋 Texte</span><pre><span></span><code>&lt;class &#39;list&#39;&gt;
+</code></pre></div>
+<p><code>m</code> est une liste, ou plus précisément un <strong>objet</strong> de type <code>list</code>. Et en tant qu'objet de type <code>list</code>, il est possible de lui appliquer certaines fonctions prédéfinies (qu'on appelera <strong>méthodes</strong>) :</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">m</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
+<span class="n">m</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">📋 Texte</span><pre><span></span><code>[2, 8, 5, 4]
+</code></pre></div>
+<p>La syntaxe utilisée (le . après le nom de l'objet) est spécifique à la POO. Chaque fois que vous voyez cela, c'est que vous êtes en train de manipuler des objets.  </p>
+<p>Nous ne sommes pas surpris par ce résultat car la personne qui a programmé la méthode <code>reverse()</code> lui a donné un nom explicite. <br />
+Comment a-t-elle programmé cette inversion des valeurs de la liste ? Nous n'en savons rien et cela ne nous intéresse pas. Nous sommes juste utilisateurs de cette méthode. 
+L'objet de type <code>list</code> nous a été livré avec sa méthode <code>reverse()</code> (et bien d'autres choses) et nous n'avons pas à démonter la boîte pour en observer les engrenages : on parle de principe d'<strong>encapsulation</strong>.</p>
+<p>On peut obtenir la liste de toutes les fonctions disponibles pour un objet de type <code>list</code>, par la fonction <code>dir</code> :</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="nb">dir</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">📋 Texte</span><pre><span></span><code>[&#39;__add__&#39;, &#39;__class__&#39;, &#39;__contains__&#39;, &#39;__delattr__&#39;, &#39;__delitem__&#39;, &#39;__dir__&#39;, &#39;__doc__&#39;, &#39;__eq__&#39;, &#39;__format__&#39;, &#39;__ge__&#39;, &#39;__getattribute__&#39;, &#39;__getitem__&#39;, &#39;__gt__&#39;, &#39;__hash__&#39;, &#39;__iadd__&#39;, &#39;__imul__&#39;, &#39;__init__&#39;, &#39;__init_subclass__&#39;, &#39;__iter__&#39;, &#39;__le__&#39;, &#39;__len__&#39;, &#39;__lt__&#39;, &#39;__mul__&#39;, &#39;__ne__&#39;, &#39;__new__&#39;, &#39;__reduce__&#39;, &#39;__reduce_ex__&#39;, &#39;__repr__&#39;, &#39;__reversed__&#39;, &#39;__rmul__&#39;, &#39;__setattr__&#39;, &#39;__setitem__&#39;, &#39;__sizeof__&#39;, &#39;__str__&#39;, &#39;__subclasshook__&#39;, &#39;append&#39;, &#39;clear&#39;, &#39;copy&#39;, &#39;count&#39;, &#39;extend&#39;, &#39;index&#39;, &#39;insert&#39;, &#39;pop&#39;, &#39;remove&#39;, &#39;reverse&#39;, &#39;sort&#39;]
+</code></pre></div>
+<p>Les méthodes encadrées par un double underscore __ sont des méthodes <strong>privées</strong>, a priori non destinées à l'utilisateur. Les méthodes <strong>publiques</strong>, utilisables pour chaque objet de type <code>list</code>, sont donc <code>append</code>, <code>clear</code>, ...  </p>
+<p>Comment savoir ce que font les méthodes ? Si elles ont été correctement codées (et elles l'ont été), elles possèdent une <em>docstring</em>, accessible par :</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">m</span><span class="o">.</span><span class="n">append</span><span class="o">.</span><span class="vm">__doc__</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">📋 Texte</span><pre><span></span><code>&#39;Append object to the end of the list.&#39;
+</code></pre></div>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">m</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="vm">__doc__</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">📋 Texte</span><pre><span></span><code>&#39;Return first index of value.\n\nRaises ValueError if the value is not present.&#39;
+</code></pre></div>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">help</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">📋 Texte</span><pre><span></span><code>Help on built-in function index:
+
+index(value, start=0, stop=2147483647, /) method of builtins.list instance
+    Return first index of value.
+
+    Raises ValueError if the value is not present.
+</code></pre></div>
+<h2 id="mise-en-pratique">Mise en pratique<a class="headerlink" href="#mise-en-pratique" title="Permanent link">⚓︎</a></h2>
+<h3 id="une-premiere-classe-en-python">Une première classe en Python<a class="headerlink" href="#une-premiere-classe-en-python" title="Permanent link">⚓︎</a></h3>
+<p>Nous allons voir comment implémenter une classe en Python. </p>
+<div class="admonition voc">
+<p class="admonition-title">Vocabulaire :</p>
+<p>Par convention, les noms de classes en Python sont écrits en capitales (première lettre en majuscule). On a documenté notre classe avec une docstring qui sera accessible à quiconque souhaite utiliser notre classe.</p>
+</div>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">class</span> <span class="nc">Voiture</span> <span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">annee</span><span class="p">,</span> <span class="n">coul</span><span class="p">,</span> <span class="n">vmax</span><span class="p">)</span> <span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">annee</span> <span class="o">=</span> <span class="n">annee</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">couleur</span> <span class="o">=</span> <span class="n">coul</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vitesse_max</span> <span class="o">=</span> <span class="n">vmax</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">age</span> <span class="o">=</span> <span class="mi">2020</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">annee</span>
+</code></pre></div>
+<h3 id="creation-et-initialisation-dun-objet-en-python">Création et initialisation d'un objet en Python<a class="headerlink" href="#creation-et-initialisation-dun-objet-en-python" title="Permanent link">⚓︎</a></h3>
+<div class="admonition savoir">
+<p class="admonition-title">A retenir : la méthode constructeur</p>
+<p>La <strong>méthode constructeur</strong>, toujours appelée <code>__init__()</code>, est une méthode (une «def») qui sera automatiquement appelée à la création de l'objet. Elle va donc le doter de tous les attributs de sa classe.</p>
+</div>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">class</span> <span class="nc">Voiture</span> <span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">annee</span><span class="p">,</span> <span class="n">coul</span><span class="p">,</span> <span class="n">vmax</span><span class="p">)</span> <span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">annee</span> <span class="o">=</span> <span class="n">annee</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">couleur</span> <span class="o">=</span> <span class="n">coul</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vitesse_max</span> <span class="o">=</span> <span class="n">vmax</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">age</span> <span class="o">=</span> <span class="mi">2022</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">annee</span>
+</code></pre></div>
+<ul>
+<li>le mot-clé <code>self</code>, omniprésent en POO (d'autres langages utilisent <code>this</code>), fait référence à l'objet lui-même, qui est en train d'être construit.</li>
+<li>pour construire l'objet, 3 paramètres seront nécessaires : <code>annee</code>, <code>coul</code> et <code>vmax</code>. Ils donneront respectivement leur valeur aux attributs <code>annee</code>, <code>couleur</code> et <code>vitesse_max</code>.</li>
+<li>dans cet exemple, les noms <code>coul</code> et <code>vmax</code> ont été utilisés pour abréger <code>couleur</code> et <code>vitesse_max</code>, mais il est recommandé de garder les mêmes noms, même si ce n'est pas du tout obligatoire.</li>
+</ul>
+<p>Construisons donc notre première voiture !</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">ma_voiture</span> <span class="o">=</span> <span class="n">Voiture</span><span class="p">(</span><span class="mi">2012</span><span class="p">,</span> <span class="s2">&quot;Grise&quot;</span><span class="p">,</span> <span class="mi">180</span><span class="p">)</span>
+</code></pre></div>
+<p><code>mon_bolide</code> possède 4 attributs : 
+- <code>annee</code>, <code>couleur</code> et <code>vitesse_max</code> ont été donnés par l'utilisateur lors de la création.
+- <code>age</code> s'est créé «tout seul» par l'instruction <code>self.age = 2022 - self.annee</code>.</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="nb">type</span><span class="p">(</span><span class="n">ma_voiture</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">📋 Texte</span><pre><span></span><code>&lt;class &#39;__main__.Voiture&#39;&gt;
+</code></pre></div>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">ma_voiture</span><span class="o">.</span><span class="n">annee</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ma_voiture</span><span class="o">.</span><span class="n">couleur</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ma_voiture</span><span class="o">.</span><span class="n">vitesse_max</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ma_voiture</span><span class="o">.</span><span class="n">age</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">📋 Texte</span><pre><span></span><code>2012
+Grise
+180
+8
+</code></pre></div>
+<p>Bien sûr, on peut créer aytant de voitures que l'on veut en suivant le même principe :</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">batmobile</span> <span class="o">=</span> <span class="n">Voiture</span><span class="p">(</span><span class="mi">2036</span><span class="p">,</span> <span class="s2">&quot;noire&quot;</span><span class="p">,</span> <span class="mi">525</span><span class="p">)</span>
+<span class="n">batmobile</span><span class="o">.</span><span class="n">couleur</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">📋 Texte</span><pre><span></span><code>&#39;noire&#39;
+</code></pre></div>
+<div class="admonition exo">
+<p class="admonition-title">Exercice : Reprendre l'exemple du type abstrait <code>Rationnel</code></p>
+<p>Nous reprenons pour cela l'exemple du type abstrait <code>Rationnel</code> abordé dans le chapitre précédent. Pour rappel, on souhaitait pouvoir effectuer les opérations suivantes sur cette structure de données :</p>
+<ul>
+<li>Créer un rationnel</li>
+<li>Accéder au numérateur et au dénominateur d'un rationnel</li>
+<li>Ajouter, soustraire, multiplier, diviser deux rationnels</li>
+<li>Vérifier si deux rationnels sont égaux ou non</li>
+</ul>
+</div>
+<p>Nous avions déjà implémenté ce type abstrait (de plusieurs manières) dans le chapitre en question. L'objectif ici est de créer une classe appelée <code>Rationnel</code> dont le but est de pouvoir construire des objets de type <code>Rationnel</code> et les manipuler.</p>
+<p>On déclare une classe en Python à l'aide du mot clé <code>class</code> :</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">class</span> <span class="nc">Rationnel</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Manipulation de rationnels définis par leurs numérateur et dénominateur&quot;&quot;&quot;</span>
+</code></pre></div>
+<blockquote>
+<p>Par convention, les noms de classes en Python sont écrits en capitales (première lettre en majuscule). On a documenté notre classe avec une docstring qui sera accessible à quiconque souhaite utiliser notre classe.</p>
+</blockquote>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">class</span> <span class="nc">Rationnel</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Manipulation de rationnels définis par leurs numérateur et dénominateur&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">numerateur</span><span class="p">,</span> <span class="n">denominateur</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Initialise le rationnel avec les valeurs indiquées&quot;&quot;&quot;</span>
+        <span class="k">pass</span>
+</code></pre></div>
+<p>On peut désormais créer un objet <code>r</code> par appel du constructeur en fournissant les valeurs des paramètres prévus dans la méthode spéciale d'initialisation. On peut accéder aux attributs de l'objet en utilisant la notation pointée.</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code>
+</code></pre></div>
+<div class="highlight"><span class="filename">📋 Texte</span><pre><span></span><code>3
+4
+</code></pre></div>
+<p>On peut modifier les attributs d'un objet en les redéfinissant.</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">r</span><span class="o">.</span><span class="n">num</span> <span class="o">=</span> <span class="mi">2</span>  <span class="c1"># modification de la valeur du numérateur</span>
+<span class="n">r</span><span class="o">.</span><span class="n">num</span><span class="p">,</span> <span class="n">r</span><span class="o">.</span><span class="n">den</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">📋 Texte</span><pre><span></span><code>(2, 4)
+</code></pre></div>
+<blockquote>
+<p>Les attributs <code>num</code> et <code>den</code> sont propres à chaque objet. Dans la terminologie des langages à objet, on parle d'<em>attributs d'instance</em>.</p>
+</blockquote>
+<p>Notre objet est bien du type abstrait de données <code>Rationnel</code> que l'on vient de créer en définissant notre classe.</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="nb">type</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">📋 Texte</span><pre><span></span><code>&lt;class &#39;__main__.Rationnel&#39;&gt;
+</code></pre></div>
+<h3 id="ecriture-des-methodes-dediees">Ecriture des méthodes dédiées<a class="headerlink" href="#ecriture-des-methodes-dediees" title="Permanent link">⚓︎</a></h3>
+<p>Si on veut pouvoir manipuler nos objets, il faut ajouter à notre classe les méthodes souhaitées. Par exemple, on ajoute les méthodes <code>ajouter</code> et <code>egal</code> en définissant deux fonctions dans notre classe.</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">class</span> <span class="nc">Rationnel</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Manipulation de rationnels définis par leurs numérateur et dénominateur&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">numerateur</span><span class="p">,</span> <span class="n">denominateur</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Initialise le rationnel avec les valeurs indiquées&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">num</span> <span class="o">=</span> <span class="n">numerateur</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">den</span> <span class="o">=</span> <span class="n">denominateur</span>
+
+    <span class="k">def</span> <span class="nf">ajouter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Renvoie un nouveau rationnel égal à la somme&quot;&quot;&quot;</span>
+        <span class="kn">import</span> <span class="nn">math</span>
+        <span class="n">num</span> <span class="o">=</span> <span class="o">...</span>  <span class="c1"># calcul du numerateur</span>
+        <span class="n">den</span> <span class="o">=</span> <span class="o">...</span>  <span class="c1"># calcul du dénominateur</span>
+        <span class="n">d</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">gcd</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="n">den</span><span class="p">)</span>  <span class="c1"># calcul du pgcd pour simplifier le rationnel</span>
+        <span class="k">return</span> <span class="n">Rationnel</span><span class="p">(</span><span class="n">num</span> <span class="o">//</span> <span class="n">d</span><span class="p">,</span> <span class="n">den</span> <span class="o">//</span> <span class="n">d</span><span class="p">)</span>  <span class="c1"># on renvoie un nouvel objet &#39;Rationnel&#39;</span>
+
+    <span class="k">def</span> <span class="nf">egal</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Renvoie Vrai si les deux rationnels sont égaux, Faux sinon.&quot;&quot;&quot;</span>        
+        <span class="k">return</span> <span class="o">...</span> <span class="ow">and</span> <span class="o">...</span>
+</code></pre></div>
+<p>On peut alors accéder à ces méthodes en utilisant également la notation pointée sur l'objet auquel s'applique la méthode.</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">r1</span> <span class="o">=</span> <span class="n">Rationnel</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">r2</span> <span class="o">=</span> <span class="n">Rationnel</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">r3</span> <span class="o">=</span> <span class="n">r1</span><span class="o">.</span><span class="n">ajouter</span><span class="p">(</span><span class="n">r2</span><span class="p">)</span>  <span class="c1"># on ajoute r2 à r1</span>
+<span class="n">r3</span><span class="o">.</span><span class="n">num</span><span class="p">,</span> <span class="n">r3</span><span class="o">.</span><span class="n">den</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">r4</span> <span class="o">=</span> <span class="n">Rationnel</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">r3</span><span class="o">.</span><span class="n">egal</span><span class="p">(</span><span class="n">r4</span><span class="p">)</span>  <span class="c1"># pour vérifier si r3 = r4</span>
+</code></pre></div>
+<blockquote>
+<p><strong>Remarque</strong> : Vous noterez que l'on fournit toujours un paramètre de moins lors de l'appel à une méthode que dans la définition de la méthode. En effet, le paramètre <code>self</code> n'est pas utilisé car il désigne la référence à l'objet auquel s'applique la méthode.</p>
+</blockquote>
+<p>On peut utiliser la fonction <code>dir</code> pour lister tous les attributs et méthodes d'un objet.</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">r</span><span class="o">=</span> <span class="n">Rationnel</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="nb">dir</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+</code></pre></div>
+<p>On constate qu'il y a de nombreuses méthodes spéciales repérables par leur nom encadré de <code>__</code>. Ces méthodes sont appelées dans des contextes particuliers et peuvent être redéfinies par le programmeur pour une classe particulière. </p>
+<p>L'usage de ces méthodes spéciales n'est pas un attendu du programme mais cela peut se révéler très utile. C'est pourquoi nous en présenterons quelques-unes.</p>
+<h3 id="methodes-speciales-en-python-hors-programme">Méthodes spéciales en Python : Hors programme<a class="headerlink" href="#methodes-speciales-en-python-hors-programme" title="Permanent link">⚓︎</a></h3>
+<p>Nous nous contenterons ici de présenter trois méthodes spéciales (quelques autres seront évoquées dans les activités) :</p>
+<ul>
+<li>la méthode <code>__repr__(self)</code> est appelée pour calculer la représentation <em>officielle</em> en chaîne de caractères d'un objet (c'est cette méthode qui est appelée lorsque l'on veut évaluer un objet) ;</li>
+<li>la méthode <code>__str__(self)</code> est appelée pour calculer une chaîne de caractères <em>informelle</em> ou joliment mise en forme de représentation de l'objet (c'est cette méthode qui est appelée par la fonction <code>print()</code>) ;</li>
+<li>la méthode <code>__eq__(self, other)</code> est appelée pour tester l'égalité entre deux objets.</li>
+</ul>
+<p>On pourrait être tenté d'afficher une instance ou de tester l'égalité entre deux instances d'une même classe. Par exemple, avec notre classe <code>Rationnel</code> on aimerait écrire.</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">r1</span> <span class="o">=</span> <span class="n">Rationnel</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">r2</span> <span class="o">=</span> <span class="n">Rationnel</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">r1</span>  <span class="c1"># évaluation </span>
+</code></pre></div>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">r1</span><span class="p">)</span>  <span class="c1"># affichage</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">r1</span> <span class="o">==</span> <span class="n">r2</span> <span class="c1"># test d&#39;égalité</span>
+</code></pre></div>
+<p>Nous ne pouvons nous satisfaire des résultats. L'évaluation d'un objet, son affichage et le test d'égalité (avec les notations habituelles) font appel respectivement aux méthodes <code>__repr__</code>, <code>__str__</code> et <code>__eq__</code> que nous avons besoin de redéfinir pour obtenir des résultats cohérents.</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">class</span> <span class="nc">Rationnel</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Manipulation de rationnels définis par leurs numérateur et dénominateur&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">numerateur</span><span class="p">,</span> <span class="n">denominateur</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Initialise le rationnel avec les valeurs indiquées&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">num</span> <span class="o">=</span> <span class="n">numerateur</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">den</span> <span class="o">=</span> <span class="n">denominateur</span>
+
+    <span class="k">def</span> <span class="nf">ajouter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Renvoie un nouveau rationnel égal à la somme&quot;&quot;&quot;</span>
+        <span class="kn">import</span> <span class="nn">math</span>
+        <span class="n">num</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">num</span> <span class="o">*</span> <span class="n">other</span><span class="o">.</span><span class="n">den</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">num</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">den</span>  <span class="c1"># calcul du numerateur</span>
+        <span class="n">den</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">den</span> <span class="o">*</span> <span class="n">other</span><span class="o">.</span><span class="n">den</span>  <span class="c1"># calcul du dénominateur</span>
+        <span class="n">d</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">gcd</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="n">den</span><span class="p">)</span>  <span class="c1"># calcul du pgcd pour simplifier le rationnel</span>
+        <span class="k">return</span> <span class="n">Rationnel</span><span class="p">(</span><span class="n">num</span> <span class="o">//</span> <span class="n">d</span><span class="p">,</span> <span class="n">den</span> <span class="o">//</span> <span class="n">d</span><span class="p">)</span>  <span class="c1"># on renvoie un nouvel objet &#39;Rationnel&#39;</span>
+
+    <span class="k">def</span> <span class="nf">egal</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Renvoie Vrai si les deux rationnels sont égaux, Faux sinon.&quot;&quot;&quot;</span>        
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">num</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">num</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">den</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">den</span>
+
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;Rationnel(&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">num</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;, &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">den</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;)&quot;</span>  <span class="c1"># ou f&quot;Rationnel({str.num}, {str.den})&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">num</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; / &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">den</span><span class="p">)</span>  <span class="c1"># ou f&quot;{self.num} / {self.den}&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>  <span class="c1"># on pourrait aussi écrire simplement __eq__ = egal</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">num</span> <span class="o">*</span> <span class="n">other</span><span class="o">.</span><span class="n">den</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">num</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">den</span>
+</code></pre></div>
+<p>On peut désormais utiliser les instructions classiques d'évaluation (ou d'affichage) et de test d'égalité avec les objets de notre classe.</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">r1</span> <span class="o">=</span> <span class="n">Rationnel</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">r2</span> <span class="o">=</span> <span class="n">Rationnel</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">r1</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">r1</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">r3</span> <span class="o">=</span> <span class="n">Rationnel</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">r4</span> <span class="o">=</span> <span class="n">r3</span><span class="o">.</span><span class="n">ajouter</span><span class="p">(</span><span class="n">r1</span><span class="p">)</span>
+<span class="n">r4</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">r1</span> <span class="o">==</span> <span class="n">r2</span>
+</code></pre></div>
+<p><strong>Que se passe-t-il pour la dernière instruction ?</strong>  </p>
+<p>Python reconnaît qu'il doit tester l'égalité entre deux instances de la classe <code>Rationnel</code>.<br />
+Ce test (<code>==</code>) invoque la méthode spéciale <code>__eq__</code> de la classe <code>Rationnel</code>. Plus précisément, <code>r1 == r2</code> appelle <code>r1.__eq__(r2)</code> et comme nous venons de définir cette méthode, le résultat est cohérent. On peut désormais tester l'égalité de deux rationnels sans utiliser l'instruction un peu plus lourde <code>r1.egal(r2)</code>.</p>
+<div class="admonition savoir">
+<p class="admonition-title">BILAN</p>
+<p>La <em>paradigme objet</em> est une autre façon de voir la programmation qui consiste à utiliser un structure de donnée appelée <em>objet</em> qui réunit des données et des fonctionnalités. Les données sont appelées <strong>atributs</strong> et les fonctionnalités sont appelées <strong>méthodes</strong>.</p>
+<p>Une <strong>classe</strong> permet de définir un modèle d'objet en spécifiant des attributs et des méthodes. On peut ensuite utiliser cette classe pour fabriquer des objets selon ce modèle.</p>
+<p>En Python, on utilise le mot clé <code>class</code> pour définir une classe qui devient alors un nouveau type abstrait de données. On peut alors créer de nouveaux objets en appelant le constructeur qui porte le nom de la classe. Les objets ainsi créés s'appellent des <em>instances</em> de la classe. </p>
+<p>En Python, la méthode spéciale <code>__init__</code> est appelée à la construction d'un nouvel objet. C'est dans cette méthode que l'on définit les attributs de nos objets.</p>
+<p>Les attributs et méthodes d'une instance de classe sont accessibles en utilisant la notation pointée : <code>objet.attribut</code> et <code>objet.methode(arguments)</code>.</p>
+</div>
+
+
+
+
+
+                
+
+<style>
+    .jp-RenderedHTMLCommon p {
+        font-size: 0.8rem;
+        line-height: 1.6;
+    }
+
+    .jp-RenderedHTMLCommon li {
+        font-size: .8rem;
+        line-height: 1.6;
+    }
+
+    .jp-RenderedHTMLCommon h1 {
+        margin: 0 0 1.25em;
+        color: var(--md-default-fg-color--light);
+        font-weight: 300;
+        font-size: 2em;
+        line-height: 1.3;
+        letter-spacing: -0.01em;
+    }
+
+    .jp-RenderedHTMLCommon h2 {
+        margin: 1.6em 0 .64em;
+        font-weight: 300;
+        font-size: 1.965em;
+        line-height: 1.4;
+        letter-spacing: -0.01em;
+    }
+
+    .jp-RenderedHTMLCommon h3 {
+        margin: 1.6em 0 .8em;
+        font-weight: 400;
+        font-size: 1.57em;
+        line-height: 1.5;
+        letter-spacing: -0.01em;
+    }
+
+    .jp-RenderedHTMLCommon hr {
+        border: none;
+    }
+</style>
+
+
+
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Retour en haut de la page
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.expand", "navigation.top", "navigation.sections", "navigation.indexes", "navigation.tracking", "header.autohide", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.81fa17fe.min.js"></script>
+      
+        <script src="../../xtra/mathjax.js"></script>
+      
+        <script src="../../javascripts/config.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/gh/rod2ik/cdn@main/mkdocs/javascripts/massilia-admonitions.js"></script>
+      
+    
+  </body>
+</html>

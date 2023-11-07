@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>DS_Pile_File_Routage.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<br>
+<table  class="redTable">
+        <tr >
+            <th width="20%"; style="background-color: #3B444B;color:white;text-align:center;border:none;font-size:40pt;">
+            DS
+            </th>
+            <th class="redTh"; width="80%"; style="text-align:center;border:none;font-size:25pt;">Devoir : Pile -File et Routage</th>
+        </tr>
+</table>
+<p>!!! exo &quot;Pile - File&quot;</p>
+<p>On rappelle qu’une pile est une structure de données abstraite fondée sur le principe «dernier arrivé, premier sorti» :</p>
+<p><img src="data/21-sujet0-exo1_1.png" alt="">{:.center width=50%}</p>
+<p>On munit la structure de données Pile de quatre fonctions primitives définies dans le tableau ci-dessous :</p>
+<p>!!! interface &quot;Structure de données abstraite : Pile&quot;
+Opérations :</p>
+<pre><code>- `creer_pile_vide` :  $\varnothing$ $\rightarrow$ Pile
+    - `creer_pile_vide()` renvoie une file vide
+- `est_vide` : Pile $\rightarrow$ Booléen
+    - `est_vide(pile)` renvoie True si pile est vide, False sinon
+- `empiler` : Pile, Élément $\rightarrow$ Rien
+    - `empiler(pile, element)` ajoute element au sommet de la pile
+- `depiler` : Pile $\rightarrow$ Élément
+    - `depiler(pile)` renvoie l’élément eau sommet de la pile en le retirant de la pile
+</code></pre>
+<ol>
+<li>
+<p>On suppose dans cette question que le contenu de la pile P est le suivant  (les élèments étant empilés par le haut) :</p>
+<p><img src="data/21-sujet0-exo1_2.png" alt="">{:.center}</p>
+<p>Quel serait le contenu de la pile Q aprés l'exécution de la suite d'instruction suivante ?</p>
+<pre class="hljs"><code><div>Q=creer_pile_vide()
+<span class="hljs-keyword">while</span> <span class="hljs-keyword">not</span> est_vide(P):
+    empiler(Q, depiler(P))
+</div></code></pre>
+</li>
+<li>
+<ol>
+<li>On appelle <strong>hauteur</strong> d’une pile le nombre d’éléments qu’elle contient. La fonction <code>hauteur_pile</code> prend en paramètre une pile P et renvoie sa hauteur.  Après appel de cette fonction, la pile P doit avoir retrouvé son état d’origine.</li>
+</ol>
+<pre><code> **Exemple :** si P est la pile de la question 1 : `hauteur_pile(P)` = 4.
+ 
+ Recopier et compléter sur votre copie le programme Python suivant implémentant la fonction `hauteur_pile` en remplaçant les ??? par les bonnes instructions.
+
+ ```python
+ def hauteur_pile(P):
+     Q = creer_pile_vide ()
+     n = 0
+     while not (est_vide (P)):
+         ???
+         x = depiler(P)
+         empiler(Q,x)
+     while not (est_vide(Q)):
+         ???
+         empiler(P,x)
+     return ???
+ ```
+</code></pre>
+<ol start="2">
+<li>
+<p>Créer une fonction <code>max_pile</code> ayant pour paramètre une pile P et un entier i. Cette fonction renvoie la position j de l’élément maximum de la pile P.</p>
+<p>Après appel de cette fonction, la pile P devra avoir retrouvé son état d’origine.  La position du sommet de la pile est 1.</p>
+<p><strong>Exemple :</strong>
+si P est la pile de la question 1 : <code>max_pile(P,2)</code> = 1.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>Créer une fonction <code>retourner</code> ayant pour paramètres une pile P et un entier j. Cette fonction inverse l’ordre des j derniers éléments empilés et ne renvoie rien. On pourra utiliser deux piles auxiliaires.</p>
+</li>
+</ol>
+<pre><code>**Exemple :**  
+si P est la pile de la question 1(a), après l’appel de `retourner(P, 3)`, l’état de la pile P sera :
+
+![](data/21-sujet0-exo1_3.png)
+</code></pre>
+<ol start="4">
+<li>
+<p>L’objectif de cette question est de trier une pile de crêpes. On modélise une pile de crêpes par une pile d’entiers représentant le diamètre de chaque crêpe. On souhaite réordonner les crêpes de la plus grande (placée en bas de la pile) à la plus petite (placée en haut de la pile).<br>
+On dispose uniquement d’une spatule que l’on peut insérer dans la pile de crêpes de façon à retourner l’ensemble des crêpes qui lui sont au-dessus.<br>
+Le principe est le suivant :</p>
+<ul>
+<li>On recherche la plus grande crêpe.</li>
+<li>On retourne la pile à partir de cette crêpe de façon à mettre cette plus grande crêpe tout en haut de la pile.</li>
+<li>On retourne l’ensemble de la pile de façon à ce que cette plus grande crêpe se retrouve tout en bas.</li>
+<li>La plus grande crêpe étant à sa place, on recommence le principe avec le reste de la pile.</li>
+</ul>
+<p><strong>Exemple :</strong><br>
+<img src="data/21-sujet0-exo1_4.png" alt=""></p>
+<p>Créer la fonction <code>tri_crepes</code> ayant pour paramètre une pile P. Cette fonction trie la pile P selon la méthode du tri crêpes et ne renvoie rien.</p>
+<p>On utilisera les fonctions créées dans les questions précédentes.</p>
+<p>Exemple : Si la pile P est  <img src="data/21-sujet0-exo1_5.png" alt=""> ,après l’appel de <code>tri_crepes(P)</code>, la pile P devient  <img src="data/21-sujet0-exo1_6.png" alt="">.</p>
+</li>
+</ol>
+<p>!!! exo &quot;Routage&quot;</p>
+<p>On considère le réseau suivant composé de sept routeurs.</p>
+<p><img src="data/exo_graph.svg" alt="">{:.center}</p>
+<p>On donne les tables de routage préalablement construites ci-dessous avec le protocole RIP (Routing Information Protocole). Le protocole RIP permet de construire les tables de routage des différents routeurs, en indiquant pour chaque routeur, la distance, en nombr de sauts, qui le sépare d'un autre routeur.</p>
+<p>Voir ANNEXE</p>
+<ol>
+<li>
+<p>Le routeur R2 doit envoyer un paquet de données au routeur R7 qui accuse réception.<br>
+Déterminer le chemin parcouru par le paquet de données ainsi que celui parcouru par l'éaccusé de réception.</p>
+</li>
+<li>
+<p>a.  Indiquer la faiblesse que représente ce réseau en cas de panne du routeur R4.<br>
+b. Proposer une solution pour y remédier.</p>
+</li>
+<li>
+<p>Dans cette question uniquement, on décide de rajouter un routeur R8 qui sera relié aux routeurs R2 et R6.<br>
+a. Donner la table de routage pour R8 qui minimise le nombre de saut.<br>
+b. Donner une nouvelle table de routage pour R2.</p>
+</li>
+<li>
+<p><strong>Pour la suite de l'exercice on considère le réseau sans le routeur R8</strong>.<br>
+Il a été décidé de modifier les règles de routage de ce réseau en appliquant le protocole de routage OSPF qui pren en compte la bande passante.<br>
+Ce protocole attribue un coût à chaque liaison afin de privilégier le choix de certaines routes plus rapide. Plus le coût est faible, plus le lien est intéressant.<br>
+Le coût d'une liaison est calculé par la formule :<br>
+$coût=\dfrac{10^8\text{ bit/s}}{\text{ bande passante du lien en bit/s}}$</p>
+<p>Voici le tableau référençant les coûts des liaisons en fonction du type de liaison entre deux routeurs :</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Type de laiison</th>
+<th style="text-align:center">bande passante</th>
+<th style="text-align:center">Coût</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">FastEthernet (FE)</td>
+<td style="text-align:center">?</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">Ethernet (E)</td>
+<td style="text-align:center">10 Mb/s</td>
+<td style="text-align:center">?</td>
+</tr>
+<tr>
+<td style="text-align:center">(E1)</td>
+<td style="text-align:center">2,048 Mb/s</td>
+<td style="text-align:center">49</td>
+</tr>
+<tr>
+<td style="text-align:center">(T1)</td>
+<td style="text-align:center">1.544 Mb/s</td>
+<td style="text-align:center">65</td>
+</tr>
+</tbody>
+</table>
+<p>On rappelle que 1 Mb/s = 1 000 kb/s = $10^6$ bit/s.</p>
+<ol>
+<li>Déterminer la bande passante di FastEthernet (FE) et justifier que le coût du réseau de type Ethernet (E) est de 10.</li>
+<li>On précise sur le graphe ci-dessous les types de liaison dans notre réseau :</li>
+</ol>
+<p><img src="data/exo_graph_cout.png" alt="">{:.center width=60%}</p>
+<p>Le coût d'un chemin est la somme des coûts des liaisons rencontrés. Donner en justifiant le chemin le moins coûteux pour relier R2 à R5. Préciser le coût.</p>
+</li>
+</ol>
+<p>ANNEXE :</p>
+<p><img src="data/22-NSIJ1AN1-exo_routage.png" alt="">{:.center}</p>
+
+</body>
+</html>

@@ -1,0 +1,20 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{def} \PYG{n+nf}{premierePosition}\PYG{p}{(}\PYG{n}{objets} \PYG{p}{:} \PYG{n+nb}{list}\PYG{p}{,} \PYG{n}{pMaxi} \PYG{p}{:} \PYG{n+nb}{int}\PYG{p}{)} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n+nb}{list}\PYG{p}{:}
+	\PYG{c+c1}{\PYGZsh{} La répartiton}
+	\PYG{n}{repartition} \PYG{o}{=} \PYG{p}{[]}
+	\PYG{c+c1}{\PYGZsh{} On ajoute une boîte vide}
+	\PYG{n}{repartition}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{o}{...}\PYG{p}{)}
+
+	\PYG{k}{for} \PYG{n}{objet} \PYG{o+ow}{in} \PYG{o}{............} \PYG{p}{:} \PYG{c+c1}{\PYGZsh{} parcours des objets}
+		\PYG{n}{ajout} \PYG{o}{=} \PYG{k+kc}{False} \PYG{c+c1}{\PYGZsh{} permet de savoir si l\PYGZsq{}objet a été ajouté}
+		\PYG{k}{for} \PYG{n}{boite} \PYG{o+ow}{in} \PYG{n}{repartition} \PYG{p}{:}
+			\PYG{k}{if} \PYG{n}{poidsBoite}\PYG{p}{(}\PYG{o}{..............}\PYG{p}{)} \PYG{o}{+} \PYG{n}{objet} \PYG{o}{\PYGZlt{}=} \PYG{o}{..............} \PYG{p}{:}
+				\PYG{c+c1}{\PYGZsh{} l\PYGZsq{}objet tient dans cette boite}
+				\PYG{n}{boite}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{o}{..............}\PYG{p}{)} \PYG{c+c1}{\PYGZsh{} on l\PYGZsq{}ajoute}
+				\PYG{n}{ajout} \PYG{o}{=} \PYG{k+kc}{True}
+				\PYG{k}{break}
+		\PYG{k}{if} \PYG{o+ow}{not} \PYG{n}{ajout} \PYG{p}{:} \PYG{c+c1}{\PYGZsh{} l\PYGZsq{}objet ne tient dans aucune des premières boîtes...}
+			\PYG{n}{repartition}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{o}{..............}\PYG{p}{)} \PYG{c+c1}{\PYGZsh{} on l\PYGZsq{}ajoute dans une nouvelle boîte}
+
+	\PYG{k}{return} \PYG{n}{repartition}
+\end{Verbatim}

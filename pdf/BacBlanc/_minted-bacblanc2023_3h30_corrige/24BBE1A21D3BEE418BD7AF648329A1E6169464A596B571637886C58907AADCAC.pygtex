@@ -1,0 +1,6 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} On \PYGZdq{}remonte\PYGZdq{} cette boîte à sa position triée}
+\PYG{k}{while} \PYG{n}{i} \PYG{o}{\PYGZgt{}} \PYG{l+m+mi}{0} \PYG{o+ow}{and} \PYG{n}{poidsBoite}\PYG{p}{(}\PYG{n}{repartition}\PYG{p}{[}\PYG{n}{i}\PYG{p}{])} \PYG{o}{\PYGZgt{}} \PYG{n}{poidsBoite}\PYG{p}{(}\PYG{n}{repartition}\PYG{p}{[}\PYG{n}{i}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{])} \PYG{p}{:}
+	\PYG{n}{repartition}\PYG{p}{[}\PYG{n}{i}\PYG{p}{],} \PYG{n}{repartition}\PYG{p}{[}\PYG{n}{i}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{]} \PYG{o}{=} \PYG{n}{repartition}\PYG{p}{[}\PYG{n}{i}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{],} \PYG{n}{repartition}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}
+	\PYG{n}{i} \PYG{o}{=} \PYG{n}{i}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}
+\end{Verbatim}

@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>T3_1_Routage_BAC.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="th%C3%A8me-3---architecture-mat%C3%A9rielle">Thème 3 - Architecture matérielle</h1>
+<br>
+<table class="redTable">
+        <tr>
+            <th width="20%" ; style="background-color: #3B444B;color:white;text-align:center;border:none;font-size:40pt;">
+            BAC
+            </th>
+            <th class="redTh" ; width="80%" style="text-align:center;border:none;font-size:25pt;">Protocole de Routage</th>
+        </tr>
+</table>
+<h1 id="exercices-bac">Exercices BAC</h1>
+<h2 id="sujet-n%C2%B01--sujet-z%C3%A9ro">Sujet n°1 : sujet zéro</h2>
+<p>!!! exo &quot;Sujet zéro&quot;</p>
+<p>On considère un réseau composé de plusieurs routeurs reliés de la façon suivante :</p>
+<p><img src="file:///mnt/TRAVAIL/3_NSI/NSITerm/docs/Archi_Materielle/data_sujet_0/sujet0_routage1.png" alt="routage">{:.center}</p>
+<h3 id="%E2%9E%A1-le-protocole-rip">➡ Le protocole RIP</h3>
+<p>Le protocole RIP permet de construire les tables de routage des différents routeurs, en indiquant pour chaque routeur la distance, en nombre de sauts, qui le sépare d’un autre routeur. Pour le réseau ci-dessus, on dispose des tables de routage suivantes :</p>
+<p><img src="file:///mnt/TRAVAIL/3_NSI/NSITerm/docs/Archi_Materielle/data_sujet_0/sujet0_table1.png" alt="table">{:.center}</p>
+<p><img src="file:///mnt/TRAVAIL/3_NSI/NSITerm/docs/Archi_Materielle/data_sujet_0/sujet0_table2.png" alt="table">{:.center}</p>
+<p><img src="file:///mnt/TRAVAIL/3_NSI/NSITerm/docs/Archi_Materielle/data_sujet_0/sujet0_table3.png" alt="table">{:.center}</p>
+<p>!!! question &quot;Question 1&quot;</p>
+<pre><code>1. Le routeur A doit transmettre un message au routeur G, en effectuant un nombre minimal de sauts. Déterminer le trajet parcouru.  
+2. Déterminer une table de routage possible pour le routeur G obtenu à l’aide du protocole RIP.
+</code></pre>
+<p>!!! question &quot;Question 2&quot;
+Le routeur C tombe en panne. Reconstruire la table de routage du routeur A en suivant le protocole RIP.</p>
+<h3 id="%E2%9E%A1-le-protocole-ospf">➡ Le protocole OSPF</h3>
+<p>Contrairement au protocole RIP, l’objectif n’est plus de minimiser le nombre de routeurs traversés par un paquet. La notion de distance utilisée dans le protocole OSPF est uniquement liée aux coûts des liaisons.<br>
+L’objectif est alors de minimiser la somme des coûts des liaisons traversées.<br>
+Le coût d’une liaison est donné par la formule suivante :</p>
+<p>$coût = \dfrac{10^8}{d}$</p>
+<p>où $d$ est la bande passante en bits/s entre les deux routeurs.</p>
+<p>On a rajouté sur le graphe représentant le réseau précédent les différents débits des liaisons.<br>
+On rappelle que 1 Gb/s = 1 000 Mb/s = $10^9$ bits/s.</p>
+<p><img src="file:///mnt/TRAVAIL/3_NSI/NSITerm/docs/Archi_Materielle/data_sujet_0/ex5.png" alt="image">{:.center}</p>
+<p>!!! question &quot;Question 3&quot;</p>
+<pre><code>1. Vérifier que le coût de la liaison entre les routeurs A et B est 0,01.
+2. La liaison entre le routeur B et D a un coût de 5. Quel est le débit de cette liaison ?
+</code></pre>
+<p>!!! question &quot;Question 4&quot;</p>
+<pre><code>Le routeur A doit transmettre un message au routeur G, en empruntant le chemin dont la somme des coûts sera la plus petite possible. Déterminer le chemin parcouru. On indiquera le raisonnement utilisé.
+</code></pre>
+<h2 id="sujet-n%C2%B02">Sujet n°2</h2>
+<p>!!! exo
+<em>Cet exercice porte sur les réseaux et les protocoles de routage.</em></p>
+<p>On représente ci-dessous un réseau dans lequel R1, R2, R3, R4, R5 et R6 sont des routeurs. Le réseau local L1 est relié au routeur R1 et le réseau local L2 au routeur R6.</p>
+<p><img src="file:///mnt/TRAVAIL/3_NSI/NSITerm/docs/Archi_Materielle/data_sujet_1/sujet1_Ex5_Enonce.png" alt="image">{:.center}</p>
+<p><strong>Rappels et notations</strong><br>
+Dans cet exercice, les adresses IP sont composées de 4 octets, soit 32 bits. Elles sont notées X1.X2.X3.X4, où X1, X2, X3 et X4 sont les valeurs des 4 octets, convertis en notation décimale.<br>
+La notation X1.X2.X3.X4/n signifie que les n premiers bits de poids forts de l’adresse IP représentent la partie « réseau », les bits suivants représentent la partie « hôte ».<br>
+Toutes les adresses des hôtes connectés à un réseau local ont la même partie réseau et peuvent donc communiquer directement. L’adresse IP dont tous les bits de la partie « hôte » sont à 0 est appelée « adresse du réseau ».</p>
+<p>On donne également des extraits de la table de routage des routeurs R1 à R5 dans le tableau suivant :</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Routeur</th>
+<th style="text-align:center">Réseau destinataire</th>
+<th style="text-align:center">Passerelle</th>
+<th style="text-align:center">Interface</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">R1</td>
+<td style="text-align:center">54.37.122.0/24</td>
+<td style="text-align:center">86.154.10.1</td>
+<td style="text-align:center">86.154.10.56</td>
+</tr>
+<tr>
+<td style="text-align:center">R2</td>
+<td style="text-align:center">54.37.122.0/24</td>
+<td style="text-align:center">37.49.236.22</td>
+<td style="text-align:center">37.49.236.23</td>
+</tr>
+<tr>
+<td style="text-align:center">R3</td>
+<td style="text-align:center">54.37.122.0/24</td>
+<td style="text-align:center">62.34.2.8</td>
+<td style="text-align:center">62.34.2.9</td>
+</tr>
+<tr>
+<td style="text-align:center">R4</td>
+<td style="text-align:center">54.37.122.0/24</td>
+<td style="text-align:center">94.23.122.10</td>
+<td style="text-align:center">94.23.122.11</td>
+</tr>
+<tr>
+<td style="text-align:center">R5</td>
+<td style="text-align:center">54.37.122.0/24</td>
+<td style="text-align:center">218.32.15.1</td>
+<td style="text-align:center">218.32.15.2</td>
+</tr>
+</tbody>
+</table>
+<p>!!! question &quot;Question 1&quot;</p>
+<pre><code>Un paquet part du réseau local L1 à destination du réseau local L2.  
+
+a. En utilisant l’extrait de la table de routage de R1, vers quel routeur R1 envoie-t-il ce paquet : R2 ou R3 ? Justifier.  
+b. A l’aide des extraits de tables de routage ci-dessus, nommer les routeurs traversés par ce paquet, lorsqu’il va du réseau L1 au réseau L2.
+</code></pre>
+<p>!!! question &quot;Question 2&quot;</p>
+<pre><code>La liaison entre R1 et R2 est rompue.  
+   
+a. Sachant que ce réseau utilise le protocole RIP (distance en nombre de sauts), donner l’un des deux chemins possibles que pourra suivre un paquet allant de L1 vers L2.  
+b. Dans les extraits de tables de routage ci-dessus, pour le chemin de la question 2.a, quelle(s) ligne(s) sera (seront) modifiée(s) ?
+</code></pre>
+<p>!!! question &quot;Question 3&quot;</p>
+<pre><code>On a rétabli la liaison entre R1 et R2.  
+Par ailleurs, pour tenir compte du débit des liaisons, on décide d’utiliser le protocole OSPF (distance liée au coût minimal des liaisons) pour effectuer le routage. Le coût des liaisons entre les routeurs est donné par le tableau suivant : 
+
+|Liaison |R1-R2 |R1-R3 |R2-R3 |R2-R4 |R2-R5 |R2-R6 |R3-R4 |R4-R5 |R4-R6 |R5-R6|
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+|Coût | 100|100|?|1|10|10|10|1|10|1|
+
+a. Le coût $C$ d'une liaison est donné ici par la formule ଽ  
+
+$C=\dfrac{10^9}{BP}$
+
+où $BP$ est la bande passante de la connexion en bps (bit par seconde).  
+Sachant que la bande passante de la liaison R2-R3 est de 10 Mbps, calculer le coût correspondant.  
+b. Déterminer le chemin parcouru par un paquet partant du réseau L1 et arrivant au réseau L2, en utilisant le protocole OSPF.  
+c. Indiquer pour quel(s) routeur(s) l’extrait de la table de routage sera modifié pour un paquet à destination de L2, avec la métrique OSPF.
+</code></pre>
+<p>!!! info &quot;Annexe&quot;
+<img src="file:///mnt/TRAVAIL/3_NSI/NSITerm/docs/Archi_Materielle/data_sujet_2/sujet2_Ex3_Annexe.png" alt="image">{:.center}</p>
+<h2 id="sujet-n%C2%B03--2022-m%C3%A9tropole-j2">Sujet n°3 : 2022, Métropole, J2</h2>
+<p>!!! exo &quot; D'après 2022, Métropole, J2, Ex. 3&quot;</p>
+<p><strong>Rappels :</strong></p>
+<p>Une adresse IPv4 est composée de 4 octets, soit 32 bits. Elle est notée <code>a.b.c.d</code>, où <code>a</code>, <code>b</code>, <code>c</code> et <code>d</code> sont les valeurs des 4 octets.</p>
+<p>La notation <code>a.b.c.d/n</code> signifie que les <code>n</code> premiers bits de l'adresse IP représentent la partie « réseau », les bits qui suivent représentent la partie « machine ».</p>
+<p>L'adresse IPv4 dont tous les bits de la partie « machine » sont à 0 est appelée « adresse du réseau ».</p>
+<p>L'adresse IPv4 dont tous les bits de la partie « machine » sont à 1 est appelée « adresse de diffusion ».</p>
+<p>On considère le réseau représenté sur la ci-dessous :</p>
+<p><img src="file:///mnt/TRAVAIL/3_NSI/NSITerm/docs/Archi_Materielle/images_22-ME2-ex3/reseau_clair.svg%23only-light" alt="Réseau">{width=75%}
+<img src="file:///mnt/TRAVAIL/3_NSI/NSITerm/docs/Archi_Materielle/images_22-ME2-ex3/reseau_sombre.svg%23only-dark" alt="Réseau">{width=75%}</p>
+<p>!!! question &quot;Question 1&quot;
+On considère la machine d'adresse IPv4 <code>192.168.1.1</code>.</p>
+<pre><code>**1.a.** Donner l'adresse du réseau sur lequel se trouve cette machine.
+
+**1.b.** Donner l'adresse de diffusion (broadcast) de ce réseau.
+
+**1.c.** Donner le nombre maximal de machines que l'on peut connecter sur ce réseau.
+
+**1.d.** On souhaite ajouter une machine sur ce réseau, proposer une adresse IPv4 possible pour cette machine.
+</code></pre>
+<p>!!! question &quot;Question 2&quot;
+La machine d'adresse IPv4 <code>192.168.1.1</code> transmet un paquet IPv4 à la machine d'adresse IPv4 <code>192.168.4.2</code>.</p>
+<pre><code>**2.a.**  Donner toutes les routes pouvant être empruntées par ce paquet IPv4, chaque routeur ne pouvant être traversé qu'une seule fois.
+
+
+**2.b.** Expliquer l'utilité d'avoir plusieurs routes possibles reliant les réseaux `192.168.1.0/24` et `192.168.4.0/24`.
+</code></pre>
+<p>!!! question &quot;Question 3&quot;
+Dans cette question, on suppose que le protocole de routage mis en place dans le réseau est RIP. Ce protocole consiste à minimiser le nombre de sauts.</p>
+<pre><code>Le schéma du réseau est celui de la figure ci-dessus.
+
+Les tables de routage utilisées sont données ci-dessous :
+
+=== &quot;Routeur A&quot;
+
+    | Destination | passe par |
+    | :---------: | :-------: |
+    |      B      |    ...    |
+    |      C      |    ...    |
+    |      D      |     E     |
+    |      E      |    ...    |
+    |      F      |     C     |
+
+=== &quot;Routeur B&quot;
+
+    | Destination | passe par |
+    | :---------: | :-------: |
+    |      A      |     A     |
+    |      C      |     C     |
+    |      D      |     C     |
+    |      E      |     C     |
+    |      F      |     C     |
+
+=== &quot;Routeur C&quot;
+
+    | Destination | passe par |
+    | :---------: | :-------: |
+    |      A      |     A     |
+    |      B      |     B     |
+    |      D      |     E     |
+    |      E      |     E     |
+    |      F      |     F     |
+
+=== &quot;Routeur D&quot;
+
+    | Destination | passe par |
+    | :---------: | :-------: |
+    |      A      |     E     |
+    |      B      |     F     |
+    |      C      |     F     |
+    |      E      |     E     |
+    |      F      |     F     |
+
+=== &quot;Routeur E&quot;
+
+    | Destination | passe par |
+    | :---------: | :-------: |
+    |      A      |     A     |
+    |      B      |     C     |
+    |      C      |     C     |
+    |      D      |     D     |
+    |      F      |     C     |
+
+=== &quot;Routeur F&quot;
+
+    | Destination | passe par |
+    | :---------: | :-------: |
+    |      A      |     C     |
+    |      B      |     C     |
+    |      C      |     C     |
+    |      D      |     D     |
+    |      E      |     C     |
+
+**3.a.** Recopier et compléter sur la copie la table de routage du routeur A.
+
+
+
+**3.b.** Un paquet IP doit aller du routeur B au routeur D. En utilisant les tables de routage, donner le parcours emprunté par celui-ci.
+
+
+**3.c.** Les connexions entre les routeurs B-C et A-E étant coupées, sur la copie, réécrire les tables de routage des routeurs A, B et C.
+
+**3.d.** Déterminer le nouveau parcours emprunté par le paquet IP pour aller du routeur B au routeur D.
+</code></pre>
+<p>!!! question &quot;Question 4&quot;
+Dans cette question, on suppose que le protocole de routage mis en place dans le réseau est OSPF. Ce protocole consiste à minimiser la somme des coûts des liaisons empruntées.</p>
+<pre><code>Le coût d'une liaison est défini par la relation $\mathrm{coût} = \frac{10^8}{d}$ où $d$ représente le débit en $\mathrm{bit}/\mathrm{s}$ et $\mathrm{coût}$ est sans unité. Le schéma du réseau reste celui du début de l'exercice.
+
+**4.a.** Déterminer le coût des liaisons Ethernet ($d = 10^7\,\mathrm{bit}/\mathrm{s}$), Fast-Ethernet ($d = 10^8\,\mathrm{bit}/\mathrm{s}$) et Fibre ($d = 10^9\,\mathrm{bit}/\mathrm{s}$).
+
+**4.b.** On veut représenter schématiquement le réseau de routeurs à partir du schéma du réseau.
+
+Recopier sur la copie le schéma ci-dessous et tracer les liaisons entre les routeurs en y indiquant leur coût.
+
+```mermaid
+graph LR
+    A[(A)] ---  B[(B)]
+    A ---  C[(C)]
+    A ---  E[(E)]
+    B ---  C
+    C ---  E
+    E ---  D[(D)]
+    D ---  F[(F)]
+    C --- F
+    linkStyle 0 stroke-width:0;
+    linkStyle 1 stroke-width:0;
+    linkStyle 2 stroke-width:0;
+    linkStyle 3 stroke-width:0;
+    linkStyle 4 stroke-width:0;
+    linkStyle 5 stroke-width:0;
+    linkStyle 6 stroke-width:0;
+    linkStyle 7 stroke-width:0;
+```
+
+**4.c.** Un paquet IPv4 doit être acheminé d'une machine ayant pour adresse IPv4 `192.168.2.1` à une machine ayant pour adresse IPv4 `192.168.4.1`.
+
+Écrire les routes possibles, c'est à dire la liste des routeurs traversés, et le coût de chacune de ces routes, chaque routeur ne pouvant être traversé qu'une seule fois.
+
+
+**4.d.** Donner, en la justifiant, la route qui sera empruntée par un paquet IPv4 pour aller d'une machine ayant pour adresse IPv4 `192.168.2.1` à une machine ayant pour adresse IPv4 `192.168.4.1`.
+</code></pre>
+<h2 id="sujet-n%C2%B04--2022-m%C3%A9tropole-j1">Sujet n°4 : 2022, Métropole, J1</h2>
+<p>!!! exo &quot;: D'après 2022, Métropole J1&quot;</p>
+<p>!!! question &quot;Question 1&quot;
+Une adresse IPv4 est représentée sous la forme de 4 nombres entiers positifs séparés par des points. Chacun de ces 4 entiers peut être représenté sur un octet.</p>
+<pre><code>**1.a.** Donner en écriture décimale l'adresse IPv4 correspondant à l'écriture binaire : `11000000.10101000.10000000.10000011`
+
+**1.b** Tous les ordinateurs du réseau A ont une adresse IPv4 de la forme : `192.168.128.___`, où seul le dernier octet (représenté par `___` ) diffère.
+
+Donner le nombre d'adresses différentes possibles du réseau A.
+</code></pre>
+<p>!!! question &quot;Question 2&quot;
+On rappelle que le protocole RIP cherche à minimiser le nombre de routeurs traversés (qui correspond à la métrique). On donne les tables de routage d'un réseau informatique composé de 5 routeurs (appelés A, B, C, D et E), chacun associé directement à un réseau du même nom, obtenues avec le protocole RIP :</p>
+<pre><code>=== &quot;Routeur A&quot;
+
+    | Destination | Métrique |
+    |---|---|
+    | A | 0 |
+    | B | 1 |
+    | C | 1 |
+    | D | 1 |
+    | E | 2 |
+    
+=== &quot;Routeur B&quot;
+
+    | Destination | Métrique |
+    |---|---|
+    | A | 1 |
+    | B | 0 |
+    | C | 2 |
+    | D | 1 |
+    | E | 2 |
+    
+=== &quot;Routeur C&quot;
+
+    | Destination | Métrique |
+    |---|---|
+    | A | 1 |
+    | B | 2 |
+    | C | 0 |
+    | D | 1 |
+    | E | 2 |
+    
+    
+=== &quot;Routeur D&quot;
+
+    | Destination | Métrique |
+    |---|---|
+    | A | 1 |
+    | B | 1 |
+    | C | 1 |
+    | D | 0 |
+    | E | 1 |
+    
+    
+=== &quot;Routeur E&quot;
+
+    | Destination | Métrique |
+    |---|---|
+    | A | 2 |
+    | B | 2 |
+    | C | 2 |
+    | D | 1 |
+    | E | 0 |
+    
+
+
+**2.a.** Donner la liste des routeurs avec lesquels le routeur A est directement relié.
+
+
+**2.b.** Représenter graphiquement et de manière sommaire les 5 routeurs ainsi que les liaisons existantes entre ceux-ci.
+</code></pre>
+<p>!!! question &quot;Question 3&quot;</p>
+<pre><code>Le protocole OSPF est un protocole de routage qui cherche à minimiser la somme des métriques des liaisons entre routeurs.  
+Dans le protocole de routage OSPF le débit des liaisons entre routeurs agit sur la métrique via la relation : $\text{métrique} = \dfrac{10^8}{\text{débit}}$ dans laquelle le débit est exprimé en bit par seconde ($\text{bps}$).
+
+On rappelle qu'un $\text{kbps}$ est égal à $10^3~\text{bps}$ et qu'un $\text{Mbps}$ est égal à $10^6~\text{bps}$.
+
+Recopier sur votre copie et compléter le tableau suivant :
+
+|   |   |   |   |   |
+|---|---|---|---|---|
+| Débit              | $100~\text{kbps}$ | $500~\text{kbps}$ | ...  |  $100~\text{Mbps}$ |
+| Métrique associée  | $1000$            | ...               | $10$ |  $1$               |
+</code></pre>
+<p>!!! question &quot;Question 4&quot;
+Voici la représentation d'un réseau et la table de routage incomplète du routeur F obtenue avec le protocole OSPF :</p>
+<pre><code>![](data/reseau.svg){ .autolight }
+
+!!! abstract &quot;Routeur F&quot;
+
+    | Destination | Métrique |
+    |-------------|----------|
+    | F | 0 |
+    | G | 8 |
+    | H | 5 |
+    | I |   |
+    | J |   |
+    | K |   |
+    | L |   |
+
+
+Les nombres présents sur les liaisons représentent les coûts des routes avec le
+protocole OSPF.
+
+**4.a.** Indiquer le chemin emprunté par un message d'un ordinateur du réseau F à destination d'un ordinateur du réseau I. Justifier votre réponse.
+
+
+
+**4.b.** Recopier et compléter la table de routage du routeur F.
+
+
+
+
+**4.c.** Citer une unique panne qui suffirait à ce que toutes les données des échanges de tout autre réseau à destination du réseau F transitent par le routeur G. Expliquer en détail votre réponse.
+</code></pre>
+
+</body>
+</html>

@@ -1,0 +1,2255 @@
+<!-- Ajout pour le bouton de téléchargement et le style des jupyter notebook   https://github.com/danielfrg/mkdocs-jupyter -->
+
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Cours et TD de l'année en cours">
+      
+      
+        <meta name="author" content="M.Meyroneinc-Condy">
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../images/dragon.svg">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.8">
+    
+    
+      
+        <title>Thème 1 - Structure de données - NSI Terminale 2022-2023</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.4b4a2bd9.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.356b1318.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rod2ik/cdn@main/mkdocs/css/massilia-admonitions.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#poo-td" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="../.." title="NSI Terminale 2022-2023" class="md-header__button md-logo" aria-label="NSI Terminale 2022-2023" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="m352 124.5-51.9-13c-6.5-1.6-11.3-7.1-12-13.8s2.8-13.1 8.7-16.1l40.8-20.4-43.2-32.4c-5.5-4.1-7.8-11.3-5.6-17.9S297.1 0 304 0h160c30.2 0 58.7 14.2 76.8 38.4l57.6 76.8c6.2 8.3 9.6 18.4 9.6 28.8 0 26.5-21.5 48-48 48h-21.5c-17 0-33.3-6.7-45.3-18.7L480 160h-32v21.5c0 24.8 12.8 47.9 33.8 61.1l106.6 66.6c32.1 20.1 51.6 55.2 51.6 93.1 0 60.6-49.1 109.7-109.8 109.7H32.3c-3.3 0-6.6-.4-9.6-1.4-9.2-2.8-16.7-9.6-20.3-18.5C1 488.7.2 485.2 0 481.4c-.2-3.7.3-7.3 1.3-10.7 2.8-9.2 9.6-16.7 18.6-20.4 3-1.2 6.2-2 9.5-2.2L433.3 412c8.3-.7 14.7-7.7 14.7-16.1 0-4.3-1.7-8.4-4.7-11.4l-44.4-44.4c-30-30-46.9-70.7-46.9-113.1V124.5zm160-52.2v-.6.6zm-1.3 7.4-46.4-11.6c-.2 1.3-.3 2.6-.3 3.9 0 13.3 10.7 24 24 24 10.6 0 19.5-6.8 22.7-16.3zm-379.8 36.8c16.3-14.5 40.4-16.2 58.5-4.1l130.6 87V227c0 32.8 8.4 64.8 24 93H112c-6.7 0-12.7-4.2-15-10.4s-.5-13.3 4.6-17.7l69.4-59.6-152.6 23.5c-7 1.1-13.9-2.6-16.9-9S0 232.7 5.3 228l125.6-111.5z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            NSI Terminale 2022-2023
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Thème 1 - Structure de données
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue"  aria-label="Basculer en mode sombre"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Basculer en mode sombre" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9v1Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="blue"  aria-label="Basculer en mode clair"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Basculer en mode clair" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Recherche">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Effacer" aria-label="Effacer" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Onglets" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  Accueil
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../index_structDonnees/" class="md-tabs__link">
+          
+  
+    
+  
+  T1 - Struct. données
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../BasesDonnees/index_bd/" class="md-tabs__link">
+          
+  
+    
+  
+  T2 - Bases données
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Archi_Materielle/index_archi/" class="md-tabs__link">
+          
+  
+    
+  
+  T3 - Archi. mat.
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Programmation/index_prog/" class="md-tabs__link">
+          
+  
+    
+  
+  T4 - Prog.
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Algo/index_algo/" class="md-tabs__link">
+          
+  
+    
+  
+  T5 Algo.
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../BAC/bac_explication/" class="md-tabs__link">
+          
+  
+    
+  
+  BAC 📝
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../epreuve_pratique/" class="md-tabs__link">
+          
+  
+    
+  
+  Annales E.P. 💻
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../divers/prog/" class="md-tabs__link">
+          
+  
+    
+  
+  Extras
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../credit/" class="md-tabs__link">
+        
+  
+    
+  
+  Crédits
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="NSI Terminale 2022-2023" class="md-nav__button md-logo" aria-label="NSI Terminale 2022-2023" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="m352 124.5-51.9-13c-6.5-1.6-11.3-7.1-12-13.8s2.8-13.1 8.7-16.1l40.8-20.4-43.2-32.4c-5.5-4.1-7.8-11.3-5.6-17.9S297.1 0 304 0h160c30.2 0 58.7 14.2 76.8 38.4l57.6 76.8c6.2 8.3 9.6 18.4 9.6 28.8 0 26.5-21.5 48-48 48h-21.5c-17 0-33.3-6.7-45.3-18.7L480 160h-32v21.5c0 24.8 12.8 47.9 33.8 61.1l106.6 66.6c32.1 20.1 51.6 55.2 51.6 93.1 0 60.6-49.1 109.7-109.8 109.7H32.3c-3.3 0-6.6-.4-9.6-1.4-9.2-2.8-16.7-9.6-20.3-18.5C1 488.7.2 485.2 0 481.4c-.2-3.7.3-7.3 1.3-10.7 2.8-9.2 9.6-16.7 18.6-20.4 3-1.2 6.2-2 9.5-2.2L433.3 412c8.3-.7 14.7-7.7 14.7-16.1 0-4.3-1.7-8.4-4.7-11.4l-44.4-44.4c-30-30-46.9-70.7-46.9-113.1V124.5zm160-52.2v-.6.6zm-1.3 7.4-46.4-11.6c-.2 1.3-.3 2.6-.3 3.9 0 13.3 10.7 24 24 24 10.6 0 19.5-6.8 22.7-16.3zm-379.8 36.8c16.3-14.5 40.4-16.2 58.5-4.1l130.6 87V227c0 32.8 8.4 64.8 24 93H112c-6.7 0-12.7-4.2-15-10.4s-.5-13.3 4.6-17.7l69.4-59.6-152.6 23.5c-7 1.1-13.9-2.6-16.9-9S0 232.7 5.3 228l125.6-111.5z"/></svg>
+
+    </a>
+    NSI Terminale 2022-2023
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Accueil
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    T1 - Struct. données
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            T1 - Struct. données
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index_structDonnees/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Structures de données
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    T2 - Bases données
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            T2 - Bases données
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BasesDonnees/index_bd/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Base de données
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BasesDonnees/Modele_Relationnel/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📓 C1 Modèle relationnel
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BasesDonnees/Cours_TP_SQL/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📓 C2 Langage SQL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BasesDonnees/SQL_BAC/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📝 S2 BAC SQL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BasesDonnees/SQL_BAC_correction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📝 S2 BAC SQL Correction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    T3 - Archi. mat.
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            T3 - Archi. mat.
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Archi_Materielle/index_archi/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Architecture matérielle et OS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    T4 - Prog.
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            T4 - Prog.
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programmation/index_prog/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Programmation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programmation/T1_1_Recursivite/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📓 C3 Récursivité
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    T5 Algo.
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            T5 Algo.
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Algo/index_algo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Algorithmique
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    BAC 📝
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            BAC 📝
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BAC/bac_explication/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Information
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    2023
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_2">
+            <span class="md-nav__icon md-icon"></span>
+            2023
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annales/2023/EE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Epreuves écrites
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_3" id="__nav_7_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    2022
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_3">
+            <span class="md-nav__icon md-icon"></span>
+            2022
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annales/2022/EE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Epreuves écrites
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_4" id="__nav_7_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    2021
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_4">
+            <span class="md-nav__icon md-icon"></span>
+            2021
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annales/2021/EE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Epreuves écrites
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Annales E.P. 💻
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Annales E.P. 💻
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../epreuve_pratique/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Déroulement
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../divers/Consigne_EP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Consigne
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../divers/lien/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    S'entrainer en ligne pour l'épreuve pratique
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_4" id="__nav_8_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    2023
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_4">
+            <span class="md-nav__icon md-icon"></span>
+            2023
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annales/2023/EP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Epreuves pratiques
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Extras
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Extras
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../divers/prog/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Divers concours programmation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Projet/forcebrute/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Force brute
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Projet/cryptographie/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cryptographie
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Projet/cryptographie2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cryptographie bis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Projet/pyxel/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    pyxel
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../divers/sujet0_geipi.pdf" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Epreuve GEIPI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../credit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Crédits
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#exercice-1-dapres-bac-locations-de-chambres" class="md-nav__link">
+    Exercice 1 : (d'après Bac)  - Locations de chambres.
+  </a>
+  
+    <nav class="md-nav" aria-label="Exercice 1 : (d'après Bac) - Locations de chambres.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#partie-a-etude-de-la-classe-chambre" class="md-nav__link">
+    Partie A - Étude de la classe Chambre :
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#partie-b-etude-de-la-classe-gite" class="md-nav__link">
+    Partie B - Étude de la classe Gite :
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercice-2-dapres-bac-pots-de-yaourts" class="md-nav__link">
+    Exercice 2 : (d'après Bac) - Pots de yaourts "
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+
+
+
+
+
+                  
+
+
+<h1 id="poo-td">POO : TD<a class="headerlink" href="#poo-td" title="Permanent link">⚓︎</a></h1>
+<table  style="border: 1px solid;  background-color: #FC6B3C;  width: 100%;  color: black;  text-align: center; font-size: 18px;">
+        <tr>
+            <th style="background-color: #FC6B3C;width: 100%; text-align:center;border:none;font-size:14pt;">
+            Thème 1 - Structure de données
+            </th>
+        </tr>
+</table>
+
+<p><br></p>
+<table  style="border: 1px;  background-color: #FC6B3C;  width: 100%;  color: black;  text-align: center;font-size: 18px;">
+        <tr >
+            <th width="20%"; style="background-color: #3B444B;color:white;text-align:center;border:none;font-size:40pt;">
+            BAC
+            </th>
+            <th  width="80%"; style="background-color: #FC6B3C;text-align:center;border:none;font-size:25pt;">TD : Sujet BAC  Programmation Orientée Objet (POO)</th>
+        </tr>
+</table>
+
+<h2 id="exercice-1-dapres-bac-locations-de-chambres">Exercice 1 : (d'après Bac)  - Locations de chambres.<a class="headerlink" href="#exercice-1-dapres-bac-locations-de-chambres" title="Permanent link">⚓︎</a></h2>
+<div class="admonition voc">
+<p class="admonition-title">Principaux thèmes abordés :</p>
+<p>Structure de données (programmation objet) et langages et programmation (spécification).</p>
+</div>
+<p>La société LOCAVACANCES doit gérer la réservation de l’ensemble des chambres de ses gîtes. Chaque chambre d’un même complexe sera différenciée par son nom.  </p>
+<p>Pour cela, d’un point de vue informatique, on a créé deux classes : <code>Chambre</code> et <code>Gite</code> dont le code ci-dessous.</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">class</span> <span class="nc">Chambre</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nom</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_nom</span> <span class="o">=</span> <span class="n">nom</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_occupation</span> <span class="o">=</span> <span class="p">[</span><span class="kc">False</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">365</span><span class="p">)]</span>
+
+        <span class="k">def</span> <span class="nf">get_nom</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_nom</span>
+
+        <span class="k">def</span> <span class="nf">get_occupation</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_occupation</span>
+
+        <span class="k">def</span> <span class="nf">reserver</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">date</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_occupation</span><span class="p">[</span><span class="n">date</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="k">class</span> <span class="nc">Gite</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nom</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_nom</span> <span class="o">=</span> <span class="n">nom</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_chambres</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_chambres</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s2">&quot;L&#39;hôtel &quot;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_nom</span> <span class="o">+</span> <span class="s2">&quot; n’a aucune chambre.&quot;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s2">&quot;L’hôtel &quot;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_nom</span> <span class="o">+</span> <span class="s2">&quot; a &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; chambre(s)&quot;</span>
+
+    <span class="k">def</span> <span class="nf">get_chambres</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_chambres</span>
+
+    <span class="k">def</span> <span class="nf">get_nchambres</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">ch</span><span class="o">.</span><span class="n">get_nom</span><span class="p">()</span> <span class="k">for</span> <span class="n">ch</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_chambres</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">ajouter_chambres</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nom_ch</span> <span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_chambres</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Chambre</span><span class="p">(</span><span class="n">nom_ch</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">mystere</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">date</span><span class="p">):</span>
+        <span class="n">l_ch</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">ch</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_chambres</span> <span class="p">:</span>
+            <span class="k">if</span> <span class="n">ch</span><span class="o">.</span><span class="n">get_occupation</span><span class="p">()[</span><span class="n">date</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="kc">False</span> <span class="p">:</span>
+                <span class="n">l_ch</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ch</span><span class="o">.</span><span class="n">get_nom</span><span class="p">())</span>
+        <span class="k">return</span><span class="p">(</span><span class="n">l_ch</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="partie-a-etude-de-la-classe-chambre">Partie A - Étude de la classe <code>Chambre</code> :<a class="headerlink" href="#partie-a-etude-de-la-classe-chambre" title="Permanent link">⚓︎</a></h3>
+<ol>
+<li>Lister les attributs en donnant leur type. Préciser s’ils sont modifiables dans la classe, en explicitant la méthode associée.</li>
+</ol>
+<details class="check">
+<summary>Réponse :</summary>
+<p>Les attributs sont en principe définis et initialisés dans la méthode <code>__init__</code>. On les désigne en faisant précéder leur nom du mot réservé <code>self</code>. Ici on a donc les attributs appelés <code>_nom</code> et <code>_occupation</code> .  </p>
+<p>On constate que lors de l'initialisation la valeur attribuée à <code>_nom</code> est le paramètre <code>nom</code> de la méthode <code>__init__</code> , dont le type est précisé comme étant <code>str</code>, c'est à dire chaîne de caractères. </p>
+<p><code>_occupation</code> est initialisé sous la forme d'une liste de valeurs booléennes (définie en compréhension)</p>
+<p>La méthode <code>reserver</code> permet de modifier la valeur de l'attribut <code>_occupation</code>.</p>
+</details>
+<ol>
+<li>Écrire un <code>assert</code> dans la méthode <code>reserver</code> pour vérifier si le nombre <code>date</code> passé en paramètre est bien compris entre 1 et 365 (on ne gère pas les années bissextiles).</li>
+</ol>
+<details class="check">
+<summary>Réponse :</summary>
+<p>Modification de la méthode <code>reserver</code>:     </p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">def</span> <span class="nf">reserver</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">date</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+    <span class="k">assert</span> <span class="n">date</span> <span class="o">&gt;=</span><span class="mi">1</span> <span class="ow">and</span> <span class="n">date</span> <span class="o">&lt;=</span><span class="mi">365</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_occupation</span><span class="p">[</span><span class="n">date</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+</code></pre></div>
+<p>ou   </p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">def</span> <span class="nf">reserver</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">date</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+    <span class="k">assert</span> <span class="mi">1</span><span class="o">&lt;=</span> <span class="n">date</span> <span class="o">&lt;=</span><span class="mi">365</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_occupation</span><span class="p">[</span><span class="n">date</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+</code></pre></div>
+</details>
+<ol>
+<li>Écrire la méthode <code>annuler_reserver(self, date : int)</code>  qui annule la réservation pour le jour <code>date</code>.</li>
+</ol>
+<details class="check">
+<summary>Réponse :</summary>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">def</span> <span class="nf">annuler_reserver</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">date</span><span class="p">:</span><span class="nb">int</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_occupation</span><span class="p">[</span><span class="n">date</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span> 
+</code></pre></div>
+</details>
+<h3 id="partie-b-etude-de-la-classe-gite">Partie B - Étude de la classe <code>Gite</code> :<a class="headerlink" href="#partie-b-etude-de-la-classe-gite" title="Permanent link">⚓︎</a></h3>
+<p>Le gîte « BonneNuit » a 5 chambres dénommées :  </p>
+<p>'Ch1', 'Ch2', 'Ch3', 'Ch4', 'Ch5'</p>
+<p>On définit l’objet <code>giteBN</code> par l’instruction : <code>giteBN = Gite("BonneNuit")</code>.  </p>
+<ol>
+<li>Méthode <code>ajouter_chambres()</code>  </li>
+</ol>
+<p>Écrire l’instruction Python pour ajouter <code>'Ch1'</code> à l’objet <code>giteBN</code>.</p>
+<details class="check">
+<summary>Réponse :</summary>
+<p>Ajout d'une chambre à <code>giteBN</code> en appelant sa méthode <code>ajouter_chambre</code> avec en paramètre le nom de la chambre  : </p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">giteBN</span><span class="o">.</span><span class="n">ajouter_chambres</span><span class="p">(</span><span class="s1">&#39;Ch1&#39;</span><span class="p">)</span>
+</code></pre></div>
+</details>
+<p>Dans les questions suivantes 2, 3 et 4, on considère que l’objet <code>giteBN</code>  contient toutes les chambres du gite « BonneNuit ».    </p>
+<ol>
+<li>La méthode <code>ajouter_chambres</code> permet d’enregistrer une nouvelle chambre, mais elle ne teste pas si le nom de cette chambre existe déjà.<br />
+Modifier la méthode pour éviter cet éventuel doublon.</li>
+</ol>
+<details class="check">
+<summary>Réponse :</summary>
+<p>Les chambres sont enregistrées dans l'attribut <code>_chambres</code> de l'objet gite. Il faut inspecter tous les noms de chambre dans cette liste pour savoir si le nouveau nom proposé existe déjà.<br />
+La méthode <code>get_nchambres</code> renvoie la liste des noms de toutes les chambres du gite. On peut donc faire : </p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">def</span> <span class="nf">ajouter_chambres</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nom_ch</span> <span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">nom_ch</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_nchambres</span><span class="p">():</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_chambres</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Chambre</span><span class="p">(</span><span class="n">nom_ch</span><span class="p">))</span>
+</code></pre></div>
+<p>ou bien, sans utiliser <code>get_nchambres</code>, une démarche classique où l'on parcourt la liste de chambres en positionnant un indicateur booléen (<code>nom_nouveau</code>) pour signaler éventuellement que le nom choisi existait déjà : </p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">def</span> <span class="nf">ajouter_chambres</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nom_ch</span> <span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+    <span class="n">nom_nouveau</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="k">for</span> <span class="n">chambre</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_chambres</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">chambre</span><span class="o">.</span><span class="n">get_nom</span><span class="p">()</span> <span class="o">==</span> <span class="n">nom_ch</span><span class="p">:</span>
+            <span class="n">nom_nouveau</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="k">if</span> <span class="n">nom_nouveau</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_chambres</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Chambre</span><span class="p">(</span><span class="n">nom_ch</span><span class="p">))</span>
+</code></pre></div>
+</details>
+<ol>
+<li>Étude des méthodes : <code>get_chambres()</code> et <code>get_nchambres()</code>.  </li>
+</ol>
+<p>a. Parmi les 4 propositions ci-dessous, quel est le type renvoyé par l’instruction Python : <code>giteBN.get_chambres()</code> .</p>
+<ul>
+<li>String </li>
+<li>Objet Chambre</li>
+<li>Tableau de String </li>
+<li>Tableau d’objets Chambre</li>
+</ul>
+<details class="check">
+<summary>Réponse :</summary>
+<p>Cette méthode renvoie la valeur de l'attribut <code>_chambres</code> , qui est une liste. La méthode <code>ajouter_chambres</code> de la classe gite modifie cette liste en lui ajoutant un nouvel objet Chambre (créé par l'appel de <code>Chambre(nom_ch)</code>) . </p>
+<p>La réponse est donc "tableau d’objets Chambre" (une liste Python est un tableau dynamique)</p>
+</details>
+<p>b. Qu’affiche la suite d’instructions suivante ?</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">ch</span> <span class="o">=</span> <span class="n">giteBN</span><span class="o">.</span><span class="n">get_chambres</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ch</span><span class="o">.</span><span class="n">get_nom</span><span class="p">())</span>
+</code></pre></div>
+<details class="check">
+<summary>Réponse :</summary>
+<p>La première ligne récupère le second élément de la liste des chambres et la seconde affiche le nom de cette chambre.</p>
+</details>
+<p>c. Quelle différence existe-t-il entre les deux méthodes <code>get_nchambres()</code>  et <code>get_chambres()</code> ?</p>
+<details class="check">
+<summary>Réponse :</summary>
+<p>La méthode <code>get_nchambres</code> renvoie une liste de chaines de caractères qui sont les noms des chambres, et <code>get_chambres</code> renvoie une liste d'objets Chambre.</p>
+</details>
+<ol>
+<li>Les chambres <code>'Ch1', 'Ch3', Ch5'</code> sont réservées pour tout le mois de Janvier 2021.</li>
+</ol>
+<p>a. Que va renvoyer l’instruction <code>giteBN.mystere(3)</code> ?   </p>
+<details class="check">
+<summary>Réponse :</summary>
+<p>La méhode <code>mystere</code> renvoie une liste à laquelle ont été ajoutés les noms des chambres du gite à condition qu'elles ne soient pas réservées à la date passée en paramètre.  </p>
+<p>Donc <code>giteBN.mystere(3)</code> va renvoyer la liste des noms des chambres du gite "BonneNuit" disponibles le 4 janvier. Cette liste ne contiendra pas les noms <code>'Ch1', 'Ch3', Ch5'</code> puisque ces chambres sont réservées en Janvier. Elle contiendra peut-être <code>'Ch2'</code> et <code>'Ch4'</code> dont on ne sait pas si elles sont réservées le 4 janvier.</p>
+</details>
+<p>b. Dans la méthode <code>mystere</code>  de la classe <code>Gite</code> , quel est le type des variables en paramètre et en sortie ? Quelles sont les méthodes ou attributs dont cette méthode a besoin ?</p>
+<details class="check">
+<summary>Réponse :</summary>
+<p>La méthode <code>mystere</code> prend comme paramètre <code>date</code>, qui est un entier (<code>int</code>). </p>
+<p>Elle retourne une liste Python. </p>
+<p>Elle a besoin de l'attribut <code>_chambres</code> des la classe <code>Gite</code> (ainsi que de la méthode <code>get_occupation</code> et <code>get_nom</code> de la classe <code>Chambre</code> , et la méthode <code>append</code> de la classe <code>list</code>. La question n'est pas très précise quand à ce qui est attendu)</p>
+</details>
+<h2 id="exercice-2-dapres-bac-pots-de-yaourts">Exercice 2 : (d'après Bac) - Pots de yaourts "<a class="headerlink" href="#exercice-2-dapres-bac-pots-de-yaourts" title="Permanent link">⚓︎</a></h2>
+<div class="admonition voc">
+<p class="admonition-title">Principaux thèmes abordés :</p>
+<p>structure de données (programmation objet) et langages et programmation (spécification).</p>
+</div>
+<p>Une entreprise fabrique des yaourts qui peuvent être soit nature (sans arôme), soit aromatisés (fraise, abricot ou vanille).  </p>
+<p>Pour pouvoir traiter informatiquement les spécificités de ce produit, on va donc créer une classe Yaourt qui possèdera un certain nombre d’attributs :</p>
+<ul>
+<li>Son genre : nature ou aromatisé</li>
+<li>Son arôme : fraise, abricot, vanille ou aucun</li>
+<li>Sa date de durabilité minimale (DDM) exprimée par un entier compris entre 1 et 365 (on ne gère pas les années  bissextiles). Par exemple, si la DDM est égale à 15, la date de durabilité minimale est le 15 janvier.</li>
+</ul>
+<p>On va créer également des méthodes permettant d’interagir avec l’objet Yaourt pour attribuer un arôme ou récupérer un genre par exemple. On peut représenter cette classe par le tableau de spécifications ci-dessous :</p>
+<table>
+<thead>
+<tr>
+<th>Yaourt</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">ATTRIBUTS</th>
+<th style="text-align: right;">METHODES</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">genre</td>
+<td style="text-align: right;">construire(arome,duree)</td>
+</tr>
+<tr>
+<td style="text-align: left;">arome</td>
+<td style="text-align: right;">obtenir_arome()</td>
+</tr>
+<tr>
+<td style="text-align: left;">duree</td>
+<td style="text-align: right;">obtenir_genre()</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: right;">obtenir_duree()</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: right;">attribuer_arome(arome)</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: right;">attribuer_duree(duree)</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: right;">attribuer_genre(arome)</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>Code partiel de la classe Yaourt, à compléter aux endroits indiqués en suivant les consignes des questions suivantes  : </li>
+</ol>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">class</span> <span class="nc">Yaourt</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Classe définissant un yaourt caractérisé par :</span>
+<span class="sd">        - son arome</span>
+<span class="sd">        - son genre</span>
+<span class="sd">        - sa durée de durabilité minimale&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">arome</span><span class="p">,</span><span class="n">duree</span><span class="p">):</span>
+    <span class="c1"># **** Assertions : à compléter suivant les indications de la  question 1.a.  </span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__arome</span> <span class="o">=</span> <span class="n">arome</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__duree</span> <span class="o">=</span> <span class="n">duree</span>
+        <span class="k">if</span> <span class="n">arome</span> <span class="o">==</span> <span class="s1">&#39;aucun&#39;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">__genre</span> <span class="o">=</span> <span class="s1">&#39;nature&#39;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">__genre</span> <span class="o">=</span> <span class="s1">&#39;aromatise&#39;</span>
+
+    <span class="c1"># **** Méthode get_arome(self) à compléter suivant les indications de la question 1.c. </span>
+
+    <span class="k">def</span> <span class="nf">get_duree</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__duree</span>
+
+    <span class="k">def</span> <span class="nf">get_genre</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__genre</span>
+
+
+    <span class="k">def</span> <span class="nf">set_duree</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">duree</span><span class="p">):</span>
+        <span class="c1"># **** Mutateur de durée</span>
+        <span class="k">if</span> <span class="n">duree</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">__duree</span> <span class="o">=</span> <span class="n">duree</span>
+
+    <span class="c1"># **** Mutateur d’arôme set_arome(self,arome) - à compléter suivant les indications de la question 2.    </span>
+
+    <span class="k">def</span> <span class="nf">__set_genre</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">arome</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">arome</span> <span class="o">==</span> <span class="s1">&#39;aucun&#39;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">__genre</span> <span class="o">=</span> <span class="s1">&#39;nature&#39;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">__genre</span> <span class="o">=</span> <span class="s1">&#39;aromatise&#39;</span>
+</code></pre></div>
+<p>1.a. Quelles sont les assertions à prévoir pour vérifier que l'arôme et la durée correspondent bien à des valeurs acceptables? Il faudra aussi expliciter les commentaires qui seront renvoyés.<br />
+Pour rappel : </p>
+<ul>
+<li>L’arôme doit prendre comme valeur 'fraise', 'abricot', 'vanille' ou 'aucun'.</li>
+<li>Sa date de durabilité minimale (DDM) est une valeur positive.</li>
+</ul>
+<details class="check">
+<summary>Réponse :</summary>
+<p>Modification de la méthode <code>__init__</code> de la classe Yaourt :  </p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">arome</span><span class="p">,</span><span class="n">duree</span><span class="p">):</span>
+        <span class="k">assert</span> <span class="n">arome</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;fraise&#39;</span><span class="p">,</span> <span class="s1">&#39;abricot&#39;</span><span class="p">,</span> <span class="s1">&#39;vanille&#39;</span><span class="p">,</span> <span class="s1">&#39;aucun&#39;</span><span class="p">)</span> <span class="p">,</span> <span class="s2">&quot;valeur invalide pour l&#39;arôme&quot;</span>
+        <span class="k">assert</span> <span class="n">duree</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;La DDM doit être une valeur positive&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__arome</span> <span class="o">=</span> <span class="n">arome</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__duree</span> <span class="o">=</span> <span class="n">duree</span>
+        <span class="k">if</span> <span class="n">arome</span> <span class="o">==</span> <span class="s1">&#39;aucun&#39;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">__genre</span> <span class="o">=</span> <span class="s1">&#39;nature&#39;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">__genre</span> <span class="o">=</span> <span class="s1">&#39;aromatise&#39;</span>
+</code></pre></div>
+</details>
+<p>1.b. Pour créer un yaourt, on exécutera la commande suivante : </p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">mon_yaourt</span> <span class="o">=</span> <span class="n">Yaourt</span><span class="p">(</span><span class="s1">&#39;fraise&#39;</span><span class="p">,</span><span class="mi">24</span><span class="p">)</span>
+</code></pre></div>
+<p>Quelle valeur sera affectée à l’attribut <code>genre</code> associé à <code>mon_yaourt</code> ?</p>
+<details class="check">
+<summary>Réponse :</summary>
+<p>L'attribut <code>genre</code> aura comme valeur 'aromatise' puisque l'arome du yaourt n'est pas ègal à 'aucun'.</p>
+</details>
+<p>1.c. Écrire en Python une fonction <code>get_arome(self)</code>, renvoyant l’arôme du yaourt créé.</p>
+<details class="check">
+<summary>Réponse :</summary>
+<p>Méthode <code>get_arome</code> à insérer dans le code de la classe Yaourt : </p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">def</span> <span class="nf">get_arome</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__arome</span>
+</code></pre></div>
+</details>
+<ol>
+<li>On appelle mutateur une méthode permettant de modifier un ou plusieurs attributs d’un objet.<br />
+Ecrire en Python le mutateur <code>set_arome(self,arome)</code> permettant de modifier l’arôme du yaourt. <br />
+<em>On veillera à garder une cohérence entre l’arôme et le genre.</em></li>
+</ol>
+<details class="check">
+<summary>Réponse :</summary>
+<p>Méthode <code>set_arome</code> à insérer dans le code de la classe Yaourt : </p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">def</span> <span class="nf">set_arome</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arome</span><span class="p">):</span>
+    <span class="k">assert</span> <span class="n">arome</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;fraise&#39;</span><span class="p">,</span> <span class="s1">&#39;abricot&#39;</span><span class="p">,</span> <span class="s1">&#39;vanille&#39;</span><span class="p">,</span> <span class="s1">&#39;aucun&#39;</span><span class="p">)</span> <span class="p">,</span> <span class="s2">&quot;valeur invalide pour l&#39;arôme&quot;</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">__arome</span><span class="o">=</span><span class="n">arome</span>
+    <span class="k">if</span> <span class="n">arome</span> <span class="o">==</span> <span class="s1">&#39;aucun&#39;</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__genre</span> <span class="o">=</span> <span class="s1">&#39;nature&#39;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__genre</span> <span class="o">=</span> <span class="s1">&#39;aromatise&#39;</span>
+</code></pre></div>
+<p>On peut aussi utiliser la méthode <code>set_genre</code> déjà définie pour garder une cohérence entre l’arôme et le genre.:</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">def</span> <span class="nf">set_arome</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arome</span><span class="p">):</span>
+    <span class="k">assert</span> <span class="n">arome</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;fraise&#39;</span><span class="p">,</span> <span class="s1">&#39;abricot&#39;</span><span class="p">,</span> <span class="s1">&#39;vanille&#39;</span><span class="p">,</span> <span class="s1">&#39;aucun&#39;</span><span class="p">)</span> <span class="p">,</span> <span class="s2">&quot;valeur invalide pour l&#39;arôme&quot;</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">__arome</span><span class="o">=</span><span class="n">arome</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">__set_genre</span><span class="p">(</span><span class="n">arome</span><span class="p">)</span>
+</code></pre></div>
+</details>
+<ol>
+<li>On veut créer une pile contenant le stock de yaourts. Pour cela il faut tout d’abord créer une pile vide : </li>
+</ol>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">def</span> <span class="nf">creer_pile</span><span class="p">():</span>
+    <span class="n">pile</span> <span class="o">=</span> <span class="p">[</span> <span class="p">]</span>
+    <span class="k">return</span> <span class="n">pile</span>
+</code></pre></div>
+<p>3.a. Créer une fonction <code>empiler( p, yaourt:Yaourt)</code>  qui renvoie la pile <code>p</code> après avoir ajouté un objet de type Yaourt au sommet de la pile.</p>
+<details class="check">
+<summary>Réponse :</summary>
+<p>Fonction <code>empiler</code> (on suppose que le sommet de la pile est la fin de la liste): </p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">def</span> <span class="nf">empiler</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">yaourt</span><span class="p">):</span>
+    <span class="n">p</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">yaourt</span><span class="p">)</span>
+</code></pre></div>
+</details>
+<p>3.b. Créer une fonction <code>depiler(p)</code> qui renvoie l’objet à dépiler.</p>
+<details class="check">
+<summary>Réponse :</summary>
+<p>Fonction <code>dépiler</code> :</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">def</span> <span class="nf">depiler</span><span class="p">(</span><span class="n">p</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">p</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div>
+</details>
+<p>3.c. Créer une fonction <code>est_vide(p)</code> qui renvoie <code>True</code> si la pile est vide et <code>False</code> sinon.</p>
+<details class="check">
+<summary>Réponse :</summary>
+<p>Fonction <code>est_vide</code> :</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">def</span> <span class="nf">est_vide</span><span class="p">(</span><span class="n">p</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span>
+</code></pre></div>
+<p>ou bien, en plus explicite : </p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">def</span> <span class="nf">est_vide</span><span class="p">(</span><span class="n">p</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+</code></pre></div>
+</details>
+<p>3.d. Qu’affiche le bloc de commandes ci-dessous ?</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code>    <span class="n">mon_yaourt1</span> <span class="o">=</span> <span class="n">Yaourt</span><span class="p">(</span><span class="s1">&#39;aucun&#39;</span><span class="p">,</span><span class="mi">18</span><span class="p">)</span>
+    <span class="n">mon_yaourt2</span> <span class="o">=</span> <span class="n">Yaourt</span><span class="p">(</span><span class="s1">&#39;fraise&#39;</span><span class="p">,</span><span class="mi">24</span><span class="p">)</span>
+    <span class="n">ma_pile</span> <span class="o">=</span> <span class="n">creer_pile</span><span class="p">()</span>
+    <span class="n">empiler</span><span class="p">(</span><span class="n">ma_pile</span><span class="p">,</span> <span class="n">mon_yaourt1</span><span class="p">)</span>
+    <span class="n">empiler</span><span class="p">(</span><span class="n">ma_pile</span><span class="p">,</span> <span class="n">mon_yaourt2</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">depiler</span><span class="p">(</span><span class="n">ma_pile</span><span class="p">)</span><span class="o">.</span><span class="n">get_duree</span><span class="p">())</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">est_vide</span><span class="p">(</span><span class="n">ma_pile</span><span class="p">))</span>
+</code></pre></div>
+<details class="check">
+<summary>Réponse :</summary>
+<p>Le sujet d'origine contient un espace entre mon_yaourt et 2 à la ligne 5, ce qui fait que l'exécution du code tel quel génèrerait une erreur. Il s'agit cependant sans doute d'une coquille. </p>
+<p>Pour le code corrigé donné ci-dessus :<br />
+Les deux premières lignes créent deux objets Yaourt. La troisième crée une pile, où les deux Yaourts sont empilés aux deux lignes suivantes. A la ligne 6, la commande dépile le dernier Yaourt empilé, <code>mon_yaourt2</code>, et affiche sa DDN, c'est à dire 24. Enfin la dernière ligne affiche <code>False</code> puisqu'à ce stade la pile contient encore <code>mon_yaourt1</code>, donc n'est pas vide. </p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">class</span> <span class="nc">Yaourt</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Classe définissant un yaourt caractérisé par :</span>
+<span class="sd">        - son arome</span>
+<span class="sd">        - son genre</span>
+<span class="sd">        - sa durée de durabilité minimale&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">arome</span><span class="p">,</span><span class="n">duree</span><span class="p">):</span>
+        <span class="k">assert</span> <span class="n">arome</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;fraise&#39;</span><span class="p">,</span> <span class="s1">&#39;abricot&#39;</span><span class="p">,</span> <span class="s1">&#39;vanille&#39;</span><span class="p">,</span> <span class="s1">&#39;aucun&#39;</span><span class="p">)</span> <span class="p">,</span> <span class="s2">&quot;valeur invalide pour l&#39;arôme&quot;</span>
+        <span class="k">assert</span> <span class="n">duree</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;La DDM doit être une valeur positive&quot;</span> 
+        <span class="bp">self</span><span class="o">.</span><span class="n">__arome</span> <span class="o">=</span> <span class="n">arome</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__duree</span> <span class="o">=</span> <span class="n">duree</span>
+        <span class="k">if</span> <span class="n">arome</span> <span class="o">==</span> <span class="s1">&#39;aucun&#39;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">__genre</span> <span class="o">=</span> <span class="s1">&#39;nature&#39;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">__genre</span> <span class="o">=</span> <span class="s1">&#39;aromatise&#39;</span>
+
+    <span class="k">def</span> <span class="nf">get_arome</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__arome</span> 
+
+    <span class="k">def</span> <span class="nf">get_duree</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__duree</span>
+
+    <span class="k">def</span> <span class="nf">get_genre</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__genre</span>
+
+    <span class="k">def</span> <span class="nf">set_duree</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">duree</span><span class="p">):</span>
+        <span class="c1"># **** Mutateur de durée</span>
+        <span class="k">if</span> <span class="n">duree</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">__duree</span> <span class="o">=</span> <span class="n">duree</span>
+
+    <span class="k">def</span> <span class="nf">set_arome</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arome</span><span class="p">):</span>
+        <span class="k">assert</span> <span class="n">arome</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;fraise&#39;</span><span class="p">,</span> <span class="s1">&#39;abricot&#39;</span><span class="p">,</span> <span class="s1">&#39;vanille&#39;</span><span class="p">,</span> <span class="s1">&#39;aucun&#39;</span><span class="p">)</span> <span class="p">,</span> <span class="s2">&quot;valeur invalide pour l&#39;arôme&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__arome</span><span class="o">=</span><span class="n">arome</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__set_genre</span><span class="p">(</span><span class="n">arome</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__set_genre</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">arome</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">arome</span> <span class="o">==</span> <span class="s1">&#39;aucun&#39;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">__genre</span> <span class="o">=</span> <span class="s1">&#39;nature&#39;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">__genre</span> <span class="o">=</span> <span class="s1">&#39;aromatise&#39;</span>
+
+<span class="k">def</span> <span class="nf">creer_pile</span><span class="p">():</span>
+    <span class="n">pile</span> <span class="o">=</span> <span class="p">[</span> <span class="p">]</span>
+    <span class="k">return</span> <span class="n">pile</span> 
+
+<span class="k">def</span> <span class="nf">empiler</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">yaourt</span><span class="p">):</span>
+    <span class="n">p</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">yaourt</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">depiler</span><span class="p">(</span><span class="n">p</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">p</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">est_vide</span><span class="p">(</span><span class="n">p</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span>
+
+<span class="n">mon_yaourt1</span> <span class="o">=</span> <span class="n">Yaourt</span><span class="p">(</span><span class="s1">&#39;aucun&#39;</span><span class="p">,</span><span class="mi">18</span><span class="p">)</span>
+<span class="n">mon_yaourt2</span> <span class="o">=</span> <span class="n">Yaourt</span><span class="p">(</span><span class="s1">&#39;fraise&#39;</span><span class="p">,</span><span class="mi">24</span><span class="p">)</span>
+<span class="n">ma_pile</span> <span class="o">=</span> <span class="n">creer_pile</span><span class="p">()</span>
+<span class="n">empiler</span><span class="p">(</span><span class="n">ma_pile</span><span class="p">,</span> <span class="n">mon_yaourt1</span><span class="p">)</span>
+<span class="n">empiler</span><span class="p">(</span><span class="n">ma_pile</span><span class="p">,</span> <span class="n">mon_yaourt2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">depiler</span><span class="p">(</span><span class="n">ma_pile</span><span class="p">)</span><span class="o">.</span><span class="n">get_duree</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">est_vide</span><span class="p">(</span><span class="n">ma_pile</span><span class="p">))</span>
+</code></pre></div>
+<p>24<br />
+False</p>
+</details>
+
+
+
+
+
+                
+
+<style>
+    .jp-RenderedHTMLCommon p {
+        font-size: 0.8rem;
+        line-height: 1.6;
+    }
+
+    .jp-RenderedHTMLCommon li {
+        font-size: .8rem;
+        line-height: 1.6;
+    }
+
+    .jp-RenderedHTMLCommon h1 {
+        margin: 0 0 1.25em;
+        color: var(--md-default-fg-color--light);
+        font-weight: 300;
+        font-size: 2em;
+        line-height: 1.3;
+        letter-spacing: -0.01em;
+    }
+
+    .jp-RenderedHTMLCommon h2 {
+        margin: 1.6em 0 .64em;
+        font-weight: 300;
+        font-size: 1.965em;
+        line-height: 1.4;
+        letter-spacing: -0.01em;
+    }
+
+    .jp-RenderedHTMLCommon h3 {
+        margin: 1.6em 0 .8em;
+        font-weight: 400;
+        font-size: 1.57em;
+        line-height: 1.5;
+        letter-spacing: -0.01em;
+    }
+
+    .jp-RenderedHTMLCommon hr {
+        border: none;
+    }
+</style>
+
+
+
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Retour en haut de la page
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.expand", "navigation.top", "navigation.sections", "navigation.indexes", "navigation.tracking", "header.autohide", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.81fa17fe.min.js"></script>
+      
+        <script src="../../xtra/mathjax.js"></script>
+      
+        <script src="../../javascripts/config.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/gh/rod2ik/cdn@main/mkdocs/javascripts/massilia-admonitions.js"></script>
+      
+    
+  </body>
+</html>

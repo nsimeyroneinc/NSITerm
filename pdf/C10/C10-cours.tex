@@ -1,0 +1,200 @@
+\PassOptionsToPackage{dvipsnames,table}{xcolor}
+\documentclass[10pt]{beamer}
+\usetheme[options]{Madrid} 
+\usepackage{../../latex/Cours}
+
+\begin{document}
+	
+\input{\detokenize{../../latex/MacrosCours.tex}}
+\setcounter{numchap}{10}
+
+\newcommand{\AB}{\cnum Arbres}
+
+\pythonmode
+
+
+% Vocabulaire sur les arbres
+\begin{frame}
+	\mframe{\AB}
+	\begin{alertblock}{Vocabulaire sur les arbres}
+		\begin{itemize}[label=\textbullet]
+			\item<1-> Un \textcolor{blue}{arbre} est une structure de données consituée de \textcolor{blue}{noeuds} reliés entre eux par des \textcolor{blue}{arêtes}.
+			\item<2-> Contrairement aux listes, piles et files qui sont des structures de données \textbf{linéaires}, les arbres sont des structures de données \textbf{hierarchisées}.
+			\item<3-> On dit qu'un noeud B est le \textcolor{blue}{fils} d'un noeud A lorsqu'une arête va du noeud A au noeud B.
+			\item<4-> Dans un arbre, un seul et unique noeud n'est le fils de personne, c'est la \textcolor{blue}{racine} de l'arbre.
+			\item<5-> Un noeud n'ayant pas de fils s'appelle une \textcolor{blue}{feuille} de l'arbre.
+			\item<6-> On appelle \textcolor{blue}{branche} une suite finie de noeuds partant de la racine vers une feuille.
+		\end{itemize}
+	\end{alertblock}
+\end{frame}
+
+
+% Définiton : taille, arité, hauteur
+\begin{frame}
+	\mframe{\AB}
+	\begin{alertblock}{Définitions}
+		\begin{itemize}[label=\textbullet]
+			\item<1-> La \textcolor{blue}{taille} d'un arbre est le nombre de noeuds de cet arbre. \\
+			      \onslide<2->{\begin{small} \textcolor{gray}{L'arbre vide n'a aucun noeud, sa taille est 0.} \end{small}}
+			\item<3-> La \textcolor{blue}{hauteur} d'un arbre est le nombre de noeud maximal qu'une branche peut avoir. \\
+			      \onslide<4->{\begin{small} \textcolor{gray}{Différentes définitions existent pour la hauteur d'un arbre, on considère parfois que la hauteur est le nombre maximal d'arête que peut avoir une branche.} \end{small}}
+			\item<5-> L'\textcolor{blue}{arité} d'un arbre est le nombre maximal de fils qu'un noeud peut avoir. \\
+			      \onslide<6->{\begin{small} \textcolor{gray}{On parle aussi de l'arité (ou degré) d'un noeud, il s'agit alors du nombre de fils de ce noeud} \end{small}}
+		\end{itemize}
+	\end{alertblock}
+\end{frame}
+
+% Arbre binaire
+\begin{frame}
+	\mframe{\AB}
+	\begin{alertblock}{Arbre binaire}
+		\begin{itemize}[label=\textbullet]
+			\item<2->On appelle \textcolor{blue}{arbre binaire} un arbre dans lequel tous les noeuds ont au maximum deux fils. \\
+			      \onslide<3->{De façon équivalent, on peut dire qu'un arbre binaire est un arbre d'arité~2.}
+			\item<4-> Chaque noeud ayant au plus deux fils, dans un arbre binaire on peut considérer le \textcolor{blue}{sous arbre droit} et le \textcolor{blue}{sous arbre gauche} d'un noeud. Chacun de ces sous arbres étant lui-même un arbre binaire pouvant être vide (noté \textcolor{blue}{$\Delta$}).
+			      \onslide<5-> On obtient donc une définition récursive d'un arbre binaire : \\
+			      \onslide<6->{Un arbre binaire est soit un arbre vide ($\Delta$) soit un triplet \textit{(noeud,sag,sad)} où \textit{sag} et \textit{sad} sont des arbres binaires.}
+		\end{itemize}
+	\end{alertblock}
+\end{frame}
+
+% Exemple arbre binaire
+% Arbre binaire
+\begin{frame}
+	\mframe{\AB}
+	\begin{exampleblock}{Exemple}
+		\tei{ab.gv.eps}{0.5}{1}{\begin{itemize}[label=\textbullet]
+				\item Vérifier rapidement que cet arbre est binaire.
+				\item Compléter l'écriture de cet arbre binaire sous forme de triplet :
+				      \begin{itemize}
+					      \item (A,sag(A),sad(A))
+					      \item (A,(B,sag(B),sad(B)),(C,$\Delta$,$\Delta$))
+					      \item \lpo[1]
+					      \item \lpo[1]
+				      \end{itemize}
+				\item Dessiner l'arbre binaire qui s'écrit sous forme de triplet : (A,(B,(C,(D,$\Delta$,$\Delta$),$\Delta$)),(E,$\Delta$,$\Delta$))).
+			\end{itemize}}
+	\end{exampleblock}
+\end{frame}
+
+
+% Cas particuliers d'arbres binaires
+\begin{frame}
+	\mframe{\AB}
+	\begin{block}{Quelques cas particuliers}
+		\begin{itemize}[label=\textbullet]
+		\item<1-> Un arbre binaire est dit \textit{complet} lorsque tous les 
+		niveaux sont remplis : \\
+			      \onslide<2->{
+				      Exemple d'arbre binaire complet de hauteur 3.
+				      \begin{center}
+					\begin{tikzpicture}[level distance=15mm]
+			\tikzstyle{every node}=[fill=gray!25,circle,inner sep=2pt]
+			\tikzstyle{level 1}=[sibling distance=50mm,
+			set style={{every node}+=[fill=gray!25]}]
+			\tikzstyle{level 2}=[sibling distance=30mm,
+			set style={{every node}+=[fill=gray!25]}]
+			\tikzstyle{level 3}=[sibling distance=10mm,
+			set style={{every node}+=[fill=gray!25]}]
+			\node {$A$}
+			child {node {$B$}
+				child {node {$D$}
+				}
+				child {node {$E$}
+				}
+			}
+			child {node {$C$}
+				child {node {$F$}
+				}
+				child {node {$G$}
+				}
+			}
+			;
+		\end{tikzpicture}
+				      \end{center}}
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+% Relation entre hauteur et taille
+\begin{frame}
+	\mframe{\AB}
+	\begin{alertblock}{Relation entre hauteur et taille}
+		En notant $n$ la taille et $h$ la hauteur d'un arbre binaire, pour $n \geq 2$, on a la relation suivante : \\
+		\onslide<2->{$$ \boxed{ h \leq n \leq 2^{h}-1} $$}
+	\end{alertblock}
+\end{frame}
+
+% Relation entre hauteur et taille
+\begin{frame}
+	\mframe{\AB}
+	\begin{alertblock}{Parcours d'un arbre}
+		On peut parcourir un arbre binaire :
+		\begin{itemize}[label=\textbullet]
+			\item<2-> En largeur, cela revient à lister les noeuds par ordre 
+			croissant de profondeur et de gauche à droite \\
+			\onslide<3-> \textcolor{gray}{L'implémentation de ce parcours peut 
+			se faire à l'aide d'une file dans laquelle on stocke les noeuds 
+			restants à parcourir. A chaque fois qu'on traite un noeud, on le 
+			defile et on enfile ses fils.}
+			\item<3-> En profondeur, on tire alors partie de la structure 
+			récursive des arbres. Pour parcourir l'arbre $T=(e,sag,sad)$ on 
+			doit relancer le parcours sur $sag$ et $sad$. On distingue alors 
+			trois parcours suivant que $e$ est affiché avant, entre ou après 
+			$sag$ et $sad$ :
+			\begin{itemize}[label=\textbullet]
+				\item<4-> Dans le parcours préfixé, $e$ est affiché avant de 
+				parcourir $sag$ et $sad$.
+				\item<5-> Dans le parcours infixé, $e$ est affiché après le 
+				parcours de $sag$ mais avant celui de  $sad$.
+				\item<6-> Dans le parcours suffixé, $e$ est affiché après le 
+				parcours de $sag$ et $sad$
+			\end{itemize}
+		\end{itemize}
+	\end{alertblock}
+\end{frame}
+
+
+\begin{frame}
+	\mframe{\AB}
+	\begin{exampleblock}{Exemple}
+		\begin{center}
+			\begin{tikzpicture}[level distance=10mm]
+				\tikzstyle{every node}=[fill=gray!25,circle,inner sep=2pt]
+				\tikzstyle{level 1}=[sibling distance=35mm,
+				set style={{every node}+=[fill=gray!25]}]
+				\tikzstyle{level 2}=[sibling distance=20mm,
+				set style={{every node}+=[fill=gray!25]}]
+				\tikzstyle{level 3}=[sibling distance=10mm,
+				set style={{every node}+=[fill=gray!25]}]
+				\node {$R$}
+				child {node {$T$}
+					child {node {$V$}
+					}
+					child {node {$I$}
+						child {node {$M$}}
+						child {node {$P$}}
+					}
+				}
+				child {node {$C$}
+					child {node {$F$}
+						child[fill=none] {edge from parent[draw=none]}
+						child {node {$A$}}
+					}
+				}
+				;
+			\end{tikzpicture}
+		\end{center}
+		
+		Donner l'ordre des noeuds lorsqu'on parcourt l'arbre ci-dessus :
+		\begin{itemize}[label=\textbullet]
+			\item<1-> En largeur
+			\item<2-> En profondeur préfixé
+			\item<3-> En profondeur infixé
+			\item<4-> En profondeur suffixé
+		\end{itemize}
+	\end{exampleblock}
+\end{frame}
+
+
+\end{document}

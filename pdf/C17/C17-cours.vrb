@@ -1,0 +1,14 @@
+\mframe{\NA}
+^^I\begin{exampleblock}{Exemple}
+^^I^^IOn considère la fonction ci-dessous :
+^^I^^I\begin{lstlisting}
+def compte(elt,liste):
+   '''compte le nombre de fois où elt apparaît dans liste'''
+   compteur=0
+   for x in liste:
+      if x==elt:
+         compteur=compteur+1
+   return compteur
+\end{lstlisting}
+^^I^^I\onslide<2-> En trouvant un invariant de boucle, montrer qu'à la sortie de la boucle, la variable compteur contient le nombre de fois où \texttt{elt} apparaît dans \texttt{liste}
+^^I\end{exampleblock}

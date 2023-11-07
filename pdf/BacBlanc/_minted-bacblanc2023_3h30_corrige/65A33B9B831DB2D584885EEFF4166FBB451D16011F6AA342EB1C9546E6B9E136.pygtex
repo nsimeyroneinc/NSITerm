@@ -1,0 +1,5 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{SELECT}\PYG{+w}{ }\PYG{n}{titre}
+\PYG{k}{FROM}\PYG{+w}{ }\PYG{n}{Articles}
+\PYG{k}{WHERE}\PYG{+w}{ }\PYG{n}{auteur}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{3}
+\end{Verbatim}

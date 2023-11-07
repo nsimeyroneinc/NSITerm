@@ -1,0 +1,3 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{Articles}\PYG{+w}{ }\PYG{p}{(}\PYG{o}{\PYGZsh{}}\PYG{n}{idArticle}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{titre}\PYG{p}{,}\PYG{+w}{ }\PYG{o}{\PYGZsh{}}\PYG{n}{auteur}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{dateParution}\PYG{p}{)}
+\end{Verbatim}

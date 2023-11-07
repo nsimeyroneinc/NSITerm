@@ -1,0 +1,2307 @@
+<!-- Ajout pour le bouton de téléchargement et le style des jupyter notebook   https://github.com/danielfrg/mkdocs-jupyter -->
+
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Cours et TD de l'année en cours">
+      
+      
+        <meta name="author" content="M.Meyroneinc-Condy">
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../images/dragon.svg">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.8">
+    
+    
+      
+        <title>Thème 1 - Structure de données - NSI Terminale 2022-2023</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.4b4a2bd9.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.356b1318.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rod2ik/cdn@main/mkdocs/css/massilia-admonitions.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#theme-1-structure-de-donnees" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="../.." title="NSI Terminale 2022-2023" class="md-header__button md-logo" aria-label="NSI Terminale 2022-2023" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="m352 124.5-51.9-13c-6.5-1.6-11.3-7.1-12-13.8s2.8-13.1 8.7-16.1l40.8-20.4-43.2-32.4c-5.5-4.1-7.8-11.3-5.6-17.9S297.1 0 304 0h160c30.2 0 58.7 14.2 76.8 38.4l57.6 76.8c6.2 8.3 9.6 18.4 9.6 28.8 0 26.5-21.5 48-48 48h-21.5c-17 0-33.3-6.7-45.3-18.7L480 160h-32v21.5c0 24.8 12.8 47.9 33.8 61.1l106.6 66.6c32.1 20.1 51.6 55.2 51.6 93.1 0 60.6-49.1 109.7-109.8 109.7H32.3c-3.3 0-6.6-.4-9.6-1.4-9.2-2.8-16.7-9.6-20.3-18.5C1 488.7.2 485.2 0 481.4c-.2-3.7.3-7.3 1.3-10.7 2.8-9.2 9.6-16.7 18.6-20.4 3-1.2 6.2-2 9.5-2.2L433.3 412c8.3-.7 14.7-7.7 14.7-16.1 0-4.3-1.7-8.4-4.7-11.4l-44.4-44.4c-30-30-46.9-70.7-46.9-113.1V124.5zm160-52.2v-.6.6zm-1.3 7.4-46.4-11.6c-.2 1.3-.3 2.6-.3 3.9 0 13.3 10.7 24 24 24 10.6 0 19.5-6.8 22.7-16.3zm-379.8 36.8c16.3-14.5 40.4-16.2 58.5-4.1l130.6 87V227c0 32.8 8.4 64.8 24 93H112c-6.7 0-12.7-4.2-15-10.4s-.5-13.3 4.6-17.7l69.4-59.6-152.6 23.5c-7 1.1-13.9-2.6-16.9-9S0 232.7 5.3 228l125.6-111.5z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            NSI Terminale 2022-2023
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Thème 1 - Structure de données
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue"  aria-label="Basculer en mode sombre"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Basculer en mode sombre" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9v1Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="blue"  aria-label="Basculer en mode clair"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Basculer en mode clair" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Recherche">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Effacer" aria-label="Effacer" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Onglets" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  Accueil
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../index_structDonnees/" class="md-tabs__link">
+          
+  
+    
+  
+  T1 - Struct. données
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../BasesDonnees/index_bd/" class="md-tabs__link">
+          
+  
+    
+  
+  T2 - Bases données
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Archi_Materielle/index_archi/" class="md-tabs__link">
+          
+  
+    
+  
+  T3 - Archi. mat.
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Programmation/index_prog/" class="md-tabs__link">
+          
+  
+    
+  
+  T4 - Prog.
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Algo/index_algo/" class="md-tabs__link">
+          
+  
+    
+  
+  T5 Algo.
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../BAC/bac_explication/" class="md-tabs__link">
+          
+  
+    
+  
+  BAC 📝
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../epreuve_pratique/" class="md-tabs__link">
+          
+  
+    
+  
+  Annales E.P. 💻
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../divers/prog/" class="md-tabs__link">
+          
+  
+    
+  
+  Extras
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../credit/" class="md-tabs__link">
+        
+  
+    
+  
+  Crédits
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="NSI Terminale 2022-2023" class="md-nav__button md-logo" aria-label="NSI Terminale 2022-2023" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="m352 124.5-51.9-13c-6.5-1.6-11.3-7.1-12-13.8s2.8-13.1 8.7-16.1l40.8-20.4-43.2-32.4c-5.5-4.1-7.8-11.3-5.6-17.9S297.1 0 304 0h160c30.2 0 58.7 14.2 76.8 38.4l57.6 76.8c6.2 8.3 9.6 18.4 9.6 28.8 0 26.5-21.5 48-48 48h-21.5c-17 0-33.3-6.7-45.3-18.7L480 160h-32v21.5c0 24.8 12.8 47.9 33.8 61.1l106.6 66.6c32.1 20.1 51.6 55.2 51.6 93.1 0 60.6-49.1 109.7-109.8 109.7H32.3c-3.3 0-6.6-.4-9.6-1.4-9.2-2.8-16.7-9.6-20.3-18.5C1 488.7.2 485.2 0 481.4c-.2-3.7.3-7.3 1.3-10.7 2.8-9.2 9.6-16.7 18.6-20.4 3-1.2 6.2-2 9.5-2.2L433.3 412c8.3-.7 14.7-7.7 14.7-16.1 0-4.3-1.7-8.4-4.7-11.4l-44.4-44.4c-30-30-46.9-70.7-46.9-113.1V124.5zm160-52.2v-.6.6zm-1.3 7.4-46.4-11.6c-.2 1.3-.3 2.6-.3 3.9 0 13.3 10.7 24 24 24 10.6 0 19.5-6.8 22.7-16.3zm-379.8 36.8c16.3-14.5 40.4-16.2 58.5-4.1l130.6 87V227c0 32.8 8.4 64.8 24 93H112c-6.7 0-12.7-4.2-15-10.4s-.5-13.3 4.6-17.7l69.4-59.6-152.6 23.5c-7 1.1-13.9-2.6-16.9-9S0 232.7 5.3 228l125.6-111.5z"/></svg>
+
+    </a>
+    NSI Terminale 2022-2023
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Accueil
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    T1 - Struct. données
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            T1 - Struct. données
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index_structDonnees/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Structures de données
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    T2 - Bases données
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            T2 - Bases données
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BasesDonnees/index_bd/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Base de données
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BasesDonnees/Modele_Relationnel/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📓 C1 Modèle relationnel
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BasesDonnees/Cours_TP_SQL/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📓 C2 Langage SQL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BasesDonnees/SQL_BAC/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📝 S2 BAC SQL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BasesDonnees/SQL_BAC_correction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📝 S2 BAC SQL Correction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    T3 - Archi. mat.
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            T3 - Archi. mat.
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Archi_Materielle/index_archi/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Architecture matérielle et OS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    T4 - Prog.
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            T4 - Prog.
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programmation/index_prog/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Programmation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programmation/T1_1_Recursivite/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📓 C3 Récursivité
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    T5 Algo.
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            T5 Algo.
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Algo/index_algo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Algorithmique
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    BAC 📝
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            BAC 📝
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BAC/bac_explication/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Information
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    2023
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_2">
+            <span class="md-nav__icon md-icon"></span>
+            2023
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annales/2023/EE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Epreuves écrites
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_3" id="__nav_7_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    2022
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_3">
+            <span class="md-nav__icon md-icon"></span>
+            2022
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annales/2022/EE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Epreuves écrites
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_4" id="__nav_7_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    2021
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_4">
+            <span class="md-nav__icon md-icon"></span>
+            2021
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annales/2021/EE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Epreuves écrites
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Annales E.P. 💻
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Annales E.P. 💻
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../epreuve_pratique/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Déroulement
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../divers/Consigne_EP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Consigne
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../divers/lien/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    S'entrainer en ligne pour l'épreuve pratique
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_4" id="__nav_8_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    2023
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_4">
+            <span class="md-nav__icon md-icon"></span>
+            2023
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annales/2023/EP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Epreuves pratiques
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Extras
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Extras
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../divers/prog/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Divers concours programmation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Projet/forcebrute/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Force brute
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Projet/cryptographie/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cryptographie
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Projet/cryptographie2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cryptographie bis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Projet/pyxel/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    pyxel
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../divers/sujet0_geipi.pdf" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Epreuve GEIPI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../credit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Crédits
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#metropole-2022-j1-verification-syntaxique-de-parentheses-ou-de-balises" class="md-nav__link">
+    Métropole 2022, J1 - Vérification syntaxique de parenthèses ou de balises
+  </a>
+  
+    <nav class="md-nav" aria-label="Métropole 2022, J1 - Vérification syntaxique de parenthèses ou de balises">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#partie-a-expression-correctement-parenthesee" class="md-nav__link">
+    Partie A : Expression correctement parenthésée
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#partie-b-texte-correctement-balise" class="md-nav__link">
+    Partie B : Texte correctement balisé
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metropole-2022-j2-jeu-de-la-poussette" class="md-nav__link">
+    Métropole 2022, J2 - Jeu de la poussette
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#polynesie-2022-j1-tri-dune-pile" class="md-nav__link">
+    Polynésie 2022, J1 - Tri d'une pile
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#centres-etrangers-2022-j1-dictionnaire-modelisant-le-contenu-dun-repertoire" class="md-nav__link">
+    Centres étrangers 2022, J1 - Dictionnaire modélisant le contenu d'un répertoire
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+
+
+
+
+
+                  
+
+
+<h1 id="theme-1-structure-de-donnees">Thème 1 - Structure de données<a class="headerlink" href="#theme-1-structure-de-donnees" title="Permanent link">⚓︎</a></h1>
+<p><br></p>
+<table  class="redTable">
+        <tr >
+            <th width="20%"; style="background-color: #3B444B;color:white;text-align:center;border:none;font-size:40pt;">
+            BAC
+            </th>
+            <th  width="80%"; style="text-align:center;border:none;font-size:25pt;">Listes, Piles et Files</th>
+        </tr>
+</table>
+
+<h2 id="metropole-2022-j1-verification-syntaxique-de-parentheses-ou-de-balises">Métropole 2022, J1 - Vérification syntaxique de parenthèses ou de balises<a class="headerlink" href="#metropole-2022-j1-verification-syntaxique-de-parentheses-ou-de-balises" title="Permanent link">⚓︎</a></h2>
+<div class="admonition exercice 1">
+<p class="admonition-title">D'après 2022, Métropole, J1, Ex. 1</p>
+</div>
+<h3 id="partie-a-expression-correctement-parenthesee">Partie A : Expression correctement parenthésée<a class="headerlink" href="#partie-a-expression-correctement-parenthesee" title="Permanent link">⚓︎</a></h3>
+<p>On veut déterminer si une expression arithmétique est correctement parenthésée.
+À chaque parenthèse fermante ")" correspond une parenthèse précédemment ouverte "(".</p>
+<div class="admonition example">
+<p class="admonition-title">Exemples</p>
+<ul>
+<li>L'expression arithmétique <code>"(2 + 3) × (18/(4 + 2))"</code> est correctement parenthésée.</li>
+<li>L'expression arithmétique <code>"(2 + 3) × (18/(4 + 2"</code> est non correctement parenthésée.</li>
+</ul>
+</div>
+<p>Pour simplifier les expressions arithmétiques, on enregistre, dans une structure de données, uniquement les parenthèses dans leur ordre d'apparition. On appelle expression simplifiée cette structure.</p>
+<table>
+<thead>
+<tr>
+<th>Expression arithmétique</th>
+<th>Structure de données</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>"(2 + 3) × (18/(4 + 2))"</code></td>
+<td><code>()(())</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>1.</strong> Indiquer si la phrase « les éléments sont maintenant retirés (pour être lus) de cette structure de données dans le même ordre qu'ils y ont été ajoutés lors de l'enregistrement » décrit le comportement d'une file ou d'une pile. Justifier.</p>
+<p>Pour vérifier le parenthésage, on peut utiliser une variable <code>controleur</code> qui :</p>
+<ul>
+<li>est un nombre entier égal à 0 en début d'analyse de l'expression simplifiée ;</li>
+<li>augmente de 1 si l'on rencontre une parenthèse ouvrante <code>"("</code> ;</li>
+<li>diminue de 1 si l'on rencontre une parenthèse fermante <code>")"</code>.</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Exemple</p>
+<p>On considère l'expression simplifiée A : <code>"()(())"</code></p>
+<p>Lors de l'analyse de l'expression A, <code>controleur</code> (initialement égal à 0) prend successivement pour valeur 1, 0, 1, 2, 1, 0.</p>
+<p>Le parenthésage est correct.</p>
+</div>
+<p><strong>2.</strong> Écrire, pour chacune des 2 expressions simplifiées B et C suivantes, les valeurs successives prises par la variable <code>controleur</code> lors de leur analyse.</p>
+<ul>
+<li>Expression simplifiée B : " ((()()"</li>
+<li>Expression simplifiée C : "(()))("</li>
+</ul>
+<p><strong>3.</strong> L'expression simplifiée B précédente est mal parenthésée (parenthèses fermantes manquantes) car le <code>controleur</code> est différent de zéro en fin d'analyse.<br />
+L'expression simplifiée C précédente est également mal parenthésée (parenthèse fermante sans parenthèse ouvrante) car le <code>controleur</code> prend une valeur négative pendant l'analyse.</p>
+<p>Recopier et compléter uniquement les lignes 13 et 16 du code ci-dessous pour que la fonction <code>parenthesage_correct</code> réponde à sa description.</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">🐍 Script Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">parenthesage_correct</span><span class="p">(</span><span class="n">expression</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; fonction renvoyant True si l&#39;expression arithmétique</span>
+<span class="sd">    simplifiée (str) est correctement parenthésée, False sinon.</span>
+<span class="sd">    Condition: expression ne contient que</span>
+<span class="sd">      des parenthèses ouvrantes et fermantes</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">controleur</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">parenthese</span> <span class="ow">in</span> <span class="n">expression</span><span class="p">:</span>  <span class="c1"># pour chaque parenthèse</span>
+        <span class="k">if</span> <span class="n">parenthese</span> <span class="o">==</span> <span class="s1">&#39;(&#39;</span><span class="p">:</span>
+            <span class="n">controleur</span> <span class="o">=</span> <span class="n">controleur</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>  <span class="c1"># parenthese == &#39;)&#39;</span>
+            <span class="n">controleur</span> <span class="o">=</span> <span class="n">controleur</span> <span class="o">-</span> <span class="mi">1</span>
+            <span class="k">if</span> <span class="n">controleur</span> <span class="o">...</span> <span class="p">:</span>  <span class="c1"># test 1 (à recopier et compléter)</span>
+                <span class="c1"># parenthèse fermante sans parenthèse ouvrante</span>
+                <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">return</span> <span class="n">controleur</span> <span class="o">...</span>  <span class="c1"># test 2 (à recopier et compléter)</span>
+    <span class="c1"># test 2 est un booléen renvoyé</span>
+    <span class="c1">#   True : le parenthésage est correct</span>
+    <span class="c1">#   False : parenthèse(s) fermante(s) manquante(s)</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="partie-b-texte-correctement-balise">Partie B : Texte correctement balisé<a class="headerlink" href="#partie-b-texte-correctement-balise" title="Permanent link">⚓︎</a></h3>
+<p>On peut faire l'analogie entre le texte simplifié des fichiers HTML (uniquement constitué de balises ouvrantes <code>&lt;nom&gt;</code> et fermantes <code>&lt;/nom&gt;</code>) et les expressions parenthésées : par exemple, l'expression HTML simplifiée : <code>"&lt;p&gt;&lt;strong&gt;&lt;em&gt;&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;"</code> est correctement balisée.</p>
+<p>On ne tiendra pas compte dans cette partie des balises ne comportant pas de fermeture comme <code>&lt;br&gt;</code> ou <code>&lt;img ...&gt;</code>.</p>
+<p>Afin de vérifier qu'une expression HTML simplifiée est correctement balisée, on peut utiliser une pile (initialement vide) selon l'algorithme suivant :</p>
+<ul>
+<li>
+<p>On parcourt successivement chaque balise de l'expression :</p>
+<ul>
+<li>lorsque l'on rencontre une balise ouvrante, on l'empile ;</li>
+<li>lorsque l'on rencontre une balise fermante :<ul>
+<li>si la pile est vide, alors l'analyse s'arrête : le balisage est incorrect,</li>
+<li>sinon, on dépile et on vérifie que les deux balises (la balise fermante rencontrée et la balise ouvrante dépilée) correspondent (c'est-à-dire ont le même nom) si ce n'est pas le cas, l'analyse s'arrête (balisage incorrect).</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Exemple</p>
+<p>État de la pile lors du déroulement de cet algorithme pour l'expression simplifiée <code>"&lt;p&gt;&lt;em&gt;&lt;/p&gt;&lt;/em&gt;"</code> qui n'est pas correctement balisée.</p>
+<p>État de la pile lors du déroulement de l'algorithme</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Départ</label><label for="__tabbed_1_2">Étape 1</label><label for="__tabbed_1_3">Étape 2</label><label for="__tabbed_1_4">Étape 3</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><span class="filename">Parcours de l'expression</span><pre><span></span><code>&quot;&lt;p&gt;&lt;em&gt;&lt;/p&gt;&lt;/em&gt;&quot;
+↑
+</code></pre></div>
+<pre class="mermaid"><code>flowchart TD
+    A["&amp;nbsp;&lt;br&gt;&amp;nbsp;&lt;br&gt;&amp;nbsp;&lt;br&gt;&amp;nbsp;&lt;br&gt;=====&lt;br&gt;Pile"]</code></pre>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><span class="filename">Parcours de l'expression</span><pre><span></span><code>&quot;&lt;p&gt;&lt;em&gt;&lt;/p&gt;&lt;/em&gt;&quot;
+  ↑                  Balise &lt;p&gt;  ouvrante, on empile
+</code></pre></div>
+<pre class="mermaid"><code>flowchart TD
+    A["&amp;nbsp;&lt;br&gt;&amp;nbsp;&lt;br&gt;&amp;nbsp;&lt;br&gt;&amp;lt;p&amp;gt;&lt;br&gt;=====&lt;br&gt;Pile"]</code></pre>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><span class="filename">Parcours de l'expression</span><pre><span></span><code>&quot;&lt;p&gt;&lt;em&gt;&lt;/p&gt;&lt;/em&gt;&quot;
+     ↑               Balise &lt;em&gt; ouvrante, on empile
+</code></pre></div>
+<pre class="mermaid"><code>flowchart TD
+    A["&amp;nbsp;&lt;br&gt;&amp;nbsp;&lt;br&gt;&amp;lt;em&amp;gt;&lt;br&gt;&amp;lt;p&amp;gt;&lt;br&gt;=====&lt;br&gt;Pile"]</code></pre>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><span class="filename">Parcours de l'expression</span><pre><span></span><code>&quot;&lt;p&gt;&lt;em&gt;&lt;/p&gt;&lt;/em&gt;&quot;
+          ↑          Balise &lt;/p&gt; fermante, on dépile
+</code></pre></div>
+<pre class="mermaid"><code>flowchart TD
+    A["&amp;nbsp;&lt;br&gt;&amp;nbsp;&lt;br&gt;&amp;nbsp;&lt;br&gt;&amp;lt;p&amp;gt;&lt;br&gt;=====&lt;br&gt;Pile"]</code></pre>
+<p><code>&lt;em&gt;</code> et <code>&lt;/p&gt;</code> ne correspondent pas !</p>
+<p>Le balisage est incorrect.</p>
+</div>
+</div>
+</div>
+</div>
+<p><strong>4.</strong> Cette question traite de l'état de la pile lors du déroulement de l'algorithme.</p>
+<p><strong>4.a.</strong> Représenter la pile à chaque étape du déroulement de cet algorithme pour l'expression <code>"&lt;p&gt;&lt;em&gt;&lt;/em&gt;&lt;/p&gt;"</code> (balisage correct).</p>
+<p><strong>4.b.</strong> Indiquer quelle condition simple (sur le contenu de la pile) permet alors de dire que le balisage est correct lorsque toute l'expression HTML simplifiée a été entièrement parcourue, sans que l'analyse ne s'arrête.</p>
+<p><strong>5.</strong> Une expression HTML correctement balisée contient 12 balises.</p>
+<p>Indiquer le nombre d'éléments que pourrait contenir au maximum la pile lors de
+son analyse.</p>
+<h2 id="metropole-2022-j2-jeu-de-la-poussette">Métropole 2022, J2 - Jeu de la poussette<a class="headerlink" href="#metropole-2022-j2-jeu-de-la-poussette" title="Permanent link">⚓︎</a></h2>
+<div class="admonition exercice 2">
+<p class="admonition-title">D'après 2022, Métropole, J2, Ex. 2</p>
+</div>
+<p>La poussette est un jeu de cartes en solitaire. Cet exercice propose une version simplifiée de ce jeu basée sur des nombres.</p>
+<p>On considère une pile constituée de nombres entiers tirés aléatoirement. Le jeu consiste à réduire la pile suivant la règle suivante : quand la pile contient du haut vers le bas un triplet dont les termes du haut et du bas sont de même parité, on supprime l'élément central.</p>
+<p>Par exemple :</p>
+<ul>
+<li>Si la pile contient du haut vers le bas le triplet 1 ; 0 ; 3, on supprime le 0, car 1 et 3 sont tous les deux impairs.</li>
+<li>Si la pile contient du haut vers le bas le triplet 1 ; 0 ; 8, la pile reste inchangée, car 1 et 8 n'ont pas la même parité.</li>
+</ul>
+<p>On parcourt la pile ainsi de haut en bas et on procède aux réductions.</p>
+<p>Arrivé en bas de la pile, <strong>on recommence la réduction</strong> en repartant du sommet de la pile jusqu'à ce que la pile ne soit plus réductible.</p>
+<p>Une partie est « gagnante » lorsque la pile finale est réduite à deux éléments exactement.</p>
+<p>Voici un exemple détaillé de déroulement d'une partie.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:4"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><input id="__tabbed_2_4" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Premier parcours de la pile</label><label for="__tabbed_2_2">Deuxième parcours</label><label for="__tabbed_2_3">Troisième parcours</label><label for="__tabbed_2_4">Quatrième parcours</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><img alt="Pile 1" class="autolight" src="../image_22-ME2-ex2/1.svg" />
+<img alt="Pile 2" class="autolight" src="../image_22-ME2-ex2/2.svg" />
+<img alt="Pile 3" class="autolight" src="../image_22-ME2-ex2/3.svg" />
+<img alt="Pile 4" class="autolight" src="../image_22-ME2-ex2/4.svg" /></p>
+<ul>
+<li>La première comparaison (7, 5 et 4) laisse la pile inchangée.</li>
+<li>On retire le 4 lors de la deuxième itération.</li>
+<li>On retire le 8 lors de la troisième.</li>
+<li>Il ne reste plus que deux valeurs en bas de la pile (9 et 6) : on a fini le premier parcours.</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<p><img alt="Pile 5" class="autolight" src="../image_22-ME2-ex2/5.svg" />
+<img alt="Pile 6" class="autolight" src="../image_22-ME2-ex2/6.svg" />
+<img alt="Pile 7" class="autolight" src="../image_22-ME2-ex2/7.svg" /></p>
+<ul>
+<li>On recommence à partir du haut de la pile : on retire le 5.</li>
+<li>Le triplet suivant (3, 9 et 6) n'entraîne pas de suppression.</li>
+<li>Il ne reste plus que deux valeurs à étudier (9 et 6) : on a terminé le deuxième parcours.</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<p><img alt="Pile 8" class="autolight" src="../image_22-ME2-ex2/8.svg" />
+<img alt="Pile 9" class="autolight" src="../image_22-ME2-ex2/9.svg" /></p>
+<ul>
+<li>On recommence en haut de la pile avec 7, 2 et 9 : on retire le 2.</li>
+<li>Il ne reste que le 9 et le 6 : on a terminé le troisième parcours.</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<p><img alt="Pile 10" class="autolight" src="../image_22-ME2-ex2/10.svg" /></p>
+<ul>
+<li>On recommence en haut de la pile avec 7, 9 et 6. La pile est inchangée.</li>
+<li>La pile n'a pas été modifiée lors de ce parcours : la partie est terminée et cette pile n'est pas gagnante.</li>
+</ul>
+</div>
+</div>
+</div>
+<p><strong>1.a.</strong> Donner les différentes étapes de réduction de la pile suivante :</p>
+<p><img alt="Pile 1.a." class="autolight" src="../image_22-ME2-ex2/1a0.svg" /></p>
+<p><strong>1.b.</strong> Parmi les piles proposées ci-dessous, donner celle qui est gagnante.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:3"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><input id="__tabbed_3_3" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Pile A</label><label for="__tabbed_3_2">Pile B</label><label for="__tabbed_3_3">Pile C</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><img alt="Pile A" class="autolight" src="../image_22-ME2-ex2/1bA.svg" /></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="Pile B" class="autolight" src="../image_22-ME2-ex2/1bB.svg" /></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="Pile C" class="autolight" src="../image_22-ME2-ex2/1bC.svg" /></p>
+</div>
+</div>
+</div>
+<p>L'interface d'une pile est proposée ci-dessous :</p>
+<ul>
+<li><code>creer_pile_vide()</code> renvoie une pile vide, </li>
+<li><code>est_vide(p)</code> renvoie <code>True</code> si <code>p</code> est vide, <code>False</code> sinon, </li>
+<li><code>empiler(p, element)</code> ajoute <code>element</code> au sommet de <code>p</code>, </li>
+<li><code>depiler(p)</code> retire l'élément au sommet de <code>p</code> et le renvoie, </li>
+<li><code>sommet(p)</code> renvoie l'élément au sommet de <code>p</code> sans le retirer de <code>p</code>, </li>
+<li><code>taille(p):</code> renvoie le nombre d'éléments de <code>p</code>.</li>
+</ul>
+<p>Dans la suite de l'exercice on utilisera uniquement ces fonctions.</p>
+<p><strong>2.</strong> La fonction <code>reduire_triplet_au_sommet</code> permet de supprimer l'élément central des trois premiers éléments en partant du haut de la pile, si l'élément du bas et du haut sont de même parité. Les éléments dépilés et non supprimés sont replacés dans le bon ordre dans la pile.</p>
+<p>Recopier et compléter sur la copie le code de la fonction <code>reduire_triplet_au_sommet</code> prenant une pile <code>p</code> en paramètre et la
+modifiant en place. Cette fonction renvoie le booléen <code>est_reduit</code> indiquant si le triplet du sommet a été réduit ou non.</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">🐍 Script Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">reduire_triplet_au_sommet</span><span class="p">(</span><span class="n">p</span><span class="p">):</span>
+    <span class="n">haut</span> <span class="o">=</span> <span class="n">depiler</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+    <span class="n">milieu</span> <span class="o">=</span> <span class="n">depiler</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+    <span class="n">bas</span> <span class="o">=</span> <span class="n">sommet</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+    <span class="n">est_reduit</span> <span class="o">=</span> <span class="o">...</span>
+    <span class="k">if</span> <span class="n">haut</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">!=</span> <span class="o">...</span><span class="p">:</span>
+        <span class="n">empiler</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>
+        <span class="o">...</span>
+    <span class="n">empiler</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>
+    <span class="k">return</span> <span class="o">...</span>
+</code></pre></div></td></tr></table></div>
+<p><strong>3.</strong> On se propose maintenant d'écrire une fonction <code>parcourir_pile_en_reduisant</code> qui parcourt la pile du haut vers le bas en procédant aux réductions pour chaque triplet rencontré quand cela est possible.</p>
+<p>La pile est toujours modifiée en place.</p>
+<p>La fonction <code>parcourir_pile_en_reduisant</code> renvoie un booléen indiquant si la pile a été réduite à au moins une reprise lors du parcours.</p>
+<p><strong>3.a.</strong> Donner la taille minimale que doit avoir une pile pour être réductible.</p>
+<p><strong>3.b.</strong> Recopier et compléter sur la copie :</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">🐍 Script Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">parcourir_pile_en_reduisant</span><span class="p">(</span><span class="n">p</span><span class="p">):</span>
+    <span class="n">q</span> <span class="o">=</span> <span class="n">creer_pile_vide</span><span class="p">()</span>
+    <span class="n">reduction_pendant_parcours</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="k">while</span> <span class="n">taille</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">3</span><span class="p">:</span>
+        <span class="k">if</span> <span class="o">...</span><span class="p">:</span>
+            <span class="n">reduction_pendant_parcours</span> <span class="o">=</span> <span class="o">...</span>
+        <span class="n">e</span> <span class="o">=</span> <span class="n">depiler</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+        <span class="n">empiler</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
+    <span class="k">while</span> <span class="ow">not</span> <span class="n">est_vide</span><span class="p">(</span><span class="n">q</span><span class="p">):</span>
+        <span class="o">...</span>
+        <span class="o">...</span>
+    <span class="k">return</span> <span class="o">...</span>
+</code></pre></div></td></tr></table></div>
+<p><strong>4.</strong> Partant d'une pile d'entiers <code>p</code>, on propose ici d'implémenter une fonction récursive <code>jouer</code> jouant une partie complète sur la pile <code>p</code>.</p>
+<p>On effectue donc autant de parcours que nécessaire.</p>
+<p>Une fois la pile parcourue de haut en bas, on effectue un nouveau parcours à condition que le parcours précédent ait modifié la pile. Si à l'inverse, la pile n'a pas été modifiée, on ne fait rien, car la partie est terminée.</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">🐍 Script Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">jouer</span><span class="p">(</span><span class="n">p</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">parcourir_pile_en_reduisant</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
+        <span class="o">...</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<h2 id="polynesie-2022-j1-tri-dune-pile">Polynésie 2022, J1 - Tri d'une pile<a class="headerlink" href="#polynesie-2022-j1-tri-dune-pile" title="Permanent link">⚓︎</a></h2>
+<div class="admonition exercice 3">
+<p class="admonition-title">D'après 2022, Polynésie, J1, Ex. 4</p>
+</div>
+<p>La classe <code>Pile</code> utilisée dans cet exercice est implémentée en utilisant des listes Python et propose quatre éléments d'interface :</p>
+<ul>
+<li>Un constructeur qui permet de créer une pile vide, représentée par <code>[]</code> ;</li>
+<li>La méthode <code>est_vide()</code> qui renvoie <code>True</code> si l'objet est une pile ne contenant aucun élément, et <code>False</code> sinon ;</li>
+<li>La méthode <code>empiler</code> qui prend un objet quelconque en paramètre et ajoute cet objet au sommet de la pile. Dans la représentation de la pile dans la console, cet objet apparait à droite des autres éléments de la pile ;</li>
+<li>La méthode <code>depiler</code> qui renvoie l'objet présent au sommet de la pile et le retire de la pile.</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Exemples :</p>
+<div class="highlight"><span class="filename">🐍 Console Python</span><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">ma_pile</span> <span class="o">=</span> <span class="n">Pile</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ma_pile</span><span class="o">.</span><span class="n">empiler</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ma_pile</span>
+<span class="go">[2]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ma_pile</span><span class="o">.</span><span class="n">empiler</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ma_pile</span><span class="o">.</span><span class="n">empiler</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ma_pile</span>
+<span class="go">[2, 3, 50]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ma_pile</span><span class="o">.</span><span class="n">depiler</span><span class="p">()</span>
+<span class="go">50</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ma_pile</span>
+<span class="go">[2, 3]</span>
+</code></pre></div>
+</div>
+<p>La méthode <code>est_triee</code> ci-dessous renvoie <code>True</code> si, en dépilant tous les éléments, ils sont traités dans l'ordre croissant, et <code>False</code> sinon.</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">🐍 Script Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">est_triee</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">est_vide</span><span class="p">():</span>
+        <span class="n">e1</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">depiler</span><span class="p">()</span>
+        <span class="k">while</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">est_vide</span><span class="p">():</span>
+            <span class="n">e2</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">depiler</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">e1</span> <span class="o">...</span> <span class="n">e2</span> <span class="p">:</span>
+                <span class="k">return</span> <span class="kc">False</span>
+            <span class="n">e1</span> <span class="o">=</span> <span class="o">...</span>
+    <span class="k">return</span> <span class="kc">True</span>
+</code></pre></div></td></tr></table></div>
+<p><strong>1.</strong> Recopier sur la copie les lignes 6 et 8 en complétant les points de suspension.</p>
+<p>On crée dans la console la pile <code>A</code> représentée par <code>[1, 2, 3, 4]</code>.</p>
+<p><strong>2.a.</strong> Donner la valeur renvoyée par l'appel <code>A.est_triee()</code>.</p>
+<p><strong>2.b.</strong> Donner le contenu de la pile <code>A</code> après l'exécution de cette instruction.</p>
+<p>On souhaite maintenant écrire le code d'une méthode <code>depile_max</code> d'une pile non vide ne contenant que des nombres entiers et renvoyant le plus grand élément de cette pile en le retirant de la pile.</p>
+<p>Après l'exécution de <code>p.depile_max()</code>, le nombre d'éléments de la pile <code>p</code> diminue donc de 1.</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">🐍 Script Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">depile_max</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">assert</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">est_vide</span><span class="p">(),</span> <span class="s2">&quot;Pile vide&quot;</span>
+    <span class="n">q</span> <span class="o">=</span> <span class="n">Pile</span><span class="p">()</span>
+    <span class="n">maxi</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">depiler</span><span class="p">()</span>
+    <span class="k">while</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">est_vide</span><span class="p">():</span>
+        <span class="n">elt</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">depiler</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">maxi</span> <span class="o">&lt;</span> <span class="n">elt</span><span class="p">:</span>
+            <span class="n">q</span><span class="o">.</span><span class="n">empiler</span><span class="p">(</span><span class="n">maxi</span><span class="p">)</span>
+            <span class="n">maxi</span> <span class="o">=</span> <span class="o">...</span>
+        <span class="k">else</span> <span class="p">:</span>
+            <span class="o">...</span>
+    <span class="k">while</span> <span class="ow">not</span> <span class="n">q</span><span class="o">.</span><span class="n">est_vide</span><span class="p">():</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">empiler</span><span class="p">(</span><span class="n">q</span><span class="o">.</span><span class="n">depiler</span><span class="p">())</span>
+    <span class="k">return</span> <span class="n">maxi</span>
+</code></pre></div></td></tr></table></div>
+<p><strong>3.</strong> Recopier sur la copie les lignes 9 et 11 en complétant les points de suspension.</p>
+<p>On crée la pile <code>B</code> représentée par <code>[9, -7, 8, 12, 4]</code> et on effectue l'appel <code>B.depile_max()</code>.</p>
+<p><strong>4.a.</strong> Donner le contenu des piles <code>B</code> et <code>q</code> à la fin de chaque itération de la boucle <code class="highlight"><span class="k">while</span></code> de la ligne 5.</p>
+<p><strong>4.b.</strong> Donner le contenu des piles <code>B</code> et <code>q</code> avant l'exécution de la ligne 14.</p>
+<p><strong>4.c.</strong> Donner un exemple de pile qui montre que l'ordre des éléments restants n'est pas préservé après l'exécution de <code>depile_max</code>.</p>
+<p>On donne le code de la fonction <code>traiter</code> :</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">🐍 Script Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">traiter</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">q</span> <span class="o">=</span> <span class="n">Pile</span><span class="p">()</span>
+    <span class="k">while</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">est_vide</span><span class="p">():</span>
+        <span class="n">q</span><span class="o">.</span><span class="n">empiler</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">depile_max</span><span class="p">())</span>
+    <span class="k">while</span> <span class="ow">not</span> <span class="n">q</span><span class="o">.</span><span class="n">est_vide</span><span class="p">():</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">empiler</span><span class="p">(</span><span class="n">q</span><span class="o">.</span><span class="n">depiler</span><span class="p">())</span>
+</code></pre></div></td></tr></table></div>
+<p><strong>5.a.</strong> Donner les contenus successifs des piles <code>B</code> et <code>q</code></p>
+<ul>
+<li>avant la ligne 3,</li>
+<li>avant la ligne 5,</li>
+<li>à la fin de l'exécution de la fonction <code>traiter</code> lorsque la fonction <code>traiter</code> est appelée avec la pile <code>B</code> contenant <code>[1, 6, 4, 3, 7, 2]</code>.</li>
+</ul>
+<p><strong>5.b.</strong> Expliquer le traitement effectué par cette méthode.</p>
+<h2 id="centres-etrangers-2022-j1-dictionnaire-modelisant-le-contenu-dun-repertoire">Centres étrangers 2022, J1 - Dictionnaire modélisant le contenu d'un répertoire<a class="headerlink" href="#centres-etrangers-2022-j1-dictionnaire-modelisant-le-contenu-dun-repertoire" title="Permanent link">⚓︎</a></h2>
+<div class="admonition exercice 4">
+<p class="admonition-title">D'après 2022, Centres étrangers, J1, Ex. 3</p>
+</div>
+<p>Afin d'organiser les répertoires et les fichiers sur un disque dur, une structure arborescente est utilisée. Les fichiers sont dans des répertoires qui sont eux-mêmes dans d'autres répertoires, etc.</p>
+<p>Dans une arborescence, chaque répertoire peut contenir des fichiers et des répertoires, qui sont identifiés par leur nom. Le contenu d'un répertoire est modélisé par la structure de données dictionnaire. Les clés de ce dictionnaire sont des chaines de caractères donnant le nom des fichiers et des répertoires contenus.</p>
+<div class="admonition example">
+<p class="admonition-title">Exemple illustré</p>
+<p>Le répertoire appelé <code>Téléchargements</code> contient deux fichiers <code>rapport.pdf</code> et <code>jingle.mp3</code> ainsi qu'un répertoire <code>Images</code> contenant simplement le fichier <code>logo.png</code>.</p>
+<p>Il est représenté ci-dessous.</p>
+<pre class="mermaid"><code>%%{init: {'themeVariables': {'fontFamily': 'monospace'}}}%%
+flowchart TB
+    n0[[Téléchargement]] --&gt; n1[[Images]]
+    n1 --&gt; n4(logo.png)
+    n0 --&gt; n2(rapport.pdf)
+    n0 --&gt; n3(jingle.mp3)</code></pre>
+<p>Ce répertoire <code>Téléchargements</code> est modélisé en Python par le dictionnaire suivant :</p>
+<p><code class="highlight"><span class="p">{</span><span class="s2">&quot;Images&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;logo.png&quot;</span><span class="p">:</span> <span class="mi">36</span><span class="p">},</span> <span class="s2">&quot;rapport.pdf&quot;</span><span class="p">:</span> <span class="mi">450</span><span class="p">,</span> <span class="s2">&quot;jingle.mp3&quot;</span><span class="p">:</span> <span class="mi">4800</span><span class="p">}</span></code></p>
+<p>Les valeurs numériques sont exprimées en ko (kilo-octets).</p>
+<p><code class="highlight"><span class="s2">&quot;logo.png&quot;</span><span class="p">:</span> <span class="mi">36</span></code> signifie que le fichier <code>logo.png</code> occupe un espace mémoire de 36 ko sur le disque dur.</p>
+</div>
+<p>On rappelle, ci-dessous, quelques commandes sur l'utilisation d'un dictionnaire :</p>
+<ul>
+<li><code class="highlight"><span class="n">dico</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span></code> crée un dictionnaire vide appelé <code>dico</code>,</li>
+<li><code class="highlight"><span class="n">dico</span><span class="p">[</span><span class="n">cle</span><span class="p">]</span> <span class="o">=</span> <span class="n">contenu</span></code> met la valeur <code>contenu</code> pour la clé <code>cle</code> dans le dictionnaire <code>dico</code>,</li>
+<li><code class="highlight"><span class="n">dico</span><span class="p">[</span><span class="n">cle</span><span class="p">]</span></code> renvoie la valeur associée à la clé <code>cle</code> dans le dictionnaire <code>dico</code>,</li>
+<li><code class="highlight"><span class="n">cle</span> <span class="ow">in</span> <span class="n">dico</span></code> renvoie un booléen indiquant si la clé <code>cle</code> est présente dans le dictionnaire <code>dico</code>.</li>
+<li><code class="highlight"><span class="k">for</span> <span class="n">cle</span> <span class="ow">in</span> <span class="n">dico</span><span class="p">:</span></code> permet d'itérer sur les clés d'un dictionnaire.</li>
+<li><code class="highlight"><span class="nb">len</span><span class="p">(</span><span class="n">dico</span><span class="p">)</span></code> renvoie le nombre de clés d'un dictionnaire.</li>
+</ul>
+<p>L'<strong>adresse</strong> d'un fichier ou d'un répertoire correspond au nom de tous les répertoires à parcourir depuis la racine afin d'accéder au fichier ou au répertoire. Cette adresse est modélisée en Python par la liste des noms de répertoire à parcourir pour y accéder.</p>
+<p>Exemple : L'adresse du répertoire : <code>/home/pierre/Documents/</code> est modélisée par la liste <code>["home", "pierre", "Documents"]</code>.</p>
+<p><strong>1.</strong> Dessiner l'arbre donné par le dictionnaire suivant, qui correspond au répertoire <code>Documents</code>.</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">Documents</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;Administratif&quot;</span><span class="p">:{</span>
+        <span class="s2">&quot;certificat_JDC.pdf&quot;</span><span class="p">:</span> <span class="mi">1500</span><span class="p">,</span>
+        <span class="s2">&quot;attestation_recensement.pdf&quot;</span><span class="p">:</span> <span class="mi">850</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;Cours&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;NSI&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;TP.html&quot;</span><span class="p">:</span> <span class="mi">60</span><span class="p">,</span>
+            <span class="s2">&quot;dm.odt&quot;</span><span class="p">:</span> <span class="mi">345</span>
+        <span class="p">},</span>
+        <span class="s2">&quot;Philo&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;Tractatus_logico-philosophicus.epub&quot;</span><span class="p">:</span> <span class="mi">2600</span>
+        <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;liste_de_courses.txt&quot;</span><span class="p">:</span> <span class="mi">24</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>2.</strong> On donne la fonction <code>parcourt</code> suivante qui prend en paramètres un répertoire racine et une liste représentant une adresse, et qui renvoie le contenu du répertoire cible correspondant à l'adresse.</p>
+<p>Exemple : Si la variable <code>docs</code> contient le dictionnaire de l'exemple de la question 1 alors <code>parcourt(docs, ["Cours", "Philo"])</code> renvoie le dictionnaire <code class="highlight"><span class="p">{</span><span class="s2">&quot;Tractatus_logico-philosophicus.epub&quot;</span><span class="p">:</span> <span class="mi">2600</span><span class="p">}</span></code>.</p>
+<p><strong>2.a.</strong> Recopier et compléter la ligne 4</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">def</span> <span class="nf">parcourt</span><span class="p">(</span><span class="n">racine</span><span class="p">,</span> <span class="n">adr</span><span class="p">):</span>
+    <span class="n">repertoire</span> <span class="o">=</span> <span class="n">racine</span>
+    <span class="k">for</span> <span class="n">nom_repertoire</span> <span class="ow">in</span> <span class="n">adr</span><span class="p">:</span>
+        <span class="n">repertoire</span> <span class="o">=</span> <span class="o">...</span>
+    <span class="k">return</span> <span class="n">repertoire</span>
+</code></pre></div>
+<p><strong>2.b.</strong> Soit la fonction suivante :</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">def</span> <span class="nf">affiche</span><span class="p">(</span><span class="n">racine</span><span class="p">,</span> <span class="n">adr</span><span class="p">,</span> <span class="n">nom_fichier</span><span class="p">):</span>
+    <span class="n">repertoire</span> <span class="o">=</span> <span class="n">parcourt</span><span class="p">(</span><span class="n">racine</span><span class="p">,</span> <span class="n">adr</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">repertoire</span><span class="p">[</span><span class="n">nom_fichier</span><span class="p">])</span>
+</code></pre></div>
+<p>Qu'affiche l'instruction <code class="highlight"><span class="n">affiche</span><span class="p">(</span><span class="n">docs</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;Cours&quot;</span><span class="p">,</span> <span class="s2">&quot;NSI&quot;</span><span class="p">],</span> <span class="s2">&quot;TP.html&quot;</span><span class="p">)</span></code> sachant que la variable <code>docs</code> contient le dictionnaire de la question 1 ?</p>
+<p><strong>3.a.</strong> La fonction <code>ajoute_fichier</code> suivante, de paramètres <code>racine</code>, <code>adr</code>, <code>nom_fichier</code> et <code>taille</code>, ajoute au dictionnaire <code>racine</code>, à l'adresse <code>adr</code>, la clé <code>nom_fichier</code> associé à la valeur <code>taille</code>.</p>
+<p>Une ligne de la fonction donnée ci-dessous contient une erreur. Laquelle ? Proposer une correction.</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">def</span> <span class="nf">ajoute_fichier</span><span class="p">(</span><span class="n">racine</span><span class="p">,</span> <span class="n">adr</span><span class="p">,</span> <span class="n">nom_fichier</span><span class="p">,</span> <span class="n">taille</span><span class="p">):</span>
+    <span class="n">repertoire</span> <span class="o">=</span> <span class="n">parcourt</span><span class="p">(</span><span class="n">racine</span><span class="p">,</span> <span class="n">adr</span><span class="p">)</span>
+    <span class="n">taille</span> <span class="o">=</span> <span class="n">repertoire</span><span class="p">[</span><span class="n">nom_fichier</span><span class="p">]</span>
+</code></pre></div>
+<p><strong>3.b.</strong> Écrire une fonction <code>ajoute_repertoire</code> de paramètres <code>racine</code>, <code>adr</code> et <code>nom_repertoire</code> qui crée un dictionnaire représentant un répertoire vide appelé <code>nom_repertoire</code> dans le dictionnaire <code>racine</code> à l'adresse <code>adr</code>.</p>
+<p><strong>4.a.</strong> </p>
+<div class="admonition info">
+<p class="admonition-title"><code>isinstance</code> pour vérifier le type d'une variable</p>
+<p><code class="highlight"><span class="nb">isinstance</span><span class="p">(</span><span class="n">variable</span><span class="p">,</span> <span class="n">A</span><span class="p">)</span></code> renvoie <code>True</code> si <code>variable</code> est de type <code>A</code> et <code>False</code> sinon.</p>
+<p><code>A</code> peut être le type <code>int</code>, <code>dict</code> ou tout autre type Python.</p>
+</div>
+<p>Écrire une fonction <code>est_fichier</code> de paramètre <code>racine</code>, un dictionnaire non vide, qui détermine si <code>racine</code> est un répertoire ou un fichier. <strong>On supposera que l'arborescence est bien formée</strong> : </p>
+<ul>
+<li>les répertoires et les fichiers sont des dictionnaires ;</li>
+<li>les répertoires ne contiennent, comme clés, que des répertoires et des fichiers ;</li>
+<li>un répertoire peut être vide ;</li>
+<li>la valeur associée à un fichier associée est toujours un entier.</li>
+</ul>
+<p>On pourra compléter le code suivant ou en proposer un autre</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">def</span> <span class="nf">est_fichier</span><span class="p">(</span><span class="n">racine</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">cle</span> <span class="ow">in</span> <span class="n">racine</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">racine</span><span class="p">[</span><span class="n">cle</span><span class="p">],</span> <span class="o">...</span><span class="p">):</span>
+           <span class="k">return</span> <span class="o">...</span>
+    <span class="k">return</span> <span class="o">...</span>
+</code></pre></div>
+<p><strong>4.b</strong> Écrire une fonction <code>taille</code> de paramètre <code>racine</code> qui prend en paramètre un dictionnaire <code>racine</code> modélisant un répertoire et qui renvoie le total d'espace mémoire occupé par les fichiers contenus dans ce répertoire.</p>
+
+
+
+
+
+                
+
+<style>
+    .jp-RenderedHTMLCommon p {
+        font-size: 0.8rem;
+        line-height: 1.6;
+    }
+
+    .jp-RenderedHTMLCommon li {
+        font-size: .8rem;
+        line-height: 1.6;
+    }
+
+    .jp-RenderedHTMLCommon h1 {
+        margin: 0 0 1.25em;
+        color: var(--md-default-fg-color--light);
+        font-weight: 300;
+        font-size: 2em;
+        line-height: 1.3;
+        letter-spacing: -0.01em;
+    }
+
+    .jp-RenderedHTMLCommon h2 {
+        margin: 1.6em 0 .64em;
+        font-weight: 300;
+        font-size: 1.965em;
+        line-height: 1.4;
+        letter-spacing: -0.01em;
+    }
+
+    .jp-RenderedHTMLCommon h3 {
+        margin: 1.6em 0 .8em;
+        font-weight: 400;
+        font-size: 1.57em;
+        line-height: 1.5;
+        letter-spacing: -0.01em;
+    }
+
+    .jp-RenderedHTMLCommon hr {
+        border: none;
+    }
+</style>
+
+
+
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Retour en haut de la page
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.expand", "navigation.top", "navigation.sections", "navigation.indexes", "navigation.tracking", "header.autohide", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.81fa17fe.min.js"></script>
+      
+        <script src="../../xtra/mathjax.js"></script>
+      
+        <script src="../../javascripts/config.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/gh/rod2ik/cdn@main/mkdocs/javascripts/massilia-admonitions.js"></script>
+      
+    
+  </body>
+</html>

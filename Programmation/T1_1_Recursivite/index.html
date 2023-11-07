@@ -1,0 +1,2356 @@
+<!-- Ajout pour le bouton de téléchargement et le style des jupyter notebook   https://github.com/danielfrg/mkdocs-jupyter -->
+
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Cours et TD de l'année en cours">
+      
+      
+      
+      
+        <link rel="prev" href="../index_prog/">
+      
+      
+        <link rel="next" href="../../Algo/index_algo/">
+      
+      
+      <link rel="icon" href="../../images/dragon.svg">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.8">
+    
+    
+      
+        <title>📓 C3 Récursivité - NSI Terminale 2022-2023</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.4b4a2bd9.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.356b1318.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rod2ik/cdn@main/mkdocs/css/massilia-admonitions.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#c3-recursivite" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="../.." title="NSI Terminale 2022-2023" class="md-header__button md-logo" aria-label="NSI Terminale 2022-2023" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="m352 124.5-51.9-13c-6.5-1.6-11.3-7.1-12-13.8s2.8-13.1 8.7-16.1l40.8-20.4-43.2-32.4c-5.5-4.1-7.8-11.3-5.6-17.9S297.1 0 304 0h160c30.2 0 58.7 14.2 76.8 38.4l57.6 76.8c6.2 8.3 9.6 18.4 9.6 28.8 0 26.5-21.5 48-48 48h-21.5c-17 0-33.3-6.7-45.3-18.7L480 160h-32v21.5c0 24.8 12.8 47.9 33.8 61.1l106.6 66.6c32.1 20.1 51.6 55.2 51.6 93.1 0 60.6-49.1 109.7-109.8 109.7H32.3c-3.3 0-6.6-.4-9.6-1.4-9.2-2.8-16.7-9.6-20.3-18.5C1 488.7.2 485.2 0 481.4c-.2-3.7.3-7.3 1.3-10.7 2.8-9.2 9.6-16.7 18.6-20.4 3-1.2 6.2-2 9.5-2.2L433.3 412c8.3-.7 14.7-7.7 14.7-16.1 0-4.3-1.7-8.4-4.7-11.4l-44.4-44.4c-30-30-46.9-70.7-46.9-113.1V124.5zm160-52.2v-.6.6zm-1.3 7.4-46.4-11.6c-.2 1.3-.3 2.6-.3 3.9 0 13.3 10.7 24 24 24 10.6 0 19.5-6.8 22.7-16.3zm-379.8 36.8c16.3-14.5 40.4-16.2 58.5-4.1l130.6 87V227c0 32.8 8.4 64.8 24 93H112c-6.7 0-12.7-4.2-15-10.4s-.5-13.3 4.6-17.7l69.4-59.6-152.6 23.5c-7 1.1-13.9-2.6-16.9-9S0 232.7 5.3 228l125.6-111.5z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            NSI Terminale 2022-2023
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              📓 C3 Récursivité
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue"  aria-label="Basculer en mode sombre"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Basculer en mode sombre" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9v1Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="blue"  aria-label="Basculer en mode clair"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Basculer en mode clair" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Recherche">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Effacer" aria-label="Effacer" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Onglets" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  Accueil
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../StructureDonnees/index_structDonnees/" class="md-tabs__link">
+          
+  
+    
+  
+  T1 - Struct. données
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../BasesDonnees/index_bd/" class="md-tabs__link">
+          
+  
+    
+  
+  T2 - Bases données
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Archi_Materielle/index_archi/" class="md-tabs__link">
+          
+  
+    
+  
+  T3 - Archi. mat.
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../index_prog/" class="md-tabs__link">
+          
+  
+    
+  
+  T4 - Prog.
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Algo/index_algo/" class="md-tabs__link">
+          
+  
+    
+  
+  T5 Algo.
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../BAC/bac_explication/" class="md-tabs__link">
+          
+  
+    
+  
+  BAC 📝
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../epreuve_pratique/" class="md-tabs__link">
+          
+  
+    
+  
+  Annales E.P. 💻
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../divers/prog/" class="md-tabs__link">
+          
+  
+    
+  
+  Extras
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../credit/" class="md-tabs__link">
+        
+  
+    
+  
+  Crédits
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="NSI Terminale 2022-2023" class="md-nav__button md-logo" aria-label="NSI Terminale 2022-2023" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="m352 124.5-51.9-13c-6.5-1.6-11.3-7.1-12-13.8s2.8-13.1 8.7-16.1l40.8-20.4-43.2-32.4c-5.5-4.1-7.8-11.3-5.6-17.9S297.1 0 304 0h160c30.2 0 58.7 14.2 76.8 38.4l57.6 76.8c6.2 8.3 9.6 18.4 9.6 28.8 0 26.5-21.5 48-48 48h-21.5c-17 0-33.3-6.7-45.3-18.7L480 160h-32v21.5c0 24.8 12.8 47.9 33.8 61.1l106.6 66.6c32.1 20.1 51.6 55.2 51.6 93.1 0 60.6-49.1 109.7-109.8 109.7H32.3c-3.3 0-6.6-.4-9.6-1.4-9.2-2.8-16.7-9.6-20.3-18.5C1 488.7.2 485.2 0 481.4c-.2-3.7.3-7.3 1.3-10.7 2.8-9.2 9.6-16.7 18.6-20.4 3-1.2 6.2-2 9.5-2.2L433.3 412c8.3-.7 14.7-7.7 14.7-16.1 0-4.3-1.7-8.4-4.7-11.4l-44.4-44.4c-30-30-46.9-70.7-46.9-113.1V124.5zm160-52.2v-.6.6zm-1.3 7.4-46.4-11.6c-.2 1.3-.3 2.6-.3 3.9 0 13.3 10.7 24 24 24 10.6 0 19.5-6.8 22.7-16.3zm-379.8 36.8c16.3-14.5 40.4-16.2 58.5-4.1l130.6 87V227c0 32.8 8.4 64.8 24 93H112c-6.7 0-12.7-4.2-15-10.4s-.5-13.3 4.6-17.7l69.4-59.6-152.6 23.5c-7 1.1-13.9-2.6-16.9-9S0 232.7 5.3 228l125.6-111.5z"/></svg>
+
+    </a>
+    NSI Terminale 2022-2023
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Accueil
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    T1 - Struct. données
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            T1 - Struct. données
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../StructureDonnees/index_structDonnees/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Structures de données
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    T2 - Bases données
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            T2 - Bases données
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BasesDonnees/index_bd/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Base de données
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BasesDonnees/Modele_Relationnel/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📓 C1 Modèle relationnel
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BasesDonnees/Cours_TP_SQL/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📓 C2 Langage SQL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BasesDonnees/SQL_BAC/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📝 S2 BAC SQL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BasesDonnees/SQL_BAC_correction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📝 S2 BAC SQL Correction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    T3 - Archi. mat.
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            T3 - Archi. mat.
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Archi_Materielle/index_archi/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Architecture matérielle et OS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    T4 - Prog.
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            T4 - Prog.
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index_prog/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Programmation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    📓 C3 Récursivité
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    📓 C3 Récursivité
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#premiere-approche" class="md-nav__link">
+    Première approche
+  </a>
+  
+    <nav class="md-nav" aria-label="Première approche">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#principe" class="md-nav__link">
+    Principe
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#premiers-exemples-et-precautions-dusage" class="md-nav__link">
+    Premiers exemples et précautions d'usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mecanisme-notion-de-pile" class="md-nav__link">
+    Mécanisme - Notion de pile
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limitation-de-la-taille-de-la-pile" class="md-nav__link">
+    Limitation de la taille de la pile
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#premiers-exercices" class="md-nav__link">
+    Premiers Exercices
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exemples-de-recursivite-double" class="md-nav__link">
+    Exemples de récursivité double
+  </a>
+  
+    <nav class="md-nav" aria-label="Exemples de récursivité double">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#la-suite-de-fibonnaci" class="md-nav__link">
+    La suite de Fibonnaci
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercices" class="md-nav__link">
+    Exercices
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#annexe-dessins-recursifs-grace-au-module-turtle" class="md-nav__link">
+    Annexe : dessins récursifs grâce au module turtle
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    T5 Algo.
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            T5 Algo.
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Algo/index_algo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Algorithmique
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    BAC 📝
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            BAC 📝
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BAC/bac_explication/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Information
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    2023
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_2">
+            <span class="md-nav__icon md-icon"></span>
+            2023
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annales/2023/EE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Epreuves écrites
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_3" id="__nav_7_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    2022
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_3">
+            <span class="md-nav__icon md-icon"></span>
+            2022
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annales/2022/EE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Epreuves écrites
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_4" id="__nav_7_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    2021
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_4">
+            <span class="md-nav__icon md-icon"></span>
+            2021
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annales/2021/EE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Epreuves écrites
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Annales E.P. 💻
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Annales E.P. 💻
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../epreuve_pratique/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Déroulement
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../divers/Consigne_EP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Consigne
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../divers/lien/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    S'entrainer en ligne pour l'épreuve pratique
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_4" id="__nav_8_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    2023
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_4">
+            <span class="md-nav__icon md-icon"></span>
+            2023
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Annales/2023/EP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Epreuves pratiques
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Extras
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Extras
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../divers/prog/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Divers concours programmation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Projet/forcebrute/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Force brute
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Projet/cryptographie/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cryptographie
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Projet/cryptographie2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cryptographie bis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Projet/pyxel/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    pyxel
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../divers/sujet0_geipi.pdf" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Epreuve GEIPI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../credit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Crédits
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#premiere-approche" class="md-nav__link">
+    Première approche
+  </a>
+  
+    <nav class="md-nav" aria-label="Première approche">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#principe" class="md-nav__link">
+    Principe
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#premiers-exemples-et-precautions-dusage" class="md-nav__link">
+    Premiers exemples et précautions d'usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mecanisme-notion-de-pile" class="md-nav__link">
+    Mécanisme - Notion de pile
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limitation-de-la-taille-de-la-pile" class="md-nav__link">
+    Limitation de la taille de la pile
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#premiers-exercices" class="md-nav__link">
+    Premiers Exercices
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exemples-de-recursivite-double" class="md-nav__link">
+    Exemples de récursivité double
+  </a>
+  
+    <nav class="md-nav" aria-label="Exemples de récursivité double">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#la-suite-de-fibonnaci" class="md-nav__link">
+    La suite de Fibonnaci
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercices" class="md-nav__link">
+    Exercices
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#annexe-dessins-recursifs-grace-au-module-turtle" class="md-nav__link">
+    Annexe : dessins récursifs grâce au module turtle
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+
+
+
+
+
+                  
+
+
+<h1 id="c3-recursivite"><span class='numchapitre'>C3</span> Récursivité <span style='float:right;'><span class="twemoji" title="Langages et programmation"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.8 200.5c-7.7-30.9-22.3-54.2-53.4-54.2h-40.1v47.4c0 36.8-31.2 67.8-66.8 67.8H172.7c-29.2 0-53.4 25-53.4 54.3v101.8c0 29 25.2 46 53.4 54.3 33.8 9.9 66.3 11.7 106.8 0 26.9-7.8 53.4-23.5 53.4-54.3v-40.7H226.2v-13.6h160.2c31.1 0 42.6-21.7 53.4-54.2 11.2-33.5 10.7-65.7 0-108.6zM286.2 404c11.1 0 20.1 9.1 20.1 20.3 0 11.3-9 20.4-20.1 20.4-11 0-20.1-9.2-20.1-20.4.1-11.3 9.1-20.3 20.1-20.3zM167.8 248.1h106.8c29.7 0 53.4-24.5 53.4-54.3V91.9c0-29-24.4-50.7-53.4-55.6-35.8-5.9-74.7-5.6-106.8.1-45.2 8-53.4 24.7-53.4 55.6v40.7h106.9v13.6h-147c-31.1 0-58.3 18.7-66.8 54.2-9.8 40.7-10.2 66.1 0 108.6 7.6 31.6 25.7 54.2 56.8 54.2H101v-48.8c0-35.3 30.5-66.4 66.8-66.4zm-6.7-142.6c-11.1 0-20.1-9.1-20.1-20.3.1-11.3 9-20.4 20.1-20.4 11 0 20.1 9.2 20.1 20.4s-9 20.3-20.1 20.3z"/></svg></span></span><a class="headerlink" href="#c3-recursivite" title="Permanent link">⚓︎</a></h1>
+<p><strong>Programme Terminale</strong>  </p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Contenus</th>
+<th style="text-align: center;">Capacités attendues</th>
+<th style="text-align: center;">Commentaires</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Récursivité</td>
+<td style="text-align: center;">Ecrire un programme récursif. Analyser le fonctionnement d'un programme récursif.</td>
+<td style="text-align: center;">Des exemples relevant de domaines variés sont à privilégier</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="" class="center" src="../data/horloge_recursive.jpg" width="50%" /></p>
+<h2 id="premiere-approche">Première approche<a class="headerlink" href="#premiere-approche" title="Permanent link">⚓︎</a></h2>
+<p><img alt="recursivite_google.png" class="center" src="../data/recursivite_google.png" /></p>
+<p>Faite l'essai</p>
+<h3 id="principe">Principe<a class="headerlink" href="#principe" title="Permanent link">⚓︎</a></h3>
+<p>En règle générale, un objet est dit récursif s'il se définit à partir de lui-même.<br />
+On trouve donc des acronymes récursifs, comme :  </p>
+<ul>
+<li>GNU dans GNU/Linux (GNU is Not Unix), </li>
+<li>le logiciel d'émulation WINE (Wine Is Not an Emulator),  </li>
+<li>les cartes bancaire VISA (Visa International Service Association), </li>
+<li>le moteur de recherche Bing (Bing is not Google), </li>
+<li>etc.  </li>
+</ul>
+<div class="admonition voc">
+<p class="admonition-title"> A retenir : Fonction récursive</p>
+<p>Une fonction est dite récursive lorsqu'elle fait appel à elle-même dans sa propre définition.</p>
+</div>
+<h3 id="premiers-exemples-et-precautions-dusage">Premiers exemples et précautions d'usage<a class="headerlink" href="#premiers-exemples-et-precautions-dusage" title="Permanent link">⚓︎</a></h3>
+<p><strong>Note : No infinite recursion !</strong> <br />
+Voici trois premiers exemples de fonctions récursives. Dans chaque cas, repérer l'appel récursif à la fonction.</p>
+<p>Une seule de ces 3 fonctions est correcte, laquelle?</p>
+<ul>
+<li>
+<p><strong>Fonction 1</strong><br />
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+    <span class="n">f</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello world!&quot;</span><span class="p">)</span>
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>Fonction 2</strong><br />
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello world!&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+        <span class="n">f</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>Fonction 3</strong><br />
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello world!&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+        <span class="n">f</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+</code></pre></div></p>
+</li>
+</ul>
+<div class="admonition voc">
+<p class="admonition-title">Cas de Base</p>
+<p>Lorsqu'on écrit une fonction récursive, le piège classique est de créer une boucle infinie.</p>
+<p>Hormis les blaques de geeks d'initiés, la récursivité en informatique ne tolère pas l'auto-référence infinie: il faut prévoir une condition d'arrêt qui traite le cas de base !!!</p>
+</div>
+<p><img alt="meme_gru_recursivite.jpg" class="center" src="../data/meme_gru_recursivite.jpg" /></p>
+<p>Ce «cas de base» sera aussi appelé «condition d'arrêt», puisque la très grande majorité des algorithmes récursifs peuvent être perçus comme des escaliers qu'on descend marche par marche, jusqu'au sol qui assure notre arrêt.</p>
+<div class="admonition voc">
+<p class="admonition-title">Terminaison</p>
+<p>Pour s'assurer qu'une fonction récursive se termine, il faut <strong>absolument</strong> que la chaîne d'appel conduise au cas de base. </p>
+<ul>
+<li>si le paramètre de la fonction est un entier, alors l'appel doit se faire avec un <strong>entier strictement inférieur</strong>;  </li>
+<li>si le paramètre de la fonction est une liste, alors l'appel doit se faire avec une liste de <strong>longueur strictement inférieure</strong>;  </li>
+<li>etc.</li>
+</ul>
+</div>
+<p><img alt="bd.png" src="../data/bd.png" /></p>
+<p>Observez bien la descente puis la remontée de notre vendeur de livre. Le cas de base est ici l'étage 0. Il empêche une descente infinie.</p>
+<p>Nous coderons bientôt la fonction donnant le prix du livre en fonction de l'étage.</p>
+<p>Pour l'instant, découvrons enfin à quoi ressemble une fonction récursive «bien écrite» :</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">def</span> <span class="nf">mystere</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">:</span>
+        <span class="k">return</span> <span class="mi">0</span>
+    <span class="k">else</span> <span class="p">:</span> 
+        <span class="k">return</span> <span class="n">n</span> <span class="o">+</span> <span class="n">mystere</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div>
+<p>Trois choses sont essentielles et doivent se retrouver dans tout programme récursif :</p>
+<ul>
+<li>lignes 2 et 3 : le cas de base (si n vaut 0 on renvoie vraiment une valeur, en l'occurence 0)  </li>
+<li>ligne 5 : l'appel récursif  </li>
+<li>ligne 5 : la décrémentation du paramètre d'appel  </li>
+</ul>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">mystere</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="mi">15</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">mystere</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
+<span class="mi">36</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Analyse avec Python tutor</p>
+</div>
+<iframe id="basthon-pythontutor-iframe-1" style="width: 100%; height: 400px;" frameborder="0" src="data:text/html;charset=utf-8,%3C%21DOCTYPE%20html%3E%0A%3Chtml%3E%0A%20%20%3Chead%3E%0A%20%20%20%20%3Clink%20rel%3D%22stylesheet%22%20href%3D%22https%3A//capytale2.ac-paris.fr/basthon/notebook/assets/0.41.11/modules/extern/pytutor-main.min.css%22/%3E%0A%20%20%20%20%3Cscript%20src%3D%22https%3A//capytale2.ac-paris.fr/basthon/notebook/assets/0.41.11/modules/extern/pytutor-main.min.js%22%3E%3C/script%3E%0A%20%20%20%20%3Cscript%3E%0A%20%20%20%20%20%20let%20sent_height%3B%0A%20%20%20%20%20%20%24%28document%29.ready%28function%28%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20//%20managing%20iframe%20resize%0A%20%20%20%20%20%20%20%20%20%20const%20send%20%3D%20%28%29%20%3D%3E%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20const%20new_height%20%3D%20document.body.offsetHeight%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20if%20%28sent_height%20%3D%3D%3D%20new_height%29%20return%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20sent_height%20%3D%20new_height%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20window.parent.postMessage%28%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20type%3A%20%22pytutor-iframe-resize%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20target%3A%20%22basthon-pythontutor-iframe-1%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20height%3A%20sent_height%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%20%27%2A%27%29%3B%0A%20%20%20%20%20%20%20%20%20%20%7D%3B%0A%20%20%20%20%20%20%20%20%20%20const%20o%20%3D%20new%20ResizeObserver%28send%29%3B%0A%20%20%20%20%20%20%20%20%20%20o.observe%28document.body%29%3B%0A%0A%20%20%20%20%20%20%20%20%20%20const%20t%20%3D%20%7B%22code%22%3A%20%22def%20mystere%28n%29%3A%5Cn%20%20%20%20if%20n%20%3D%3D%200%20%3A%5Cn%20%20%20%20%20%20%20%20return%200%5Cn%20%20%20%20else%20%3A%20%5Cn%20%20%20%20%20%20%20%20return%20n%20%2B%20mystere%28n-1%29%5Cn%5Cnmystere%284%29%22%2C%20%22trace%22%3A%20%5B%7B%22line%22%3A%201%2C%20%22event%22%3A%20%22step_line%22%2C%20%22func_name%22%3A%20%22%3Cmodule%3E%22%2C%20%22globals%22%3A%20%7B%7D%2C%20%22ordered_globals%22%3A%20%5B%5D%2C%20%22stack_to_render%22%3A%20%5B%5D%2C%20%22heap%22%3A%20%7B%7D%2C%20%22stdout%22%3A%20%22%22%7D%2C%20%7B%22line%22%3A%207%2C%20%22event%22%3A%20%22step_line%22%2C%20%22func_name%22%3A%20%22%3Cmodule%3E%22%2C%20%22globals%22%3A%20%7B%22mystere%22%3A%20%5B%22REF%22%2C%201%5D%7D%2C%20%22ordered_globals%22%3A%20%5B%22mystere%22%5D%2C%20%22stack_to_render%22%3A%20%5B%5D%2C%20%22heap%22%3A%20%7B%221%22%3A%20%5B%22FUNCTION%22%2C%20%22mystere%28n%29%22%2C%20null%5D%7D%2C%20%22stdout%22%3A%20%22%22%7D%2C%20%7B%22line%22%3A%201%2C%20%22event%22%3A%20%22call%22%2C%20%22func_name%22%3A%20%22mystere%22%2C%20%22globals%22%3A%20%7B%22mystere%22%3A%20%5B%22REF%22%2C%201%5D%7D%2C%20%22ordered_globals%22%3A%20%5B%22mystere%22%5D%2C%20%22stack_to_render%22%3A%20%5B%7B%22func_name%22%3A%20%22mystere%22%2C%20%22is_parent%22%3A%20false%2C%20%22frame_id%22%3A%201%2C%20%22parent_frame_id_list%22%3A%20%5B%5D%2C%20%22encoded_locals%22%3A%20%7B%22n%22%3A%204%7D%2C%20%22ordered_varnames%22%3A%20%5B%22n%22%5D%2C%20%22is_zombie%22%3A%20false%2C%20%22is_highlighted%22%3A%20true%2C%20%22unique_hash%22%3A%20%22mystere_f1%22%7D%5D%2C%20%22heap%22%3A%20%7B%221%22%3A%20%5B%22FUNCTION%22%2C%20%22mystere%28n%29%22%2C%20null%5D%7D%2C%20%22stdout%22%3A%20%22%22%7D%2C%20%7B%22line%22%3A%202%2C%20%22event%22%3A%20%22step_line%22%2C%20%22func_name%22%3A%20%22mystere%22%2C%20%22globals%22%3A%20%7B%22mystere%22%3A%20%5B%22REF%22%2C%201%5D%7D%2C%20%22ordered_globals%22%3A%20%5B%22mystere%22%5D%2C%20%22stack_to_render%22%3A%20%5B%7B%22func_name%22%3A%20%22mystere%22%2C%20%22is_parent%22%3A%20false%2C%20%22frame_id%22%3A%201%2C%20%22parent_frame_id_list%22%3A%20%5B%5D%2C%20%22encoded_locals%22%3A%20%7B%22n%22%3A%204%7D%2C%20%22ordered_varnames%22%3A%20%5B%22n%22%5D%2C%20%22is_zombie%22%3A%20false%2C%20%22is_highlighted%22%3A%20true%2C%20%22unique_hash%22%3A%20%22mystere_f1%22%7D%5D%2C%20%22heap%22%3A%20%7B%221%22%3A%20%5B%22FUNCTION%22%2C%20%22mystere%28n%29%22%2C%20null%5D%7D%2C%20%22stdout%22%3A%20%22%22%7D%2C%20%7B%22line%22%3A%205%2C%20%22event%22%3A%20%22step_line%22%2C%20%22func_name%22%3A%20%22mystere%22%2C%20%22globals%22%3A%20%7B%22mystere%22%3A%20%5B%22REF%22%2C%201%5D%7D%2C%20%22ordered_globals%22%3A%20%5B%22mystere%22%5D%2C%20%22stack_to_render%22%3A%20%5B%7B%22func_name%22%3A%20%22mystere%22%2C%20%22is_parent%22%3A%20false%2C%20%22frame_id%22%3A%201%2C%20%22parent_frame_id_list%22%3A%20%5B%5D%2C%20%22encoded_locals%22%3A%20%7B%22n%22%3A%204%7D%2C%20%22ordered_varnames%22%3A%20%5B%22n%22%5D%2C%20%22is_zombie%22%3A%20false%2C%20%22is_highlighted%22%3A%20true%2C%20%22unique_hash%22%3A%20%22mystere_f1%22%7D%5D%2C%20%22heap%22%3A%20%7B%221%22%3A%20%5B%22FUNCTION%22%2C%20%22mystere%28n%29%22%2C%20null%5D%7D%2C%20%22stdout%22%3A%20%22%22%7D%2C%20%7B%22line%22%3A%201%2C%20%22event%22%3A%20%22call%22%2C%20%22func_name%22%3A%20%22mystere%22%2C%20%22globals%22%3A%20%7B%22mystere%22%3A%20%5B%22REF%22%2C%201%5D%7D%2C%20%22ordered_globals%22%3A%20%5B%22mystere%22%5D%2C%20%22stack_to_render%22%3A%20%5B%7B%22func_name%22%3A%20%22mystere%22%2C%20%22is_parent%22%3A%20false%2C%20%22frame_id%22%3A%201%2C%20%22parent_frame_id_list%22%3A%20%5B%5D%2C%20%22encoded_locals%22%3A%20%7B%22n%22%3A%204%7D%2C%20%22ordered_varnames%22%3A%20%5B%22n%22%5D%2C%20%22is_zombie%22%3A%20false%2C%20%22is_highlighted%22%3A%20false%2C%20%22unique_hash%22%3A%20%22mystere_f1%22%7D%2C%20%7B%22func_name%22%3A%20%22mystere%22%2C%20%22is_parent%22%3A%20false%2C%20%22frame_id%22%3A%202%2C%20%22parent_frame_id_list%22%3A%20%5B%5D%2C%20%22encoded_locals%22%3A%20%7B%22n%22%3A%203%7D%2C%20%22ordered_varnames%22%3A%20%5B%22n%22%5D%2C%20%22is_zombie%22%3A%20false%2C%20%22is_highlighted%22%3A%20true%2C%20%22unique_hash%22%3A%20%22mystere_f2%22%7D%5D%2C%20%22heap%22%3A%20%7B%221%22%3A%20%5B%22FUNCTION%22%2C%20%22mystere%28n%29%22%2C%20null%5D%7D%2C%20%22stdout%22%3A%20%22%22%7D%2C%20%7B%22line%22%3A%202%2C%20%22event%22%3A%20%22step_line%22%2C%20%22func_name%22%3A%20%22mystere%22%2C%20%22globals%22%3A%20%7B%22mystere%22%3A%20%5B%22REF%22%2C%201%5D%7D%2C%20%22ordered_globals%22%3A%20%5B%22mystere%22%5D%2C%20%22stack_to_render%22%3A%20%5B%7B%22func_name%22%3A%20%22mystere%22%2C%20%22is_parent%22%3A%20false%2C%20%22frame_id%22%3A%201%2C%20%22parent_frame_id_list%22%3A%20%5B%5D%2C%20%22encoded_locals%22%3A%20%7B%22n%22%3A%204%7D%2C%20%22ordered_varnames%22%3A%20%5B%22n%22%5D%2C%20%22is_zombie%22%3A%20false%2C%20%22is_highlighted%22%3A%20false%2C%20%22unique_hash%22%3A%20%22mystere_f1%22%7D%2C%20%7B%22func_name%22%3A%20%22mystere%22%2C%20%22is_parent%22%3A%20false%2C%20%22frame_id%22%3A%202%2C%20%22parent_frame_id_list%22%3A%20%5B%5D%2C%20%22encoded_locals%22%3A%20%7B%22n%22%3A%203%7D%2C%20%22ordered_varnames%22%3A%20%5B%22n%22%5D%2C%20%22is_zombie%22%3A%20false%2C%20%22is_highlighted%22%3A%20true%2C%20%22unique_hash%22%3A%20%22mystere_f2%22%7D%5D%2C%20%22heap%22%3A%20%7B%221%22%3A%20%5B%22FUNCTION%22%2C%20%22mystere%28n%29%22%2C%20null%5D%7D%2C%20%22stdout%22%3A%20%22%22%7D%2C%20%7B%22line%22%3A%205%2C%20%22event%22%3A%20%22step_line%22%2C%20%22func_name%22%3A%20%22mystere%22%2C%20%22globals%22%3A%20%7B%22mystere%22%3A%20%5B%22REF%22%2C%201%5D%7D%2C%20%22ordered_globals%22%3A%20%5B%22mystere%22%5D%2C%20%22stack_to_render%22%3A%20%5B%7B%22func_name%22%3A%20%22mystere%22%2C%20%22is_parent%22%3A%20false%2C%20%22frame_id%22%3A%201%2C%20%22parent_frame_id_list%22%3A%20%5B%5D%2C%20%22encoded_locals%22%3A%20%7B%22n%22%3A%204%7D%2C%20%22ordered_varnames%22%3A%20%5B%22n%22%5D%2C%20%22is_zombie%22%3A%20false%2C%20%22is_highlighted%22%3A%20false%2C%20%22unique_hash%22%3A%20%22mystere_f1%22%7D%2C%20%7B%22func_name%22%3A%20%22mystere%22%2C%20%22is_parent%22%3A%20false%2C%20%22frame_id%22%3A%202%2C%20%22parent_frame_id_list%22%3A%20%5B%5D%2C%20%22encoded_locals%22%3A%20%7B%22n%22%3A%203%7D%2C%20%22ordered_varnames%22%3A%20%5B%22n%22%5D%2C%20%22is_zombie%22%3A%20false%2C%20%22is_highlighted%22%3A%20true%2C%20%22unique_hash%22%3A%20%22mystere_f2%22%7D%5D%2C%20%22heap%22%3A%20%7B%221%22%3A%20%5B%22FUNCTION%22%2C%20%22mystere%28n%29%22%2C%20null%5D%7D%2C%20%22stdout%22%3A%20%22%22%7D%2C%20%7B%22line%22%3A%201%2C%20%22event%22%3A%20%22call%22%2C%20%22func_name%22%3A%20%22mystere%22%2C%20%22globals%22%3A%20%7B%22mystere%22%3A%20%5B%22REF%22%2C%201%5D%7D%2C%20%22ordered_globals%22%3A%20%5B%22mystere%22%5D%2C%20%22stack_to_render%22%3A%20%5B%7B%22func_name%22%3A%20%22mystere%22%2C%20%22is_parent%22%3A%20false%2C%20%22frame_id%22%3A%201%2C%20%22parent_frame_id_list%22%3A%20%5B%5D%2C%20%22encoded_locals%22%3A%20%7B%22n%22%3A%204%7D%2C%20%22ordered_varnames%22%3A%20%5B%22n%22%5D%2C%20%22is_zombie%22%3A%20false%2C%20%22is_highlighted%22%3A%20false%2C%20%22unique_hash%22%3A%20%22mystere_f1%22%7D%2C%20%7B%22func_name%22%3A%20%22mystere%22%2C%20%22is_parent%22%3A%20false%2C%20%22frame_id%22%3A%202%2C%20%22parent_frame_id_list%22%3A%20%5B%5D%2C%20%22encoded_locals%22%3A%20%7B%22n%22%3A%203%7D%2C%20%22ordered_varnames%22%3A%20%5B%22n%22%5D%2C%20%22is_zombie%22%3A%20false%2C%20%22is_highlighted%22%3A%20false%2C%20%22unique_hash%22%3A%20%22mystere_f2%22%7D%2C%20%7B%22func_name%22%3A%20%22mystere%22%2C%20%22is_parent%22%3A%20false%2C%20%22frame_id%22%3A%203%2C%20%22parent_frame_id_list%22%3A%20%5B%5D%2C%20%22encoded_locals%22%3A%20%7B%22n%22%3A%202%7D%2C%20%22ordered_varnames%22%3A%20%5B%22n%22%5D%2C%20%22is_zombie%22%3A%20false%2C%20%22is_highlighted%22%3A%20true%2C%20%22unique_hash%22%3A%20%22mystere_f3%22%7D%5D%2C%20%22heap%22%3A%20%7B%221%22%3A%20%5B%22FUNCTION%22%2C%20%22mystere%28n%29%22%2C%20null%5D%7D%2C%20%22stdout%22%3A%20%22%22%7D%2C%20%7B%22line%22%3A%202%2C%20%22event%22%3A%20%22step_line%22%2C%20%22func_name%22%3A%20%22mystere%22%2C%20%22globals%22%3A%20%7B%22mystere%22%3A%20%5B%22REF%22%2C%201%5D%7D%2C%20%22ordered_globals%22%3A%20%5B%22mystere%22%5D%2C%20%22stack_to_render%22%3A%20%5B%7B%22func_name%22%3A%20%22mystere%22%2C%20%22is_parent%22%3A%20false%2C%20%22frame_id%22%3A%201%2C%20%22parent_frame_id_list%22%3A%20%5B%5D%2C%20%22encoded_locals%22%3A%20%7B%22n%22%3A%204%7D%2C%20%22ordered_varnames%22%3A%20%5B%22n%22%5D%2C%20%22is_zombie%22%3A%20false%2C%20%22is_highlighted%22%3A%20false%2C%20%22unique_hash%22%3A%20%22mystere_f1%22%7D%2C%20%7B%22func_name%22%3A%20%22mystere%22%2C%20%22is_parent%22%3A%20false%2C%20%22frame_id%22%3A%202%2C%20%22parent_frame_id_list%22%3A%20%5B%5D%2C%20%22encoded_locals%22%3A%20%7B%22n%22%3A%203%7D%2C%20%22ordered_varnames%22%3A%20%5B%22n%22%5D%2C%20%22is_zombie%22%3A%20false%2C%20%22is_highlighted%22%3A%20false%2C%20%22unique_hash%22%3A%20%22mystere_f2%22%7D%2C%20%7B%22func_name%22%3A%20%22mystere%22%2C%20%22is_parent%22%3A%20false%2C%20%22frame_id%22%3A%203%2C%20%22parent_frame_id_list%22%3A%20%5B%5D%2C%20%22encoded_locals%22%3A%20%7B%22n%22%3A%202%7D%2C%20%22ordered_varnames%22%3A%20%5B%22n%22%5D%2C%20%22is_zombie%22%3A%20false%2C%20%22is_highlighted%22%3A%20true%2C%20%22unique_hash%22%3A%20%22mystere_f3%22%7D%5D%2C%20%22heap%22%3A%20%7B%221%22%3A%20%5B%22FUNCTION%22%2C%20%22mystere%28n%29%22%2C%20null%5D%7D%2C%20%22stdout%22%3A%20%22%22%7D%2C%20%7B%22line%22%3A%205%2C%20%22event%22%3A%20%22step_line%22%2C%20%22func_name%22%3A%20%22mystere%22%2C%20%22globals%22%3A%20%7B%22mystere%22%3A%20%5B%22REF%22%2C%201%5D%7D%2C%20%22ordered_globals%22%3A%20%5B%22mystere%22%5D%2C%20%22stack_to_render%22%3A%20%5B%7B%22func_name%22%3A%20%22mystere%22%2C%20%22is_parent%22%3A%20false%2C%20%22frame_id%22%3A%201%2C%20%22parent_frame_id_list%22%3A%20%5B%5D%2C%20%22encoded_locals%22%3A%20%7B%22n%22%3A%204%7D%2C%20%22ordered_varnames%22%3A%20%5B%22n%22%5D%2C%20%22is_zombie%22%3A%20false%2C%20%22is_highlighted%22%3A%20false%2C%20%22unique_hash%22%3A%20%22mystere_f1%22%7D%2C%20%7B%22func_name%22%3A%20%22mystere%22%2C%20%22is_parent%22%3A%20false%2C%20%22frame_id%22%3A%202%2C%20%22parent_frame_id_list%22%3A%20%5B%5D%2C%20%22encoded_locals%22%3A%20%7B%22n%22%3A%203%7D%2C%20%22ordered_varnames%22%3A%20%5B%22n%22%5D%2C%20%22is_zombie%22%3A%20false%2C%20%22is_highlighted%22%3A%20false%2C%20%22unique_hash%22%3A%20%22mystere_f2%22%7D%2C%20%7B%22func_name%22%3A%20%22mystere%22%2C%20%22is_parent%22%3A%20false%2C%20%22frame_id%22%3A%203%2C%20%22parent_frame_id_list%22%3A%20%5B%5D%2C%20%22encoded_locals%22%3A%20%7B%22n%22%3A%202%7D%2C%20%22ordered_varnames%22%3A%20%5B%22n%22%5D%2C%20%22is_zombie%22%3A%20false%2C%20%22is_highlighted%22%3A%20true%2C%20%22unique_hash%22%3A%20%22mystere_f3%22%7D%5D%2C%20%22heap%22%3A%20%7B%221%22%3A%20%5B%22FUNCTION%22%2C%20%22mystere%28n%29%22%2C%20null%5D%7D%2C%20%22stdout%22%3A%20%22%22%7D%2C%20%7B%22line%22%3A%201%2C%20%22event%22%3A%20%22call%22%2C%20%22func_name%22%3A%20%22mystere%22%2C%20%22globals%22%3A%20%7B%22mystere%22%3A%20%5B%22REF%22%2C%201%5D%7D%2C%20%22ordered_globals%22%3A%20%5B%22mystere%22%5D%2C%20%22stack_to_render%22%3A%20%5B%7B%22func_name%22%3A%20%22mystere%22%2C%20%22is_parent%22%3A%20false%2C%20%22frame_id%22%3A%201%2C%20%22parent_frame_id_list%22%3A%20%5B%5D%2C%20%22encoded_locals%22%3A%20%7B%22n%22%3A%204%7D%2C%20%22ordered_varnames%22%3A%20%5B%22n%22%5D%2C%20%22is_zombie%22%3A%20false%2C%20%22is_highlighted%22%3A%20false%2C%20%22unique_hash%22%3A%20%22mystere_f1%22%7D%2C%20%7B%22func_name%22%3A%20%22mystere%22%2C%20%22is_parent%22%3A%20false%2C%20%22frame_id%22%3A%202%2C%20%22parent_frame_id_list%22%3A%20%5B%5D%2C%20%22encoded_locals%22%3A%20%7B%22n%22%3A%203%7D%2C%20%22ordered_varnames%22%3A%20%5B%22n%22%5D%2C%20%22is_zombie%22%3A%20false%2C%20%22is_highlighted%22%3A%20false%2C%20%22unique_hash%22%3A%20%22mystere_f2%22%7D%2C%20%7B%22func_name%22%3A%20%22mystere%22%2C%20%22is_parent%22%3A%20false%2C%20%22frame_id%22%3A%203%2C%20%22parent_frame_id_list%22%3A%20%5B%5D%2C%20%22encoded_locals%22%3A%20%7B%22n%22%3A%202%7D%2C%20%22ordered_varnames%22%3A%20%5B%22n%22%5D%2C%20%22is_zombie%22%3A%20false%2C%20%22is_highlighted%22%3A%20false%2C%20%22unique_hash%22%3A%20%22mystere_f3%22%7D%2C%20%7B%22func_name%22%3A%20%22mystere%22%2C%20%22is_parent%22%3A%20false%2C%20%22frame_id%22%3A%204%2C%20%22parent_frame_id_list%22%3A%20%5B%5D%2C%20%22encoded_locals%22%3A%20%7B%22n%22%3A%201%7D%2C%20%22ordered_varnames%22%3A%20%5B%22n%22%5D%2C%20%22is_zombie%22%3A%20false%2C%20%22is_highlighted%22%3A%20true%2C%20%22unique_hash%22%3A%20%22mystere_f4%22%7D%5D%2C%20%22heap%22%3A%20%7B%221%22%3A%20%5B%22FUNCTION%22%2C%20%22mystere%28n%29%22%2C%20null%5D%7D%2C%20%22stdout%22%3A%20%22%22%7D%2C%20%7B%22line%22%3A%202%2C%20%22event%22%3A%20%22step_line%22%2C%20%22func_name%22%3A%20%22mystere%22%2C%20%22globals%22%3A%20%7B%22mystere%22%3A%20%5B%22REF%22%2C%201%5D%7D%2C%20%22ordered_globals%22%3A%20%5B%22mystere%22%5D%2C%20%22stack_to_render%22%3A%20%5B%7B%22func_name%22%3A%20%22mystere%22%2C%20%22is_parent%22%3A%20false%2C%20%22frame_id%22%3A%201%2C%20%22parent_frame_id_list%22%3A%20%5B%5D%2C%20%22encoded_locals%22%3A%20%7B%22n%22%3A%204%7D%2C%20%22ordered_varnames%22%3A%20%5B%22n%22%5D%2C%20%22is_zombie%22%3A%20false%2C%20%22is_highlighted%22%3A%20false%2C%20%22unique_hash%22%3A%20%22mystere_f1%22%7D%2C%20%7B%22func_name%22%3A%20%22mystere%22%2C%20%22is_parent%22%3A%20false%2C%20%22frame_id%22%3A%202%2C%20%22parent_frame_id_list%22%3A%20%5B%5D%2C%20%22encoded_locals%22%3A%20%7B%22n%22%3A%203%7D%2C%20%22ordered_varnames%22%3A%20%5B%22n%22%5D%2C%20%22is_zombie%22%3A%20false%2C%20%22is_highlighted%22%3A%20false%2C%20%22unique_hash%22%3A%20%22mystere_f2%22%7D%2C%20%7B%22func_name%22%3A%20%22mystere%22%2C%20%22is_parent%22%3A%20false%2C%20%22frame_id%22%3A%203%2C%20%22parent_frame_id_list%22%3A%20%5B%5D%2C%20%22encoded_locals%22%3A%20%7B%22n%22%3A%202%7D%2C%20%22ordered_varnames%22%3A%20%5B%22n%22%5D%2C%20%22is_zombie%22%3A%20false%2C%20%22is_highlighted%22%3A%20false%2C%20%22unique_hash%22%3A%20%22mystere_f3%22%7D%2C%20%7B%22func_name%22%3A%20%22mystere%22%2C%20%22is_parent%22%3A%20false%2C%20%22frame_id%22%3A%204%2C%20%22parent_frame_id_list%22%3A%20%5B%5D%2C%20%22encoded_locals%22%3A%20%7B%22n%22%3A%201%7D%2C%20%22ordered_varnames%22%3A%20%5B%22n%22%5D%2C%20%22is_zombie%22%3A%20false%2C%20%22is_highlighted%22%3A%20true%2C%20%22unique_hash%22%3A%20%22mystere_f4%22%7D%5D%2C%20%22heap%22%3A%20%7B%221%22%3A%20%5B%22FUNCTION%22%2C%20%22mystere%28n%29%22%2C%20null%5D%7D%2C%20%22stdout%22%3A%20%22%22%7D%2C%20%7B%22line%22%3A%205%2C%20%22event%22%3A%20%22step_line%22%2C%20%22func_name%22%3A%20%22mystere%22%2C%20%22globals%22%3A%20%7B%22mystere%22%3A%20%5B%22REF%22%2C%201%5D%7D%2C%20%22ordered_globals%22%3A%20%5B%22mystere%22%5D%2C%20%22stack_to_render%22%3A%20%5B%7B%22func_name%22%3A%20%22mystere%22%2C%20%22is_parent%22%3A%20false%2C%20%22frame_id%22%3A%201%2C%20%22parent_frame_id_list%22%3A%20%5B%5D%2C%20%22encoded_locals%22%3A%20%7B%22n%22%3A%204%7D%2C%20%22ordered_varnames%22%3A%20%5B%22n%22%5D%2C%20%22is_zombie%22%3A%20false%2C%20%22is_highlighted%22%3A%20false%2C%20%22unique_hash%22%3A%20%22mystere_f1%22%7D%2C%20%7B%22func_name%22%3A%20%22mystere%22%2C%20%22is_parent%22%3A%20false%2C%20%22frame_id%22%3A%202%2C%20%22parent_frame_id_list%22%3A%20%5B%5D%2C%20%22encoded_locals%22%3A%20%7B%22n%22%3A%203%7D%2C%20%22ordered_varnames%22%3A%20%5B%22n%22%5D%2C%20%22is_zombie%22%3A%20false%2C%20%22is_highlighted%22%3A%20false%2C%20%22unique_hash%22%3A%20%22mystere_f2%22%7D%2C%20%7B%22func_name%22%3A%20%22mystere%22%2C%20%22is_parent%22%3A%20false%2C%20%22frame_id%22%3A%203%2C%20%22parent_frame_id_list%22%3A%20%5B%5D%2C%20%22encoded_locals%22%3A%20%7B%22n%22%3A%202%7D%2C%20%22ordered_varnames%22%3A%20%5B%22n%22%5D%2C%20%22is_zombie%22%3A%20false%2C%20%22is_highlighted%22%3A%20false%2C%20%22unique_hash%22%3A%20%22mystere_f3%22%7D%2C%20%7B%22func_name%22%3A%20%22mystere%22%2C%20%22is_parent%22%3A%20false%2C%20%22frame_id%22%3A%204%2C%20%22parent_frame_id_list%22%3A%20%5B%5D%2C%20%22encoded_locals%22%3A%20%7B%22n%22%3A%201%7D%2C%20%22ordered_varnames%22%3A%20%5B%22n%22%5D%2C%20%22is_zombie%22%3A%20false%2C%20%22is_highlighted%22%3A%20true%2C%20%22unique_hash%22%3A%20%22mystere_f4%22%7D%5D%2C%20%22heap%22%3A%20%7B%221%22%3A%20%5B%22FUNCTION%22%2C%20%22mystere%28n%29%22%2C%20null%5D%7D%2C%20%22stdout%22%3A%20%22%22%7D%2C%20%7B%22line%22%3A%201%2C%20%22event%22%3A%20%22call%22%2C%20%22func_name%22%3A%20%22mystere%22%2C%20%22globals%22%3A%20%7B%22mystere%22%3A%20%5B%22REF%22%2C%201%5D%7D%2C%20%22ordered_globals%22%3A%20%5B%22mystere%22%5D%2C%20%22stack_to_render%22%3A%20%5B%7B%22func_name%22%3A%20%22mystere%22%2C%20%22is_parent%22%3A%20false%2C%20%22frame_id%22%3A%201%2C%20%22parent_frame_id_list%22%3A%20%5B%5D%2C%20%22encoded_locals%22%3A%20%7B%22n%22%3A%204%7D%2C%20%22ordered_varnames%22%3A%20%5B%22n%22%5D%2C%20%22is_zombie%22%3A%20false%2C%20%22is_highlighted%22%3A%20false%2C%20%22unique_hash%22%3A%20%22mystere_f1%22%7D%2C%20%7B%22func_name%22%3A%20%22mystere%22%2C%20%22is_parent%22%3A%20false%2C%20%22frame_id%22%3A%202%2C%20%22parent_frame_id_list%22%3A%20%5B%5D%2C%20%22encoded_locals%22%3A%20%7B%22n%22%3A%203%7D%2C%20%22ordered_varnames%22%3A%20%5B%22n%22%5D%2C%20%22is_zombie%22%3A%20false%2C%20%22is_highlighted%22%3A%20false%2C%20%22unique_hash%22%3A%20%22mystere_f2%22%7D%2C%20%7B%22func_name%22%3A%20%22mystere%22%2C%20%22is_parent%22%3A%20false%2C%20%22frame_id%22%3A%203%2C%20%22parent_frame_id_list%22%3A%20%5B%5D%2C%20%22encoded_locals%22%3A%20%7B%22n%22%3A%202%7D%2C%20%22ordered_varnames%22%3A%20%5B%22n%22%5D%2C%20%22is_zombie%22%3A%20false%2C%20%22is_highlighted%22%3A%20false%2C%20%22unique_hash%22%3A%20%22mystere_f3%22%7D%2C%20%7B%22func_name%22%3A%20%22mystere%22%2C%20%22is_parent%22%3A%20false%2C%20%22frame_id%22%3A%204%2C%20%22parent_frame_id_list%22%3A%20%5B%5D%2C%20%22encoded_locals%22%3A%20%7B%22n%22%3A%201%7D%2C%20%22ordered_varnames%22%3A%20%5B%22n%22%5D%2C%20%22is_zombie%22%3A%20false%2C%20%22is_highlighted%22%3A%20false%2C%20%22unique_hash%22%3A%20%22mystere_f4%22%7D%2C%20%7B%22func_name%22%3A%20%22mystere%22%2C%20%22is_parent%22%3A%20false%2C%20%22frame_id%22%3A%205%2C%20%22parent_frame_id_list%22%3A%20%5B%5D%2C%20%22encoded_locals%22%3A%20%7B%22n%22%3A%200%7D%2C%20%22ordered_varnames%22%3A%20%5B%22n%22%5D%2C%20%22is_zombie%22%3A%20false%2C%20%22is_highlighted%22%3A%20true%2C%20%22unique_hash%22%3A%20%22mystere_f5%22%7D%5D%2C%20%22heap%22%3A%20%7B%221%22%3A%20%5B%22FUNCTION%22%2C%20%22mystere%28n%29%22%2C%20null%5D%7D%2C%20%22stdout%22%3A%20%22%22%7D%2C%20%7B%22line%22%3A%202%2C%20%22event%22%3A%20%22step_line%22%2C%20%22func_name%22%3A%20%22mystere%22%2C%20%22globals%22%3A%20%7B%22mystere%22%3A%20%5B%22REF%22%2C%201%5D%7D%2C%20%22ordered_globals%22%3A%20%5B%22mystere%22%5D%2C%20%22stack_to_render%22%3A%20%5B%7B%22func_name%22%3A%20%22mystere%22%2C%20%22is_parent%22%3A%20false%2C%20%22frame_id%22%3A%201%2C%20%22parent_frame_id_list%22%3A%20%5B%5D%2C%20%22encoded_locals%22%3A%20%7B%22n%22%3A%204%7D%2C%20%22ordered_varnames%22%3A%20%5B%22n%22%5D%2C%20%22is_zombie%22%3A%20false%2C%20%22is_highlighted%22%3A%20false%2C%20%22unique_hash%22%3A%20%22mystere_f1%22%7D%2C%20%7B%22func_name%22%3A%20%22mystere%22%2C%20%22is_parent%22%3A%20false%2C%20%22frame_id%22%3A%202%2C%20%22parent_frame_id_list%22%3A%20%5B%5D%2C%20%22encoded_locals%22%3A%20%7B%22n%22%3A%203%7D%2C%20%22ordered_varnames%22%3A%20%5B%22n%22%5D%2C%20%22is_zombie%22%3A%20false%2C%20%22is_highlighted%22%3A%20false%2C%20%22unique_hash%22%3A%20%22mystere_f2%22%7D%2C%20%7B%22func_name%22%3A%20%22mystere%22%2C%20%22is_parent%22%3A%20false%2C%20%22frame_id%22%3A%203%2C%20%22parent_frame_id_list%22%3A%20%5B%5D%2C%20%22encoded_locals%22%3A%20%7B%22n%22%3A%202%7D%2C%20%22ordered_varnames%22%3A%20%5B%22n%22%5D%2C%20%22is_zombie%22%3A%20false%2C%20%22is_highlighted%22%3A%20false%2C%20%22unique_hash%22%3A%20%22mystere_f3%22%7D%2C%20%7B%22func_name%22%3A%20%22mystere%22%2C%20%22is_parent%22%3A%20false%2C%20%22frame_id%22%3A%204%2C%20%22parent_frame_id_list%22%3A%20%5B%5D%2C%20%22encoded_locals%22%3A%20%7B%22n%22%3A%201%7D%2C%20%22ordered_varnames%22%3A%20%5B%22n%22%5D%2C%20%22is_zombie%22%3A%20false%2C%20%22is_highlighted%22%3A%20false%2C%20%22unique_hash%22%3A%20%22mystere_f4%22%7D%2C%20%7B%22func_name%22%3A%20%22mystere%22%2C%20%22is_parent%22%3A%20false%2C%20%22frame_id%22%3A%205%2C%20%22parent_frame_id_list%22%3A%20%5B%5D%2C%20%22encoded_locals%22%3A%20%7B%22n%22%3A%200%7D%2C%20%22ordered_varnames%22%3A%20%5B%22n%22%5D%2C%20%22is_zombie%22%3A%20false%2C%20%22is_highlighted%22%3A%20true%2C%20%22unique_hash%22%3A%20%22mystere_f5%22%7D%5D%2C%20%22heap%22%3A%20%7B%221%22%3A%20%5B%22FUNCTION%22%2C%20%22mystere%28n%29%22%2C%20null%5D%7D%2C%20%22stdout%22%3A%20%22%22%7D%2C%20%7B%22line%22%3A%203%2C%20%22event%22%3A%20%22step_line%22%2C%20%22func_name%22%3A%20%22mystere%22%2C%20%22globals%22%3A%20%7B%22mystere%22%3A%20%5B%22REF%22%2C%201%5D%7D%2C%20%22ordered_globals%22%3A%20%5B%22mystere%22%5D%2C%20%22stack_to_render%22%3A%20%5B%7B%22func_name%22%3A%20%22mystere%22%2C%20%22is_parent%22%3A%20false%2C%20%22frame_id%22%3A%201%2C%20%22parent_frame_id_list%22%3A%20%5B%5D%2C%20%22encoded_locals%22%3A%20%7B%22n%22%3A%204%7D%2C%20%22ordered_varnames%22%3A%20%5B%22n%22%5D%2C%20%22is_zombie%22%3A%20false%2C%20%22is_highlighted%22%3A%20false%2C%20%22unique_hash%22%3A%20%22mystere_f1%22%7D%2C%20%7B%22func_name%22%3A%20%22mystere%22%2C%20%22is_parent%22%3A%20false%2C%20%22frame_id%22%3A%202%2C%20%22parent_frame_id_list%22%3A%20%5B%5D%2C%20%22encoded_locals%22%3A%20%7B%22n%22%3A%203%7D%2C%20%22ordered_varnames%22%3A%20%5B%22n%22%5D%2C%20%22is_zombie%22%3A%20false%2C%20%22is_highlighted%22%3A%20false%2C%20%22unique_hash%22%3A%20%22mystere_f2%22%7D%2C%20%7B%22func_name%22%3A%20%22mystere%22%2C%20%22is_parent%22%3A%20false%2C%20%22frame_id%22%3A%203%2C%20%22parent_frame_id_list%22%3A%20%5B%5D%2C%20%22encoded_locals%22%3A%20%7B%22n%22%3A%202%7D%2C%20%22ordered_varnames%22%3A%20%5B%22n%22%5D%2C%20%22is_zombie%22%3A%20false%2C%20%22is_highlighted%22%3A%20false%2C%20%22unique_hash%22%3A%20%22mystere_f3%22%7D%2C%20%7B%22func_name%22%3A%20%22mystere%22%2C%20%22is_parent%22%3A%20false%2C%20%22frame_id%22%3A%204%2C%20%22parent_frame_id_list%22%3A%20%5B%5D%2C%20%22encoded_locals%22%3A%20%7B%22n%22%3A%201%7D%2C%20%22ordered_varnames%22%3A%20%5B%22n%22%5D%2C%20%22is_zombie%22%3A%20false%2C%20%22is_highlighted%22%3A%20false%2C%20%22unique_hash%22%3A%20%22mystere_f4%22%7D%2C%20%7B%22func_name%22%3A%20%22mystere%22%2C%20%22is_parent%22%3A%20false%2C%20%22frame_id%22%3A%205%2C%20%22parent_frame_id_list%22%3A%20%5B%5D%2C%20%22encoded_locals%22%3A%20%7B%22n%22%3A%200%7D%2C%20%22ordered_varnames%22%3A%20%5B%22n%22%5D%2C%20%22is_zombie%22%3A%20false%2C%20%22is_highlighted%22%3A%20true%2C%20%22unique_hash%22%3A%20%22mystere_f5%22%7D%5D%2C%20%22heap%22%3A%20%7B%221%22%3A%20%5B%22FUNCTION%22%2C%20%22mystere%28n%29%22%2C%20null%5D%7D%2C%20%22stdout%22%3A%20%22%22%7D%2C%20%7B%22line%22%3A%203%2C%20%22event%22%3A%20%22return%22%2C%20%22func_name%22%3A%20%22mystere%22%2C%20%22globals%22%3A%20%7B%22mystere%22%3A%20%5B%22REF%22%2C%201%5D%7D%2C%20%22ordered_globals%22%3A%20%5B%22mystere%22%5D%2C%20%22stack_to_render%22%3A%20%5B%7B%22func_name%22%3A%20%22mystere%22%2C%20%22is_parent%22%3A%20false%2C%20%22frame_id%22%3A%201%2C%20%22parent_frame_id_list%22%3A%20%5B%5D%2C%20%22encoded_locals%22%3A%20%7B%22n%22%3A%204%7D%2C%20%22ordered_varnames%22%3A%20%5B%22n%22%5D%2C%20%22is_zombie%22%3A%20false%2C%20%22is_highlighted%22%3A%20false%2C%20%22unique_hash%22%3A%20%22mystere_f1%22%7D%2C%20%7B%22func_name%22%3A%20%22mystere%22%2C%20%22is_parent%22%3A%20false%2C%20%22frame_id%22%3A%202%2C%20%22parent_frame_id_list%22%3A%20%5B%5D%2C%20%22encoded_locals%22%3A%20%7B%22n%22%3A%203%7D%2C%20%22ordered_varnames%22%3A%20%5B%22n%22%5D%2C%20%22is_zombie%22%3A%20false%2C%20%22is_highlighted%22%3A%20false%2C%20%22unique_hash%22%3A%20%22mystere_f2%22%7D%2C%20%7B%22func_name%22%3A%20%22mystere%22%2C%20%22is_parent%22%3A%20false%2C%20%22frame_id%22%3A%203%2C%20%22parent_frame_id_list%22%3A%20%5B%5D%2C%20%22encoded_locals%22%3A%20%7B%22n%22%3A%202%7D%2C%20%22ordered_varnames%22%3A%20%5B%22n%22%5D%2C%20%22is_zombie%22%3A%20false%2C%20%22is_highlighted%22%3A%20false%2C%20%22unique_hash%22%3A%20%22mystere_f3%22%7D%2C%20%7B%22func_name%22%3A%20%22mystere%22%2C%20%22is_parent%22%3A%20false%2C%20%22frame_id%22%3A%204%2C%20%22parent_frame_id_list%22%3A%20%5B%5D%2C%20%22encoded_locals%22%3A%20%7B%22n%22%3A%201%7D%2C%20%22ordered_varnames%22%3A%20%5B%22n%22%5D%2C%20%22is_zombie%22%3A%20false%2C%20%22is_highlighted%22%3A%20false%2C%20%22unique_hash%22%3A%20%22mystere_f4%22%7D%2C%20%7B%22func_name%22%3A%20%22mystere%22%2C%20%22is_parent%22%3A%20false%2C%20%22frame_id%22%3A%205%2C%20%22parent_frame_id_list%22%3A%20%5B%5D%2C%20%22encoded_locals%22%3A%20%7B%22n%22%3A%200%2C%20%22__return__%22%3A%200%7D%2C%20%22ordered_varnames%22%3A%20%5B%22n%22%2C%20%22__return__%22%5D%2C%20%22is_zombie%22%3A%20false%2C%20%22is_highlighted%22%3A%20true%2C%20%22unique_hash%22%3A%20%22mystere_f5%22%7D%5D%2C%20%22heap%22%3A%20%7B%221%22%3A%20%5B%22FUNCTION%22%2C%20%22mystere%28n%29%22%2C%20null%5D%7D%2C%20%22stdout%22%3A%20%22%22%7D%2C%20%7B%22line%22%3A%205%2C%20%22event%22%3A%20%22return%22%2C%20%22func_name%22%3A%20%22mystere%22%2C%20%22globals%22%3A%20%7B%22mystere%22%3A%20%5B%22REF%22%2C%201%5D%7D%2C%20%22ordered_globals%22%3A%20%5B%22mystere%22%5D%2C%20%22stack_to_render%22%3A%20%5B%7B%22func_name%22%3A%20%22mystere%22%2C%20%22is_parent%22%3A%20false%2C%20%22frame_id%22%3A%201%2C%20%22parent_frame_id_list%22%3A%20%5B%5D%2C%20%22encoded_locals%22%3A%20%7B%22n%22%3A%204%7D%2C%20%22ordered_varnames%22%3A%20%5B%22n%22%5D%2C%20%22is_zombie%22%3A%20false%2C%20%22is_highlighted%22%3A%20false%2C%20%22unique_hash%22%3A%20%22mystere_f1%22%7D%2C%20%7B%22func_name%22%3A%20%22mystere%22%2C%20%22is_parent%22%3A%20false%2C%20%22frame_id%22%3A%202%2C%20%22parent_frame_id_list%22%3A%20%5B%5D%2C%20%22encoded_locals%22%3A%20%7B%22n%22%3A%203%7D%2C%20%22ordered_varnames%22%3A%20%5B%22n%22%5D%2C%20%22is_zombie%22%3A%20false%2C%20%22is_highlighted%22%3A%20false%2C%20%22unique_hash%22%3A%20%22mystere_f2%22%7D%2C%20%7B%22func_name%22%3A%20%22mystere%22%2C%20%22is_parent%22%3A%20false%2C%20%22frame_id%22%3A%203%2C%20%22parent_frame_id_list%22%3A%20%5B%5D%2C%20%22encoded_locals%22%3A%20%7B%22n%22%3A%202%7D%2C%20%22ordered_varnames%22%3A%20%5B%22n%22%5D%2C%20%22is_zombie%22%3A%20false%2C%20%22is_highlighted%22%3A%20false%2C%20%22unique_hash%22%3A%20%22mystere_f3%22%7D%2C%20%7B%22func_name%22%3A%20%22mystere%22%2C%20%22is_parent%22%3A%20false%2C%20%22frame_id%22%3A%204%2C%20%22parent_frame_id_list%22%3A%20%5B%5D%2C%20%22encoded_locals%22%3A%20%7B%22n%22%3A%201%2C%20%22__return__%22%3A%201%7D%2C%20%22ordered_varnames%22%3A%20%5B%22n%22%2C%20%22__return__%22%5D%2C%20%22is_zombie%22%3A%20false%2C%20%22is_highlighted%22%3A%20true%2C%20%22unique_hash%22%3A%20%22mystere_f4%22%7D%5D%2C%20%22heap%22%3A%20%7B%221%22%3A%20%5B%22FUNCTION%22%2C%20%22mystere%28n%29%22%2C%20null%5D%7D%2C%20%22stdout%22%3A%20%22%22%7D%2C%20%7B%22line%22%3A%205%2C%20%22event%22%3A%20%22return%22%2C%20%22func_name%22%3A%20%22mystere%22%2C%20%22globals%22%3A%20%7B%22mystere%22%3A%20%5B%22REF%22%2C%201%5D%7D%2C%20%22ordered_globals%22%3A%20%5B%22mystere%22%5D%2C%20%22stack_to_render%22%3A%20%5B%7B%22func_name%22%3A%20%22mystere%22%2C%20%22is_parent%22%3A%20false%2C%20%22frame_id%22%3A%201%2C%20%22parent_frame_id_list%22%3A%20%5B%5D%2C%20%22encoded_locals%22%3A%20%7B%22n%22%3A%204%7D%2C%20%22ordered_varnames%22%3A%20%5B%22n%22%5D%2C%20%22is_zombie%22%3A%20false%2C%20%22is_highlighted%22%3A%20false%2C%20%22unique_hash%22%3A%20%22mystere_f1%22%7D%2C%20%7B%22func_name%22%3A%20%22mystere%22%2C%20%22is_parent%22%3A%20false%2C%20%22frame_id%22%3A%202%2C%20%22parent_frame_id_list%22%3A%20%5B%5D%2C%20%22encoded_locals%22%3A%20%7B%22n%22%3A%203%7D%2C%20%22ordered_varnames%22%3A%20%5B%22n%22%5D%2C%20%22is_zombie%22%3A%20false%2C%20%22is_highlighted%22%3A%20false%2C%20%22unique_hash%22%3A%20%22mystere_f2%22%7D%2C%20%7B%22func_name%22%3A%20%22mystere%22%2C%20%22is_parent%22%3A%20false%2C%20%22frame_id%22%3A%203%2C%20%22parent_frame_id_list%22%3A%20%5B%5D%2C%20%22encoded_locals%22%3A%20%7B%22n%22%3A%202%2C%20%22__return__%22%3A%203%7D%2C%20%22ordered_varnames%22%3A%20%5B%22n%22%2C%20%22__return__%22%5D%2C%20%22is_zombie%22%3A%20false%2C%20%22is_highlighted%22%3A%20true%2C%20%22unique_hash%22%3A%20%22mystere_f3%22%7D%5D%2C%20%22heap%22%3A%20%7B%221%22%3A%20%5B%22FUNCTION%22%2C%20%22mystere%28n%29%22%2C%20null%5D%7D%2C%20%22stdout%22%3A%20%22%22%7D%2C%20%7B%22line%22%3A%205%2C%20%22event%22%3A%20%22return%22%2C%20%22func_name%22%3A%20%22mystere%22%2C%20%22globals%22%3A%20%7B%22mystere%22%3A%20%5B%22REF%22%2C%201%5D%7D%2C%20%22ordered_globals%22%3A%20%5B%22mystere%22%5D%2C%20%22stack_to_render%22%3A%20%5B%7B%22func_name%22%3A%20%22mystere%22%2C%20%22is_parent%22%3A%20false%2C%20%22frame_id%22%3A%201%2C%20%22parent_frame_id_list%22%3A%20%5B%5D%2C%20%22encoded_locals%22%3A%20%7B%22n%22%3A%204%7D%2C%20%22ordered_varnames%22%3A%20%5B%22n%22%5D%2C%20%22is_zombie%22%3A%20false%2C%20%22is_highlighted%22%3A%20false%2C%20%22unique_hash%22%3A%20%22mystere_f1%22%7D%2C%20%7B%22func_name%22%3A%20%22mystere%22%2C%20%22is_parent%22%3A%20false%2C%20%22frame_id%22%3A%202%2C%20%22parent_frame_id_list%22%3A%20%5B%5D%2C%20%22encoded_locals%22%3A%20%7B%22n%22%3A%203%2C%20%22__return__%22%3A%206%7D%2C%20%22ordered_varnames%22%3A%20%5B%22n%22%2C%20%22__return__%22%5D%2C%20%22is_zombie%22%3A%20false%2C%20%22is_highlighted%22%3A%20true%2C%20%22unique_hash%22%3A%20%22mystere_f2%22%7D%5D%2C%20%22heap%22%3A%20%7B%221%22%3A%20%5B%22FUNCTION%22%2C%20%22mystere%28n%29%22%2C%20null%5D%7D%2C%20%22stdout%22%3A%20%22%22%7D%2C%20%7B%22line%22%3A%205%2C%20%22event%22%3A%20%22return%22%2C%20%22func_name%22%3A%20%22mystere%22%2C%20%22globals%22%3A%20%7B%22mystere%22%3A%20%5B%22REF%22%2C%201%5D%7D%2C%20%22ordered_globals%22%3A%20%5B%22mystere%22%5D%2C%20%22stack_to_render%22%3A%20%5B%7B%22func_name%22%3A%20%22mystere%22%2C%20%22is_parent%22%3A%20false%2C%20%22frame_id%22%3A%201%2C%20%22parent_frame_id_list%22%3A%20%5B%5D%2C%20%22encoded_locals%22%3A%20%7B%22n%22%3A%204%2C%20%22__return__%22%3A%2010%7D%2C%20%22ordered_varnames%22%3A%20%5B%22n%22%2C%20%22__return__%22%5D%2C%20%22is_zombie%22%3A%20false%2C%20%22is_highlighted%22%3A%20true%2C%20%22unique_hash%22%3A%20%22mystere_f1%22%7D%5D%2C%20%22heap%22%3A%20%7B%221%22%3A%20%5B%22FUNCTION%22%2C%20%22mystere%28n%29%22%2C%20null%5D%7D%2C%20%22stdout%22%3A%20%22%22%7D%2C%20%7B%22line%22%3A%207%2C%20%22event%22%3A%20%22return%22%2C%20%22func_name%22%3A%20%22%3Cmodule%3E%22%2C%20%22globals%22%3A%20%7B%22mystere%22%3A%20%5B%22REF%22%2C%201%5D%7D%2C%20%22ordered_globals%22%3A%20%5B%22mystere%22%5D%2C%20%22stack_to_render%22%3A%20%5B%5D%2C%20%22heap%22%3A%20%7B%221%22%3A%20%5B%22FUNCTION%22%2C%20%22mystere%28n%29%22%2C%20null%5D%7D%2C%20%22stdout%22%3A%20%22%22%7D%5D%7D%3B%0A%20%20%20%20%20%20%20%20%20%20function%20redraw%28%29%20%7B%20if%20%28window.v%29%20window.v.redrawConnectors%28%29%3B%20%7D%0A%20%20%20%20%20%20%20%20%20%20window.v%20%3D%20new%20ExecutionVisualizer%28%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%27main%27%2C%20t%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7BembeddedMode%3A%20false%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20heightChangeCallback%3A%20redraw%7D%0A%20%20%20%20%20%20%20%20%20%20%29%3B%0A%0A%20%20%20%20%20%20%20%20%20%20//%20message%20of%20type%20%27redraw%27%20from%20parent%20triggers%20a%20full%20redraw%0A%20%20%20%20%20%20%20%20%20%20//%20%28usefull%20when%20iframe%20is%20added%20to%20a%20non%20visible%20parent%29%0A%20%20%20%20%20%20%20%20%20%20window.addEventListener%28%27message%27%2C%20function%20%28event%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20const%20data%20%3D%20event.data%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20if%28%20data.type%20%3D%3D%3D%20%27redraw%27%20%29%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20window.v.updateOutput%28%29%3B%0A%20%20%20%20%20%20%20%20%20%20%7D%29%3B%0A%0A%20%20%20%20%20%20%20%20%20%20%24%28window%29.resize%28redraw%29%3B%0A%20%20%20%20%20%20%20%20%20%20redraw%28%29%3B%0A%20%20%20%20%20%20%7D%29%3B%0A%20%20%20%20%3C/script%3E%0A%20%20%3C/head%3E%0A%20%20%3Cbody%20style%3D%22overflow-y%3A%20hidden%3B%22%3E%0A%20%20%20%20%3Cdiv%20id%3D%22main%22%3E%3C/div%3E%0A%20%20%3C/body%3E%0A%3C/html%3E%0A"></iframe>
+
+<p>Que se passe-t-il lorsqu'on appelle <code>mystere(4)</code> ?</p>
+<div class="arithmatex">\[\begin{align}
+  \rm{mystere(4)} &amp;= 4+ \rm{mystere(3)}\\
+   &amp;= 4+ (3+\rm{mystere(2)}) \\
+   &amp;= 4+ (3+(2+\rm{mystere(1)} )) \\
+   &amp;= 4+ (3+(2+(1+\rm{mystere(0)} ))) \\   
+   &amp;= 4+ (3+(2+(1+0 ))) \\  
+\end{align}\]</div>
+<p>On voit que l'existence du cas de base pour <span class="arithmatex">\(n=0\)</span> est primordiale pour éviter la récursion infinie.</p>
+<p><img alt="diag.png" src="../data/diag.png" /></p>
+<p>Cette fonction <code>mystere(n)</code> calcule donc la somme des entiers positifs inférieurs ou égaux à <span class="arithmatex">\(n\)</span>.</p>
+<p>Une anecdote raconte que <a href="https://fr.wikipedia.org/wiki/Carl_Friedrich_Gauss">Carl Friedrich Gauss</a> trouva cette valeur de 5050 en quelques secondes, devant son instituteur ébahi.<br />
+Il venait pour cela d'inventer la formule : <span class="arithmatex">\(1+2+3+\dots+n=\frac{n(n+1)}{2}\)</span></p>
+<p>Ici, <span class="arithmatex">\(1+2+3+\dots+100=\dfrac{(100\times 101)}{2}=50 \times 101=5050\)</span></p>
+<div class="admonition example">
+<p class="admonition-title">A Connaitre : Somme des n premiers entiers</p>
+<p>On souhaite calculer la somme suivante:  <span class="arithmatex">\(S = 0 + 1 + 2 + 3 + \dots + (n-1) + n\)</span></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Version itérative</label><label for="__tabbed_1_2">Version récursive</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>En première, on a vu comment construire une fonction <em>itérative</em> le permettant, à l'aide d'une boucle <code>for</code> (d'où le terme <em>itératif</em>) et d'une variable accumulatrice:</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">def</span> <span class="nf">somme_iter</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+     <span class="n">s</span> <span class="o">+=</span> <span class="n">k</span>
+    <span class="k">return</span> <span class="n">s</span>
+<span class="n">somme_iter</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="mi">5050</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p>Une autre façon de voir le problème, c'est de se dire que cette somme peut s'écrire <span class="arithmatex">\(S = n + (n-1) + \dots + 3 + 2 + 1 + 0\)</span> et que c'est la somme de <span class="arithmatex">\(n\)</span> et <strong>de la somme des <span class="arithmatex">\(n-1\)</span> premiers entiers</strong> : <span class="arithmatex">\(S = n + \underbrace{(n-1) + \dots + 3 + 2 + 1 + 0}_{\text{somme des entiers jusqu'à } n-1}\)</span>.</p>
+<p>On écrit alors de façon «assez naturelle» la fonction récursive suivante (qui est la fonction mystère précédente) :</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">def</span> <span class="nf">somme_rec</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">0</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">n</span> <span class="o">+</span> <span class="n">somme</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">somme_rec</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="mi">5050</span>  
+</code></pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="admonition exo">
+<p class="admonition-title">Exercice  1 <img alt="❤" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/2764.svg" title=":heart:" /> </p>
+<p>On considère la fonction <code>factorielle(n)</code> (notée <span class="arithmatex">\(n!\)</span> en mathématiques), qui calcule le produit d'un entier <span class="arithmatex">\(n\)</span> par les entiers positifs qui lui sont inférieurs:
+$$ n! = n \times (n-1) \times (n-2) \times  \dots \times 3 \times 2 \times 1$$
+Exemple : <span class="arithmatex">\(5!=5\times4\times3\times2\times1=120\)</span></p>
+<p>S'inspirer des fonctions <code>somme</code> précédentes pour écrire deux fonctions <code>facto_iter</code> (itérative) et <code>facto_rec</code> (récursive) renvoyant la factorielle d'un nombre entier <code>n</code> strictement positif.</p>
+</div>
+<h3 id="mecanisme-notion-de-pile">Mécanisme - Notion de pile<a class="headerlink" href="#mecanisme-notion-de-pile" title="Permanent link">⚓︎</a></h3>
+<p>Maintenant qu'on a vu le principe d'une fonction récursive, il faut comprendre comment se passent les appels successifs à la fonction, pour un paramètre différent. </p>
+<p>Reprenons l'exemple de la fonction récursive <code>somme</code>. Si on appelle cette fonction:
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">somme</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</code></pre></div>
+Puisque l'argument <code>5</code> ne correspond pas au cas de base, la fonction va faire appel à <code>somme(4)</code>. Il faut retenir que l'exécution de la fonction <code>somme</code> est interrompue (avec l'argument <code>5</code>) pour rappeler la fonction <code>somme</code> (avec l'argument <code>4</code>)... </p>
+<p>Pour gérer ces différents appels, le système utilise une <strong>pile d'exécution</strong> :   </p>
+<p>(Dans la notion de pile (qui sera traitée plus tard dans le programme de Terminale), seule l'instruction «en haut de la pile» peut être traitée et enlevée (on dit «dépilée»).)</p>
+<p><img alt="ezgif_pile.gif" class="center" src="../data/ezgif_pile.gif" width="25%" /></p>
+<h3 id="limitation-de-la-taille-de-la-pile">Limitation de la taille de la pile<a class="headerlink" href="#limitation-de-la-taille-de-la-pile" title="Permanent link">⚓︎</a></h3>
+<p>Nous venons de voir que notre appel à <code>somme(5)</code> générait une pile de hauteur 6 (on parlera plutôt de <em>profondeur</em> 6). Cette profondeur est-elle limitée ?</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">somme_rec</span><span class="p">(</span><span class="mi">3000</span><span class="p">)</span>
+</code></pre></div>
+<p>Dans l'exemple précédent, la pile a une <em>profondeur</em> de 6. La profondeur de la pile n'est pas illimitée:
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">somme</span><span class="p">(</span><span class="mi">3000</span><span class="p">)</span>
+<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+    <span class="n">File</span> <span class="s2">&quot;&lt;console&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+    <span class="n">File</span> <span class="s2">&quot;&lt;tmp 1&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">5</span><span class="p">,</span> <span class="ow">in</span> <span class="n">somme</span>
+        <span class="k">return</span> <span class="n">n</span> <span class="o">+</span> <span class="n">somme</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">File</span> <span class="s2">&quot;&lt;tmp 1&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">5</span><span class="p">,</span> <span class="ow">in</span> <span class="n">somme</span>
+        <span class="k">return</span> <span class="n">n</span> <span class="o">+</span> <span class="n">somme</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">File</span> <span class="s2">&quot;&lt;tmp 1&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">5</span><span class="p">,</span> <span class="ow">in</span> <span class="n">somme</span>
+        <span class="k">return</span> <span class="n">n</span> <span class="o">+</span> <span class="n">somme</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="p">[</span><span class="n">Previous</span> <span class="n">line</span> <span class="n">repeated</span> <span class="mi">984</span> <span class="n">more</span> <span class="n">times</span><span class="p">]</span>
+    <span class="n">File</span> <span class="s2">&quot;&lt;tmp 1&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">2</span><span class="p">,</span> <span class="ow">in</span> <span class="n">somme</span>
+        <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="ne">RecursionError</span><span class="p">:</span> <span class="n">maximum</span> <span class="n">recursion</span> <span class="n">depth</span> <span class="n">exceeded</span> <span class="ow">in</span> <span class="n">comparison</span>
+</code></pre></div></p>
+<p>Vous venons de provoquer un «débordement de pile», le célèbre <strong>stack overflow</strong>.</p>
+<p>De manière générale, les programmes récursifs sont souvent proches de la définition du problème à résoudre et assez naturels à écrire, mais ils sont susceptibles de générer un trop grand nombre d'appels à eux-mêmes et de nécessiter un temps d'exécution trop grand ou un débordement de pile. Il est parfois possible de les optimiser, comme nous le verrons dans le cours concernant la <strong>programmation dynamique</strong>.  </p>
+<p>Nous reparlerons aussi de récursivité lorsque nous l'inscrirons dans un paradigme plus global de programmation, qui est <strong>« diviser pour régner »</strong> (en anglais <em>divide and conquer</em>).</p>
+<h2 id="premiers-exercices">Premiers Exercices<a class="headerlink" href="#premiers-exercices" title="Permanent link">⚓︎</a></h2>
+<div class="admonition exo">
+<p class="admonition-title">Exercice  2</p>
+<p>Coder la fonction <code>prix(etage)</code> de la BD présentée plus haut.</p>
+</div>
+<div class="admonition exo">
+<p class="admonition-title">Exercice  3</p>
+<p>Écrire une fonction récursive <code>puissance(x,n)</code> qui calcule le nombre <span class="arithmatex">\(x^n\)</span>.</p>
+</div>
+<div class="admonition exo">
+<p class="admonition-title">Exercice  4</p>
+<p>Dans une grande boite de Pétri contenant un mileu nutritif riche sont déposées 10 bactéries.<br />
+On suppose que chaque heure le nombre de bactéries est multiplié par 4.<br />
+Ecrire une fonction récursive nb_bact qui renvoie le nombre de bactéries au bout de <span class="arithmatex">\(n\)</span> jours, <span class="arithmatex">\(n\)</span> étant un entier naturel saisi comme argument.    </p>
+</div>
+<h2 id="exemples-de-recursivite-double">Exemples de récursivité double<a class="headerlink" href="#exemples-de-recursivite-double" title="Permanent link">⚓︎</a></h2>
+<p>Les expressions qui définissent une fonction peuvent aussi dépendre de plusieurs appels à la fonction en cours de définition.</p>
+<h3 id="la-suite-de-fibonnaci">La suite de Fibonnaci<a class="headerlink" href="#la-suite-de-fibonnaci" title="Permanent link">⚓︎</a></h3>
+<p>Considérons la suite numérique ainsi définie :
+- <span class="arithmatex">\(F_0 = 0\)</span>
+- <span class="arithmatex">\(F_1 = 1\)</span>
+- $ \forall n \in \mathbb{N}, F_{n+2} = F_{n+1}+F_n$</p>
+<p>On a donc <span class="arithmatex">\(F_2=0+1=1, F_3=F_2+F_1=1+1=2, F_4=F_3+F_2=2+1=3, F_5=F_4+F_3=3+2=5\)</span> ...</p>
+<div class="admonition exo">
+<p class="admonition-title">Exercice  5</p>
+<p>Implémenter de façon récursive la suite de Fibonnaci.</p>
+</div>
+<p><strong>Observation de la pile d'exécution</strong></p>
+<p>Appelons <code>F(n)</code> la fonction calculant de manière récursive le n-ième terme de la suite. Observons en détail la pile d'exécution lors du calcul de <code>F(4)</code>.</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="kn">from</span> <span class="nn">tutor</span> <span class="kn">import</span> <span class="n">tutor</span>
+
+
+<span class="n">fibo</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">tutor</span><span class="p">()</span>
+</code></pre></div>
+<p>On s'aperçoit notamment que :</p>
+<ul>
+<li>les appels récursifs ne sont PAS simultanés (rappelons que la simultanéité n'existe théoriquement pas en informatique). On pourrait s'imaginer que la relation <span class="arithmatex">\(F_4=F_3+F_2\)</span> allait déclencher deux «fils» récursifs calculant respectivement <span class="arithmatex">\(F_3\)</span> et <span class="arithmatex">\(F_2\)</span>. Il n'en est rien, on va jusqu'au bout du calcul de <span class="arithmatex">\(F_3\)</span> avant de s'intéresser à <span class="arithmatex">\(F_2\)</span>.</li>
+<li>conséquence de la remarque précédente : le calcul de <span class="arithmatex">\(F_2\)</span> s'effectue 2 fois. Une amélioration future (appelée <strong>mémoïsation</strong>, voir le cours de programmation dynamique) sera de conserver cette valeur de <span class="arithmatex">\(F_2\)</span> afin d'améliorer les calculs.</li>
+</ul>
+<p>On peut y construire par exemple l'arbre d'appel de <code>fibo(6)</code> :</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="kn">from</span> <span class="nn">rcviz</span> <span class="kn">import</span> <span class="n">viz</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="nd">@viz</span>
+<span class="k">def</span> <span class="nf">fibo</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">0</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">fibo</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="n">fibo</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="n">fibo</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
+<span class="mi">8</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">📋 Texte</span><pre><span></span><code>fibo.callgraph()
+</code></pre></div>
+<p><img alt="svg" src="../data/arbre_fibo.png" /></p>
+<p>On y remarque (par exemple) que <code>fibo(2)</code> est calculé 5 fois... </p>
+<h2 id="exercices">Exercices<a class="headerlink" href="#exercices" title="Permanent link">⚓︎</a></h2>
+<div class="admonition exo">
+<p class="admonition-title">Exercice  6</p>
+<p>On veut réaliser un château de cartes géants qui prolonge la château de l'image ci-dessous :</p>
+<p><img alt="chateau.jpeg" class="center" src="../data/chateau.jpeg" /></p>
+<p>On note <span class="arithmatex">\(n\)</span> le nombre d'étages du château et  <span class="arithmatex">\(nb\_cartes(n)\)</span> le nombre de cartes nécessaires pour réaliser un château à <span class="arithmatex">\(n\)</span> étages.<br />
+On admet que l'on peut connaître le nombre <span class="arithmatex">\(nb\_cartes(n+1)\)</span> de cartes nécessaires pour un château à <span class="arithmatex">\(n+1\)</span> étages si on connaît déjà le nombre <span class="arithmatex">\(nb\_cartes(n)\)</span> en utilisant la relation suivante (appelée relation de récurrence en mathématiques) : </p>
+<div class="arithmatex">\[nb\_cartes(n+1)=nb\_cartes(n)+2+3 \times n\]</div>
+<p>(à retrouver pour ceux suivant la spécialité maths)</p>
+<p>On veut à partir de ces informations construire une fonction récursive nommée <span class="arithmatex">\(nb\_cartes\)</span> qui renvoie finalement le nombre <span class="arithmatex">\(nb\_cartes(n)\)</span> si en argument lui est entré le nombre <span class="arithmatex">\(n\)</span> d'étages voulus au château.  </p>
+<ol>
+<li>Ecrire la fonction correspondante
+2 Testez votre fonction obtenue.<br />
+Vous pouvez utiliser l'image ci-dessus pour connaître quelques valeurs à obtenir.</li>
+</ol>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">def</span> <span class="nf">nb_cartes</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+<span class="n">nb_cartes</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>
+<span class="mi">345</span>
+</code></pre></div>
+</div>
+<div class="admonition exo">
+<p class="admonition-title">Exercice  7</p>
+<p>Soit <span class="arithmatex">\((u_n)\)</span> la suite d'entiers définie par : </p>
+<p><span class="arithmatex">\(u_{n+1}= \left\{\begin{array}{ll}
+\dfrac{u_n}{2}  &amp; \text{si } u_n \text{ est pair}\\
+3 \times u_n +1  &amp; \text{sinon}\\
+\end{array} \right.\)</span></p>
+<p>avec <span class="arithmatex">\(u_0\)</span> un entier quelconque plus grand que 1.<br />
+Ecrire une fonction récursive <code>syracuse(u_n)</code> qui affiche les valeurs successives de la suite <span class="arithmatex">\(u_n\)</span> tant que <span class="arithmatex">\(u_n\)</span> est plus grand que 1.<br />
+La conjecture de Syracuse affirme que, quelle que soit la valeur de <span class="arithmatex">\(u_0\)</span>, il existe un indice <span class="arithmatex">\(n\)</span> dans la liste tel que <span class="arithmatex">\(u_n=1\)</span>;<br />
+Cette conjecture défie toujours les mathématiciens.</p>
+</div>
+<div class="admonition exo">
+<p class="admonition-title">Exercice  8</p>
+<p>Voici une fonction mystère nommée <code>myst</code> :
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="k">def</span> <span class="nf">myst</span><span class="p">(</span><span class="n">l</span><span class="p">:</span> <span class="nb">list</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">l</span><span class="o">==</span><span class="p">[]:</span>
+        <span class="k">return</span> <span class="mi">0</span>
+    <span class="k">else</span><span class="p">:</span>          
+        <span class="n">l</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>          <span class="c1"># suppression du premier terme de la liste l</span>
+        <span class="k">return</span> <span class="mi">1</span><span class="o">+</span><span class="n">myst</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+</code></pre></div></p>
+<ol>
+<li>Pourquoi cette fonction myst est une fonction récursive ?</li>
+<li>Testez cette fonction avec quelques listes.</li>
+<li>Quel est le rôle de cette fonction myst ?</li>
+</ol>
+</div>
+<div class="admonition exo">
+<p class="admonition-title">Exercice  9</p>
+<p>Soit <span class="arithmatex">\((u_n)\)</span> la suite d'entiers définie par : 
+    <span class="arithmatex">\(u_{n}= \left\{\begin{array}{ll}
+    a \in R  &amp; \text{si } n =0\\
+    b \in R  &amp; \text{si } n=1\\
+    3u_{n-1}+2u_{n-2}+5 &amp; \forall n \geq 2
+    \end{array} \right.\)</span></p>
+<p>Ecrire une fonction récursive <code>serie(n,a,b)</code> qui renvoie le <span class="arithmatex">\(n\)</span>-ième terme de cette suite pour les valeurs de <span class="arithmatex">\(a\)</span> et <span class="arithmatex">\(b\)</span> données en paramètres.</p>
+</div>
+<div class="admonition exo">
+<p class="admonition-title">Exercice  10</p>
+<p>Un palindrome est une chaîne de caractères qui est identique lue de gauche à droite ou de droite à gauche. Par exemple, la chaîne GIRAFARIG est un palindrome : si on inverse le mot, il reste identique.<br />
+Pour coder récursivement un test de palindrome (cf. dessin ci-dessous), il suffit de vérifier que  </p>
+<ul>
+<li>les lettres aux extrémités sont les mêmes (les lettres en bleu sur la figure);  </li>
+<li>le mot privé de ses deux extrémités est encore un palindrome (en orange sur le dessin), d’où appel récursif.  </li>
+</ul>
+</div>
+<p><img alt="girafarig.png" src="../data/girafarig.png" /></p>
+<p><strong>Précaution :</strong> quand on vérifie que le mot privé de ses deux extrémités est encore un palindrome, il faut faire attention à ce que le retrait des extrémités soit possible. Ce problème ne se pose que si le mot a une lettre ou n’a aucune lettre. Dans ces cas, le mot est un palindrome, ce qui donne le cas de base de la récursivité. Remarquons que si le mot a deux lettres, ce n’est pas un cas de base car quand on lui retire ses extrémités, la chaîne devient vide et on tombe sur un cas de base.</p>
+<p><strong>Remarque :</strong><br />
+mot[1:-1] est un slice : c’est la chaîne mot amputée de son premier caractère (elle commence à l’indice 1 et se termine juste avant l’indice -1, ce dernier indice référençant le dernier caractère de la chaîne).</p>
+<h2 id="annexe-dessins-recursifs-grace-au-module-turtle">Annexe : dessins récursifs grâce au module <code>turtle</code><a class="headerlink" href="#annexe-dessins-recursifs-grace-au-module-turtle" title="Permanent link">⚓︎</a></h2>
+<p>Le module <code>turtle</code> permet de faire des tracés basiques. Mais dès l'instant où on met de la récursivité dans le code, les résultats peuvent devenir très surprenants, et aboutir à des structures <a href="https://fr.wikipedia.org/wiki/Fractale">fractales</a>.</p>
+<div class="highlight"><span class="filename">🐍 Script Python</span><pre><span></span><code><span class="kn">from</span> <span class="nn">turtle</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="n">ang</span> <span class="o">=</span> <span class="mi">40</span>
+
+<span class="k">def</span> <span class="nf">trace</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">l</span><span class="p">):</span>
+
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
+    <span class="k">else</span> <span class="p">:</span>
+        <span class="n">forward</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+        <span class="n">left</span><span class="p">(</span><span class="n">ang</span><span class="p">)</span>
+        <span class="n">trace</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mf">0.7</span><span class="o">*</span><span class="n">l</span><span class="p">)</span>
+        <span class="n">right</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">ang</span><span class="p">)</span>
+        <span class="n">trace</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mf">0.7</span><span class="o">*</span><span class="n">l</span><span class="p">)</span>
+        <span class="n">left</span><span class="p">(</span><span class="n">ang</span><span class="p">)</span>
+        <span class="n">forward</span><span class="p">(</span><span class="o">-</span><span class="n">l</span><span class="p">)</span>
+
+
+<span class="n">penup</span><span class="p">()</span>        
+<span class="n">goto</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">80</span><span class="p">)</span>
+<span class="n">pendown</span><span class="p">()</span>
+<span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">speed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="n">trace</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">📋 Texte</span><pre><span></span><code>from turtle import *
+
+ang = 40
+
+def trace(n,l):
+
+    if n == 0 :
+        return None
+    else :
+        forward(l)
+        left(ang)
+        trace(n-1,0.65*l)
+        right(2*ang)
+        trace(n-1,0.65*l)
+        left(ang)
+        forward(-l)
+
+
+penup()        
+goto(0,-80)
+pendown()
+left(90)
+speed(0)
+
+trace(12,100)
+mainloop()
+</code></pre></div>
+<div class="highlight"><span class="filename">📋 Texte</span><pre><span></span><code>
+</code></pre></div>
+<div class="admonition exo">
+<p class="admonition-title">Exercice  11 Facultatif</p>
+<p>Reproduire le dessin suivant, à l'aide du module <code>turtle</code>.  </p>
+<p><code>turtle</code> est un hommage au langage LOGO inventé par <a href="https://fr.wikipedia.org/wiki/Seymour_Papert">Seymour Papert</a> au MIT à la fin des années 60.</p>
+<p><img alt="carres_turtle.png" src="../data/carre_turtle.png" /></p>
+</div>
+
+
+
+
+
+                
+
+<style>
+    .jp-RenderedHTMLCommon p {
+        font-size: 0.8rem;
+        line-height: 1.6;
+    }
+
+    .jp-RenderedHTMLCommon li {
+        font-size: .8rem;
+        line-height: 1.6;
+    }
+
+    .jp-RenderedHTMLCommon h1 {
+        margin: 0 0 1.25em;
+        color: var(--md-default-fg-color--light);
+        font-weight: 300;
+        font-size: 2em;
+        line-height: 1.3;
+        letter-spacing: -0.01em;
+    }
+
+    .jp-RenderedHTMLCommon h2 {
+        margin: 1.6em 0 .64em;
+        font-weight: 300;
+        font-size: 1.965em;
+        line-height: 1.4;
+        letter-spacing: -0.01em;
+    }
+
+    .jp-RenderedHTMLCommon h3 {
+        margin: 1.6em 0 .8em;
+        font-weight: 400;
+        font-size: 1.57em;
+        line-height: 1.5;
+        letter-spacing: -0.01em;
+    }
+
+    .jp-RenderedHTMLCommon hr {
+        border: none;
+    }
+</style>
+
+
+
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Retour en haut de la page
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.expand", "navigation.top", "navigation.sections", "navigation.indexes", "navigation.tracking", "header.autohide", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.81fa17fe.min.js"></script>
+      
+        <script src="../../xtra/mathjax.js"></script>
+      
+        <script src="../../javascripts/config.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/gh/rod2ik/cdn@main/mkdocs/javascripts/massilia-admonitions.js"></script>
+      
+    
+  </body>
+</html>

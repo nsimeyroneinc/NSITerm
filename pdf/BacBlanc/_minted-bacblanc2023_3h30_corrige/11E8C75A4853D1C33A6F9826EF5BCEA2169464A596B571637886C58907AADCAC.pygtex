@@ -1,0 +1,16 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{def} \PYG{n+nf}{construitABR}\PYG{p}{(}\PYG{n}{i}\PYG{p}{,} \PYG{n}{ordre}\PYG{p}{):}
+    \PYG{k}{while} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{nouveau}\PYG{p}{)} \PYG{o}{\PYGZlt{}=} \PYG{n}{i}\PYG{p}{:}
+        \PYG{n}{nouveau}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{k+kc}{None}\PYG{p}{)}
+
+    \PYG{n}{i\PYGZus{}milieu} \PYG{o}{=} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{ordre}\PYG{p}{)}\PYG{o}{//}\PYG{l+m+mi}{2}
+    \PYG{n}{nouveau}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{=} \PYG{n}{ordre}\PYG{p}{[}\PYG{n}{i\PYGZus{}milieu}\PYG{p}{]}
+
+    \PYG{n}{gauche} \PYG{o}{=} \PYG{n}{ordre}\PYG{p}{[:}\PYG{n}{i\PYGZus{}milieu}\PYG{p}{]}
+    \PYG{k}{if} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{gauche}\PYG{p}{)} \PYG{o}{\PYGZgt{}} \PYG{l+m+mi}{0}\PYG{p}{:}
+        \PYG{n}{construitABR}\PYG{p}{(}\PYG{l+m+mi}{2}\PYG{o}{*}\PYG{n}{i}\PYG{p}{,} \PYG{n}{gauche}\PYG{p}{)}
+
+    \PYG{n}{droite} \PYG{o}{=} \PYG{n}{ordre}\PYG{p}{[(}\PYG{n}{i\PYGZus{}milieu}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{):]}
+    \PYG{k}{if} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{droite}\PYG{p}{)} \PYG{o}{\PYGZgt{}} \PYG{l+m+mi}{0}\PYG{p}{:}
+        \PYG{n}{construitABR}\PYG{p}{(}\PYG{l+m+mi}{2}\PYG{o}{*}\PYG{n}{i}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{droite}\PYG{p}{)}
+\end{Verbatim}

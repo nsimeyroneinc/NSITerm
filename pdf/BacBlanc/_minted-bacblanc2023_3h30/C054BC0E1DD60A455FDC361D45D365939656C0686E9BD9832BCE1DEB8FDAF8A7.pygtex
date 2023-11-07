@@ -1,0 +1,18 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+Fonction infixe(arbre) :
+    p est une Pile vide
+    visites est une liste vide
+    n est égal à 1 \PYGZsh{} l\PYGZsq{}indice du nœud étudié dans arbre
+    repetition est égal à Vrai
+    Tant que repetition est Vrai :
+        Tant que n \PYGZlt{} longueur(arbre) et arbre[n] n\PYGZsq{}est pas None :
+            Ajouter n à la pile
+            n est égal à l\PYGZsq{}indice du fils gauche du nœud d\PYGZsq{}indice n
+        Si la longueur de la pile est nulle :
+            repetition est égal à Faux
+        Sinon :
+            Dépiler une valeur de la pile dans n
+            Ajouter arbre[n] à la fin de visites
+            n est égal à l\PYGZsq{}indice du fils droit du nœud d\PYGZsq{}indice n
+    Renvoyer visites
+\end{Verbatim}

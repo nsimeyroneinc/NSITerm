@@ -1,0 +1,16 @@
+\mframe{\Recursivite}
+^^I\begin{exampleblock}{Exemple : une fonction à analyser}
+^^I^^I\begin{itemize}[label=\textbullet]
+^^I^^I^^I\item<2-> \textcolor{OliveGreen}{Cette fonction compte le nombre d'occurence de {\tt elt} dans {\tt liste}}
+^^I^^I^^I\item<3-> \textcolor{OliveGreen}{Elle ne contient pas de boucle, elle n'est donc pas programmé de façon itérative. Par contre c'est une fonction récursive car elle fait appel à elle même.}
+^^I^^I^^I\item<4-> \textcolor{OliveGreen}{Version itérative}
+\begin{lstlisting}
+def occurence(elt,liste):
+   occ=0
+   for x in liste:
+      if x==elt:
+         occ=occ+1
+   return occ
+\end{lstlisting}
+^^I^^I\end{itemize}
+^^I\end{exampleblock}
