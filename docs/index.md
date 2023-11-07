@@ -1,30 +1,10 @@
 
 
 !!! info "Actualités" 
-    - Les graphes - TP labyrinthe
-        - [TP](StructureDonnees/TP_Labyrinthe.md)  
-    - Idée projet :
-      - [Gomoku](Projet/gomoku.md)
-      - [Le problème des huit reines](Projet/reines.md)
+	Site en reconstruction
 
 
-
-  
-## Progression sur l'année
-
-### Liste des chapitres 
-
-{{ affiche_progression("terminale") }}
-
-### Liste des sujets BAC
-
-{{ affiche_BAC("terminale") }}
-
-
-!!! note 
-    Le sujet de l’épreuve écrite de la spécialité numérique et sciences informatiques, **comporte trois exercices indépendants les uns des autres**, qui permettent d’évaluer les connaissances et compétences des candidats. 
- 
-## Notions à l'épreuve écrite de Mars 2023 (mis à jours 30/09/2022): 
+## Notions à l'épreuve écrite de Mars 2023 : 
 
 ### &#10145; Thème : Structure de données  
 
