@@ -18,18 +18,18 @@ nav:
 
     - T1 - Struct. données :
       - Structures de données : StructureDonnees/index_structDonnees.md
-      - 📓 C4 P.O.O : StructureDonnees/T1_1_Programmation_Orientee_Objet.md
-      - 💻 T4 POO Exercices : StructureDonnees/T1_2_TD_POO.md
-      - 💻 TD POO BAC : StructureDonnees/T1_3_BAC_Capytale.md     
-      - 📝 S4 Sujet POO BAC : StructureDonnees/POO_BAC_correction.md
-      - 📓 C5 Listes, Piles et Files : StructureDonnees/T2_1_Listes_Piles_et_Files.md
+      #- 📓 C4 P.O.O : StructureDonnees/T1_1_Programmation_Orientee_Objet.md
+      #- 💻 T4 POO Exercices : StructureDonnees/T1_2_TD_POO.md
+      #- 💻 TD POO BAC : StructureDonnees/T1_3_BAC_Capytale.md     
+      #- 📝 S4 Sujet POO BAC : StructureDonnees/POO_BAC_correction.md
+      #- 📓 C5 Listes, Piles et Files : StructureDonnees/T2_1_Listes_Piles_et_Files.md
       #- T2_2 BAC - Listes, Piles et Files : StructureDonnees/T2_2_Pile_File_BAC.md
-      - 📝 S5 BAC Correction - Listes, Piles et Files : StructureDonnees/T2_2_Pile_File_BAC_Correction.md
-      - 📓 C9 Les dictionnaires : StructureDonnees/T4_1_Dictionnaires.md
-      - 📓 C10 Les arbres : StructureDonnees/T3_1_arbre.md
-      - 📝 S10 BAC Les arbres : StructureDonnees/T3_2_arbre_BAC.md
-      - Les Dictionnaires: StructureDonnees/T4_2_dictionnaires.md
-      - Les graphes : Graphe/TD_Graphe.md
+      #- 📝 S5 BAC Correction - Listes, Piles et Files : StructureDonnees/T2_2_Pile_File_BAC_Correction.md
+      #- 📓 C9 Les dictionnaires : StructureDonnees/T4_1_Dictionnaires.md
+      #- 📓 C10 Les arbres : StructureDonnees/T3_1_arbre.md
+      #- 📝 S10 BAC Les arbres : StructureDonnees/T3_2_arbre_BAC.md
+      #- Les Dictionnaires: StructureDonnees/T4_2_dictionnaires.md
+      #- Les graphes : Graphe/TD_Graphe.md
 
 
     
@@ -42,31 +42,31 @@ nav:
     
     - T3 - Archi. mat. :
       - Architecture matérielle et OS : Archi_Materielle/index_archi.md
-      - 📓 C6 Protocole de routage : Archi_Materielle/T3_1_Routage.md
+      #- 📓 C6 Protocole de routage : Archi_Materielle/T3_1_Routage.md
       #- T3_1 BAC Protocole de routage : Archi_Materielle/T3_1_Routage_BAC.md
-      - 📝 S6 BAC Correction Protocole de routage : Archi_Materielle/T3_1_Routage_BAC_Correction.md
-      - 📓 C13 Gestion Processus : Archi_Materielle/T3_2_gestion_processus.md
-      - 📝 S13 BAC Gestion Processus : Archi_Materielle/T3_3_gestion_processus_BAC.md
-      - 📓 C21 Système sur puce : Archi_Materielle/T3_5_systeme_sur_puce.md
+      #- 📝 S6 BAC Correction Protocole de routage : Archi_Materielle/T3_1_Routage_BAC_Correction.md
+      #- 📓 C13 Gestion Processus : Archi_Materielle/T3_2_gestion_processus.md
+      #- 📝 S13 BAC Gestion Processus : Archi_Materielle/T3_3_gestion_processus_BAC.md
+      #- 📓 C21 Système sur puce : Archi_Materielle/T3_5_systeme_sur_puce.md
     
     - T4 - Prog. :
       - Programmation : Programmation/index_prog.md
       - 📓 C3 Récursivité  :  Programmation/T1_1_Recursivite.md
-      - Calculabilité, décidabilité : Programmation/calculabilite.md
+      #- Calculabilité, décidabilité : Programmation/calculabilite.md
       
     #   - Récursivité : Programmation/T4_1_TP_Recursivite_correction.md
 
     - T5 Algo. : 
       - Algorithmique : Algo/index_algo.md
-      - 📓 C7 Tri 1ère : Algo/T5_2_algo_tri.md
-      - 📓 C8 Diviser pour régner : Algo/T5_3_Diviser_pour_regner.md
-      - 📝 S8 Diviser pour régner BAC : Algo/T5_4_Diviser_pour_regner_BAC.md
-      - 📓 C11 Implémentation des arbres binaires : Algo/TP5_5_Implementation_arbres.md
-      - 📝 S11 Algorithme arbres binaires BAC : Algo/T5_6_algo_arbre_BAC.md
-      - 📓 C12 Arbres binaires de recherche : StructureDonnees/T3_3_arbre_recherche.md
-      - 📝 S12 Arbres binaires de recherche BAC : StructureDonnees/T3_4_arbre_recherche_BAC.md
-      - k-plus proches voisins : Algo/TP6_1_kppv.md
-      - Les Graphes Cours : Graphe/Graphe.md
+      #- 📓 C7 Tri 1ère : Algo/T5_2_algo_tri.md
+      #- 📓 C8 Diviser pour régner : Algo/T5_3_Diviser_pour_regner.md
+      #- 📝 S8 Diviser pour régner BAC : Algo/T5_4_Diviser_pour_regner_BAC.md
+      #- 📓 C11 Implémentation des arbres binaires : Algo/TP5_5_Implementation_arbres.md
+      #- 📝 S11 Algorithme arbres binaires BAC : Algo/T5_6_algo_arbre_BAC.md
+      #- 📓 C12 Arbres binaires de recherche : StructureDonnees/T3_3_arbre_recherche.md
+      #- 📝 S12 Arbres binaires de recherche BAC : StructureDonnees/T3_4_arbre_recherche_BAC.md
+      #- k-plus proches voisins : Algo/TP6_1_kppv.md
+      #- Les Graphes Cours : Graphe/Graphe.md
       #- Les Graphes Parcours : Graphe/TD_Graphe_Parcours.md
       #- Les Graphes Exercices : Graphe/TD_Graphe_Exercices.md
 
@@ -94,35 +94,35 @@ nav:
       - '2023': 
         - "Epreuves pratiques" : Annales/2023/EP.md
         
-    - Révision BAC 📝 :  
-      - Acceuil BAC : BAC/index_BAC.md
-      - Piles et Files : BAC/pile_file/compilation_pile_file.md
-      - Récursivité : BAC/recursivite/compile_recursivite.md
-      - Programmation Tableaux : BAC/programmation/compilation_programmation.md
-      - SQL : BAC/SQL/compile_sql.md
+    #- Révision BAC 📝 :  
+      #- Acceuil BAC : BAC/index_BAC.md
+      #- Piles et Files : BAC/pile_file/compilation_pile_file.md
+      #- Récursivité : BAC/recursivite/compile_recursivite.md
+      #- Programmation Tableaux : BAC/programmation/compilation_programmation.md
+      #- SQL : BAC/SQL/compile_sql.md
     #  - Consigne : divers/Consigne_EP.md
     #  - Sujets : divers/EpreuvePratique.md
       #- EP 2022 : BAC/EP_2022.md
   
 
-    - Grand Oral:
-      - Grand Oral : oral/oral.md
+    #- Grand Oral:
+      #- Grand Oral : oral/oral.md
 
-    - Eval. :
-      - Index : progression.md
-      - DS 0001 : Evaluations/BDD_Devoir_Corrige.md
-      - DS 0011 : Evaluations/DS_Pile_File_Routage.md
+    #- Eval. :
+      #- Index : progression.md
+      #- DS 0001 : Evaluations/BDD_Devoir_Corrige.md
+      #- DS 0011 : Evaluations/DS_Pile_File_Routage.md
       #- DS 0100 : Evaluations/DS_Diviser_pour_regner_tris.md
-      - DS 0100 : Evaluations/DS0100bis.md
-      - Eval EP1 : Evaluations/DS_EP1.md
-      - Eval EP2 : Evaluations/DS_EP2.md
-      - Eval EP3 : Evaluations/DS_EP3.md
-      - DS 0101 : Evaluations/DS_Arbres.md
-      - Eval EP4 : Evaluations/DS_EP4.md
-      - Eval EP5 : Evaluations/DS_EP5.md
-      - Eval EP6 : Evaluations/DS_EP6.md
-      - Eval EP7 : Evaluations/DS_EP7.md
-      - DS 0110 : Evaluations/DS0110.md
+      #- DS 0100 : Evaluations/DS0100bis.md
+      #- Eval EP1 : Evaluations/DS_EP1.md
+      #- Eval EP2 : Evaluations/DS_EP2.md
+      #- Eval EP3 : Evaluations/DS_EP3.md
+      #- DS 0101 : Evaluations/DS_Arbres.md
+      #- Eval EP4 : Evaluations/DS_EP4.md
+      #- Eval EP5 : Evaluations/DS_EP5.md
+      #- Eval EP6 : Evaluations/DS_EP6.md
+      #- Eval EP7 : Evaluations/DS_EP7.md
+      #- DS 0110 : Evaluations/DS0110.md
     
     - Extras :
       - Divers concours programmation: divers/prog.md
@@ -131,7 +131,7 @@ nav:
       - Cryptographie bis: Projet/cryptographie2.md
       - pyxel: Projet/pyxel.md
       #- Life & Death : Projet/life_and_death.md
-      - Mini-Projet : Projet/pygame.md
+      #- Mini-Projet : Projet/pygame.md
       - Epreuve GEIPI : divers/sujet0_geipi.pdf
     
     - Crédits : credit.md
